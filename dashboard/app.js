@@ -505,11 +505,15 @@ function renderTickerCharts() {
     }
 
     const allLabels = [...labels, ...forecastLabels.slice(1)];
+    const totalLen  = allLabels.length;
 
-    // Null-pad historical data for forecast region
-    const forecastPadCount = Math.max(0, forecastLabels.length - 1);
-    const histPadded  = [...prices, ...Array(forecastPadCount).fill(null)];
-    const forecastPad = [...Array(Math.max(0, labels.length-1)).fill(null), ...forecastData];
+    // Null-pad so every dataset is exactly totalLen long
+    const histPadded  = [...prices,      ...Array(totalLen - prices.length).fill(null)];
+    // forecastPad: nulls up to the bridge point (last historical index), then forecastData
+    // if no forecastData, fill entirely with null so dataset lengths still match
+    const forecastPad = forecastData.length
+      ? [...Array(Math.max(0, labels.length - 1)).fill(null), ...forecastData]
+      : Array(totalLen).fill(null);
 
     destroyChart(divId);
     const ctx2 = document.getElementById(divId).getContext('2d');
