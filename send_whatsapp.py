@@ -355,17 +355,19 @@ def _regenerate_dashboard_and_pdf(today: str) -> Optional[Path]:
             print(f"[whatsapp] export_dashboard.py failed: {r1.stderr}", file=sys.stderr)
 
         pdf_path = REPORTS_DIR / f"{today}.pdf"
+        screenshot_dir = REPORTS_DIR / today
+        pdf_path = screenshot_dir / "report.pdf"
         r2 = subprocess.run(
             [
-                "/opt/homebrew/bin/python3.12", "pdf_report.py",
-                "--report", str(REPORTS_DIR / f"{today}.md"),
-                "--dashboard-json", str(DASHBOARD_JSON),
-                "--out", str(pdf_path),
+                "node", "screenshot_dashboard.js",
+                "--json", str(DASHBOARD_JSON),
+                "--out", str(screenshot_dir),
+                "--pdf",
             ],
-            cwd=PROJECT_ROOT, capture_output=True, text=True, timeout=60,
+            cwd=PROJECT_ROOT, capture_output=True, text=True, timeout=120,
         )
         if r2.returncode != 0:
-            print(f"[whatsapp] pdf_report.py failed: {r2.stderr}", file=sys.stderr)
+            print(f"[whatsapp] screenshot_dashboard.js failed: {r2.stderr}", file=sys.stderr)
             return None
 
         return pdf_path if pdf_path.exists() else None
@@ -448,7 +450,7 @@ def main() -> None:
         dashboard = json.load(f)
 
     message = compose_daily_message(dashboard, today)
-    pdf_path = REPORTS_DIR / f"{today}.pdf"
+    pdf_path = REPORTS_DIR / today / "report.pdf"
     if not pdf_path.exists():
         pdf_path = None
 
