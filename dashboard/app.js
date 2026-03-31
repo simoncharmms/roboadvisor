@@ -447,7 +447,13 @@ function renderTickerCharts() {
 
   state.portfolio.forEach((pos, idx) => {
     const hist = state.priceHistory[pos.ticker] || [];
-    if (!hist.length) return;
+    if (!hist.length) {
+      const card = document.createElement('div');
+      card.className = 'ticker-chart-card';
+      card.innerHTML = `<div class="ticker-chart-header"><div><div class="ticker-chart-title">${pos.ticker}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">${pos.name}</div></div></div><div style="color:var(--text-muted);font-size:13px;padding:24px 0;text-align:center">No price history available</div>`;
+      container.appendChild(card);
+      return;
+    }
 
     const divId = `ticker-chart-${idx}`;
     const card = document.createElement('div');
@@ -501,8 +507,9 @@ function renderTickerCharts() {
     const allLabels = [...labels, ...forecastLabels.slice(1)];
 
     // Null-pad historical data for forecast region
-    const histPadded  = [...prices, ...Array(forecastLabels.length-1).fill(null)];
-    const forecastPad = [...Array(labels.length-1).fill(null), ...forecastData];
+    const forecastPadCount = Math.max(0, forecastLabels.length - 1);
+    const histPadded  = [...prices, ...Array(forecastPadCount).fill(null)];
+    const forecastPad = [...Array(Math.max(0, labels.length-1)).fill(null), ...forecastData];
 
     destroyChart(divId);
     const ctx2 = document.getElementById(divId).getContext('2d');
