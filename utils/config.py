@@ -30,7 +30,7 @@ class Config:
 
     finance_api_key: str
     news_api_key: str
-    openai_api_key: Optional[str]
+    anthropic_api_key: Optional[str]
 
     # Optional tuning knobs with sensible defaults
     db_path: str = field(default="roboadvisor.db")
@@ -42,7 +42,7 @@ class Config:
 # ---------------------------------------------------------------------------
 
 _REQUIRED_KEYS = ["FINANCE_API_KEY", "NEWS_API_KEY"]
-_OPTIONAL_KEYS = ["OPENAI_API_KEY"]
+_OPTIONAL_KEYS = ["ANTHROPIC_API_KEY"]
 
 
 def load_config(env_file: Optional[str] = None) -> Config:
@@ -97,12 +97,12 @@ def load_config(env_file: Optional[str] = None) -> Config:
     # Warn about optional keys
     for key in _OPTIONAL_KEYS:
         if not os.getenv(key):
-            print(f"[config] WARNING: Optional key {key!r} not set — related features will be disabled.")
+            print(f"[config] WARNING: Optional key {key!r} not set — LLM features will be disabled.")
 
     return Config(
         finance_api_key=os.environ["FINANCE_API_KEY"],
         news_api_key=os.environ["NEWS_API_KEY"],
-        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
         db_path=os.getenv("DB_PATH", "roboadvisor.db"),
         log_level=os.getenv("LOG_LEVEL", "INFO"),
     )

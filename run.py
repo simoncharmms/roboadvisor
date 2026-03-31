@@ -22,7 +22,7 @@ Usage
 Environment variables (see .env.example):
     NEWS_API_KEY    – required for news fetching
     FINANCE_API_KEY – required (validated on startup)
-    OPENAI_API_KEY  – optional, enables LLM recommendations
+    ANTHROPIC_API_KEY  – optional, enables LLM recommendations
 """
 
 from __future__ import annotations
@@ -377,7 +377,7 @@ def generate_report(portfolio: list[dict], all_results: list[dict], today_str: s
         # LLM placeholder
         lines.append("### LLM Recommendation\n")
         lines.append("> *LLM analysis not yet available for this run.*  ")
-        lines.append("> Configure `OPENAI_API_KEY` and integrate `llm/` module to enable AI-driven commentary.\n")
+        lines.append("> Configure `ANTHROPIC_API_KEY` and integrate `llm/` module to enable AI-driven commentary.\n")
 
     # ---- Disclaimer ----
     lines.append("---\n")

@@ -17,7 +17,7 @@ numpy>=1.24.0
 scipy>=1.11.0             # Gaussian copula (stats.norm, rankdata)
 
 # ── LLM integration (optional) ───────────────────────────────
-openai>=1.0.0             # OpenAI API client
+anthropic>=0.25.0         # Anthropic API client (Claude)
 
 # ── Configuration ────────────────────────────────────────────
 python-dotenv>=1.0.0      # Load .env files
