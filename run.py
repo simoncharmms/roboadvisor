@@ -63,6 +63,7 @@ from models.y_filter import y_filter
 from models.arima_forecast import arima_forecast
 from models.garch_copula import garch_copula_analysis
 from models.backtest import backtest
+from llm.analyzer import LLMAnalyzer
 
 
 # ---------------------------------------------------------------------------
@@ -249,7 +250,12 @@ def _fmt(value, decimals: int = 4, suffix: str = "") -> str:
         return str(value)
 
 
-def generate_report(portfolio: list[dict], all_results: list[dict], today_str: str) -> str:
+def generate_report(
+    portfolio: list[dict],
+    all_results: list[dict],
+    today_str: str,
+    llm_results: Optional[dict] = None,
+) -> str:
     """Render the analysis results as a Markdown report string.
 
     Parameters
@@ -257,12 +263,14 @@ def generate_report(portfolio: list[dict], all_results: list[dict], today_str: s
     portfolio   : list[dict]  – portfolio entries from portfolio.json
     all_results : list[dict]  – one result dict per ticker
     today_str   : str         – report date
+    llm_results : dict, optional – {ticker: llm analysis dict}
 
     Returns
     -------
     str
         Full Markdown report text.
     """
+    llm_results = llm_results or {}
     lines = []
 
     # ---- Header ----
@@ -374,10 +382,40 @@ def generate_report(portfolio: list[dict], all_results: list[dict], today_str: s
             lines.append("*No backtest result available.*")
         lines.append("")
 
-        # LLM placeholder
+        # LLM recommendation
         lines.append("### LLM Recommendation\n")
-        lines.append("> *LLM analysis not yet available for this run.*  ")
-        lines.append("> Configure `ANTHROPIC_API_KEY` and integrate `llm/` module to enable AI-driven commentary.\n")
+        llm = llm_results.get(ticker)
+        if llm and not llm.get("error"):
+            rec = llm.get("recommendation", "N/A")
+            conf = llm.get("confidence", "N/A")
+            agreement = llm.get("quant_agreement", "N/A")
+            rationale = llm.get("rationale", "")
+            yf_signal = (result.get("y_filter") or {}).get("signal", "N/A")
+            conflict = (
+                rec not in ("N/A", "HOLD") and yf_signal not in ("N/A", "HOLD")
+                and rec != yf_signal
+            )
+            rec_emoji = {"BUY": "🟢", "SELL": "🔴", "HOLD": "🟡"}.get(rec, "⚪")
+            conf_emoji = {"HIGH": "🔵", "MED": "🟠", "LOW": "🔘"}.get(conf, "")
+            agreement_emoji = {"agree": "✅", "disagree": "⚠️", "neutral": "➖"}.get(agreement, "")
+
+            lines.append(f"| Field | Value |")
+            lines.append(f"|-------|-------|")
+            lines.append(f"| **Recommendation** | {rec_emoji} **{rec}** |")
+            lines.append(f"| Confidence | {conf_emoji} {conf} |")
+            lines.append(f"| Quant Agreement | {agreement_emoji} {agreement} |")
+            lines.append(f"| Model | {llm.get('model', 'N/A')} |")
+            lines.append("")
+            lines.append(f"> **Rationale:** {rationale}")
+            if conflict:
+                lines.append(f"\n> 🚩 **Signal conflict:** Quant says **{yf_signal}**, LLM says **{rec}** — review manually.")
+        elif llm and llm.get("error"):
+            lines.append(f"> ⚠️ LLM analysis failed: {llm.get('error')}")
+            lines.append(f"> Defaulted to HOLD with LOW confidence.")
+        else:
+            lines.append("> *LLM analysis not run for this report.*  ")
+            lines.append("> Configure `ANTHROPIC_API_KEY` to enable AI-driven commentary.")
+        lines.append("")
 
     # ---- Disclaimer ----
     lines.append("---\n")
@@ -499,11 +537,63 @@ def main() -> None:
         except Exception as exc:
             print(f"[run] WARNING: multi-asset GARCH copula failed: {exc}")
 
-    # 7. Generate report
+    # 7. LLM analysis (optional — requires ANTHROPIC_API_KEY)
+    llm_results: dict = {}
+    if cfg.anthropic_api_key:
+        print(f"\n[run] Running LLM analysis (Claude)...")
+        try:
+            analyzer = LLMAnalyzer(api_key=cfg.anthropic_api_key)
+
+            # Fetch news rows per ticker for the prompt
+            news_by_ticker: dict[str, list] = {}
+            for entry in portfolio:
+                ticker = entry.get("ticker", "")
+                if ticker:
+                    from data.db import get_news as _get_news
+                    news_by_ticker[ticker] = _get_news(conn, ticker, days=7)
+
+            # Compute total portfolio value for weight calculations
+            total_value = sum(
+                (r.get("latest_price") or 0) * next(
+                    (e.get("shares", 0) for e in portfolio if e.get("ticker") == r["ticker"]), 0
+                )
+                for r in all_results
+            )
+
+            llm_results = analyzer.analyze_portfolio(
+                portfolio=portfolio,
+                all_quant_results=all_results,
+                news_by_ticker=news_by_ticker,
+                total_portfolio_value=total_value,
+            )
+
+            # Persist LLM signals back to the signals table
+            for ticker, llm_r in llm_results.items():
+                if not llm_r.get("error"):
+                    try:
+                        upsert_signal(
+                            conn,
+                            ticker=ticker,
+                            date=today_str,
+                            llm_recommendation=llm_r.get("recommendation"),
+                            llm_confidence=llm_r.get("confidence"),
+                            llm_rationale=llm_r.get("rationale"),
+                            llm_quant_agreement=llm_r.get("quant_agreement"),
+                        )
+                        conn.commit()
+                    except Exception as exc:
+                        print(f"[run] WARNING: could not persist LLM signal for {ticker}: {exc}")
+        except Exception as exc:
+            print(f"[run] ERROR during LLM analysis: {exc}")
+            traceback.print_exc()
+    else:
+        print(f"\n[run] Skipping LLM analysis (ANTHROPIC_API_KEY not set).")
+
+    # 8. Generate report
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     report_path = REPORTS_DIR / f"{today_str}.md"
     try:
-        report_text = generate_report(portfolio, all_results, today_str)
+        report_text = generate_report(portfolio, all_results, today_str, llm_results=llm_results)
         with open(report_path, "w", encoding="utf-8") as fh:
             fh.write(report_text)
         print(f"\n[run] Report written to: {report_path}")
