@@ -173,12 +173,14 @@ function destroyChart(key) {
 function renderKPIs() {
   const totalValue = computePortfolioValue();
 
-  // Total invested (from executed trades)
+  // Total invested + fees (fee-adjusted cost basis)
   const invested = state.executedTrades.reduce((sum, t) => {
     if (!t.total_eur) return sum;
     return t.action?.toUpperCase() === 'BUY' ? sum + t.total_eur : sum - t.total_eur;
   }, 0);
-  const returnPct = invested > 0 ? ((totalValue - invested) / invested * 100) : null;
+  const totalFees = state.executedTrades.reduce((sum, t) => sum + (t.fee_eur || 0), 0);
+  const totalCost = invested + totalFees;  // what you actually paid incl. fees
+  const returnPct = totalCost > 0 ? ((totalValue - totalCost) / totalCost * 100) : null;
 
   setKPI('kpi-total-value', `€${totalValue.toFixed(2)}`, 'current market value', null);
   setKPI('kpi-total-return', fmtPct(returnPct), 'since first trade', returnPct != null && returnPct >= 0 ? 'positive' : returnPct != null ? 'negative' : null);
@@ -345,9 +347,10 @@ function renderAllocationChart() {
   legend.innerHTML = state.portfolio.map((pos, i) => {
     const val = values[i];
     const pct = (val / totalValue * 100).toFixed(1);
+    const isinWkn = [pos.isin, pos.wkn].filter(Boolean).join(' · ');
     return `<div class="donut-legend-item">
       <div class="donut-legend-dot" style="background:${PALETTE[i%PALETTE.length]}"></div>
-      <span class="donut-legend-name" title="${pos.name}">${pos.ticker}</span>
+      <span class="donut-legend-name" title="${pos.name}${isinWkn ? '\n' + isinWkn : ''}">${pos.ticker}</span>
       <span class="donut-legend-pct" style="color:${PALETTE[i%PALETTE.length]}">${pct}%</span>
     </div>`;
   }).join('');
@@ -478,6 +481,7 @@ function renderTickerCharts() {
           <div class="ticker-price-change ${changeDir}">${changePct!=null?fmtPct(changePct):'—'} today</div>
         </div>
       </div>
+      <div style="font-size:10px;color:var(--text-muted);margin-top:2px;font-family:monospace">${[pos.isin,pos.wkn].filter(Boolean).join(' · ')}</div>
       <div class="ticker-chart-canvas-wrap">
         <canvas id="${divId}"></canvas>
       </div>`;
@@ -583,7 +587,7 @@ function renderTickerCharts() {
 function renderTradesTable() {
   const tbody = document.getElementById('trades-tbody');
   if (!state.executedTrades.length) {
-    tbody.innerHTML = '<tr><td colspan="7" style="color:var(--text-muted);text-align:center;padding:24px">No executed trades loaded.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" style="color:var(--text-muted);text-align:center;padding:24px">No executed trades loaded.</td></tr>';
     return;
   }
 
@@ -592,10 +596,13 @@ function renderTradesTable() {
     return `<tr>
       <td>${t.date}</td>
       <td>${t.ticker}</td>
+      <td style="font-family:monospace;font-size:11px;color:var(--text-muted)">${t.isin||'—'}</td>
+      <td style="font-family:monospace;font-size:11px;color:var(--text-muted)">${t.wkn||'—'}</td>
       <td class="${isBuy?'action-buy':'action-sell'}">${t.action?.toUpperCase()||'—'}</td>
       <td>${t.shares!=null?t.shares:'—'}</td>
       <td>${t.price_per_share!=null?'€'+Number(t.price_per_share).toFixed(2):'—'}</td>
       <td>${t.total_eur!=null?'€'+Number(t.total_eur).toFixed(2):'—'}</td>
+      <td style="color:${t.fee_eur?'var(--sell)':'var(--text-muted)'}">${t.fee_eur!=null?'€'+Number(t.fee_eur).toFixed(2):'—'}</td>
       <td style="color:var(--text-muted);font-size:12px">${t.note||''}</td>
     </tr>`;
   }).join('');

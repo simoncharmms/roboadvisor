@@ -76,9 +76,11 @@ def load_portfolio(portfolio_path: Path) -> list[dict]:
     holdings = []
     for item in raw.get("portfolio", []):
         holdings.append({
-            "ticker": item["ticker"],
-            "name": item.get("name", ""),
-            "shares": item.get("shares", 0),
+            "ticker":   item["ticker"],
+            "isin":     item.get("isin", ""),
+            "wkn":      item.get("wkn", ""),
+            "name":     item.get("name", ""),
+            "shares":   item.get("shares", 0),
             "currency": item.get("currency", ""),
         })
     return holdings
@@ -274,12 +276,38 @@ def build_export(
     Returns:
         Complete export dict ready to be serialised to JSON.
     """
+    # Compute per-ticker cost basis (total invested incl. fees) from trades
+    cost_basis: dict[str, dict] = {}
+    for t in executed_trades:
+        ticker = t.get("ticker", "")
+        action = (t.get("action") or "").upper()
+        total  = t.get("total_eur") or 0.0
+        fee    = t.get("fee_eur") or 0.0
+        if action == "BUY":
+            entry = cost_basis.setdefault(ticker, {"invested_eur": 0.0, "fees_eur": 0.0})
+            entry["invested_eur"] += total
+            entry["fees_eur"]     += fee
+        elif action == "SELL":
+            entry = cost_basis.setdefault(ticker, {"invested_eur": 0.0, "fees_eur": 0.0})
+            entry["invested_eur"] -= total
+            entry["fees_eur"]     += fee  # sell fees still reduce profitability
+
+    # Attach cost basis to portfolio entries
+    enriched_portfolio = []
+    for pos in portfolio:
+        cb = cost_basis.get(pos["ticker"], {})
+        enriched_portfolio.append({
+            **pos,
+            "cost_basis_eur": cb.get("invested_eur"),
+            "total_fees_eur": cb.get("fees_eur"),
+        })
+
     return {
         "meta": {
             "generated_at": date.today().isoformat(),
-            "version": "1.0",
+            "version": "1.1",
         },
-        "portfolio": portfolio,
+        "portfolio": enriched_portfolio,
         "price_history": price_history,
         "suggestions": suggestions,
         "backtest_results": backtest_results,

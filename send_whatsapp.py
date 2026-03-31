@@ -75,33 +75,45 @@ def parse_trade(text: str) -> Optional[dict]:
     Parameters
     ----------
     text : str
-        Free-form trade message, e.g. ``"BUY IQQH.DE 10 at €8.80"``
+        Free-form trade message, e.g. ``"BUY IQQH.DE 10 at €8.80 fee 3.90"``
 
     Returns
     -------
     dict or None
-        ``{action, ticker, shares, price}`` or None if unparseable.
+        ``{action, ticker, shares, price, fee}`` or None if unparseable.
+        ``fee`` is None if not provided.
     """
+    # Optional fee suffix: "fee 3.90" or "Gebühr 3,90"
+    _FEE = re.compile(r'(?:fee|gebühr|kosten)\s+[€$£]?([\d.,]+)', re.IGNORECASE)
+
+    trade = None
     m = _PRIMARY.match(text.strip())
     if m:
-        return {
+        trade = {
             "action": m.group(1).upper(),
             "ticker": m.group(2).upper(),
             "shares": _norm(m.group(3)),
             "price":  _norm(m.group(4)),
         }
 
-    m = _FALLBACK.search(text)
-    if m:
-        verb = m.group("verb").lower()
-        return {
-            "action": "BUY" if verb in ("bought", "purchased") else "SELL",
-            "ticker": m.group("ticker").upper(),
-            "shares": _norm(m.group("shares")),
-            "price":  _norm(m.group("price")),
-        }
+    if trade is None:
+        m = _FALLBACK.search(text)
+        if m:
+            verb = m.group("verb").lower()
+            trade = {
+                "action": "BUY" if verb in ("bought", "purchased") else "SELL",
+                "ticker": m.group("ticker").upper(),
+                "shares": _norm(m.group("shares")),
+                "price":  _norm(m.group("price")),
+            }
 
-    return None
+    if trade is None:
+        return None
+
+    # Extract optional fee
+    fee_match = _FEE.search(text)
+    trade["fee"] = _norm(fee_match.group(1)) if fee_match else None
+    return trade
 
 
 # ---------------------------------------------------------------------------
@@ -127,15 +139,31 @@ def append_trade(trade: dict) -> None:
     """
     trades = load_trades()
     today = date.today().isoformat()
+    # Look up ISIN/WKN from portfolio.json if available
+    portfolio_path = PROJECT_ROOT / "portfolio.json"
+    isin, wkn = "", ""
+    if portfolio_path.exists():
+        with open(portfolio_path) as pf:
+            pdata = json.load(pf)
+        for pos in pdata.get("portfolio", []):
+            if pos.get("ticker") == trade["ticker"]:
+                isin = pos.get("isin", "")
+                wkn  = pos.get("wkn", "")
+                break
+
+    fee = trade.get("fee")
     entry = {
         "date":            today,
         "ticker":          trade["ticker"],
+        "isin":            isin,
+        "wkn":             wkn,
         "action":          trade["action"],
         "shares":          trade["shares"],
         "price_per_share": trade["price"],
         "price_eur":       trade["price"],   # assume EUR; adjust manually if needed
         "currency":        "EUR",
         "total_eur":       round(trade["shares"] * trade["price"], 2),
+        "fee_eur":         fee,
         "note":            f"Reported via WhatsApp {today}",
     }
     trades.append(entry)
@@ -420,8 +448,9 @@ def main() -> None:
         if not trade:
             msg = (
                 "❓ Couldn't parse trade. Use format:\n"
-                "BUY TICKER SHARES at PRICE\n"
-                "e.g. BUY IQQH.DE 10 at 8.80"
+                "BUY TICKER SHARES at PRICE [fee FEE]\n"
+                "e.g. BUY IQQH.DE 10 at 8.80\n"
+                "or: BUY IQQH.DE 10 at 8.80 fee 3.90"
             )
             print(msg)
             _openclaw_send(msg, dry_run=args.dry_run)
@@ -429,9 +458,10 @@ def main() -> None:
 
         append_trade(trade)
         pdf_path = _regenerate_dashboard_and_pdf(today)
+        fee_str = f" | Fee: €{trade['fee']:.2f}" if trade.get('fee') else " | Fee: not provided"
         confirm_msg = (
             f"✅ Logged: {trade['action']} {trade['ticker']} "
-            f"{trade['shares']} shares @ {trade['price']:.4f}\n"
+            f"{trade['shares']} shares @ {trade['price']:.4f}{fee_str}\n"
             f"Dashboard updated. PDF attached."
         )
         _openclaw_send(confirm_msg, pdf_path=pdf_path, dry_run=args.dry_run)
