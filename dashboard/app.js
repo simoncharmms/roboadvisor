@@ -107,7 +107,7 @@ function fmtPct(n, decimals=1) {
 }
 
 function badgeHtml(signal) {
-  if (!signal) return '<span class="badge badge-na">—</span>';
+  if (!signal || signal === '—') return '<span class="badge badge-na">—</span>';
   const cls = signal.toUpperCase() === 'BUY'  ? 'badge-buy'
             : signal.toUpperCase() === 'SELL' ? 'badge-sell'
             :                                   'badge-hold';
@@ -181,7 +181,7 @@ function renderKPIs() {
   const returnPct = invested > 0 ? ((totalValue - invested) / invested * 100) : null;
 
   setKPI('kpi-total-value', `€${totalValue.toFixed(2)}`, 'current market value', null);
-  setKPI('kpi-total-return', fmtPct(returnPct), 'since first trade', returnPct >= 0 ? 'positive' : 'negative');
+  setKPI('kpi-total-return', fmtPct(returnPct), 'since first trade', returnPct != null && returnPct >= 0 ? 'positive' : returnPct != null ? 'negative' : null);
   setKPI('kpi-positions', state.portfolio.length.toString(), state.portfolio.map(p=>p.ticker).join(' · '), null);
 
   const sharpes = state.backtestResults.map(b=>b.sharpe_ratio).filter(n=>n!=null);
@@ -190,7 +190,7 @@ function renderKPIs() {
 
   const dds = state.backtestResults.map(b=>b.max_drawdown_pct).filter(n=>n!=null);
   const worstDD = dds.length ? Math.min(...dds) : null;
-  setKPI('kpi-max-dd', fmtPct(worstDD), 'worst position', worstDD < 0 ? 'negative' : null);
+  setKPI('kpi-max-dd', fmtPct(worstDD), 'worst position', worstDD != null && worstDD < 0 ? 'negative' : null);
 
   // Latest signals
   const latestDate = state.suggestions.length ? state.suggestions[state.suggestions.length-1].date : null;
@@ -456,7 +456,7 @@ function renderTickerCharts() {
     const lastClose = hist[hist.length-1]?.close;
     const prevClose = hist[hist.length-2]?.close;
     const changePct = (prevClose && lastClose) ? ((lastClose - prevClose)/prevClose*100) : null;
-    const changeDir = changePct >= 0 ? 'up' : 'down';
+    const changeDir = (changePct != null && changePct >= 0) ? 'up' : changePct != null ? 'down' : '';
 
     // Latest ARIMA forecasts for this ticker
     const latestSug = [...state.suggestions].filter(s=>s.ticker===pos.ticker).pop();
@@ -649,31 +649,31 @@ function loadDemo() {
   }
 
   const amunPrices = genPrices('AMUN.PA', 42.0, 0.012);
-  const iegePrices = genPrices('IEGE.DE', 28.0, 0.004);
+  const iegePrices = genPrices('EUN4.DE', 28.0, 0.004);
 
   const demo = {
     meta: { generated_at: '2026-03-31', version: '1.0' },
     portfolio: [
       { ticker: 'AMUN.PA', name: 'Amundi MSCI World III UCITS ETF Dis', shares: 1.62338, currency: 'EUR' },
-      { ticker: 'IEGE.DE', name: 'iShares Germany Government Bonds UCITS ETF EUR Dist', shares: 3, currency: 'EUR' }
+      { ticker: 'EUN4.DE', name: 'iShares Germany Government Bonds UCITS ETF EUR Dist', shares: 3, currency: 'EUR' }
     ],
     price_history: {
       'AMUN.PA': amunPrices,
-      'IEGE.DE': iegePrices
+      'EUN4.DE': iegePrices
     },
     suggestions: [
       { date: '2026-03-28', ticker: 'AMUN.PA', quant_signal: 'HOLD', llm_recommendation: 'HOLD', llm_confidence: 'HIGH', llm_rationale: 'Broad equity markets remain under pressure from oil shock; MSCI World holds steady.', arima_forecast_1d: amunPrices.at(-1).close * 1.003, arima_forecast_5d: amunPrices.at(-1).close * 1.011, garch_volatility: 0.013 },
-      { date: '2026-03-28', ticker: 'IEGE.DE', quant_signal: 'HOLD', llm_recommendation: 'SELL', llm_confidence: 'MED', llm_rationale: 'Rising inflation expectations from oil shock may pressure bond prices; consider reducing duration exposure.', arima_forecast_1d: iegePrices.at(-1).close * 0.998, arima_forecast_5d: iegePrices.at(-1).close * 0.994, garch_volatility: 0.004 },
+      { date: '2026-03-28', ticker: 'EUN4.DE', quant_signal: 'HOLD', llm_recommendation: 'SELL', llm_confidence: 'MED', llm_rationale: 'Rising inflation expectations from oil shock may pressure bond prices; consider reducing duration exposure.', arima_forecast_1d: iegePrices.at(-1).close * 0.998, arima_forecast_5d: iegePrices.at(-1).close * 0.994, garch_volatility: 0.004 },
       { date: '2026-03-31', ticker: 'AMUN.PA', quant_signal: 'BUY', llm_recommendation: 'HOLD', llm_confidence: 'MED', llm_rationale: 'Quant signal triggered BUY but macro uncertainty persists. LLM suggests waiting for oil shock resolution.', arima_forecast_1d: amunPrices.at(-1).close * 1.005, arima_forecast_5d: amunPrices.at(-1).close * 1.018, garch_volatility: 0.014 },
-      { date: '2026-03-31', ticker: 'IEGE.DE', quant_signal: 'HOLD', llm_recommendation: 'HOLD', llm_confidence: 'HIGH', llm_rationale: 'Government bonds remain defensive anchor; hold position.', arima_forecast_1d: iegePrices.at(-1).close * 0.999, arima_forecast_5d: iegePrices.at(-1).close * 0.997, garch_volatility: 0.003 }
+      { date: '2026-03-31', ticker: 'EUN4.DE', quant_signal: 'HOLD', llm_recommendation: 'HOLD', llm_confidence: 'HIGH', llm_rationale: 'Government bonds remain defensive anchor; hold position.', arima_forecast_1d: iegePrices.at(-1).close * 0.999, arima_forecast_5d: iegePrices.at(-1).close * 0.997, garch_volatility: 0.003 }
     ],
     backtest_results: [
       { run_date: '2026-03-31', ticker: 'AMUN.PA', total_return_pct: 6.4, sharpe_ratio: 0.87, max_drawdown_pct: -4.2, win_rate: 0.58 },
-      { run_date: '2026-03-31', ticker: 'IEGE.DE', total_return_pct: 1.1, sharpe_ratio: 0.42, max_drawdown_pct: -1.8, win_rate: 0.51 }
+      { run_date: '2026-03-31', ticker: 'EUN4.DE', total_return_pct: 1.1, sharpe_ratio: 0.42, max_drawdown_pct: -1.8, win_rate: 0.51 }
     ],
     executed_trades: [
       { date: '2026-01-15', ticker: 'AMUN.PA', action: 'BUY', shares: 1.62338, price_per_share: 42.10, total_eur: 68.35, note: 'Initial position' },
-      { date: '2026-01-15', ticker: 'IEGE.DE', action: 'BUY', shares: 3, price_per_share: 27.80, total_eur: 83.40, note: 'Initial position' }
+      { date: '2026-01-15', ticker: 'EUN4.DE', action: 'BUY', shares: 3, price_per_share: 27.80, total_eur: 83.40, note: 'Initial position' }
     ]
   };
 
