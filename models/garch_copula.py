@@ -23,14 +23,16 @@ Dependencies: ``arch``, ``scipy``, ``numpy``, ``pandas``
 from __future__ import annotations
 
 import warnings
-from typing import Optional
+from typing import TYPE_CHECKING, Any, Optional
+
+if TYPE_CHECKING:
+    from arch.univariate.base import ARCHModelResult
 
 import numpy as np
 import pandas as pd
 
 try:
     from arch import arch_model
-    from arch.univariate import ARCHModelResult
 except ImportError as exc:
     raise ImportError("arch is required: pip install arch") from exc
 
@@ -133,7 +135,7 @@ def _fit_garch(ticker: str, prices: pd.Series) -> dict:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
             am = arch_model(log_returns, vol="Garch", p=1, q=1, dist="normal", rescale=False)
-            res: ARCHModelResult = am.fit(disp="off", show_warning=False)
+            res: Any = am.fit(disp="off", show_warning=False)
 
         # Annualised volatility: σ_daily × √252, converted back from percent
         last_variance = float(res.conditional_volatility.iloc[-1]) ** 2  # already in % units
