@@ -1,0 +1,18 @@
+{
+  "portfolio": [
+    {
+      "ticker": "AMUN.PA",
+      "name": "Amundi MSCI World III UCITS ETF Dis",
+      "shares": 1.62338,
+      "purchase_price": null,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "IEGE.DE",
+      "name": "iShares Germany Government Bonds UCITS ETF EUR (Dist)",
+      "shares": 3,
+      "purchase_price": null,
+      "currency": "EUR"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📈 Roboadvisor — Portfolio Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<header class="app-header">
+  <div class="logo">
+    <div class="logo-icon">📈</div>
+    <span class="logo-text">Roboadvisor</span>
+    <span class="logo-tagline">Portfolio Intelligence</span>
+  </div>
+  <div class="header-actions">
+    <div id="last-updated" class="last-updated">No data loaded</div>
+    <label class="btn btn-primary" for="file-import">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Import JSON
+    </label>
+    <input type="file" id="file-import" accept=".json" style="display:none">
+    <button class="btn btn-ghost btn-sm" id="btn-load-demo">Load Demo</button>
+  </div>
+</header>
+
+<!-- ================================================================
+     EMPTY STATE
+================================================================ -->
+<div id="empty-state" class="empty-state">
+  <div class="empty-icon">📂</div>
+  <h2>Import your portfolio data</h2>
+  <p>Load a JSON file containing your portfolio, historical suggestions, backtesting results, and executed trades.<br>See the <strong>data format guide</strong> below.</p>
+  <label class="btn btn-primary" for="file-import" style="margin-top: 24px; font-size: 16px; padding: 14px 28px;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    Import JSON File
+  </label>
+  <button class="btn btn-ghost" id="btn-load-demo2" style="margin-top: 12px;">Load Demo Data</button>
+
+  <div class="format-guide">
+    <h3>📋 Expected JSON Format</h3>
+    <pre><code>{
+  "meta": {
+    "generated_at": "2026-03-31",
+    "version": "1.0"
+  },
+  "portfolio": [
+    {
+      "ticker": "AMUN.PA",
+      "name": "Amundi MSCI World III UCITS ETF Dis",
+      "shares": 1.62338,
+      "currency": "EUR"
+    }
+  ],
+  "price_history": {
+    "AMUN.PA": [
+      { "date": "2026-03-01", "close": 42.50 },
+      { "date": "2026-03-31", "close": 44.10 }
+    ]
+  },
+  "suggestions": [
+    {
+      "date": "2026-03-31",
+      "ticker": "AMUN.PA",
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "HIGH",
+      "llm_rationale": "...",
+      "arima_forecast_1d": 44.20,
+      "arima_forecast_5d": 44.80,
+      "garch_volatility": 0.012
+    }
+  ],
+  "backtest_results": [
+    {
+      "run_date": "2026-03-31",
+      "ticker": "AMUN.PA",
+      "total_return_pct": 8.4,
+      "sharpe_ratio": 1.2,
+      "max_drawdown_pct": -5.1,
+      "win_rate": 0.62
+    }
+  ],
+  "executed_trades": [
+    {
+      "date": "2026-03-15",
+      "ticker": "AMUN.PA",
+      "action": "BUY",
+      "shares": 1.62338,
+      "price_per_share": 42.10,
+      "total_eur": 68.35,
+      "note": "Initial position"
+    }
+  ]
+}</code></pre>
+  </div>
+</div>
+
+<!-- ================================================================
+     MAIN DASHBOARD
+================================================================ -->
+<div id="dashboard" class="dashboard" style="display:none">
+
+  <!-- KPI Strip -->
+  <section class="kpi-strip">
+    <div class="kpi-card" id="kpi-total-value">
+      <div class="kpi-label">Portfolio Value</div>
+      <div class="kpi-value">—</div>
+      <div class="kpi-sub">—</div>
+    </div>
+    <div class="kpi-card" id="kpi-total-return">
+      <div class="kpi-label">Total Return</div>
+      <div class="kpi-value">—</div>
+      <div class="kpi-sub">since first trade</div>
+    </div>
+    <div class="kpi-card" id="kpi-positions">
+      <div class="kpi-label">Positions</div>
+      <div class="kpi-value">—</div>
+      <div class="kpi-sub">—</div>
+    </div>
+    <div class="kpi-card" id="kpi-sharpe">
+      <div class="kpi-label">Avg Sharpe</div>
+      <div class="kpi-value">—</div>
+      <div class="kpi-sub">backtested</div>
+    </div>
+    <div class="kpi-card" id="kpi-max-dd">
+      <div class="kpi-label">Max Drawdown</div>
+      <div class="kpi-value">—</div>
+      <div class="kpi-sub">backtested</div>
+    </div>
+    <div class="kpi-card" id="kpi-signals">
+      <div class="kpi-label">Today's Signals</div>
+      <div class="kpi-value" id="kpi-signals-val">—</div>
+      <div class="kpi-sub" id="kpi-signals-sub">—</div>
+    </div>
+  </section>
+
+  <!-- Main Chart -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Portfolio Performance</h2>
+        <p class="section-sub">Overall value over time · markers show executed trades</p>
+      </div>
+      <div class="chart-controls">
+        <button class="chip active" data-range="1M">1M</button>
+        <button class="chip" data-range="3M">3M</button>
+        <button class="chip" data-range="6M">6M</button>
+        <button class="chip" data-range="ALL">All</button>
+        <div class="chart-legend">
+          <span class="legend-dot buy"></span>BUY
+          <span class="legend-dot sell"></span>SELL
+        </div>
+      </div>
+    </div>
+    <div class="chart-container main-chart-container">
+      <canvas id="chart-performance"></canvas>
+    </div>
+  </section>
+
+  <!-- Two-column: Allocation + Signals -->
+  <div class="two-col">
+
+    <!-- Allocation -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Allocation</h2>
+          <p class="section-sub">Current portfolio weights</p>
+        </div>
+      </div>
+      <div class="donut-container">
+        <canvas id="chart-allocation"></canvas>
+        <div id="allocation-legend" class="donut-legend"></div>
+      </div>
+    </section>
+
+    <!-- Latest Signals -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Latest Signals</h2>
+          <p class="section-sub">Most recent daily recommendations</p>
+        </div>
+      </div>
+      <div id="signals-list" class="signals-list"></div>
+    </section>
+
+  </div>
+
+  <!-- Backtest Results -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Backtesting Results</h2>
+        <p class="section-sub">Statistical model performance on historical data</p>
+      </div>
+    </div>
+    <div id="backtest-grid" class="backtest-grid"></div>
+  </section>
+
+  <!-- Per-Ticker Price Charts -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Individual Positions</h2>
+        <p class="section-sub">Price history with ARIMA forecast overlay</p>
+      </div>
+    </div>
+    <div id="ticker-charts" class="ticker-charts"></div>
+  </section>
+
+  <!-- Trade History -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Executed Trades</h2>
+        <p class="section-sub">Your manually logged portfolio adjustments</p>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="trades-table" class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Ticker</th>
+            <th>Action</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total (€)</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody id="trades-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Suggestion History -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Suggestion History</h2>
+        <p class="section-sub">All daily recommendations — quant + LLM</p>
+      </div>
+      <div>
+        <select id="suggestion-filter" class="select">
+          <option value="ALL">All tickers</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Ticker</th>
+            <th>Quant</th>
+            <th>LLM</th>
+            <th>Confidence</th>
+            <th>ARIMA 1D</th>
+            <th>ARIMA 5D</th>
+            <th>Vol (GARCH)</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody id="suggestions-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+</div><!-- /dashboard -->
+
+<script src="app.js"></script>
+</body>
+</html>

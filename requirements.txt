@@ -1,0 +1,23 @@
+# ============================================================
+#  Roboadvisor — Python dependencies
+#  Install with: pip install -r requirements.txt
+# ============================================================
+
+# ── Data fetching ────────────────────────────────────────────
+yfinance>=0.2.40          # OHLCV price data from Yahoo Finance
+newsapi-python>=0.2.7     # NewsAPI client for headline fetching
+
+# ── Quantitative models ──────────────────────────────────────
+statsmodels>=0.14.0       # ARIMA time-series modelling
+arch>=6.3.0               # GARCH volatility modelling
+
+# ── Data wrangling ───────────────────────────────────────────
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.11.0             # Gaussian copula (stats.norm, rankdata)
+
+# ── LLM integration (optional) ───────────────────────────────
+openai>=1.0.0             # OpenAI API client
+
+# ── Configuration ────────────────────────────────────────────
+python-dotenv>=1.0.0      # Load .env files
