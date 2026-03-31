@@ -13,6 +13,41 @@
       "shares": 3,
       "purchase_price": null,
       "currency": "EUR"
+    },
+    {
+      "ticker": "IQQH.DE",
+      "name": "iShares S&P 500 Energy Sector UCITS ETF",
+      "shares": 85.567598,
+      "purchase_price": 8.765,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "BTCE.DE",
+      "name": "ETC Group Physical Bitcoin ETP",
+      "shares": 9.584052,
+      "purchase_price": 52.17,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "4GLD.DE",
+      "name": "Xetra-Gold ETC",
+      "shares": 3.914814,
+      "purchase_price": 127.72,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "DFNS.SW",
+      "name": "VanEck Defense UCITS ETF",
+      "shares": 6.736095,
+      "purchase_price": 51.07,
+      "currency": "CHF"
+    },
+    {
+      "ticker": "ICOM.L",
+      "name": "iShares Diversified Commodity Swap UCITS ETF",
+      "shares": 43.311742,
+      "purchase_price": 9.9325,
+      "currency": "USD"
     }
   ]
 }
