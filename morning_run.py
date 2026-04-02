@@ -20,7 +20,6 @@ import sys
 import traceback
 from datetime import date, datetime, timezone
 from pathlib import Path
-from typing import Optional
 
 # ---------------------------------------------------------------------------
 # Bootstrap
@@ -276,7 +275,12 @@ def main() -> None:
                 print(f"[morning] WARNING: news fetch failed for {ticker}: {exc}")
 
         # Run quant models
-        result = analyse_ticker(ticker, conn, today_str)
+        try:
+            result = analyse_ticker(ticker, conn, today_str)
+        except Exception as exc:
+            print(f"[morning] ERROR analysing {ticker}: {exc}")
+            traceback.print_exc()
+            continue
         all_results.append(result)
 
         # Persist signals & backtest

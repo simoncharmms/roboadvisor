@@ -248,11 +248,13 @@ function renderKPIs() {
 
 function setKPI(id, value, sub, cls) {
   const el = document.getElementById(id);
+  if (!el) return;
   const valEl = el.querySelector('.kpi-value');
   const subEl = el.querySelector('.kpi-sub');
+  if (!valEl) return;
   valEl.textContent = value;
   valEl.className = 'kpi-value' + (cls ? ' ' + cls : '');
-  if (sub) subEl.textContent = sub;
+  if (sub && subEl) subEl.textContent = sub;
 }
 
 // ── Performance Chart ──────────────────────────────────────────
@@ -683,7 +685,7 @@ function renderSuggestionTable() {
       <td>${s.arima_forecast_1d!=null?'€'+Number(s.arima_forecast_1d).toFixed(2):'—'}</td>
       <td>${s.arima_forecast_5d!=null?'€'+Number(s.arima_forecast_5d).toFixed(2):'—'}</td>
       <td>${s.garch_volatility!=null?(s.garch_volatility*100).toFixed(2)+'%':'—'}</td>
-      <td><span class="rationale-cell" title="${(s.llm_rationale||'').replace(/"/g,'&quot;')}">${s.llm_rationale||'—'}</span></td>
+      <td><span class="rationale-cell" title="${(s.llm_rationale||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}">${s.llm_rationale||'—'}</span></td>
     </tr>`;
   }).join('');
 }

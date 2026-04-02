@@ -313,11 +313,12 @@ def main() -> None:
             if len(rows) >= 2:
                 morning_price = float(rows[-2]["close"])
 
-        if morning_price and closing_price:
+        if morning_price is not None and closing_price is not None:
             ticker_pnl = shares * (closing_price - morning_price)
             total_pnl += ticker_pnl
             total_morning_value += shares * morning_price
 
+    total_pnl = round(total_pnl, 2)
     total_pnl_pct = (total_pnl / total_morning_value * 100) if total_morning_value > 0 else 0.0
 
     conn.close()
