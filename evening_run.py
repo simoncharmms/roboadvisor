@@ -138,12 +138,17 @@ def _load_morning_snapshot(today_str: str) -> Optional[dict]:
         return None
 
 
-def _get_latest_price(conn, ticker: str, today_str: str) -> Optional[float]:
-    """Get the latest closing price from DB for a ticker."""
+def _get_latest_price(conn, ticker: str, today_str: str) -> tuple[Optional[float], Optional[str]]:
+    """Get the latest closing price from DB for a ticker.
+
+    Returns (price, date_str).  *date_str* may differ from *today_str*
+    on market holidays / weekends.
+    """
     rows = get_prices(conn, ticker, "2000-01-01", today_str)
     if not rows:
-        return None
-    return float(rows[-1]["close"])
+        return None, None
+    row = rows[-1]
+    return float(row["close"]), row["date"]
 
 
 def _grade_signal(signal: str, pct_change: float) -> str:
@@ -177,13 +182,19 @@ def _compose_evening_message(
     snapshot: Optional[dict],
     total_pnl: float,
     total_pnl_pct: float,
+    stale_price_dates: Optional[dict[str, str]] = None,
+    pnl_is_estimated: bool = False,
 ) -> str:
     """Build the evening WhatsApp message."""
+    stale_price_dates = stale_price_dates or {}
     lines = [f"🌆 *Roboadvisor Evening — {today_str}*", ""]
 
     pnl_sign = "+" if total_pnl >= 0 else ""
     pnl_pct_sign = "+" if total_pnl_pct >= 0 else ""
-    lines.append(f"*Portfolio Day P&L:* {pnl_sign}€{total_pnl:.2f} ({pnl_pct_sign}{total_pnl_pct:.2f}%)")
+    pnl_prefix = "~" if pnl_is_estimated else ""
+    lines.append(f"*Portfolio Day P&L:* {pnl_prefix}{pnl_sign}€{total_pnl:.2f} ({pnl_pct_sign}{total_pnl_pct:.2f}%)")
+    if pnl_is_estimated:
+        lines.append("_(no morning snapshot — estimated from prev. close)_")
     lines.append("")
 
     tickers_data = snapshot.get("tickers", {}) if snapshot else {}
@@ -207,16 +218,22 @@ def _compose_evening_message(
             if llm_rec and llm_rec.upper() != morning_signal.upper():
                 conflicts_today += 1
 
+            # Grade the signal the user actually saw: LLM if available, else quant
+            effective_signal = llm_rec if llm_rec else morning_signal
+
+            # Stale price annotation
+            stale_note = f" (est. {stale_price_dates[ticker]})" if ticker in stale_price_dates else ""
+
             if morning_price and closing_price and morning_price > 0:
                 pct_change = ((closing_price - morning_price) / morning_price) * 100
-                grade = _grade_signal(morning_signal, pct_change)
+                grade = _grade_signal(effective_signal, pct_change)
                 pct_str = f"{'+' if pct_change >= 0 else ''}{pct_change:.2f}%"
-                lines.append(f"{ticker}  | ☀️ {morning_signal} | Actual: {pct_str} | {grade}")
+                lines.append(f"{ticker}{stale_note}  | ☀️ {effective_signal} | Actual: {pct_str} | {grade}")
                 total_graded += 1
                 if "Correct" in grade:
                     correct_count += 1
             else:
-                lines.append(f"{ticker}  | ☀️ {morning_signal} | Actual: N/A | ➖ Neutral")
+                lines.append(f"{ticker}{stale_note}  | ☀️ {effective_signal} | Actual: N/A | ➖ Neutral")
     else:
         lines.append("_No morning snapshot — skipping grading_")
 
@@ -272,6 +289,7 @@ def main() -> None:
 
     # Fetch closing prices
     closing_prices: dict[str, float] = {}
+    stale_price_dates: dict[str, str] = {}  # ticker -> actual date when price != today
     for entry in portfolio:
         ticker = entry.get("ticker")
         if not ticker:
@@ -282,10 +300,14 @@ def main() -> None:
         except Exception as exc:
             print(f"[evening] WARNING: price fetch failed for {ticker}: {exc}")
 
-        price = _get_latest_price(conn, ticker, today_str)
+        price, price_date = _get_latest_price(conn, ticker, today_str)
         if price is not None:
             closing_prices[ticker] = price
-            print(f"[evening]   Latest price: {price:.4f}")
+            stale_tag = "" if price_date == today_str else f" (est. {price_date})"
+            # Track stale dates so the message can annotate them
+            if price_date != today_str:
+                stale_price_dates[ticker] = price_date
+            print(f"[evening]   Latest price: {price:.4f}{stale_tag}")
         else:
             print(f"[evening]   No price data for {ticker}")
 
@@ -296,6 +318,7 @@ def main() -> None:
     # Compute P&L
     total_pnl = 0.0
     total_morning_value = 0.0
+    pnl_is_estimated = False
 
     for entry in portfolio:
         ticker = entry.get("ticker")
@@ -308,6 +331,7 @@ def main() -> None:
 
         # Fall back to previous close if no morning snapshot
         if morning_price is None and closing_price is not None:
+            pnl_is_estimated = True
             # Use the second-to-last price as a rough fallback
             rows = get_prices(conn, ticker, "2000-01-01", today_str)
             if len(rows) >= 2:
@@ -328,7 +352,8 @@ def main() -> None:
 
     # Compose and send message
     message = _compose_evening_message(
-        today_str, portfolio, closing_prices, snapshot, total_pnl, total_pnl_pct
+        today_str, portfolio, closing_prices, snapshot, total_pnl, total_pnl_pct,
+        stale_price_dates=stale_price_dates, pnl_is_estimated=pnl_is_estimated,
     )
     _send_whatsapp(message, dry_run=args.dry_run)
 
