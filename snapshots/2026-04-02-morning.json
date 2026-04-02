@@ -1,0 +1,55 @@
+{
+  "date": "2026-04-02",
+  "run_at": "2026-04-02T06:43:25Z",
+  "tickers": {
+    "AMUN.PA": {
+      "morning_price": 75.85,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms an uptrend with a HOLD signal, and the ARIMA forecast projects marginal price appreciation from 75.85 to ~76.06 EUR over five days, suggesting limited near-term momentum. GARCH volatility at 20.88% is moderate, not warranting a defensive reduction. In the absence of any fundamental catalyst, maintaining the current 4.0% weight is appropriate, though low confidence reflects the information gap."
+    },
+    "EUN4.DE": {
+      "morning_price": 106.74,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "MED",
+      "llm_rationale": "No recent news is available for EUN4.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms a HOLD with an upward trend, while ARIMA forecasts indicate marginal price drift downward over 5 days, suggesting no strong directional momentum. GARCH annualised volatility of 6.26% is low, indicating a stable and low-risk position that does not warrant immediate action. Maintaining the current 10.5% weight is appropriate given the absence of new information and consistent quant signals."
+    },
+    "IQQH.DE": {
+      "morning_price": 9.115,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available for IQQH.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a downward trend of -3.421%, but the ARIMA forecast projects a flat price over both 1-day and 5-day horizons, suggesting momentum has stalled rather than accelerated to the downside. GARCH annualised volatility of 22.25% is moderate, not alarming enough to justify a defensive exit. Given the absence of a directional catalyst from either news or forecasting models, maintaining the current position is the most defensible stance, though conviction is low."
+    },
+    "BTCE.DE": {
+      "morning_price": 52.685,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available for BTCE.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a significant move already captured (101.77% from the last turning point), suggesting the position may be extended but has not yet triggered a reversal signal. The ARIMA forecast shows no expected price movement over 1–5 days, implying momentum has stalled, while elevated annualised GARCH volatility of 45.80% warrants caution against adding to the position. Given the absence of a reversal signal and no newsflow to challenge the trend, holding the current 16.6% weight is appropriate, but the high volatility and flat forecast argue against increasing exposure."
+    },
+    "4GLD.DE": {
+      "morning_price": 132.46,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available for this ticker, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms an upward trend with a significant move from the last turning point, and the ARIMA forecast is flat over 1–5 days, suggesting momentum has stalled near current levels. However, GARCH annualised volatility of 37.78% is elevated, warranting caution against adding to the position. Maintaining the current 17.0% weight is appropriate until either a clearer directional signal or supporting news emerges."
+    },
+    "DFNS.SW": {
+      "morning_price": 55.04,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available for DFNS.SW, so the recommendation rests entirely on quantitative signals. The Y%-Filter confirms a HOLD with a strong upward trend, and the ARIMA forecasts project price stability over the next 1 and 5 days, supporting inaction. However, GARCH annualised volatility of 27.23% indicates meaningful risk, and with no fundamental catalyst visible, initiating or trimming the 12.2% position cannot be justified at this time. Confidence is low due to the complete absence of news-based context."
+    },
+    "ICOM.L": {
+      "morning_price": 9.8525,
+      "quant_signal": "HOLD",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "No recent news is available to provide fundamental or sentiment context for this position. The quantitative signals support a hold: the Y%-Filter indicates an upward trend with substantial momentum (46.2% from last turning point), while ARIMA forecasts show price stability over the next 1–5 days. GARCH volatility of 20.31% is moderate, suggesting no immediate risk spike warranting a position change. Given the absence of news, confidence is low and the recommendation defaults to the quant signal consensus."
+    }
+  }
+}

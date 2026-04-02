@@ -39,7 +39,48 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('suggestion-filter').addEventListener('change', renderSuggestionTable);
+
+  // Auto-load dashboard data
+  autoLoad();
 });
+
+// ── Auto-Load ──────────────────────────────────────────────────
+function autoLoad() {
+  const paths = ['./dashboard_data.json', '../dashboard/dashboard_data.json'];
+
+  function tryFetch(index) {
+    if (index >= paths.length) {
+      // Try localStorage cache as last resort
+      const cached = localStorage.getItem('roboadvisor_cache');
+      if (cached) {
+        try {
+          const data = JSON.parse(cached);
+          loadData(data);
+          showCacheBadge(data.meta?.generated_at);
+        } catch(e) { /* ignore corrupt cache */ }
+      }
+      return;
+    }
+    fetch(paths[index])
+      .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
+      .then(data => {
+        localStorage.setItem('roboadvisor_cache', JSON.stringify(data));
+        loadData(data);
+        showCacheBadge(data.meta?.generated_at, 'live');
+      })
+      .catch(() => tryFetch(index + 1));
+  }
+
+  tryFetch(0);
+}
+
+function showCacheBadge(dateStr, source) {
+  const el = document.getElementById('last-updated');
+  if (el) {
+    const src = source === 'live' ? '🟢 Live' : '📦 Cached';
+    el.textContent = `${src} — ${dateStr || 'unknown date'}`;
+  }
+}
 
 // ── File Import ────────────────────────────────────────────────
 function handleFileImport(e) {
