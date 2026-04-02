@@ -124,7 +124,11 @@ def _save_snapshot(today_str: str, ticker_data: dict) -> Path:
         "tickers": ticker_data,
     }
     path = SNAPSHOTS_DIR / f"{today_str}-morning.json"
-    path.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False))
+    # Write atomically: temp file → rename, so a crash mid-write never leaves
+    # a corrupt snapshot that the evening run silently fails to parse.
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(snapshot, indent=2, ensure_ascii=False))
+    tmp.replace(path)
     print(f"[morning] Snapshot saved: {path}")
     return path
 
