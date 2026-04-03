@@ -149,14 +149,19 @@ def render(data: dict, out_path: str) -> None:
     ax_kpi.set_facecolor(BG)
     ax_kpi.axis("off")
 
+    # Pull meta checkpoints for start date display
+    meta = data.get("meta", {})
+    start_val = meta.get("total_invested_eur") or total_cost or 0
+    start_date = (meta.get("portfolio_checkpoints") or [{}])[0].get("date", "—")
+
     kpis = [
         ("Portfoliowert", fmt_eur(total_value), TEXT),
-        ("Gesamtkosten",  fmt_eur(total_cost),  MUTED),
+        ("Eingesetzt", fmt_eur(start_val), MUTED),
         ("Gewinn/Verlust", fmt_eur(total_pnl) if total_pnl is not None else "—",
          GREEN if (total_pnl or 0) >= 0 else RED),
         ("Rendite", fmt_pct(total_pnl_pct) if total_pnl_pct is not None else "—",
          GREEN if (total_pnl_pct or 0) >= 0 else RED),
-        ("Positionen", str(n_positions), BLUE),
+        ("Seit", start_date, MUTED),
     ]
     for idx, (label, value, color) in enumerate(kpis):
         x = idx / len(kpis)
@@ -179,8 +184,8 @@ def render(data: dict, out_path: str) -> None:
     ax_table.text(0.03, 0.97, "Positionen", fontsize=12, color=TEXT,
                   fontweight="bold", va="top", transform=ax_table.transAxes)
 
-    headers = ["Ticker", "Kurs", "Stück", "Wert", "P&L", "P&L %"]
-    col_x   = [0.02, 0.18, 0.33, 0.48, 0.63, 0.80]
+    headers = ["Ticker", "Kurs", "Stück", "Wert", "Wert %", ""]
+    col_x   = [0.02, 0.18, 0.33, 0.48, 0.65, 0.85]
     row_h   = 0.82 / max(n_positions + 1, 2)
 
     for ci, (h, x) in enumerate(zip(headers, col_x)):
@@ -199,12 +204,11 @@ def render(data: dict, out_path: str) -> None:
         price_str = f"{pos['price']:.2f}" if pos['price'] else "—"
         shares_str = f"{pos['shares']:.3f}"
         value_str = fmt_eur(pos['value'])
-        pnl_str = fmt_eur(pos['pnl']) if pos['pnl'] is not None else "—"
-        pnl_pct_str = fmt_pct(pos['pnl_pct']) if pos['pnl_pct'] is not None else "—"
-        pnl_color = GREEN if (pos.get('pnl') or 0) >= 0 else RED
+        # Show portfolio weight % instead of individual P&L (cost basis is estimated)
+        weight_pct = f"{pos['value'] / total_value * 100:.1f}%" if (pos['value'] and total_value) else "—"
 
-        row_data = [pos['ticker'], price_str, shares_str, value_str, pnl_str, pnl_pct_str]
-        row_colors = [TEXT, TEXT, MUTED, TEXT, pnl_color, pnl_color]
+        row_data = [pos['ticker'], price_str, shares_str, value_str, weight_pct, ""]
+        row_colors = [TEXT, TEXT, MUTED, TEXT, BLUE, TEXT]
 
         for ci, (val, x, col) in enumerate(zip(row_data, col_x, row_colors)):
             ax_table.text(x, y + row_h * 0.3, val, fontsize=8, color=col,
