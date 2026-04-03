@@ -1,0 +1,252 @@
+/Users/homer-service/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+  Roboadvisor — 2026-03-31
+============================================================
+
+[run] Loaded 7 positions from /Users/homer-service/.openclaw/workspace/roboadvisor/portfolio.json
+
+
+──────────────────────────────────────────────────
+  Processing: AMUN.PA  (Amundi MSCI World III UCITS ETF Dist)
+──────────────────────────────────────────────────
+[prices] AMUN.PA: already up-to-date (last stored: 2026-03-31)
+[news] AMUN.PA: querying NewsAPI for 'Amundi MSCI World ETF' since 2026-03-24 …
+[news] AMUN.PA: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: EUN4.DE  (iShares Germany Government Bond UCITS ETF (Dist))
+──────────────────────────────────────────────────
+[prices] EUN4.DE: already up-to-date (last stored: 2026-03-31)
+[news] EUN4.DE: querying NewsAPI for 'EUN4.DE' since 2026-03-24 …
+[news] EUN4.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: IQQH.DE  (iShares S&P 500 Energy Sector UCITS ETF (Acc))
+──────────────────────────────────────────────────
+[prices] IQQH.DE: already up-to-date (last stored: 2026-03-31)
+[news] IQQH.DE: querying NewsAPI for 'IQQH.DE' since 2026-03-24 …
+[news] IQQH.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: BTCE.DE  (Bitwise Physical Bitcoin ETP)
+──────────────────────────────────────────────────
+[prices] BTCE.DE: already up-to-date (last stored: 2026-03-31)
+[news] BTCE.DE: querying NewsAPI for 'BTCE.DE' since 2026-03-24 …
+[news] BTCE.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: 4GLD.DE  (Xetra-Gold ETC)
+──────────────────────────────────────────────────
+[prices] 4GLD.DE: already up-to-date (last stored: 2026-03-31)
+[news] 4GLD.DE: querying NewsAPI for '4GLD.DE' since 2026-03-24 …
+[news] 4GLD.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: DFNS.SW  (VanEck Defense UCITS ETF A)
+──────────────────────────────────────────────────
+[prices] DFNS.SW: already up-to-date (last stored: 2026-03-31)
+[news] DFNS.SW: querying NewsAPI for 'DFNS.SW' since 2026-03-24 …
+[news] DFNS.SW: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: ICOM.L  (iShares Diversified Commodity Swap UCITS ETF)
+──────────────────────────────────────────────────
+[prices] ICOM.L: already up-to-date (last stored: 2026-03-31)
+[news] ICOM.L: querying NewsAPI for 'ICOM.L' since 2026-03-24 …
+[news] ICOM.L: 0 articles fetched, 0 written to DB.
+
+[run] Running multi-asset GARCH copula for: ['AMUN.PA', 'EUN4.DE', 'IQQH.DE', 'BTCE.DE', '4GLD.DE', 'DFNS.SW', 'ICOM.L']
+[run] Copula correlation matrix:
+  AMUN.PA:  1.0000   0.0493   0.0066  -0.0138  -0.0484   0.0235  -0.0123
+  EUN4.DE:  0.0493   1.0000   0.2312   0.0315   0.2043  -0.0039  -0.0139
+  IQQH.DE:  0.0066   0.2312   1.0000   0.1731   0.1445   0.0600  -0.0430
+  BTCE.DE: -0.0138   0.0315   0.1731   1.0000   0.0535   0.0835  -0.0275
+  4GLD.DE: -0.0484   0.2043   0.1445   0.0535   1.0000  -0.0308   0.0443
+  DFNS.SW:  0.0235  -0.0039   0.0600   0.0835  -0.0308   1.0000   0.0341
+  ICOM.L: -0.0123  -0.0139  -0.0430  -0.0275   0.0443   0.0341   1.0000
+
+[run] Running LLM analysis (Claude)...
+[llm] Analyzing AMUN.PA (1/7)...
+[llm] Analyzing EUN4.DE (2/7)...
+[llm] Analyzing IQQH.DE (3/7)...
+[llm] Analyzing BTCE.DE (4/7)...
+[llm] Analyzing 4GLD.DE (5/7)...
+[llm] Analyzing DFNS.SW (6/7)...
+[llm] Analyzing ICOM.L (7/7)...
+
+[run] Report written to: /Users/homer-service/.openclaw/workspace/roboadvisor/reports/2026-03-31.md
+
+[run] Done.
+
+/Users/homer-service/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+  Roboadvisor — 2026-04-01
+============================================================
+
+[run] Loaded 7 positions from /Users/homer-service/.openclaw/workspace/roboadvisor/portfolio.json
+
+
+──────────────────────────────────────────────────
+  Processing: AMUN.PA  (Amundi MSCI World III UCITS ETF Dist)
+──────────────────────────────────────────────────
+[prices] AMUN.PA: fetching 2026-04-01 → 2026-04-01 …
+[prices] AMUN.PA: stored 1 new rows.
+[news] AMUN.PA: querying NewsAPI for 'Amundi MSCI World ETF' since 2026-03-25 …
+[news] AMUN.PA: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: EUN4.DE  (iShares Germany Government Bond UCITS ETF (Dist))
+──────────────────────────────────────────────────
+[prices] EUN4.DE: fetching 2026-04-01 → 2026-04-01 …
+[prices] EUN4.DE: stored 1 new rows.
+[news] EUN4.DE: querying NewsAPI for 'EUN4.DE' since 2026-03-25 …
+[news] EUN4.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: IQQH.DE  (iShares S&P 500 Energy Sector UCITS ETF (Acc))
+──────────────────────────────────────────────────
+[prices] IQQH.DE: fetching 2026-04-01 → 2026-04-01 …
+[prices] IQQH.DE: stored 1 new rows.
+[news] IQQH.DE: querying NewsAPI for 'IQQH.DE' since 2026-03-25 …
+[news] IQQH.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: BTCE.DE  (Bitwise Physical Bitcoin ETP)
+──────────────────────────────────────────────────
+[prices] BTCE.DE: fetching 2026-04-01 → 2026-04-01 …
+[prices] BTCE.DE: stored 1 new rows.
+[news] BTCE.DE: querying NewsAPI for 'BTCE.DE' since 2026-03-25 …
+[news] BTCE.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: 4GLD.DE  (Xetra-Gold ETC)
+──────────────────────────────────────────────────
+[prices] 4GLD.DE: fetching 2026-04-01 → 2026-04-01 …
+[prices] 4GLD.DE: stored 1 new rows.
+[news] 4GLD.DE: querying NewsAPI for '4GLD.DE' since 2026-03-25 …
+[news] 4GLD.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: DFNS.SW  (VanEck Defense UCITS ETF A)
+──────────────────────────────────────────────────
+[prices] DFNS.SW: fetching 2026-04-01 → 2026-04-01 …
+[prices] DFNS.SW: stored 1 new rows.
+[news] DFNS.SW: querying NewsAPI for 'DFNS.SW' since 2026-03-25 …
+[news] DFNS.SW: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: ICOM.L  (iShares Diversified Commodity Swap UCITS ETF)
+──────────────────────────────────────────────────
+[prices] ICOM.L: already up-to-date (last stored: 2026-04-01)
+[news] ICOM.L: querying NewsAPI for 'ICOM.L' since 2026-03-25 …
+[news] ICOM.L: 0 articles fetched, 0 written to DB.
+
+[run] Running multi-asset GARCH copula for: ['AMUN.PA', 'EUN4.DE', 'IQQH.DE', 'BTCE.DE', '4GLD.DE', 'DFNS.SW', 'ICOM.L']
+[run] Copula correlation matrix:
+  AMUN.PA:  1.0000   0.0509   0.0139  -0.0097  -0.0428   0.0326  -0.0148
+  EUN4.DE:  0.0509   1.0000   0.2325   0.0326   0.2056  -0.0017  -0.0147
+  IQQH.DE:  0.0139   0.2325   1.0000   0.1753   0.1491   0.0679  -0.0461
+  BTCE.DE: -0.0097   0.0326   0.1753   1.0000   0.0558   0.0868  -0.0289
+  4GLD.DE: -0.0428   0.2056   0.1491   0.0558   1.0000  -0.0234   0.0422
+  DFNS.SW:  0.0326  -0.0017   0.0679   0.0868  -0.0234   1.0000   0.0306
+  ICOM.L: -0.0148  -0.0147  -0.0461  -0.0289   0.0422   0.0306   1.0000
+
+[run] Running LLM analysis (Claude)...
+[llm] Analyzing AMUN.PA (1/7)...
+[llm] Analyzing EUN4.DE (2/7)...
+[llm] Analyzing IQQH.DE (3/7)...
+[llm] Analyzing BTCE.DE (4/7)...
+[llm] Analyzing 4GLD.DE (5/7)...
+[llm] Analyzing DFNS.SW (6/7)...
+[llm] Analyzing ICOM.L (7/7)...
+
+[run] Report written to: /Users/homer-service/.openclaw/workspace/roboadvisor/reports/2026-04-01.md
+
+[run] Done.
+
+/Users/homer-service/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+============================================================
+  Roboadvisor — 2026-04-02
+============================================================
+
+[run] Loaded 7 positions from /Users/homer-service/.openclaw/workspace/roboadvisor/portfolio.json
+
+
+──────────────────────────────────────────────────
+  Processing: AMUN.PA  (Amundi MSCI World III UCITS ETF Dist)
+──────────────────────────────────────────────────
+[prices] AMUN.PA: already up-to-date (last stored: 2026-04-02)
+[news] AMUN.PA: querying NewsAPI for 'Amundi MSCI World ETF' since 2026-03-26 …
+[news] AMUN.PA: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: EUN4.DE  (iShares Germany Government Bond UCITS ETF (Dist))
+──────────────────────────────────────────────────
+[prices] EUN4.DE: already up-to-date (last stored: 2026-04-02)
+[news] EUN4.DE: querying NewsAPI for 'EUN4.DE' since 2026-03-26 …
+[news] EUN4.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: IQQH.DE  (iShares S&P 500 Energy Sector UCITS ETF (Acc))
+──────────────────────────────────────────────────
+[prices] IQQH.DE: already up-to-date (last stored: 2026-04-02)
+[news] IQQH.DE: querying NewsAPI for 'IQQH.DE' since 2026-03-26 …
+[news] IQQH.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: BTCE.DE  (Bitwise Physical Bitcoin ETP)
+──────────────────────────────────────────────────
+[prices] BTCE.DE: already up-to-date (last stored: 2026-04-02)
+[news] BTCE.DE: querying NewsAPI for 'BTCE.DE' since 2026-03-26 …
+[news] BTCE.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: 4GLD.DE  (Xetra-Gold ETC)
+──────────────────────────────────────────────────
+[prices] 4GLD.DE: already up-to-date (last stored: 2026-04-02)
+[news] 4GLD.DE: querying NewsAPI for '4GLD.DE' since 2026-03-26 …
+[news] 4GLD.DE: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: DFNS.SW  (VanEck Defense UCITS ETF A)
+──────────────────────────────────────────────────
+[prices] DFNS.SW: already up-to-date (last stored: 2026-04-02)
+[news] DFNS.SW: querying NewsAPI for 'DFNS.SW' since 2026-03-26 …
+[news] DFNS.SW: 0 articles fetched, 0 written to DB.
+
+──────────────────────────────────────────────────
+  Processing: ICOM.L  (iShares Diversified Commodity Swap UCITS ETF)
+──────────────────────────────────────────────────
+[prices] ICOM.L: already up-to-date (last stored: 2026-04-02)
+[news] ICOM.L: querying NewsAPI for 'ICOM.L' since 2026-03-26 …
+[news] ICOM.L: 0 articles fetched, 0 written to DB.
+
+[run] Running multi-asset GARCH copula for: ['AMUN.PA', 'EUN4.DE', 'IQQH.DE', 'BTCE.DE', '4GLD.DE', 'DFNS.SW', 'ICOM.L']
+[run] Copula correlation matrix:
+  AMUN.PA:  1.0000   0.0529   0.0170  -0.0066  -0.0391   0.0342  -0.0194
+  EUN4.DE:  0.0529   1.0000   0.2335   0.0341   0.2068  -0.0011  -0.0164
+  IQQH.DE:  0.0170   0.2335   1.0000   0.1774   0.1511   0.0685  -0.0484
+  BTCE.DE: -0.0066   0.0341   0.1774   1.0000   0.0582   0.0878  -0.0322
+  4GLD.DE: -0.0391   0.2068   0.1511   0.0582   1.0000  -0.0223   0.0392
+  DFNS.SW:  0.0342  -0.0011   0.0685   0.0878  -0.0223   1.0000   0.0290
+  ICOM.L: -0.0194  -0.0164  -0.0484  -0.0322   0.0392   0.0290   1.0000
+
+[run] Running LLM analysis (Claude)...
+[llm] Analyzing AMUN.PA (1/7)...
+[llm] Analyzing EUN4.DE (2/7)...
+[llm] Analyzing IQQH.DE (3/7)...
+[llm] Analyzing BTCE.DE (4/7)...
+[llm] Analyzing 4GLD.DE (5/7)...
+[llm] Analyzing DFNS.SW (6/7)...
+[llm] Analyzing ICOM.L (7/7)...
+
+[run] Report written to: /Users/homer-service/.openclaw/workspace/roboadvisor/reports/2026-04-02.md
+
+[run] Done.
+

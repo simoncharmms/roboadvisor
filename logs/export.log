@@ -1,0 +1,27 @@
+
+── Export summary ──────────────────────────────────
+  Tickers    : AMUN.PA, EUN4.DE, IQQH.DE, BTCE.DE, 4GLD.DE, DFNS.SW, ICOM.L
+  Price range: 2025-03-31 → 2026-03-31
+  Signals    : 7 row(s)
+  Backtest   : 33 row(s)
+  Output     : /Users/homer-service/.openclaw/workspace/roboadvisor/dashboard/dashboard_data.json
+────────────────────────────────────────────────────
+
+
+── Export summary ──────────────────────────────────
+  Tickers    : AMUN.PA, EUN4.DE, IQQH.DE, BTCE.DE, 4GLD.DE, DFNS.SW, ICOM.L
+  Price range: 2025-04-01 → 2026-04-01
+  Signals    : 7 row(s)
+  Backtest   : 14 row(s)
+  Output     : /Users/homer-service/.openclaw/workspace/roboadvisor/dashboard/dashboard_data.json
+────────────────────────────────────────────────────
+
+
+── Export summary ──────────────────────────────────
+  Tickers    : AMUN.PA, EUN4.DE, IQQH.DE, BTCE.DE, 4GLD.DE, DFNS.SW, ICOM.L
+  Price range: 2025-04-02 → 2026-04-02
+  Signals    : 7 row(s)
+  Backtest   : 42 row(s)
+  Output     : /Users/homer-service/.openclaw/workspace/roboadvisor/dashboard/dashboard_data.json
+────────────────────────────────────────────────────
+

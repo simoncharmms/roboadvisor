@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-03-31",
+    "generated_at": "2026-04-02",
     "version": "1.1"
   },
   "portfolio": [
@@ -77,14 +77,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-03-31",
-        "close": 67.88156127929688
-      },
-      {
-        "date": "2025-04-01",
-        "close": 68.77721405029297
-      },
       {
         "date": "2025-04-02",
         "close": 64.11035919189453
@@ -1100,17 +1092,17 @@
       {
         "date": "2026-03-31",
         "close": 73.0999984741211
+      },
+      {
+        "date": "2026-04-01",
+        "close": 75.8499984741211
+      },
+      {
+        "date": "2026-04-02",
+        "close": 73.80000305175781
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-03-31",
-        "close": 105.25250244140625
-      },
-      {
-        "date": "2025-04-01",
-        "close": 105.55985260009766
-      },
       {
         "date": "2025-04-02",
         "close": 105.31104278564453
@@ -2110,17 +2102,17 @@
       {
         "date": "2026-03-31",
         "close": 106.44999694824219
+      },
+      {
+        "date": "2026-04-01",
+        "close": 106.73999786376953
+      },
+      {
+        "date": "2026-04-02",
+        "close": 106.44000244140625
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-03-31",
-        "close": 5.958344459533691
-      },
-      {
-        "date": "2025-04-01",
-        "close": 6.020493030548096
-      },
       {
         "date": "2025-04-02",
         "close": 6.033317565917969
@@ -3120,17 +3112,17 @@
       {
         "date": "2026-03-31",
         "close": 8.812000274658203
+      },
+      {
+        "date": "2026-04-01",
+        "close": 9.114999771118164
+      },
+      {
+        "date": "2026-04-02",
+        "close": 8.934000015258789
       }
     ],
     "BTCE.DE": [
-      {
-        "date": "2025-03-31",
-        "close": 70.36000061035156
-      },
-      {
-        "date": "2025-04-01",
-        "close": 71.43499755859375
-      },
       {
         "date": "2025-04-02",
         "close": 72.69499969482422
@@ -4130,17 +4122,17 @@
       {
         "date": "2026-03-31",
         "close": 51.20000076293945
+      },
+      {
+        "date": "2026-04-01",
+        "close": 52.685001373291016
+      },
+      {
+        "date": "2026-04-02",
+        "close": 50.875
       }
     ],
     "4GLD.DE": [
-      {
-        "date": "2025-03-31",
-        "close": 92.83499908447266
-      },
-      {
-        "date": "2025-04-01",
-        "close": 93.08499908447266
-      },
       {
         "date": "2025-04-02",
         "close": 92.65499877929688
@@ -5140,17 +5132,17 @@
       {
         "date": "2026-03-31",
         "close": 127.68000030517578
+      },
+      {
+        "date": "2026-04-01",
+        "close": 132.4600067138672
+      },
+      {
+        "date": "2026-04-02",
+        "close": 128.66000366210938
       }
     ],
     "DFNS.SW": [
-      {
-        "date": "2025-03-31",
-        "close": 38.79499816894531
-      },
-      {
-        "date": "2025-04-01",
-        "close": 39.41999816894531
-      },
       {
         "date": "2025-04-02",
         "close": 39.3849983215332
@@ -6142,17 +6134,17 @@
       {
         "date": "2026-03-31",
         "close": 51.380001068115234
+      },
+      {
+        "date": "2026-04-01",
+        "close": 55.040000915527344
+      },
+      {
+        "date": "2026-04-02",
+        "close": 54.560001373291016
       }
     ],
     "ICOM.L": [
-      {
-        "date": "2025-03-31",
-        "close": 7.492499828338623
-      },
-      {
-        "date": "2025-04-01",
-        "close": 7.525000095367432
-      },
       {
         "date": "2025-04-02",
         "close": 7.53000020980835
@@ -7160,83 +7152,91 @@
       {
         "date": "2026-03-31",
         "close": 9.9375
+      },
+      {
+        "date": "2026-04-01",
+        "close": 9.852499961853027
+      },
+      {
+        "date": "2026-04-02",
+        "close": 10.074999809265137
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "4GLD.DE",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter confirms an upward trend with a substantial move from the last turning point, and the ARIMA forecast is essentially flat over both 1-day and 5-day horizons, suggesting no near-term directional catalyst. GARCH annualised volatility at 41.42% is elevated, indicating meaningful risk that warrants caution about adding to the position. With no recent news available to corroborate or contradict the quant signals, confidence remains low, and maintaining the current 16.9% weight without adjustment is the prudent course.",
+      "llm_rationale": "No recent news is available, so the assessment rests entirely on quantitative signals. The Y%-Filter confirms an uptrend with a strong cumulative move of ~119% from the last turning point, and the ARIMA forecast projects marginal near-flat price action (+0.21 EUR over 5 days), consistent with a HOLD. However, the elevated GARCH annualised volatility of 41% warrants caution, and the absence of any news-based confirmation limits conviction. The current 16.8% portfolio weight appears appropriate given the flat short-term price outlook and high volatility risk.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "AMUN.PA",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms a HOLD with an upward trend, and the ARIMA forecasts show virtually no price movement over the next 1\u20135 days, consistent with a consolidation phase. GARCH volatility at 21.11% is moderate, suggesting no urgent risk-management action is required. Confidence is low solely due to the absence of any news-based context to validate or challenge the quant signals.",
+      "llm_rationale": "No recent news is available for AMUN.PA, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend, but the ARIMA forecast projects a marginal decline of approximately 0.13 EUR over five days, suggesting the trend is stalling. GARCH annualised volatility of 27.70% reflects meaningful risk, and with no fundamental catalyst to justify adding exposure, maintaining the current 4.0% weight is appropriate. Confidence is low due to the absence of news-based context.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "BTCE.DE",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a HOLD signal, and the ARIMA forecast shows price stability over both 1-day and 5-day horizons. However, annualised GARCH volatility of 45.88% is elevated, warranting caution against increasing the position at this time. The existing 16.6% weight is maintained pending new fundamental catalysts.",
+      "llm_rationale": "No recent news is available for BTCE.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a 94.8% move from the last turning point, suggesting the position may be extended and approaching a potential reversal zone, while the ARIMA forecast shows no expected price movement over the next 1\u20135 days. GARCH annualised volatility of 45.74% is elevated, warranting caution against adding to the position at current levels. Given the lack of news and flat price forecasts, maintaining the current 16.3% weight is appropriate until a clearer signal emerges.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "DFNS.SW",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter signals HOLD with an upward trend, and the ARIMA forecast projects price stability over both the 1-day and 5-day horizons, offering no momentum-based reason to add or reduce exposure. GARCH annualised volatility of 27.49% is moderately elevated, warranting caution against increasing the already meaningful 11.7% portfolio weight. Maintain the current position until either a directional price signal or supporting news emerges.",
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a strong upward trend with an extended move of 189%, suggesting the position may be stretched but momentum remains positive. The ARIMA forecast shows no expected price change over 1 and 5 days, implying the model sees the current price as an equilibrium. However, the elevated GARCH annualised volatility of 41.55% warrants caution against adding exposure at this level, supporting a HOLD with low confidence given the absence of news-based context.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "EUN4.DE",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a HOLD with an upward trend, while ARIMA forecasts suggest minimal price movement over the next 5 days (~0.05% decline), consistent with consolidation. GARCH annualised volatility of 6.48% is low, indicating a stable, low-risk position that does not warrant immediate action. Maintaining the current 10.8% weight is appropriate given the lack of catalysts in either direction.",
+      "llm_rationale": "No recent news is available, so this assessment relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a 7.2% move from the last turning point, suggesting momentum but also proximity to a potential reversal zone. The ARIMA forecast shows near-flat price movement over the next 5 days, and the low GARCH volatility of 6.14% indicates a stable, low-risk environment with little expected disruption. Holding the current 10.6% weight is appropriate given the absence of a clear directional catalyst.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "ICOM.L",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available for ICOM.L, so the recommendation rests entirely on quantitative signals. The Y%-Filter indicates an upward trend with a significant move from the last turning point, and the ARIMA forecast projects flat price action over both 1-day and 5-day horizons, suggesting the trend may be maturing with limited near-term momentum. GARCH volatility at 21.03% is moderate and does not signal an imminent risk spike. With no fundamental catalyst to act on, maintaining the current 14.5% weight is appropriate pending new information.",
+      "llm_rationale": "No recent news is available for ICOM.L, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a substantial 49.5% move from the last turning point, suggesting the position may be extended and closer to a potential reversal than a fresh entry. ARIMA forecasts are flat over both 1-day and 5-day horizons, implying no near-term directional momentum, while GARCH volatility at 20.15% is moderate and not alarming. Given the lack of news catalyst and a potentially stretched trend, holding the current 14.6% weight is appropriate until clearer signals emerge.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
     },
     {
-      "date": "2026-03-31",
+      "date": "2026-04-02",
       "ticker": "IQQH.DE",
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available for IQQH.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a downward trend of -6.63% from the last turning point, but has not yet triggered a SELL signal. The ARIMA forecast projects no price movement over both the 1-day and 5-day horizons, suggesting the model sees the current price as an equilibrium, while GARCH volatility at 23.04% is moderate and does not signal imminent instability. Given the absence of news catalysts and flat ARIMA forecasts, maintaining the current position is the most defensible action, though the downward trend warrants close monitoring.",
+      "llm_rationale": "No recent news is available, so the recommendation rests entirely on quantitative signals. The Y%-Filter indicates a downtrend of -5.33% from the last turning point, but has not yet triggered a sell signal, while the ARIMA forecast projects a flat price over both 1-day and 5-day horizons, suggesting no near-term directional momentum. GARCH annualised volatility of 26.30% is moderately elevated, warranting caution but not immediate action. Given the flat forecast and absence of a confirmed sell trigger, holding the position while monitoring for a trend reversal or news catalyst is the appropriate stance.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
@@ -7244,7 +7244,7 @@
   ],
   "backtest_results": [
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "4GLD.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7252,7 +7252,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "4GLD.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7260,7 +7260,39 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "4GLD.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "4GLD.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "4GLD.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "4GLD.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7268,7 +7300,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7276,7 +7308,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7284,7 +7316,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7292,7 +7324,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7300,7 +7332,15 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "AMUN.PA",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "BTCE.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7308,7 +7348,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "BTCE.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7316,7 +7356,39 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "BTCE.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "BTCE.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "BTCE.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "BTCE.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "DFNS.SW",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7324,7 +7396,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "DFNS.SW",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7332,7 +7404,39 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "DFNS.SW",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "DFNS.SW",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "DFNS.SW",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": -9.289726976698298e+16,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "DFNS.SW",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": -9.289726976698298e+16,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7340,7 +7444,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7348,7 +7452,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7356,7 +7460,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7364,7 +7468,23 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "EUN4.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "EUN4.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "ICOM.L",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7372,7 +7492,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
       "ticker": "ICOM.L",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7380,7 +7500,39 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "ICOM.L",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "ICOM.L",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "ICOM.L",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "ICOM.L",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -7388,7 +7540,39 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-03-31",
+      "run_date": "2026-04-02",
+      "ticker": "IQQH.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "IQQH.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "IQQH.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
+      "ticker": "IQQH.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": 0.0,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-02",
       "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,

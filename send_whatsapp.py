@@ -303,23 +303,34 @@ def compose_daily_message(dashboard: dict, today: str) -> str:
 # OpenClaw send helpers
 # ---------------------------------------------------------------------------
 
-def _openclaw_send(message: str, pdf_path: Optional[Path] = None, dry_run: bool = False) -> bool:
-    """Send a WhatsApp message (and optional PDF) via openclaw CLI.
+def _openclaw_send(
+    message: str,
+    pdf_path: Optional[Path] = None,
+    media_path: Optional[Path] = None,
+    recipient: str = SIMON_PHONE,
+    dry_run: bool = False,
+) -> bool:
+    """Send a WhatsApp message (and optional media/PDF) via openclaw CLI.
 
     Parameters
     ----------
-    message  : str
-    pdf_path : Path, optional
-    dry_run  : bool
+    message    : str
+    pdf_path   : Path, optional  – legacy PDF attachment (document send)
+    media_path : Path, optional  – arbitrary media file (image/document);
+                                   sent with --force-document to avoid compression
+    recipient  : str             – E.164 phone number (default: Simon)
+    dry_run    : bool
 
     Returns
     -------
     bool  – True on success
     """
     if dry_run:
-        print("\n[DRY RUN] Would send to", SIMON_PHONE)
+        print(f"\n[DRY RUN] Would send to {recipient}")
         print("─" * 60)
         print(message)
+        if media_path:
+            print(f"\n[DRY RUN] + media attachment: {media_path}")
         if pdf_path:
             print(f"\n[DRY RUN] + PDF attachment: {pdf_path}")
         print("─" * 60)
@@ -330,7 +341,7 @@ def _openclaw_send(message: str, pdf_path: Optional[Path] = None, dry_run: bool 
         cmd = [
             "openclaw", "message", "send",
             "--channel", "whatsapp",
-            "--to", SIMON_PHONE,
+            "--to", recipient,
             "--message", message,
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
@@ -339,15 +350,31 @@ def _openclaw_send(message: str, pdf_path: Optional[Path] = None, dry_run: bool 
             return False
         print("[whatsapp] Message sent.")
 
-        # PDF attachment
+        # Arbitrary media attachment (image, screenshot, etc.)
+        # --force-document prevents WhatsApp from compressing images
+        if media_path and media_path.exists():
+            cmd_media = [
+                "openclaw", "message", "send",
+                "--channel", "whatsapp",
+                "--to", recipient,
+                "--media", str(media_path),
+                "--force-document",
+            ]
+            r_media = subprocess.run(cmd_media, capture_output=True, text=True, timeout=60)
+            if r_media.returncode != 0:
+                print(f"[whatsapp] WARNING: media send failed: {r_media.stderr}", file=sys.stderr)
+            else:
+                print(f"[whatsapp] Media sent: {media_path.name}")
+
+        # PDF attachment (legacy path — also sent as document)
         if pdf_path and pdf_path.exists():
             cmd_pdf = [
                 "openclaw", "message", "send",
                 "--channel", "whatsapp",
-                "--to", SIMON_PHONE,
+                "--to", recipient,
                 "--media", str(pdf_path),
                 "--message", f"📄 Full report: {pdf_path.name}",
-                "--as-document",
+                "--force-document",
             ]
             r2 = subprocess.run(cmd_pdf, capture_output=True, text=True, timeout=60)
             if r2.returncode != 0:
@@ -438,9 +465,29 @@ def main() -> None:
                         help="Print message without sending")
     parser.add_argument("--force", action="store_true",
                         help="Send even if already sent today")
+    parser.add_argument("--media", metavar="FILEPATH",
+                        help="Attach a media file (image/document) to the outgoing message")
+    parser.add_argument("--to", metavar="PHONE",
+                        help="Override recipient phone number (default: Simon's number)")
     args = parser.parse_args()
 
     today = date.today().isoformat()
+
+    # Resolve recipient (default: Simon; overrideable via --to)
+    recipient = args.to if args.to else SIMON_PHONE
+
+    # Resolve optional media path
+    media_path: Optional[Path] = Path(args.media) if args.media else None
+
+    # ── Standalone media send mode (--media without --parse-trade) ──────
+    # Allows: python3 send_whatsapp.py --media /path/to/image.png [--to +49...]
+    if media_path and not args.parse_trade:
+        if not media_path.exists():
+            print(f"[whatsapp] ERROR: media file not found: {media_path}", file=sys.stderr)
+            sys.exit(1)
+        caption = f"📎 {media_path.name}"
+        ok = _openclaw_send(caption, media_path=media_path, recipient=recipient, dry_run=args.dry_run)
+        sys.exit(0 if ok else 1)
 
     # ── Trade execution reply mode ──────────────────────────────────────
     if args.parse_trade:
@@ -464,7 +511,7 @@ def main() -> None:
             f"{trade['shares']} shares @ {trade['price']:.4f}{fee_str}\n"
             f"Dashboard updated. PDF attached."
         )
-        _openclaw_send(confirm_msg, pdf_path=pdf_path, dry_run=args.dry_run)
+        _openclaw_send(confirm_msg, pdf_path=pdf_path, recipient=recipient, dry_run=args.dry_run)
         sys.exit(0)
 
     # ── Daily push mode ─────────────────────────────────────────────────
@@ -484,7 +531,7 @@ def main() -> None:
     if not pdf_path.exists():
         pdf_path = None
 
-    ok = _openclaw_send(message, pdf_path=pdf_path, dry_run=args.dry_run)
+    ok = _openclaw_send(message, pdf_path=pdf_path, recipient=recipient, dry_run=args.dry_run)
 
     if ok and not args.dry_run:
         _mark_sent(today)
