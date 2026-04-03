@@ -134,9 +134,9 @@ def render(data: dict, out_path: str) -> None:
     generated_at = data.get("meta", {}).get("generated_at", date.today().isoformat())
 
     n_positions = len(positions)
-    fig_height = 6 + n_positions * 0.55 + 4  # dynamic height
+    fig_height = 6 + n_positions * 0.55 + 8  # extra height for 2-row charts
 
-    fig = plt.figure(figsize=(16, fig_height), facecolor=BG)
+    fig = plt.figure(figsize=(17, fig_height), facecolor=BG)
     fig.patch.set_facecolor(BG)
 
     # Layout: header | KPIs | [table | pie] | signals | charts
@@ -146,14 +146,14 @@ def render(data: dict, out_path: str) -> None:
         height_ratios=[0.6, 0.8, max(n_positions * 0.55, 3), 2, 3],
         hspace=0.45,
         wspace=0.08,
-        left=0.04, right=0.97, top=0.97, bottom=0.03,
+        left=0.03, right=0.98, top=0.97, bottom=0.05,
     )
 
     # ── Header ────────────────────────────────────────────────
     ax_header = fig.add_subplot(gs[0, :])
     ax_header.set_facecolor(BG)
     ax_header.axis("off")
-    ax_header.text(0.0, 0.7, "📈 Roboadvisor", fontsize=22, color=TEXT,
+    ax_header.text(0.0, 0.7, "Roboadvisor", fontsize=22, color=TEXT,
                    fontweight="bold", transform=ax_header.transAxes)
     ax_header.text(0.0, 0.1, f"Portfolio-Dashboard  •  Stand: {generated_at}",
                    fontsize=11, color=MUTED, transform=ax_header.transAxes)
@@ -198,8 +198,8 @@ def render(data: dict, out_path: str) -> None:
     ax_table.text(0.03, 0.97, "Positionen", fontsize=12, color=TEXT,
                   fontweight="bold", va="top", transform=ax_table.transAxes)
 
-    headers = ["Ticker", "Kurs", "Stück", "Wert", "Wert %", ""]
-    col_x   = [0.02, 0.18, 0.33, 0.48, 0.65, 0.85]
+    headers = ["Name", "Ticker", "Kurs", "Stück", "Wert", "Anteil"]
+    col_x   = [0.02, 0.28, 0.40, 0.52, 0.64, 0.78]
     row_h   = 0.82 / max(n_positions + 1, 2)
 
     for ci, (h, x) in enumerate(zip(headers, col_x)):
@@ -215,14 +215,24 @@ def render(data: dict, out_path: str) -> None:
                               transform=ax_table.transAxes)
         ax_table.add_patch(rect)
 
+        # Shorten long names for display
+        raw_name = pos.get('name', pos['ticker'])
+        short_name = (raw_name
+                      .replace(" UCITS ETF Dist", "").replace(" UCITS ETF (Dist)", "")
+                      .replace(" UCITS ETF (Acc)", "").replace(" UCITS ETF A", "")
+                      .replace(" UCITS ETF", "").replace(" ETF", "").replace(" ETP", "")
+                      .replace("iShares ", "").replace("Amundi ", "")
+                      .replace(" Swap", "")  # "Diversified Commodity Swap" → shorter
+                      .strip())
+        if len(short_name) > 24:
+            short_name = short_name[:23] + "…"
         price_str = f"{pos['price']:.2f}" if pos['price'] else "—"
         shares_str = f"{pos['shares']:.3f}"
         value_str = fmt_eur(pos['value'])
-        # Show portfolio weight % instead of individual P&L (cost basis is estimated)
         weight_pct = f"{pos['value'] / total_value * 100:.1f}%" if (pos['value'] and total_value) else "—"
 
-        row_data = [pos['ticker'], price_str, shares_str, value_str, weight_pct, ""]
-        row_colors = [TEXT, TEXT, MUTED, TEXT, BLUE, TEXT]
+        row_data = [short_name, pos['ticker'], price_str, shares_str, value_str, weight_pct]
+        row_colors = [TEXT, MUTED, TEXT, MUTED, TEXT, BLUE]
 
         for ci, (val, x, col) in enumerate(zip(row_data, col_x, row_colors)):
             ax_table.text(x, y + row_h * 0.3, val, fontsize=8, color=col,
@@ -265,7 +275,7 @@ def render(data: dict, out_path: str) -> None:
         for i, sig in enumerate(recent_signals):
             x = i * col_w + 0.01
             ticker = sig.get("ticker", "")
-            signal = sig.get("signal", "")
+            signal = sig.get("signal") or sig.get("llm_recommendation") or "HOLD"
             conf   = sig.get("llm_confidence", "")
             d      = sig.get("date", "")
             sc = sig_color(signal)
@@ -285,22 +295,31 @@ def render(data: dict, out_path: str) -> None:
 
     # ── Price Charts ──────────────────────────────────────────
     n_charts = min(len(positions), 7)
-    ax_charts = fig.add_subplot(gs[4, :])
-    ax_charts.set_facecolor(BG)
-    ax_charts.axis("off")
-    ax_charts.text(0.01, 0.97, "Kursverlauf (90 Tage)", fontsize=12, color=TEXT,
-                   fontweight="bold", va="top", transform=ax_charts.transAxes)
+
+    # Use a nested gridspec so the section title doesn't overlap the charts
+    from matplotlib.gridspec import GridSpecFromSubplotSpec as GSSP
+    charts_outer = GSSP(2, 1, subplot_spec=gs[4, :],
+                        height_ratios=[0.15, 0.85], hspace=0.25)
+
+    ax_charts_title = fig.add_subplot(charts_outer[0, 0])
+    ax_charts_title.set_facecolor(BG)
+    ax_charts_title.axis("off")
+    ax_charts_title.text(0.01, 0.5, "Kursverlauf (90 Tage)", fontsize=12, color=TEXT,
+                         fontweight="bold", va="center", transform=ax_charts_title.transAxes)
 
     if n_charts > 0:
-        inner = gridspec.GridSpecFromSubplotSpec(
-            1, n_charts, subplot_spec=gs[4, :], wspace=0.3
-        )
-        for i, pos in enumerate(positions[:n_charts]):
-            ax = fig.add_subplot(inner[0, i])
+        # Split into 2 rows: up to 4 per row — avoids clipping on the right
+        row1_pos = positions[:4]
+        row2_pos = positions[4:n_charts]
+        n_rows = 2 if row2_pos else 1
+
+        inner = GSSP(n_rows, 4, subplot_spec=charts_outer[1, 0],
+                     wspace=0.25, hspace=0.55)
+
+        def _draw_chart(ax, pos, color):
             ax.set_facecolor(CARD)
             dates, closes = get_perf_series(data, pos["ticker"], 90)
             if dates and closes:
-                color = PALETTE[i % len(PALETTE)]
                 ax.plot(range(len(closes)), closes, color=color, linewidth=1.5)
                 ax.fill_between(range(len(closes)), closes,
                                 min(closes), alpha=0.15, color=color)
@@ -310,12 +329,18 @@ def render(data: dict, out_path: str) -> None:
                 ax.set_xticks([])
             else:
                 ax.text(0.5, 0.5, "—", ha="center", va="center", color=MUTED)
-
-            ax.set_facecolor(CARD)
             for spine in ax.spines.values():
                 spine.set_edgecolor(BORDER)
             ax.tick_params(colors=MUTED)
             ax.set_title(pos["ticker"], fontsize=8, color=TEXT, pad=4)
+
+        for i, pos in enumerate(row1_pos):
+            ax = fig.add_subplot(inner[0, i])
+            _draw_chart(ax, pos, PALETTE[i % len(PALETTE)])
+
+        for i, pos in enumerate(row2_pos):
+            ax = fig.add_subplot(inner[1, i])
+            _draw_chart(ax, pos, PALETTE[(i + 4) % len(PALETTE)])
 
     plt.savefig(out_path, dpi=120, bbox_inches="tight",
                 facecolor=BG, edgecolor="none")
