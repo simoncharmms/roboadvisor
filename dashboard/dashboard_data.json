@@ -4,8 +4,7 @@
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
-      "value_eur": 1324.9,
-      "note": "Depoteröffnung"
+      "value_eur": 1324.9
     },
     "portfolio_checkpoints": [
       {
@@ -7200,7 +7199,7 @@
       "quant_signal": null,
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available to provide fundamental or sentiment context for this position. The Y%-Filter signals HOLD with a strong upward trend, and the ARIMA forecast projects flat price movement over the next 1–5 days, suggesting no imminent directional catalyst. However, the elevated GARCH annualised volatility of 41.53% warrants caution, as price swings could be significant despite the neutral short-term forecast. Given the absence of news and flat quant momentum, maintaining the current 12.4% weight is appropriate until new information emerges.",
+      "llm_rationale": "No recent news is available to provide fundamental or sentiment context for this position. The Y%-Filter signals HOLD with a strong upward trend, and the ARIMA forecast projects flat price movement over the next 1\u20135 days, suggesting no imminent directional catalyst. However, the elevated GARCH annualised volatility of 41.53% warrants caution, as price swings could be significant despite the neutral short-term forecast. Given the absence of news and flat quant momentum, maintaining the current 12.4% weight is appropriate until new information emerges.",
       "arima_forecast_1d": null,
       "arima_forecast_5d": null,
       "garch_volatility": null
@@ -7353,104 +7352,5 @@
       "win_rate": 0.0
     }
   ],
-  "executed_trades": [
-    {
-      "date": "2026-03-31",
-      "ticker": "AMUN.PA",
-      "isin": "LU2572257124",
-      "wkn": "ETF018",
-      "action": "BUY",
-      "shares": 1.62338,
-      "price_per_share": null,
-      "price_eur": null,
-      "currency": "EUR",
-      "total_eur": null,
-      "fee_eur": null,
-      "note": "Initial position (pre-expansion, exact price and fee unknown)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "EUN4.DE",
-      "isin": "IE00B5V94313",
-      "wkn": "A1JXZG",
-      "action": "BUY",
-      "shares": 3,
-      "price_per_share": null,
-      "price_eur": null,
-      "currency": "EUR",
-      "total_eur": null,
-      "fee_eur": null,
-      "note": "Initial position (pre-expansion, exact price and fee unknown)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "IQQH.DE",
-      "isin": "IE00B42NKQ00",
-      "wkn": "A142NX",
-      "action": "BUY",
-      "shares": 85.567598,
-      "price_per_share": 8.765,
-      "price_eur": 8.765,
-      "currency": "EUR",
-      "total_eur": 750.0,
-      "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 30% of 2500 EUR expansion (energy/oil shock play)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "BTCE.DE",
-      "isin": "DE000A27Z304",
-      "wkn": "A27Z30",
-      "action": "BUY",
-      "shares": 9.584052,
-      "price_per_share": 52.17,
-      "price_eur": 52.17,
-      "currency": "EUR",
-      "total_eur": 500.0,
-      "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 20% of 2500 EUR expansion (US crypto strategy / BTC dip)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "4GLD.DE",
-      "isin": "DE000A0S9GB0",
-      "wkn": "A0S9GB",
-      "action": "BUY",
-      "shares": 3.914814,
-      "price_per_share": 127.72,
-      "price_eur": 127.72,
-      "currency": "EUR",
-      "total_eur": 500.0,
-      "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 20% of 2500 EUR expansion (stagflation/gold hedge)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "DFNS.SW",
-      "isin": "IE000YYE6WK5",
-      "wkn": "A3D9M1",
-      "action": "BUY",
-      "shares": 6.736095,
-      "price_per_share": 51.07,
-      "price_eur": 55.6702,
-      "currency": "CHF",
-      "total_eur": 375.0,
-      "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 15% of 2500 EUR expansion (defense/geopolitical)"
-    },
-    {
-      "date": "2026-03-31",
-      "ticker": "ICOM.L",
-      "isin": "IE00BDFL4P12",
-      "wkn": "A2DK6R",
-      "action": "BUY",
-      "shares": 43.311742,
-      "price_per_share": 9.9325,
-      "price_eur": 8.6582,
-      "currency": "USD",
-      "total_eur": 375.0,
-      "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 15% of 2500 EUR expansion (broad commodity inflation hedge)"
-    }
-  ]
+  "executed_trades": []
 }

@@ -62,6 +62,20 @@ def fmt_pct(v, decimals=1):
     sign = "+" if v >= 0 else ""
     return f"{sign}{v:.{decimals}f}%"
 
+def refresh_dashboard_data(json_path: str) -> None:
+    """Run export_dashboard.py to ensure dashboard_data.json is up-to-date."""
+    import subprocess, sys
+    script = Path(__file__).parent / "export_dashboard.py"
+    result = subprocess.run(
+        [sys.executable, str(script), "--out", json_path],
+        cwd=str(Path(__file__).parent),
+        capture_output=True, text=True, timeout=120,
+    )
+    if result.returncode != 0:
+        print(f"[render] WARNING: export_dashboard failed:\n{result.stderr[:300]}", file=sys.stderr)
+    else:
+        print("[render] Dashboard data refreshed.")
+
 def load_data(json_path: str) -> dict:
     with open(json_path, "r") as f:
         return json.load(f)
@@ -321,6 +335,9 @@ def main() -> None:
     json_path = args.json
     if not Path(json_path).is_absolute():
         json_path = str(Path(__file__).parent / json_path)
+
+    # Always refresh before rendering
+    refresh_dashboard_data(json_path)
 
     if not Path(json_path).exists():
         print(f"ERROR: JSON not found: {json_path}", file=sys.stderr)

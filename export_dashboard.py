@@ -302,11 +302,30 @@ def build_export(
             "total_fees_eur": cb.get("fees_eur"),
         })
 
+    # Load existing data to preserve manually-set fields (cost_basis, portfolio history)
+    existing: dict = {}
+    out_path_guess = Path(__file__).parent / "dashboard" / "dashboard_data.json"
+    if out_path_guess.exists():
+        try:
+            with open(out_path_guess) as _f:
+                existing = json.load(_f)
+        except Exception:
+            pass
+
+    # Merge cost_basis_eur: prefer existing value if trades don't provide one
+    existing_cost = {p["ticker"]: p for p in existing.get("portfolio", [])}
+    for pos in enriched_portfolio:
+        if pos["cost_basis_eur"] is None and pos["ticker"] in existing_cost:
+            pos["cost_basis_eur"] = existing_cost[pos["ticker"]].get("cost_basis_eur")
+            pos["total_fees_eur"] = existing_cost[pos["ticker"]].get("total_fees_eur")
+
+    # Build meta: always update generated_at/version, preserve historical fields
+    meta = {**existing.get("meta", {})}
+    meta["generated_at"] = date.today().isoformat()
+    meta["version"] = "1.1"
+
     return {
-        "meta": {
-            "generated_at": date.today().isoformat(),
-            "version": "1.1",
-        },
+        "meta": meta,
         "portfolio": enriched_portfolio,
         "price_history": price_history,
         "suggestions": suggestions,
