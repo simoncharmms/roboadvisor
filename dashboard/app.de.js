@@ -248,7 +248,7 @@ function renderKPIs() {
     const todaySigs = state.suggestions.filter(s=>s.date===latestDate);
     const buys  = todaySigs.filter(s=>['BUY'].includes((s.llm_recommendation||s.quant_signal||'').toUpperCase())).length;
     const sells = todaySigs.filter(s=>['SELL'].includes((s.llm_recommendation||s.quant_signal||'').toUpperCase())).length;
-    document.getElementById('kpi-signals-val').textContent = `${buys}K / ${sells}V`;
+    document.getElementById('kpi-signals-val').textContent = `${buys}× KAUF / ${sells}× VERKAUF`;
     document.getElementById('kpi-signals-sub').textContent = latestDate;
   }
 }

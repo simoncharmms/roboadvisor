@@ -73,6 +73,8 @@ def detect_intent(message: str) -> str:
     str
         One of: STATUS_REQUEST, EXPLAIN_BACKTEST, THANKS, FALLBACK
     """
+    if not message:
+        return "FALLBACK"
     msg_lower = message.lower().strip()
 
     # Score each intent by counting keyword matches
@@ -225,7 +227,7 @@ def compose_german_summary(data: dict) -> str:
     total_value = 0.0
     for pos in portfolio:
         ticker = pos.get("ticker", "")
-        shares = pos.get("shares", 0)
+        shares = pos.get("shares") or 0
         hist = price_history.get(ticker, [])
         if hist:
             last_price = hist[-1].get("close", 0)

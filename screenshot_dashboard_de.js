@@ -67,35 +67,38 @@ async function injectData(page, jsonFilePath) {
 
   ensureDir(outDir);
 
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', `--window-size=${width},900`],
-  });
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', `--window-size=${width},900`],
+    });
 
-  const page = await browser.newPage();
-  await page.setViewport({ width, height: 900, deviceScaleFactor: 2 });
+    const page = await browser.newPage();
+    await page.setViewport({ width, height: 900, deviceScaleFactor: 2 });
 
-  // Load the German dashboard (index.de.html served at root)
-  const dashboardUrl = `${serverUrl}/index.de.html`;
-  console.log(`Loading ${dashboardUrl} ...`);
-  await page.goto(dashboardUrl, { waitUntil: 'networkidle0', timeout: 30000 });
+    // Load the German dashboard (index.de.html served at root)
+    const dashboardUrl = `${serverUrl}/index.de.html`;
+    console.log(`Loading ${dashboardUrl} ...`);
+    await page.goto(dashboardUrl, { waitUntil: 'networkidle0', timeout: 30000 });
 
-  // Inject the JSON data
-  console.log('Injecting dashboard data...');
-  await injectData(page, jsonPath);
+    // Inject the JSON data
+    console.log('Injecting dashboard data...');
+    await injectData(page, jsonPath);
 
-  // Wait for charts to finish rendering
-  console.log('Waiting for charts to render...');
-  await waitForCharts(page);
+    // Wait for charts to finish rendering
+    console.log('Waiting for charts to render...');
+    await waitForCharts(page);
 
-  // Capture full dashboard screenshot
-  const fullPath = path.join(outDir, '00_full_dashboard_de.png');
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await new Promise(r => setTimeout(r, 300));
-  await page.screenshot({ path: fullPath, fullPage: true, type: 'png' });
-  console.log(`  ✅ 00_full_dashboard_de.png (full page)`);
+    // Capture full dashboard screenshot
+    const fullPath = path.join(outDir, '00_full_dashboard_de.png');
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await new Promise(r => setTimeout(r, 300));
+    await page.screenshot({ path: fullPath, fullPage: true, type: 'png' });
+    console.log(`  ✅ 00_full_dashboard_de.png (full page)`);
 
-  await browser.close();
-
-  console.log(`\n✅ Done. Screenshot saved to: ${outDir}\n`);
+    console.log(`\n✅ Done. Screenshot saved to: ${outDir}\n`);
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
 })();
