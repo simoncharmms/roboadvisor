@@ -143,6 +143,8 @@ function renderAll() {
   renderTradesTable();
   renderSuggestionFilter();
   renderSuggestionTable();
+  // Signal for Puppeteer screenshot
+  window.__chartsReady = true;
 }
 
 // ── Helpers ────────────────────────────────────────────────────
