@@ -15,7 +15,7 @@ let state = {
 };
 
 let charts = {};
-let activeRange = '1M';
+let activeRange = '3M';
 
 // ── Palette ────────────────────────────────────────────────────
 const PALETTE = [
@@ -157,6 +157,9 @@ function badgeHtml(signal) {
 
 /** Get the last price from priceHistory for a ticker */
 function lastPrice(ticker) {
+  // Prefer current_price_eur from portfolio entry if set (e.g. manually updated)
+  const pos = state.portfolio.find(p => p.ticker === ticker);
+  if (pos?.current_price_eur) return pos.current_price_eur;
   const hist = state.priceHistory[ticker];
   if (!hist || !hist.length) return null;
   return hist[hist.length - 1].close;
@@ -278,6 +281,7 @@ function renderPerformanceChart() {
 
   const labels = series.map(d => d.date);
   const values = series.map(d => d.value);
+  const xyData = series.map(d => ({ x: d.date, y: d.value }));
 
   // Build trade annotations
   const annotations = {};
@@ -313,10 +317,9 @@ function renderPerformanceChart() {
   charts['performance'] = new Chart(ctx, {
     type: 'line',
     data: {
-      labels,
       datasets: [{
         label: 'Portfolio Value (€)',
-        data: values,
+        data: xyData,
         borderColor: '#10b981',
         borderWidth: 2.5,
         backgroundColor: grad,
@@ -341,15 +344,18 @@ function renderPerformanceChart() {
           bodyColor: '#f0f0f8',
           bodyFont: { weight: '700', size: 14 },
           callbacks: {
-            label: ctx => `€${ctx.raw.toFixed(2)}`
+            label: ctx => `€${(ctx.raw?.y ?? ctx.raw).toFixed(2)}`
           }
         },
         annotation: { annotations }
       },
       scales: {
         x: {
+          type: 'time',
+          time: { unit: 'month', tooltipFormat: 'yyyy-MM-dd', displayFormats: { month: 'MMM yy', week: 'MMM d', day: 'MMM d' } },
+          adapters: { date: {} },
           grid: { color: 'rgba(42,42,58,0.5)' },
-          ticks: { color: '#5a5a78', font: { size: 11 }, maxTicksLimit: 8, maxRotation: 0 }
+          ticks: { color: '#5a5a78', font: { size: 11 }, maxTicksLimit: 10, maxRotation: 0 }
         },
         y: {
           grid: { color: 'rgba(42,42,58,0.5)' },
