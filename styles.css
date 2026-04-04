@@ -640,3 +640,137 @@ body {
 .text-muted { color: var(--text-muted); }
 .text-up    { color: var(--up); }
 .text-down  { color: var(--down); }
+
+/* ============================================
+   MOBILE / PHONE RESPONSIVE (≤ 480px)
+   Optimised for iPhone 13 mini (375×812)
+   ============================================ */
+@media (max-width: 480px) {
+
+  /* -- Base -- */
+  html { font-size: 14px; }
+  body { padding-bottom: 40px; overflow-x: hidden; }
+
+  /* -- Header -- */
+  .app-header {
+    padding: 0 16px;
+    height: 52px;
+  }
+  .logo-tagline { display: none; }
+  .logo-text { font-size: 17px; }
+  .logo-icon { width: 30px; height: 30px; font-size: 15px; }
+  .last-updated { display: none; }
+  .header-actions { gap: 8px; }
+  .btn { padding: 8px 12px; font-size: 12px; }
+  .btn-ghost .btn-icon { display: none; }
+
+  /* -- Main layout -- */
+  .main-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  /* -- KPI strip: 2 col on mobile -- */
+  .kpi-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .kpi-card { padding: 14px 12px; }
+  .kpi-label { font-size: 9px; letter-spacing: 0.3px; }
+  .kpi-value { font-size: 20px; }
+  .kpi-sub   { font-size: 10px; margin-top: 3px; }
+
+  /* -- Section cards -- */
+  .section { padding: 16px; }
+  .section-header { flex-wrap: wrap; gap: 10px; }
+  .section-title { font-size: 14px; }
+  .section-sub { font-size: 11px; }
+
+  /* -- Performance chart -- */
+  #chart-performance { height: 220px !important; }
+  .chart-wrap { height: 220px; }
+
+  /* -- Range buttons -- */
+  .range-buttons {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    padding: 5px 10px;
+    font-size: 11px;
+    min-width: 36px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* -- Two-col → single col -- */
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* -- Allocation donut -- */
+  .donut-container canvas { max-height: 140px !important; }
+  .donut-legend { gap: 6px; }
+  .donut-legend-name { font-size: 11px; }
+  .donut-legend-pct  { font-size: 12px; }
+
+  /* -- Signal rows -- */
+  .signal-row {
+    padding: 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .signal-ticker { font-size: 14px; min-width: 70px; }
+  .signal-name   { font-size: 11px; white-space: normal; }
+  .signal-badges { flex-wrap: wrap; gap: 6px; }
+  .badge { padding: 4px 10px; font-size: 11px; min-height: 28px; }
+
+  /* -- Backtest cards -- */
+  .backtest-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .backtest-card { padding: 14px; }
+  .backtest-metrics { flex-direction: row; flex-wrap: wrap; gap: 10px; }
+  .backtest-metric  { flex: 1 1 40%; }
+  .metric-label { font-size: 10px; }
+  .metric-value { font-size: 14px; }
+
+  /* -- Position charts -- */
+  .ticker-charts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .ticker-chart-card { padding: 14px; }
+  .ticker-chart-header { flex-wrap: wrap; gap: 6px; }
+  .ticker-chart-title { font-size: 13px; }
+  .ticker-current-price { font-size: 20px; }
+  .ticker-price-change  { font-size: 12px; }
+  .ticker-chart-canvas-wrap { height: 160px !important; }
+  .ticker-chart-isin { font-size: 10px; }
+
+  /* -- Tables: make horizontally scrollable -- */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .data-table { font-size: 12px; min-width: 500px; }
+  .data-table th { padding: 8px 10px; font-size: 10px; }
+  .data-table td { padding: 10px 10px; }
+  .rationale-cell { max-width: 160px; font-size: 11px; }
+
+  /* -- Suggestion filter -- */
+  .select { font-size: 12px; padding: 6px 10px; }
+
+  /* -- Trades table: smaller min-width -- */
+  #trades-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* -- Empty state -- */
+  .empty-state { padding: 0 16px; margin: 40px auto; }
+  .empty-icon  { font-size: 48px; }
+  .empty-state h2 { font-size: 22px; }
+  .empty-state p  { font-size: 13px; }
+}
