@@ -5,7 +5,16 @@
       "isin": "LU2572257124",
       "wkn": "ETF018",
       "name": "Amundi MSCI World III UCITS ETF Dist",
-      "shares": 1.62338,
+      "shares": 2.17278,
+      "purchase_price": null,
+      "currency": "EUR"
+    },
+    {
+      "ticker": "IQQH.DE",
+      "isin": "IE00B42NKQ00",
+      "wkn": "A142NX",
+      "name": "iShares S&P 500 Energy Sector UCITS ETF (Acc)",
+      "shares": 65,
       "purchase_price": null,
       "currency": "EUR"
     },
@@ -17,51 +26,6 @@
       "shares": 3,
       "purchase_price": null,
       "currency": "EUR"
-    },
-    {
-      "ticker": "IQQH.DE",
-      "isin": "IE00B42NKQ00",
-      "wkn": "A142NX",
-      "name": "iShares S&P 500 Energy Sector UCITS ETF (Acc)",
-      "shares": 85.567598,
-      "purchase_price": 8.765,
-      "currency": "EUR"
-    },
-    {
-      "ticker": "BTCE.DE",
-      "isin": "DE000A27Z304",
-      "wkn": "A27Z30",
-      "name": "Bitwise Physical Bitcoin ETP",
-      "shares": 9.584052,
-      "purchase_price": 52.17,
-      "currency": "EUR"
-    },
-    {
-      "ticker": "4GLD.DE",
-      "isin": "DE000A0S9GB0",
-      "wkn": "A0S9GB",
-      "name": "Xetra-Gold ETC",
-      "shares": 3.914814,
-      "purchase_price": 127.72,
-      "currency": "EUR"
-    },
-    {
-      "ticker": "DFNS.SW",
-      "isin": "IE000YYE6WK5",
-      "wkn": "A3D9M1",
-      "name": "VanEck Defense UCITS ETF A",
-      "shares": 6.736095,
-      "purchase_price": 51.07,
-      "currency": "CHF"
-    },
-    {
-      "ticker": "ICOM.L",
-      "isin": "IE00BDFL4P12",
-      "wkn": "A2DK6R",
-      "name": "iShares Diversified Commodity Swap UCITS ETF",
-      "shares": 43.311742,
-      "purchase_price": 9.9325,
-      "currency": "USD"
     }
   ]
 }
