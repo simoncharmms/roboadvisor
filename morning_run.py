@@ -79,7 +79,7 @@ def _send_whatsapp(message: str, dry_run: bool = False) -> None:
             [
                 "openclaw", "message", "send",
                 "--channel", "whatsapp",
-                "--to", WHATSAPP_TO,
+                "--target", WHATSAPP_TO,
                 "--message", message,
             ],
             check=False, capture_output=True, text=True, timeout=30,
