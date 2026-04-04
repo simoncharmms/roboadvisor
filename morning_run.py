@@ -143,8 +143,28 @@ def _export_dashboard() -> None:
             print(f"[morning] WARNING: export_dashboard failed: {result.stderr[:300]}")
         else:
             print("[morning] Dashboard exported.")
+            _deploy_dashboard()
     except Exception as exc:
         print(f"[morning] ERROR exporting dashboard: {exc}")
+
+
+def _deploy_dashboard() -> None:
+    """Push updated dashboard_data.json to gh-pages branch."""
+    deploy_script = PROJECT_ROOT / "deploy_dashboard.sh"
+    if not deploy_script.exists():
+        return
+    try:
+        result = subprocess.run(
+            ["bash", str(deploy_script)],
+            cwd=str(PROJECT_ROOT),
+            capture_output=True, text=True, timeout=60,
+        )
+        if result.returncode != 0:
+            print(f"[morning] WARNING: gh-pages deploy failed: {result.stderr[:300]}")
+        else:
+            print("[morning] Dashboard deployed to gh-pages ✓")
+    except Exception as exc:
+        print(f"[morning] WARNING: gh-pages deploy error: {exc}")
 
 
 def _get_quant_signal(result: dict) -> str:
