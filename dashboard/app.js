@@ -177,20 +177,32 @@ function buildPortfolioSeries() {
   Object.values(state.priceHistory).forEach(arr => arr.forEach(d => allDates.add(d.date)));
   const dates = [...allDates].sort();
 
-  // For each ticker, build a Map of date→close
+  // For each ticker, build a Map of date→close with forward-fill for missing dates
   const maps = {};
   state.portfolio.forEach(pos => {
-    maps[pos.ticker] = new Map((state.priceHistory[pos.ticker]||[]).map(d=>[d.date,d.close]));
+    const sorted = (state.priceHistory[pos.ticker]||[]).slice().sort((a,b)=>a.date.localeCompare(b.date));
+    const map = new Map(sorted.map(d=>[d.date,d.close]));
+    // Forward-fill: for each date in allDates, carry forward last known price
+    let lastPrice = null;
+    const filled = new Map();
+    for (const date of dates) {
+      if (map.has(date)) lastPrice = map.get(date);
+      if (lastPrice !== null) filled.set(date, lastPrice);
+    }
+    maps[pos.ticker] = filled;
   });
 
   return dates.map(date => {
     let total = 0;
+    let allPresent = true;
     state.portfolio.forEach(pos => {
       const p = maps[pos.ticker]?.get(date);
       if (p) total += p * pos.shares;
+      else allPresent = false;
     });
-    return { date, value: total };
-  }).filter(d => d.value > 0);
+    // Only include dates where all tickers have (possibly forward-filled) prices
+    return allPresent ? { date, value: total } : null;
+  }).filter(d => d !== null && d.value > 0);
 }
 
 /** Filter a series by time range */
