@@ -195,7 +195,7 @@ function buildPortfolioSeries() {
     maps[pos.ticker] = filled;
   });
 
-  return dates.map(date => {
+  const series = dates.map(date => {
     let total = 0;
     let allPresent = true;
     state.portfolio.forEach(pos => {
@@ -206,6 +206,19 @@ function buildPortfolioSeries() {
     // Only include dates where all tickers have (possibly forward-filled) prices
     return allPresent ? { date, value: total } : null;
   }).filter(d => d !== null && d.value > 0);
+
+  // Append today's data point using current_price_eur if available and newer than last series date
+  const today = new Date().toISOString().slice(0, 10);
+  const lastDate = series.length ? series[series.length - 1].date : null;
+  if (lastDate && today > lastDate) {
+    const allHaveCurrent = state.portfolio.every(p => p.current_price_eur);
+    if (allHaveCurrent) {
+      const todayTotal = state.portfolio.reduce((sum, p) => sum + p.current_price_eur * p.shares, 0);
+      series.push({ date: today, value: todayTotal });
+    }
+  }
+
+  return series;
 }
 
 /** Filter a series by time range */
