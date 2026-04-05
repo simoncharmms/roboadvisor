@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-04",
+    "generated_at": "2026-04-05",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -37,8 +37,7 @@
       "shares": 2.17278,
       "currency": "EUR",
       "cost_basis_eur": 0.0,
-      "total_fees_eur": 0.0,
-      "current_price_eur": 105.6803
+      "total_fees_eur": 0.0
     },
     {
       "ticker": "IQQH.DE",
@@ -48,8 +47,7 @@
       "shares": 65,
       "currency": "EUR",
       "cost_basis_eur": 750.0,
-      "total_fees_eur": 0.0,
-      "current_price_eur": 10.72
+      "total_fees_eur": 0.0
     },
     {
       "ticker": "EUN4.DE",
@@ -59,16 +57,11 @@
       "shares": 3,
       "currency": "EUR",
       "cost_basis_eur": 0.0,
-      "total_fees_eur": 0.0,
-      "current_price_eur": 117.9667
+      "total_fees_eur": 0.0
     }
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-04-04",
-        "close": 59.01924514770508
-      },
       {
         "date": "2025-04-07",
         "close": 55.15376663208008
@@ -1084,10 +1077,6 @@
     ],
     "IQQH.DE": [
       {
-        "date": "2025-04-04",
-        "close": 5.750197410583496
-      },
-      {
         "date": "2025-04-07",
         "close": 5.580522537231445
       },
@@ -2085,10 +2074,6 @@
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-04-04",
-        "close": 106.02333068847656
-      },
       {
         "date": "2025-04-07",
         "close": 105.81354522705078
@@ -3089,42 +3074,42 @@
   },
   "suggestions": [
     {
-      "date": "2026-04-04",
+      "date": "2026-04-05",
       "ticker": "AMUN.PA",
-      "quant_signal": null,
-      "llm_recommendation": "HOLD",
-      "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available to inform a fundamental or sentiment-based view on AMUN.PA. The quantitative signals are broadly consistent with a hold: the Y%-Filter indicates an upward trend but the ARIMA forecasts show marginal price decline (-0.15% over 5 days), suggesting momentum is flattening. GARCH volatility of 27.62% is elevated, warranting caution against increasing the position without additional conviction. Confidence is low solely due to the absence of news, leaving the recommendation entirely dependent on quant signals.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "quant_signal": "HOLD",
+      "llm_recommendation": null,
+      "llm_confidence": null,
+      "llm_rationale": null,
+      "arima_forecast_1d": 73.9879,
+      "arima_forecast_5d": 73.9802,
+      "garch_volatility": 0.2762
     },
     {
-      "date": "2026-04-04",
+      "date": "2026-04-05",
       "ticker": "EUN4.DE",
-      "quant_signal": null,
-      "llm_recommendation": "HOLD",
-      "llm_confidence": "MED",
-      "llm_rationale": "No recent news is available, so this assessment relies entirely on quantitative signals. The Y%-Filter indicates an upward trend but a HOLD signal, suggesting the move from the last turning point (7.62%) has not yet triggered a new entry or exit threshold. ARIMA forecasts project minimal price drift over the next 1\u20135 days (~flat to marginally lower), and GARCH annualised volatility of 6.12% indicates a low-risk, stable instrument. Maintaining the current 30% weight is appropriate given the lack of new information and consistent quant signals.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "quant_signal": "HOLD",
+      "llm_recommendation": null,
+      "llm_confidence": null,
+      "llm_rationale": null,
+      "arima_forecast_1d": 106.8114,
+      "arima_forecast_5d": 106.7688,
+      "garch_volatility": 0.061244
     },
     {
-      "date": "2026-04-04",
+      "date": "2026-04-05",
       "ticker": "IQQH.DE",
-      "quant_signal": null,
-      "llm_recommendation": "HOLD",
-      "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a downtrend of -4.29% from the last turning point, but the ARIMA forecast shows a flat near-term price path, suggesting momentum has stalled rather than accelerating lower. GARCH volatility at 26.13% is elevated, warranting caution but not an immediate exit. Given the flat ARIMA outlook and absence of any fundamental catalyst, holding the position while monitoring for a directional break is the appropriate stance.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "quant_signal": "HOLD",
+      "llm_recommendation": null,
+      "llm_confidence": null,
+      "llm_rationale": null,
+      "arima_forecast_1d": 9.033,
+      "arima_forecast_5d": 9.033,
+      "garch_volatility": 0.261327
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-04",
+      "run_date": "2026-04-05",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3132,31 +3117,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-04",
-      "ticker": "AMUN.PA",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "AMUN.PA",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "AMUN.PA",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
+      "run_date": "2026-04-05",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3164,55 +3125,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-04",
-      "ticker": "EUN4.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "EUN4.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "EUN4.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "IQQH.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "IQQH.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
-      "ticker": "IQQH.DE",
-      "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
-      "max_drawdown_pct": 0.0,
-      "win_rate": 0.0
-    },
-    {
-      "run_date": "2026-04-04",
+      "run_date": "2026-04-05",
       "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3220,5 +3133,104 @@
       "win_rate": 0.0
     }
   ],
-  "executed_trades": []
+  "executed_trades": [
+    {
+      "date": "2026-03-31",
+      "ticker": "AMUN.PA",
+      "isin": "LU2572257124",
+      "wkn": "ETF018",
+      "action": "BUY",
+      "shares": 1.62338,
+      "price_per_share": null,
+      "price_eur": null,
+      "currency": "EUR",
+      "total_eur": null,
+      "fee_eur": null,
+      "note": "Initial position (pre-expansion, exact price and fee unknown)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "EUN4.DE",
+      "isin": "IE00B5V94313",
+      "wkn": "A1JXZG",
+      "action": "BUY",
+      "shares": 3,
+      "price_per_share": null,
+      "price_eur": null,
+      "currency": "EUR",
+      "total_eur": null,
+      "fee_eur": null,
+      "note": "Initial position (pre-expansion, exact price and fee unknown)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "IQQH.DE",
+      "isin": "IE00B42NKQ00",
+      "wkn": "A142NX",
+      "action": "BUY",
+      "shares": 85.567598,
+      "price_per_share": 8.765,
+      "price_eur": 8.765,
+      "currency": "EUR",
+      "total_eur": 750.0,
+      "fee_eur": null,
+      "note": "Homer suggestion 2026-03-31 \u2014 30% of 2500 EUR expansion (energy/oil shock play)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "BTCE.DE",
+      "isin": "DE000A27Z304",
+      "wkn": "A27Z30",
+      "action": "BUY",
+      "shares": 9.584052,
+      "price_per_share": 52.17,
+      "price_eur": 52.17,
+      "currency": "EUR",
+      "total_eur": 500.0,
+      "fee_eur": null,
+      "note": "Homer suggestion 2026-03-31 \u2014 20% of 2500 EUR expansion (US crypto strategy / BTC dip)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "4GLD.DE",
+      "isin": "DE000A0S9GB0",
+      "wkn": "A0S9GB",
+      "action": "BUY",
+      "shares": 3.914814,
+      "price_per_share": 127.72,
+      "price_eur": 127.72,
+      "currency": "EUR",
+      "total_eur": 500.0,
+      "fee_eur": null,
+      "note": "Homer suggestion 2026-03-31 \u2014 20% of 2500 EUR expansion (stagflation/gold hedge)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "DFNS.SW",
+      "isin": "IE000YYE6WK5",
+      "wkn": "A3D9M1",
+      "action": "BUY",
+      "shares": 6.736095,
+      "price_per_share": 51.07,
+      "price_eur": 55.6702,
+      "currency": "CHF",
+      "total_eur": 375.0,
+      "fee_eur": null,
+      "note": "Homer suggestion 2026-03-31 \u2014 15% of 2500 EUR expansion (defense/geopolitical)"
+    },
+    {
+      "date": "2026-03-31",
+      "ticker": "ICOM.L",
+      "isin": "IE00BDFL4P12",
+      "wkn": "A2DK6R",
+      "action": "BUY",
+      "shares": 43.311742,
+      "price_per_share": 9.9325,
+      "price_eur": 8.6582,
+      "currency": "USD",
+      "total_eur": 375.0,
+      "fee_eur": null,
+      "note": "Homer suggestion 2026-03-31 \u2014 15% of 2500 EUR expansion (broad commodity inflation hedge)"
+    }
+  ]
 }
