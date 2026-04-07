@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-06",
+    "generated_at": "2026-04-07",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -3074,7 +3074,7 @@
   },
   "suggestions": [
     {
-      "date": "2026-04-06",
+      "date": "2026-04-07",
       "ticker": "AMUN.PA",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
@@ -3085,7 +3085,7 @@
       "garch_volatility": 0.2762
     },
     {
-      "date": "2026-04-06",
+      "date": "2026-04-07",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
@@ -3096,7 +3096,7 @@
       "garch_volatility": 0.061244
     },
     {
-      "date": "2026-04-06",
+      "date": "2026-04-07",
       "ticker": "IQQH.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
@@ -3109,7 +3109,7 @@
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-06",
+      "run_date": "2026-04-07",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3117,7 +3117,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-06",
+      "run_date": "2026-04-07",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3125,7 +3125,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-06",
+      "run_date": "2026-04-07",
       "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
