@@ -3076,35 +3076,35 @@
     {
       "date": "2026-04-08",
       "ticker": "AMUN.PA",
-      "quant_signal": null,
+      "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the assessment relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a 52% move from the last turning point, suggesting the position may be extended but the signal remains HOLD. The ARIMA forecast implies near-flat price action over the next 1\u20135 days, and GARCH volatility at 27.58% is elevated, warranting caution about adding exposure without fundamental confirmation. Maintain the current 15% weight but avoid increasing the position until news or a new quant signal provides clearer directional conviction.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a substantial 52% move from the last turning point, suggesting the position may be extended and momentum could be fading. The ARIMA forecast is essentially flat over both 1-day and 5-day horizons, reinforcing a HOLD stance with no near-term directional catalyst. GARCH volatility at 27.58% is moderately elevated, warranting caution against increasing exposure without fundamental confirmation.",
+      "arima_forecast_1d": 72.0801,
+      "arima_forecast_5d": 72.0801,
+      "garch_volatility": 0.27576
     },
     {
       "date": "2026-04-08",
       "ticker": "EUN4.DE",
-      "quant_signal": null,
+      "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms an upward trend but flags a HOLD, as the 7.21% move from the last turning point suggests the position may be approaching a reversal threshold. The ARIMA forecasts indicate near-flat price action over the next 1\u20135 days, and low annualised GARCH volatility of 5.93% signals a stable, low-risk environment with little urgency to act. Maintaining the current position is appropriate until a clearer directional signal or new information emerges.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "llm_rationale": "No recent news is available, so the assessment relies entirely on quantitative signals. The Y%-Filter confirms a HOLD with an upward trend, and the ARIMA forecasts show near-flat price movement over the next 5 days, suggesting no imminent directional catalyst. GARCH annualised volatility of 5.93% indicates a low-risk environment consistent with a stable hold. The position's 30.5% weight warrants maintaining rather than adding until a clearer signal or news catalyst emerges.",
+      "arima_forecast_1d": 106.4405,
+      "arima_forecast_5d": 106.4023,
+      "garch_volatility": 0.059343
     },
     {
       "date": "2026-04-08",
       "ticker": "IQQH.DE",
-      "quant_signal": null,
+      "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available for IQQH.DE, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates a downward trend of approximately -6.98% from the last turning point, but has not yet triggered a SELL signal. The ARIMA forecast projects a flat price trajectory over both 1-day and 5-day horizons, providing no directional edge to justify active repositioning. Given the elevated annualised volatility of 24.29% and the already substantial portfolio weight of 54.5%, no action is warranted without additional confirming signals, but the position warrants close monitoring.",
-      "arima_forecast_1d": null,
-      "arima_forecast_5d": null,
-      "garch_volatility": null
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter flags a downward trend of approximately -6.98% from the last turning point, but the ARIMA forecast projects a flat price over both 1-day and 5-day horizons, suggesting momentum has stalled rather than accelerated to the downside. GARCH annualised volatility of 24.29% indicates moderate risk, which does not justify an aggressive position change without a clearer directional signal. Given the flat ARIMA forecast and absence of news catalysts, holding is appropriate, though the position size of 54.5% warrants close monitoring for any emerging downside confirmation.",
+      "arima_forecast_1d": 8.779,
+      "arima_forecast_5d": 8.779,
+      "garch_volatility": 0.242949
     }
   ],
   "backtest_results": [
@@ -3134,6 +3134,22 @@
     },
     {
       "run_date": "2026-04-08",
+      "ticker": "AMUN.PA",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": -9.290207213085822e+16,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-08",
+      "ticker": "EUN4.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": -9.290159149890013e+16,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-08",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": -9.290159149890013e+16,
@@ -3151,6 +3167,14 @@
     {
       "run_date": "2026-04-08",
       "ticker": "EUN4.DE",
+      "total_return_pct": 0.0,
+      "sharpe_ratio": -9.290159149890013e+16,
+      "max_drawdown_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "run_date": "2026-04-08",
+      "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": -9.290159149890013e+16,
       "max_drawdown_pct": 0.0,
