@@ -224,6 +224,8 @@ def _compose_morning_message(
     conflict_str = ", ".join(conflicts) if conflicts else "None"
     lines.append(f"🚩 *Conflicts:* {conflict_str}")
     lines.append("")
+    lines.append("📊 https://simoncharmms.github.io/roboadvisor/")
+    lines.append("")
     lines.append("_Reply: BUY TICKER SHARES at PRICE_")
     lines.append("_or: SELL TICKER SHARES at PRICE_")
 

@@ -248,12 +248,21 @@ def upsert_signal(
     """
     conn.execute(
         """
-        INSERT OR REPLACE INTO signals (
+        INSERT INTO signals (
             ticker, date,
             y_filter_signal, arima_forecast_1d, arima_forecast_5d,
             garch_volatility, llm_recommendation, llm_confidence,
             llm_rationale, llm_quant_agreement
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(ticker, date) DO UPDATE SET
+            y_filter_signal    = COALESCE(excluded.y_filter_signal,    y_filter_signal),
+            arima_forecast_1d  = COALESCE(excluded.arima_forecast_1d,  arima_forecast_1d),
+            arima_forecast_5d  = COALESCE(excluded.arima_forecast_5d,  arima_forecast_5d),
+            garch_volatility   = COALESCE(excluded.garch_volatility,   garch_volatility),
+            llm_recommendation = COALESCE(excluded.llm_recommendation, llm_recommendation),
+            llm_confidence     = COALESCE(excluded.llm_confidence,     llm_confidence),
+            llm_rationale      = COALESCE(excluded.llm_rationale,      llm_rationale),
+            llm_quant_agreement= COALESCE(excluded.llm_quant_agreement,llm_quant_agreement)
         """,
         (
             ticker, date,
@@ -289,6 +298,11 @@ def log_backtest_result(
     """
     if run_date is None:
         run_date = datetime.utcnow().date().isoformat()
+    # Deduplicate: keep only one row per (ticker, run_date) — delete stale then insert
+    conn.execute(
+        "DELETE FROM backtest_results WHERE ticker = ? AND run_date = ?",
+        (ticker, run_date),
+    )
     conn.execute(
         """
         INSERT INTO backtest_results

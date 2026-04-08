@@ -223,6 +223,45 @@ def load_backtest_results(conn: sqlite3.Connection, tickers: list[str]) -> list[
     return results
 
 
+def load_news(conn: sqlite3.Connection, tickers: list[str], days: int = 7, max_per_ticker: int = 5) -> dict[str, list[dict]]:
+    """
+    Load the latest news articles per ticker from the news table.
+
+    Args:
+        conn: Open SQLite connection.
+        tickers: List of ticker symbols to query.
+        days: Number of calendar days back from today to include.
+        max_per_ticker: Maximum number of articles per ticker.
+
+    Returns:
+        Dict mapping ticker → list of {published_at, headline, source, url, body} dicts.
+    """
+    cutoff = (date.today() - timedelta(days=days)).isoformat()
+    result: dict[str, list[dict]] = {}
+    for ticker in tickers:
+        rows = conn.execute(
+            """
+            SELECT ticker, published_at, headline, source, url, body
+            FROM news
+            WHERE ticker = ? AND published_at >= ?
+            ORDER BY published_at DESC
+            LIMIT ?
+            """,
+            (ticker, cutoff, max_per_ticker),
+        ).fetchall()
+        result[ticker] = [
+            {
+                "published_at": r[1],
+                "headline": r[2],
+                "source": r[3],
+                "url": r[4],
+                "body": (r[5] or "")[:300],  # truncate body to avoid JSON bloat
+            }
+            for r in rows
+        ]
+    return result
+
+
 def load_trades(trades_path: Path) -> list[dict]:
     """
     Load executed trades from a JSON file.
@@ -262,6 +301,7 @@ def build_export(
     suggestions: list[dict],
     backtest_results: list[dict],
     executed_trades: list[dict],
+    news_by_ticker=None,
 ) -> dict:
     """
     Assemble the full dashboard export dict.
@@ -331,6 +371,7 @@ def build_export(
         "suggestions": suggestions,
         "backtest_results": backtest_results,
         "executed_trades": executed_trades,
+        "news_by_ticker": news_by_ticker or {},
     }
 
 
@@ -407,6 +448,7 @@ def main() -> None:
         price_history = load_price_history(conn, tickers, args.days)
         suggestions = load_signals(conn, tickers)
         backtest_results = load_backtest_results(conn, tickers)
+        news_by_ticker = load_news(conn, tickers)
     finally:
         conn.close()
 
@@ -416,7 +458,7 @@ def main() -> None:
         executed_trades = load_trades(trades_path)
 
     # Assemble and write
-    export = build_export(portfolio, price_history, suggestions, backtest_results, executed_trades)
+    export = build_export(portfolio, price_history, suggestions, backtest_results, executed_trades, news_by_ticker)
 
     with out_path.open("w") as f:
         json.dump(export, f, indent=2, default=str)

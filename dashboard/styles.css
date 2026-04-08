@@ -568,9 +568,46 @@ body {
 .ticker-price-change.up   { color: var(--up); }
 .ticker-price-change.down { color: var(--down); }
 
+.ticker-chart-card { overflow: hidden; }
+
 .ticker-chart-canvas-wrap {
   height: 200px;
   position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+canvas { max-width: 100% !important; display: block; }
+
+/* ---- Ticker News ---- */
+.ticker-news {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  max-height: 120px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.news-item {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-item a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 /* ---- Tables ---- */
@@ -665,6 +702,7 @@ body {
   .btn-ghost .btn-icon { display: none; }
 
   /* -- Main layout -- */
+  .content-wrap { padding: 12px 10px; }
   .main-content {
     padding: 16px;
     gap: 16px;
@@ -751,6 +789,10 @@ body {
   .ticker-price-change  { font-size: 12px; }
   .ticker-chart-canvas-wrap { height: 160px !important; }
   .ticker-chart-isin { font-size: 10px; }
+
+  /* -- News -- */
+  .ticker-news { max-height: 80px; }
+  .news-item { font-size: 11px; }
 
   /* -- Tables: make horizontally scrollable -- */
   .table-wrap {

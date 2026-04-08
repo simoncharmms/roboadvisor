@@ -207,17 +207,20 @@ def _compute_sharpe(equity_curve: list[float]) -> float:
     eq = np.array(equity_curve, dtype=float)
     daily_returns = np.diff(eq) / eq[:-1]
 
-    if len(daily_returns) == 0:
+    if len(daily_returns) < 2:
         return 0.0
 
     rf_daily = _RISK_FREE_RATE_ANNUAL / _TRADING_DAYS_PER_YEAR
     excess = daily_returns - rf_daily
-    std = np.std(excess, ddof=1)
+    std = float(np.std(excess, ddof=1))
 
-    if std == 0 or math.isnan(std):
+    _MIN_STD = 1e-5  # guard against near-zero std (raised from 1e-8 — almost-flat curves)
+    if std < _MIN_STD or math.isnan(std):
         return 0.0
 
-    return float(np.mean(excess) / std * math.sqrt(_TRADING_DAYS_PER_YEAR))
+    sharpe = float(np.mean(excess) / std * math.sqrt(_TRADING_DAYS_PER_YEAR))
+    # Clamp to a sane finance range
+    return max(-50.0, min(50.0, sharpe))
 
 
 def _compute_max_drawdown(equity_curve: list[float]) -> float:

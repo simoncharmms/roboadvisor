@@ -106,6 +106,7 @@ function loadData(data) {
   state.backtestResults = data.backtest_results || [];
   state.executedTrades  = data.executed_trades  || [];
   state.meta            = data.meta             || {};
+  state.newsByTicker    = data.news_by_ticker   || {};
 
   // Sort everything by date asc
   state.suggestions     = state.suggestions.sort((a,b) => a.date.localeCompare(b.date));
@@ -544,6 +545,20 @@ function renderTickerCharts() {
     // Latest ARIMA forecasts for this ticker
     const latestSug = [...state.suggestions].filter(s=>s.ticker===pos.ticker).pop();
 
+    // Build news HTML for this ticker
+    const tickerNews = (state.newsByTicker && state.newsByTicker[pos.ticker]) || [];
+    const newsHtml = tickerNews.length
+      ? `<div class="ticker-news">
+          ${tickerNews.map(n => {
+            const dateStr = n.published_at ? n.published_at.slice(0,10) : '';
+            const src = n.source || '';
+            const headline = (n.headline || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            const url = n.url || '#';
+            return `<div class="news-item">📰 ${dateStr}${src ? ' · ('+src+')' : ''} <a href="${url}" target="_blank" rel="noopener">${headline}</a></div>`;
+          }).join('')}
+        </div>`
+      : '';
+
     card.innerHTML = `
       <div class="ticker-chart-header">
         <div>
@@ -558,7 +573,8 @@ function renderTickerCharts() {
       <div style="font-size:10px;color:var(--text-muted);margin-top:2px;font-family:monospace">${[pos.isin,pos.wkn].filter(Boolean).join(' · ')}</div>
       <div class="ticker-chart-canvas-wrap">
         <canvas id="${divId}"></canvas>
-      </div>`;
+      </div>
+      ${newsHtml}`;
     container.appendChild(card);
 
     const labels = hist.map(d=>d.date);
@@ -599,6 +615,7 @@ function renderTickerCharts() {
     grad2.addColorStop(0, color+'30');
     grad2.addColorStop(1, color+'05');
 
+    const isMobile = window.innerWidth < 480;
     charts[divId] = new Chart(ctx2, {
       type: 'line',
       data: {
@@ -633,7 +650,7 @@ function renderTickerCharts() {
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: { display: false },
+          legend: { labels: { font: { size: isMobile ? 10 : 12 }, boxWidth: 12 } },
           tooltip: {
             backgroundColor: '#16161e',
             borderColor: '#2a2a3a',
@@ -645,11 +662,11 @@ function renderTickerCharts() {
         scales: {
           x: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, maxTicksLimit: 6, maxRotation: 0 }
+            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, maxTicksLimit: 6, maxRotation: 45 }
           },
           y: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, callback: v => '€'+v.toFixed(1) }
+            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, callback: v => '€'+v.toFixed(1) }
           }
         }
       }

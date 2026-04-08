@@ -66,36 +66,45 @@ def y_filter(prices: pd.Series, threshold_pct: float = 5.0) -> dict:
     turning_point_price: float = float(prices.iloc[0])
     turning_point_date = prices.index[0]
     current_trend: str = "UP"  # assume uptrend initially; will be corrected below
+    signal: str = "HOLD"
+
+    # Track extremes within each trend leg for proper filter behaviour.
+    # In an UP trend we track the running high; in a DOWN trend the running low.
+    # A turning point fires when price reverses by threshold_pct from that extreme.
+    extreme_price: float = turning_point_price
 
     # Run through the full series to find the current turning point and trend
     for date, price in prices.items():
         price = float(price)
-        pct_change = (price - turning_point_price) / turning_point_price
 
-        if current_trend == "DOWN":
-            # Looking for a bottom → rally of +threshold_pct signals a new UP turning point
-            if pct_change >= threshold:
-                turning_point_price = price
-                turning_point_date = date
-                current_trend = "UP"
-        else:  # current_trend == "UP"
-            # Looking for a top → drop of -threshold_pct signals a new DOWN turning point
+        if current_trend == "UP":
+            # Track the running high
+            if price > extreme_price:
+                extreme_price = price
+            # Check for reversal: drop of threshold_pct from the high
+            pct_change = (price - extreme_price) / extreme_price
             if pct_change <= -threshold:
-                turning_point_price = price
+                turning_point_price = extreme_price
                 turning_point_date = date
                 current_trend = "DOWN"
+                extreme_price = price  # reset extreme to current (new low tracker)
+                signal = "SELL"
+        else:  # current_trend == "DOWN"
+            # Track the running low
+            if price < extreme_price:
+                extreme_price = price
+            # Check for reversal: rally of threshold_pct from the low
+            pct_change = (price - extreme_price) / extreme_price
+            if pct_change >= threshold:
+                turning_point_price = extreme_price
+                turning_point_date = date
+                current_trend = "UP"
+                extreme_price = price  # reset extreme to current (new high tracker)
+                signal = "BUY"
 
     # Current price
     latest_price = float(prices.iloc[-1])
     pct_from_turning_point = (latest_price - turning_point_price) / turning_point_price * 100.0
-
-    # Determine signal based on latest move relative to the last turning point
-    if current_trend == "UP" and pct_from_turning_point <= -threshold_pct:
-        signal = "SELL"
-    elif current_trend == "DOWN" and pct_from_turning_point >= threshold_pct:
-        signal = "BUY"
-    else:
-        signal = "HOLD"
 
     # Format date for JSON-serializability
     tp_date_str = _format_date(turning_point_date)

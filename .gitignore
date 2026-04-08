@@ -3,3 +3,13 @@ node_modules/
 __pycache__/
 *.db-journal
 .env
+
+# Secrets & local state
+.env
+*.db
+*.db-shm
+*.db-wal
+logs/
+snapshots/
+reports/
+.gh-pages-worktree/
