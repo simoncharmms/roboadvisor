@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-07",
+    "generated_at": "2026-04-08",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-04-07",
-        "close": 55.15376663208008
-      },
       {
         "date": "2025-04-08",
         "close": 56.19084548950195
@@ -1073,13 +1069,13 @@
       {
         "date": "2026-04-02",
         "close": 74.0999984741211
+      },
+      {
+        "date": "2026-04-07",
+        "close": 72.19999694824219
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-04-07",
-        "close": 5.580522537231445
-      },
       {
         "date": "2025-04-08",
         "close": 5.630833148956299
@@ -2071,13 +2067,13 @@
       {
         "date": "2026-04-02",
         "close": 9.032999992370605
+      },
+      {
+        "date": "2026-04-07",
+        "close": 8.779000282287598
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-04-07",
-        "close": 105.81354522705078
-      },
       {
         "date": "2025-04-08",
         "close": 105.52571105957031
@@ -3069,66 +3065,70 @@
       {
         "date": "2026-04-02",
         "close": 106.83000183105469
+      },
+      {
+        "date": "2026-04-07",
+        "close": 106.42500305175781
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "ticker": "AMUN.PA",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
       "llm_confidence": null,
       "llm_rationale": null,
-      "arima_forecast_1d": 73.9879,
-      "arima_forecast_5d": 73.9802,
-      "garch_volatility": 0.2762
+      "arima_forecast_1d": 72.0801,
+      "arima_forecast_5d": 72.0801,
+      "garch_volatility": 0.27576
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
       "llm_confidence": null,
       "llm_rationale": null,
-      "arima_forecast_1d": 106.8114,
-      "arima_forecast_5d": 106.7688,
-      "garch_volatility": 0.061244
+      "arima_forecast_1d": 106.4405,
+      "arima_forecast_5d": 106.4023,
+      "garch_volatility": 0.059343
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "ticker": "IQQH.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": null,
       "llm_confidence": null,
       "llm_rationale": null,
-      "arima_forecast_1d": 9.033,
-      "arima_forecast_5d": 9.033,
-      "garch_volatility": 0.261327
+      "arima_forecast_1d": 8.779,
+      "arima_forecast_5d": 8.779,
+      "garch_volatility": 0.242949
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-07",
+      "run_date": "2026-04-08",
       "ticker": "AMUN.PA",
       "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
+      "sharpe_ratio": -9.290207213085822e+16,
       "max_drawdown_pct": 0.0,
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-07",
+      "run_date": "2026-04-08",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
+      "sharpe_ratio": -9.290159149890013e+16,
       "max_drawdown_pct": 0.0,
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-07",
+      "run_date": "2026-04-08",
       "ticker": "IQQH.DE",
       "total_return_pct": 0.0,
-      "sharpe_ratio": 0.0,
+      "sharpe_ratio": -9.290159149890013e+16,
       "max_drawdown_pct": 0.0,
       "win_rate": 0.0
     }
