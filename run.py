@@ -490,12 +490,15 @@ def main() -> None:
 
         # 2. News
         if not args.skip_news:
-            try:
-                fetch_news(ticker, conn, days=7, api_key=cfg.news_api_key)
-            except Exception as exc:
-                print(f"[run] WARNING: news fetch failed for {ticker}: {exc}")
+            if cfg.finnhub_api_key:
+                try:
+                    fetch_news(ticker, conn, days=7, api_key=cfg.finnhub_api_key)
+                except Exception as exc:
+                    print(f"[run] WARNING: news fetch failed for {ticker}: {exc}")
+            else:
+                print(f"[run] {ticker}: skipping news (FINNHUB_API_KEY not set).")
         else:
-            print(f"[run] {ticker}: skipping news (--skip-news flag set).")
+            print(f"[run] {ticker}: skipping news (--skip-news flag set.)")
 
         # 3. Models
         result = analyse_ticker(ticker, conn, today_str)

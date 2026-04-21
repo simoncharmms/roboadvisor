@@ -5,7 +5,7 @@
 
 # ── Data fetching ────────────────────────────────────────────
 yfinance>=0.2.40          # OHLCV price data from Yahoo Finance
-newsapi-python>=0.2.7     # NewsAPI client for headline fetching
+requests>=2.31.0          # HTTP client for Finnhub news API
 
 # ── Quantitative models ──────────────────────────────────────
 statsmodels>=0.14.0       # ARIMA time-series modelling

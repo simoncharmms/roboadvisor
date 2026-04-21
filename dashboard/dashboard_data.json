@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-08",
+    "generated_at": "2026-04-21",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,38 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-04-08",
-        "close": 56.19084548950195
-      },
-      {
-        "date": "2025-04-09",
-        "close": 55.05949020385742
-      },
-      {
-        "date": "2025-04-10",
-        "close": 57.79360580444336
-      },
-      {
-        "date": "2025-04-11",
-        "close": 58.40642547607422
-      },
-      {
-        "date": "2025-04-14",
-        "close": 60.05632400512695
-      },
-      {
-        "date": "2025-04-15",
-        "close": 61.5648078918457
-      },
-      {
-        "date": "2025-04-16",
-        "close": 61.28196334838867
-      },
-      {
-        "date": "2025-04-17",
-        "close": 61.0462646484375
-      },
       {
         "date": "2025-04-22",
         "close": 62.03620529174805
@@ -1073,41 +1041,45 @@
       {
         "date": "2026-04-07",
         "close": 72.19999694824219
+      },
+      {
+        "date": "2026-04-08",
+        "close": 75.25
+      },
+      {
+        "date": "2026-04-09",
+        "close": 75.69999694824219
+      },
+      {
+        "date": "2026-04-10",
+        "close": 75.5
+      },
+      {
+        "date": "2026-04-13",
+        "close": 75.6500015258789
+      },
+      {
+        "date": "2026-04-14",
+        "close": 77.5999984741211
+      },
+      {
+        "date": "2026-04-15",
+        "close": 77.5
+      },
+      {
+        "date": "2026-04-16",
+        "close": 76.9000015258789
+      },
+      {
+        "date": "2026-04-17",
+        "close": 79.05000305175781
+      },
+      {
+        "date": "2026-04-20",
+        "close": 77.75
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-04-08",
-        "close": 5.630833148956299
-      },
-      {
-        "date": "2025-04-09",
-        "close": 5.38322639465332
-      },
-      {
-        "date": "2025-04-10",
-        "close": 5.516401290893555
-      },
-      {
-        "date": "2025-04-11",
-        "close": 5.5104827880859375
-      },
-      {
-        "date": "2025-04-14",
-        "close": 5.664373397827148
-      },
-      {
-        "date": "2025-04-15",
-        "close": 5.7344136238098145
-      },
-      {
-        "date": "2025-04-16",
-        "close": 5.7215895652771
-      },
-      {
-        "date": "2025-04-17",
-        "close": 5.7136969566345215
-      },
       {
         "date": "2025-04-22",
         "close": 5.788670063018799
@@ -2071,41 +2043,45 @@
       {
         "date": "2026-04-07",
         "close": 8.779000282287598
+      },
+      {
+        "date": "2026-04-08",
+        "close": 9.093000411987305
+      },
+      {
+        "date": "2026-04-09",
+        "close": 9.237000465393066
+      },
+      {
+        "date": "2026-04-10",
+        "close": 9.322999954223633
+      },
+      {
+        "date": "2026-04-13",
+        "close": 9.265999794006348
+      },
+      {
+        "date": "2026-04-14",
+        "close": 9.597000122070312
+      },
+      {
+        "date": "2026-04-15",
+        "close": 9.628999710083008
+      },
+      {
+        "date": "2026-04-16",
+        "close": 9.463000297546387
+      },
+      {
+        "date": "2026-04-17",
+        "close": 9.472000122070312
+      },
+      {
+        "date": "2026-04-20",
+        "close": 9.545000076293945
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-04-08",
-        "close": 105.52571105957031
-      },
-      {
-        "date": "2025-04-09",
-        "close": 105.53058624267578
-      },
-      {
-        "date": "2025-04-10",
-        "close": 105.78915405273438
-      },
-      {
-        "date": "2025-04-11",
-        "close": 105.95990753173828
-      },
-      {
-        "date": "2025-04-14",
-        "close": 106.55510711669922
-      },
-      {
-        "date": "2025-04-15",
-        "close": 106.3014144897461
-      },
-      {
-        "date": "2025-04-16",
-        "close": 106.40874481201172
-      },
-      {
-        "date": "2025-04-17",
-        "close": 106.72097778320312
-      },
       {
         "date": "2025-04-22",
         "close": 106.93563842773438
@@ -3069,55 +3045,91 @@
       {
         "date": "2026-04-07",
         "close": 106.42500305175781
+      },
+      {
+        "date": "2026-04-08",
+        "close": 107.58000183105469
+      },
+      {
+        "date": "2026-04-09",
+        "close": 107.16999816894531
+      },
+      {
+        "date": "2026-04-10",
+        "close": 106.84500122070312
+      },
+      {
+        "date": "2026-04-13",
+        "close": 106.61000061035156
+      },
+      {
+        "date": "2026-04-14",
+        "close": 107.08499908447266
+      },
+      {
+        "date": "2026-04-15",
+        "close": 106.98500061035156
+      },
+      {
+        "date": "2026-04-16",
+        "close": 107.04000091552734
+      },
+      {
+        "date": "2026-04-17",
+        "close": 107.74500274658203
+      },
+      {
+        "date": "2026-04-20",
+        "close": 107.53500366210938
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-04-08",
+      "date": "2026-04-21",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available to provide fundamental or sentiment context for this position. The Y%-Filter signals a BUY with an upward trend, but the ARIMA forecast projects essentially flat price action (+1d and +5d both at 72.08 EUR vs. current 72.20 EUR), offering no meaningful upside catalyst. GARCH annualised volatility of 27.58% indicates moderate risk, which does not justify increasing the already meaningful 15% portfolio weight without corroborating news-driven conviction. A HOLD is appropriate until either the quant signals strengthen or news provides directional clarity.",
-      "arima_forecast_1d": 72.0801,
-      "arima_forecast_5d": 72.0801,
-      "garch_volatility": 0.27576
+      "llm_rationale": "No recent news is available, preventing any fundamental or sentiment-based assessment of the position. The Y%-Filter indicates an upward trend, but the ARIMA forecast projects effectively flat price movement over both the 1-day and 5-day horizons, offering no near-term upside catalyst. GARCH annualised volatility of 25.55% is moderately elevated, suggesting meaningful risk without a clear directional edge from the quant signals taken together. Given the absence of news and the mixed quantitative picture, maintaining the current weight is the prudent course until clearer signals emerge.",
+      "arima_forecast_1d": 77.6666,
+      "arima_forecast_5d": 77.6666,
+      "garch_volatility": 0.255496
     },
     {
-      "date": "2026-04-08",
+      "date": "2026-04-21",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "No recent news is available, so the assessment relies entirely on quantitative signals. The Y%-Filter confirms an upward trend but has already moved 7.2% from the last turning point, suggesting limited near-term upside before a potential reversal. ARIMA forecasts are essentially flat over both 1-day and 5-day horizons, and annualised GARCH volatility of 5.93% indicates a low-risk, range-bound environment. Maintaining the current position is appropriate until a clearer directional signal or news catalyst emerges.",
-      "arima_forecast_1d": 106.4405,
-      "arima_forecast_5d": 106.4023,
-      "garch_volatility": 0.059343
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter confirms a HOLD with an upward trend, though the 8.33% move from the last turning point suggests the position may be approaching a potential reversal threshold. ARIMA forecasts indicate marginal price drift lower over 5 days (-0.05%), while GARCH volatility of 6.70% annualised signals a low-risk, stable environment. Given the absence of any catalyst and quant signals pointing to consolidation, maintaining the current position is appropriate.",
+      "arima_forecast_1d": 107.5334,
+      "arima_forecast_5d": 107.484,
+      "garch_volatility": 0.066973
     },
     {
-      "date": "2026-04-08",
+      "date": "2026-04-21",
       "ticker": "IQQH.DE",
-      "quant_signal": "SELL",
-      "llm_recommendation": "SELL",
+      "quant_signal": "BUY",
+      "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals a SELL with a -6.09% drawdown from the last turning point, indicating a confirmed downward trend. The ARIMA forecast is flat across both the 1-day and 5-day horizons, suggesting no mean-reversion catalyst is anticipated by the model. GARCH annualised volatility of 24.29% adds meaningful downside risk to a position that already represents an outsized 54.5% portfolio weight. No news is available to contradict or support the quant signals, so confidence is low, but the combination of trend deterioration and concentration risk warrants a reduction.",
-      "arima_forecast_1d": 8.779,
-      "arima_forecast_5d": 8.779,
-      "garch_volatility": 0.242949
+      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with meaningful distance from the last turning point, but the ARIMA forecast is completely flat over both 1-day and 5-day horizons, suggesting no further near-term price momentum is expected. GARCH volatility at 22.63% is moderate but not alarming. Given the conflicting signals between the trend filter and the static ARIMA forecast, and the already elevated portfolio weight of 55.8%, the prudent action is to hold without adding further exposure until clearer directional signals emerge.",
+      "arima_forecast_1d": 9.545,
+      "arima_forecast_5d": 9.545,
+      "garch_volatility": 0.226311
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-08",
+      "run_date": "2026-04-21",
       "ticker": "AMUN.PA",
-      "total_return_pct": 22.978,
-      "sharpe_ratio": 0.2515,
+      "total_return_pct": 32.4313,
+      "sharpe_ratio": 0.3867,
       "max_drawdown_pct": 15.8172,
-      "win_rate": 0.4375
+      "win_rate": 0.5
     },
     {
-      "run_date": "2026-04-08",
+      "run_date": "2026-04-21",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3125,12 +3137,12 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-08",
+      "run_date": "2026-04-21",
       "ticker": "IQQH.DE",
-      "total_return_pct": -7.1057,
-      "sharpe_ratio": -0.3135,
+      "total_return_pct": -4.0082,
+      "sharpe_ratio": -0.2438,
       "max_drawdown_pct": 28.4527,
-      "win_rate": 0.375
+      "win_rate": 0.4118
     }
   ],
   "executed_trades": [

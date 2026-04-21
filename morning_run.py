@@ -291,10 +291,13 @@ def main() -> None:
 
         # Fetch news
         if not args.skip_news:
-            try:
-                fetch_news(ticker, conn, days=7, api_key=cfg.news_api_key)
-            except Exception as exc:
-                print(f"[morning] WARNING: news fetch failed for {ticker}: {exc}")
+            if cfg.finnhub_api_key:
+                try:
+                    fetch_news(ticker, conn, days=7, api_key=cfg.finnhub_api_key)
+                except Exception as exc:
+                    print(f"[morning] WARNING: news fetch failed for {ticker}: {exc}")
+            else:
+                print(f"[morning] {ticker}: skipping news (FINNHUB_API_KEY not set).")
 
         # Run quant models
         try:

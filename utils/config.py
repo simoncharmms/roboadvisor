@@ -29,7 +29,7 @@ class Config:
     """Holds all application configuration values loaded from the environment."""
 
     finance_api_key: str
-    news_api_key: str
+    finnhub_api_key: Optional[str]
     anthropic_api_key: Optional[str]
 
     # Optional tuning knobs with sensible defaults
@@ -41,8 +41,8 @@ class Config:
 # Loader
 # ---------------------------------------------------------------------------
 
-_REQUIRED_KEYS = ["FINANCE_API_KEY", "NEWS_API_KEY"]
-_OPTIONAL_KEYS = ["ANTHROPIC_API_KEY"]
+_REQUIRED_KEYS = ["FINANCE_API_KEY"]
+_OPTIONAL_KEYS = ["ANTHROPIC_API_KEY", "FINNHUB_API_KEY"]
 
 
 def load_config(env_file: Optional[str] = None) -> Config:
@@ -101,7 +101,7 @@ def load_config(env_file: Optional[str] = None) -> Config:
 
     return Config(
         finance_api_key=os.environ["FINANCE_API_KEY"],
-        news_api_key=os.environ["NEWS_API_KEY"],
+        finnhub_api_key=os.getenv("FINNHUB_API_KEY"),
         anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
         db_path=os.getenv("DB_PATH", "roboadvisor.db"),
         log_level=os.getenv("LOG_LEVEL", "INFO"),
