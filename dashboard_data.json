@@ -3103,7 +3103,7 @@
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with a BUY signal, but the ARIMA forecast shows virtually no price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. GARCH volatility at 25% annualised is moderate, not warranting an aggressive position change. Given the flat ARIMA outlook and absence of news catalysts, maintaining the current 15.1% weight is prudent until stronger directional signals emerge.",
+      "llm_rationale": "The quantitative signals are weakly constructive \u2014 a BUY filter with an upward trend \u2014 but the ARIMA forecast shows near-zero expected price movement over both 1-day and 5-day horizons, suggesting momentum has stalled. All available news is macro in nature (Iran ceasefire uncertainty, Middle East tensions, mixed equity sentiment) with no company- or sector-specific coverage for AMUN.PA, making it impossible to assess fundamental catalysts. Given the flat price forecast, elevated annualised volatility of 25%, and geopolitical uncertainty creating broad market noise, maintaining the current 15.1% weight is the prudent stance until clearer signals emerge.",
       "arima_forecast_1d": 77.8607,
       "arima_forecast_5d": 77.8607,
       "garch_volatility": 0.250049
@@ -3114,7 +3114,7 @@
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "No recent news is available, so the recommendation relies entirely on quantitative signals. The Y%-Filter indicates an upward trend with momentum of ~8% from the last turning point, while the ARIMA forecasts suggest near-flat price movement over the next 1–5 days, and GARCH annualised volatility of 6.52% is low, indicating a stable instrument. Taken together, the signals support maintaining the current position with no immediate catalyst to buy more or reduce exposure.",
+      "llm_rationale": "The Y%-Filter confirms an upward trend and the ARIMA forecasts show near-flat price movement over the next 5 days, supporting a hold stance. GARCH annualised volatility of 6.52% is low, indicating a stable instrument with limited near-term risk. The macro news is mixed \u2014 a partial risk-on signal from the Iran ceasefire extension is offset by lingering geopolitical uncertainty and doubts over its durability, which could introduce modest headwinds for broader equity-linked instruments. No position change is warranted at this time.",
       "arima_forecast_1d": 107.2599,
       "arima_forecast_5d": 107.2128,
       "garch_volatility": 0.065164
@@ -3125,7 +3125,7 @@
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "No recent news is available, so the assessment relies entirely on quantitative signals. The Y%-Filter indicates an uptrend with a ~9.8% move from the last turning point, but the ARIMA forecast projects no price change over 1 or 5 days, suggesting momentum may be stalling. GARCH annualised volatility of 21.79% is moderate but warrants caution given the already high portfolio concentration of 56.1%. Without news-based confirmation of the bullish trend signal, initiating additional exposure is not justified, and the current position warrants monitoring rather than action.",
+      "llm_rationale": "The Y%-Filter signals a BUY with an upward trend, but ARIMA forecasts show zero expected price movement over both 1-day and 5-day horizons, suggesting the quantitative signals are mixed and offer limited conviction. The news flow is exclusively macro in nature\u2014covering US-Iran ceasefire uncertainty and Middle East geopolitical tensions\u2014with no direct coverage of IQQH.DE or its underlying assets, making it impossible to assess fundamental catalysts from the provided news. Geopolitical uncertainty around the Iran ceasefire could introduce short-term volatility, consistent with the elevated GARCH annualised volatility of 21.79%, warranting caution before increasing an already heavily concentrated 56.1% position. A HOLD is appropriate until clearer directional signals emerge from both the quant models and asset-specific news.",
       "arima_forecast_1d": 9.637,
       "arima_forecast_5d": 9.637,
       "garch_volatility": 0.217863
@@ -3258,8 +3258,116 @@
     }
   ],
   "news_by_ticker": {
-    "AMUN.PA": [],
-    "IQQH.DE": [],
-    "EUN4.DE": []
+    "AMUN.PA": [
+      {
+        "published_at": "2026-04-22T03:48:32",
+        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
+        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T01:29:00",
+        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
+        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:47:00",
+        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
+        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:35:00",
+        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
+        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-21T22:53:00",
+        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
+        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+      }
+    ],
+    "IQQH.DE": [
+      {
+        "published_at": "2026-04-22T03:48:32",
+        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
+        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T01:29:00",
+        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
+        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:47:00",
+        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
+        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:35:00",
+        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
+        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-21T22:53:00",
+        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
+        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+      }
+    ],
+    "EUN4.DE": [
+      {
+        "published_at": "2026-04-22T03:48:32",
+        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
+        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T01:29:00",
+        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
+        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:47:00",
+        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
+        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-22T00:35:00",
+        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
+        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-21T22:53:00",
+        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
+        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+      }
+    ]
   }
 }
