@@ -1,8 +1,177 @@
 /* ============================================================
-   ROBOADVISOR DASHBOARD — app.js
+   ROBOADVISOR DASHBOARD — app.js  (i18n enabled)
    ============================================================ */
 
 'use strict';
+
+// ── Translations ───────────────────────────────────────────────────────────
+const TRANSLATIONS = {
+  en: {
+    'tagline':          'Portfolio Intelligence',
+    'no-data':          'No data loaded',
+    'import-btn':       'Import JSON',
+    'import-btn-full':  'Import JSON File',
+    'load-demo':        'Load Demo',
+    'load-demo-data':   'Load Demo Data',
+    'empty-title':      'Import your portfolio data',
+    'empty-desc':       'Load a JSON file containing your portfolio, historical suggestions, backtesting results, and executed trades.<br>See the <strong>data format guide</strong> below.',
+    'format-guide-title': '📋 Expected JSON Format',
+    'kpi-value':        'Portfolio Value',
+    'kpi-return':       'Total Return',
+    'kpi-return-sub':   'since first trade',
+    'kpi-positions':    'Positions',
+    'kpi-sharpe':       'Avg Sharpe',
+    'kpi-sharpe-sub':   'backtested',
+    'kpi-drawdown':     'Max Drawdown',
+    'kpi-drawdown-sub': 'backtested',
+    'kpi-signals':      "Today's Signals",
+    'perf-title':       'Portfolio Performance',
+    'perf-sub':         'Overall value over time · markers show executed trades',
+    'range-all':        'All',
+    'legend-buy':       'BUY',
+    'legend-sell':      'SELL',
+    'alloc-title':      'Allocation',
+    'alloc-sub':        'Current portfolio weights',
+    'signals-title':    'Latest Signals',
+    'signals-sub':      'Most recent daily recommendations',
+    'backtest-title':   'Backtesting Results',
+    'backtest-sub':     'Statistical model performance on historical data',
+    'positions-title':  'Individual Positions',
+    'positions-sub':    'Price history with ARIMA forecast overlay',
+    'trades-title':     'Executed Trades',
+    'trades-sub':       'Your manually logged portfolio adjustments',
+    'col-date':         'Date',
+    'col-action':       'Action',
+    'col-shares':       'Shares',
+    'col-price':        'Price',
+    'col-total':        'Total (€)',
+    'col-fee':          'Fee (€)',
+    'col-note':         'Note',
+    'suggestions-title':'Suggestion History',
+    'suggestions-sub':  'All daily recommendations — quant + LLM',
+    'filter-all':       'All tickers',
+    'col-confidence':   'Confidence',
+    'col-arima1':       'ARIMA 1D',
+    'col-arima5':       'ARIMA 5D',
+    'col-vol':          'Vol (GARCH)',
+    'col-rationale':    'Rationale',
+    // dynamic strings (used in JS)
+    'last-updated-live':   (ts) => `🟢 Live — ${ts}`,
+    'last-updated-cached': (ts) => `📦 Cached — ${ts}`,
+    'last-updated-loaded': (ts) => `Last updated: ${ts}`,
+    'no-suggestions':   'No suggestions loaded.',
+    'no-backtest':      'No backtest results loaded.',
+    'no-price-history': 'No price history available',
+    'no-trades':        'No executed trades loaded.',
+    'today':            'today',
+    'backtest-return':  'Total Return',
+    'backtest-sharpe':  'Sharpe Ratio',
+    'backtest-dd':      'Max Drawdown',
+    'backtest-wr':      'Win Rate',
+    'backtest-run':     'Run Date',
+    'forecast-label':   'ARIMA Forecast',
+    'price-label':      'Price',
+    'portfolio-label':  'Portfolio Value (€)',
+  },
+  de: {
+    'tagline':          'Portfolio-Intelligenz',
+    'no-data':          'Keine Daten geladen',
+    'import-btn':       'JSON importieren',
+    'import-btn-full':  'JSON-Datei importieren',
+    'load-demo':        'Demo laden',
+    'load-demo-data':   'Demo-Daten laden',
+    'empty-title':      'Portfolio-Daten importieren',
+    'empty-desc':       'Laden Sie eine JSON-Datei mit Ihrem Portfolio, historischen Empfehlungen, Backtesting-Ergebnissen und ausgeführten Trades.<br>Siehe das <strong>Datenformat</strong> unten.',
+    'format-guide-title': '📋 Erwartetes JSON-Format',
+    'kpi-value':        'Portfoliowert',
+    'kpi-return':       'Gesamtrendite',
+    'kpi-return-sub':   'seit erstem Trade',
+    'kpi-positions':    'Positionen',
+    'kpi-sharpe':       'Ø Sharpe-Ratio',
+    'kpi-sharpe-sub':   'Backtest',
+    'kpi-drawdown':     'Max. Drawdown',
+    'kpi-drawdown-sub': 'Backtest',
+    'kpi-signals':      'Heutige Signale',
+    'perf-title':       'Portfolio-Performance',
+    'perf-sub':         'Gesamtwert im Zeitverlauf · Markierungen zeigen ausgeführte Trades',
+    'range-all':        'Alle',
+    'legend-buy':       'KAUF',
+    'legend-sell':      'VERK.',
+    'alloc-title':      'Aufteilung',
+    'alloc-sub':        'Aktuelle Portfolio-Gewichtung',
+    'signals-title':    'Aktuelle Signale',
+    'signals-sub':      'Neueste tägliche Empfehlungen',
+    'backtest-title':   'Backtesting-Ergebnisse',
+    'backtest-sub':     'Statistische Modellperformance auf historischen Daten',
+    'positions-title':  'Einzelne Positionen',
+    'positions-sub':    'Kursverlauf mit ARIMA-Prognose',
+    'trades-title':     'Ausgeführte Trades',
+    'trades-sub':       'Manuell erfasste Portfolio-Anpassungen',
+    'col-date':         'Datum',
+    'col-action':       'Aktion',
+    'col-shares':       'Anteile',
+    'col-price':        'Kurs',
+    'col-total':        'Gesamt (€)',
+    'col-fee':          'Gebühren (€)',
+    'col-note':         'Notiz',
+    'suggestions-title':'Empfehlungsverlauf',
+    'suggestions-sub':  'Alle täglichen Empfehlungen — Quant + KI',
+    'filter-all':       'Alle Ticker',
+    'col-confidence':   'Konfidenz',
+    'col-arima1':       'ARIMA 1T',
+    'col-arima5':       'ARIMA 5T',
+    'col-vol':          'Vol. (GARCH)',
+    'col-rationale':    'Begründung',
+    // dynamic strings
+    'last-updated-live':   (ts) => `🟢 Live — ${ts}`,
+    'last-updated-cached': (ts) => `📦 Cache — ${ts}`,
+    'last-updated-loaded': (ts) => `Aktualisiert: ${ts}`,
+    'no-suggestions':   'Keine Empfehlungen geladen.',
+    'no-backtest':      'Keine Backtest-Ergebnisse geladen.',
+    'no-price-history': 'Kein Kursverlauf verfügbar',
+    'no-trades':        'Keine Trades geladen.',
+    'today':            'heute',
+    'backtest-return':  'Gesamtrendite',
+    'backtest-sharpe':  'Sharpe-Ratio',
+    'backtest-dd':      'Max. Drawdown',
+    'backtest-wr':      'Trefferquote',
+    'backtest-run':     'Run-Datum',
+    'forecast-label':   'ARIMA-Prognose',
+    'price-label':      'Kurs',
+    'portfolio-label':  'Portfoliowert (€)',
+  }
+};
+
+// ── i18n helpers ───────────────────────────────────────────────────────────
+let currentLang = localStorage.getItem('roboadvisor_lang') || 'en';
+
+function t(key, ...args) {
+  const val = TRANSLATIONS[currentLang]?.[key] ?? TRANSLATIONS['en']?.[key] ?? key;
+  return typeof val === 'function' ? val(...args) : val;
+}
+
+function applyTranslations() {
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if (val.includes('<')) el.innerHTML = val;
+    else el.textContent = val;
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === currentLang);
+  });
+}
+
+function setLang(lang) {
+  if (!TRANSLATIONS[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('roboadvisor_lang', lang);
+  applyTranslations();
+  if (document.getElementById('dashboard').style.display !== 'none') {
+    renderAll();
+  }
+}
 
 // ── State ──────────────────────────────────────────────────────
 let state = {
@@ -25,6 +194,12 @@ const PALETTE = [
 
 // ── Init ───────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  applyTranslations();
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
   document.getElementById('file-import').addEventListener('change', handleFileImport);
   document.getElementById('btn-load-demo').addEventListener('click', loadDemo);
   document.getElementById('btn-load-demo2').addEventListener('click', loadDemo);
@@ -77,8 +252,8 @@ function autoLoad() {
 function showCacheBadge(dateStr, source) {
   const el = document.getElementById('last-updated');
   if (el) {
-    const src = source === 'live' ? '🟢 Live' : '📦 Cached';
-    el.textContent = `${src} — ${dateStr || 'unknown date'}`;
+    const key = source === 'live' ? 'last-updated-live' : 'last-updated-cached';
+    el.textContent = t(key, dateStr || 'unknown date');
   }
 }
 
@@ -106,6 +281,7 @@ function loadData(data) {
   state.backtestResults = data.backtest_results || [];
   state.executedTrades  = data.executed_trades  || [];
   state.meta            = data.meta             || {};
+  state.newsByTicker    = data.news_by_ticker   || {};
 
   // Sort everything by date asc
   state.suggestions     = state.suggestions.sort((a,b) => a.date.localeCompare(b.date));
@@ -118,7 +294,7 @@ function loadData(data) {
   document.getElementById('dashboard').style.display    = '';
 
   const ts = state.meta.generated_at || new Date().toISOString().slice(0,10);
-  document.getElementById('last-updated').textContent = `Last updated: ${ts}`;
+  document.getElementById('last-updated').textContent = t('last-updated-loaded', ts);
 
   renderAll();
 }
@@ -331,7 +507,7 @@ function renderPerformanceChart() {
     type: 'line',
     data: {
       datasets: [{
-        label: 'Portfolio Value (€)',
+        label: t('portfolio-label'),
         data: xyData,
         borderColor: '#10b981',
         borderWidth: 2.5,
@@ -434,7 +610,7 @@ function renderAllocationChart() {
 function renderSignalsList() {
   const container = document.getElementById('signals-list');
   if (!state.suggestions.length) {
-    container.innerHTML = '<p style="color:var(--text-muted);font-size:13px">No suggestions loaded.</p>';
+    container.innerHTML = `<p style="color:var(--text-muted);font-size:13px">${t('no-suggestions')}</p>`;
     return;
   }
 
@@ -469,7 +645,7 @@ function renderSignalsList() {
 function renderBacktestGrid() {
   const grid = document.getElementById('backtest-grid');
   if (!state.backtestResults.length) {
-    grid.innerHTML = '<p style="color:var(--text-muted);font-size:13px">No backtest results loaded.</p>';
+    grid.innerHTML = `<p style="color:var(--text-muted);font-size:13px">${t('no-backtest')}</p>`;
     return;
   }
 
@@ -493,23 +669,23 @@ function renderBacktestGrid() {
       </div>
       <div class="backtest-metrics">
         <div class="backtest-metric">
-          <span class="metric-label">Total Return</span>
+          <span class="metric-label">${t('backtest-return')}</span>
           <span class="metric-value ${ret>=0?'positive':'negative'}">${fmtPct(ret)}</span>
         </div>
         <div class="backtest-metric">
-          <span class="metric-label">Sharpe Ratio</span>
+          <span class="metric-label">${t('backtest-sharpe')}</span>
           <span class="metric-value ${sr>=1?'positive':sr>=0?'neutral':'negative'}">${fmt(sr,2)}</span>
         </div>
         <div class="backtest-metric">
-          <span class="metric-label">Max Drawdown</span>
+          <span class="metric-label">${t('backtest-dd')}</span>
           <span class="metric-value negative">${fmtPct(dd)}</span>
         </div>
         <div class="backtest-metric">
-          <span class="metric-label">Win Rate</span>
+          <span class="metric-label">${t('backtest-wr')}</span>
           <span class="metric-value ${wr>=0.5?'positive':'neutral'}">${wr!=null?(wr*100).toFixed(0)+'%':'—'}</span>
         </div>
         <div class="backtest-metric">
-          <span class="metric-label">Run Date</span>
+          <span class="metric-label">${t('backtest-run')}</span>
           <span class="metric-value neutral" style="font-weight:500">${b.run_date||'—'}</span>
         </div>
       </div>
@@ -527,7 +703,7 @@ function renderTickerCharts() {
     if (!hist.length) {
       const card = document.createElement('div');
       card.className = 'ticker-chart-card';
-      card.innerHTML = `<div class="ticker-chart-header"><div><div class="ticker-chart-title">${pos.ticker}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">${pos.name}</div></div></div><div style="color:var(--text-muted);font-size:13px;padding:24px 0;text-align:center">No price history available</div>`;
+      card.innerHTML = `<div class="ticker-chart-header"><div><div class="ticker-chart-title">${pos.ticker}</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px">${pos.name}</div></div></div><div style="color:var(--text-muted);font-size:13px;padding:24px 0;text-align:center">${t('no-price-history')}</div>`;
       container.appendChild(card);
       return;
     }
@@ -544,6 +720,20 @@ function renderTickerCharts() {
     // Latest ARIMA forecasts for this ticker
     const latestSug = [...state.suggestions].filter(s=>s.ticker===pos.ticker).pop();
 
+    // Build news HTML for this ticker
+    const tickerNews = (state.newsByTicker && state.newsByTicker[pos.ticker]) || [];
+    const newsHtml = tickerNews.length
+      ? `<div class="ticker-news">
+          ${tickerNews.map(n => {
+            const dateStr = n.published_at ? n.published_at.slice(0,10) : '';
+            const src = n.source || '';
+            const headline = (n.headline || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            const url = n.url || '#';
+            return `<div class="news-item">📰 ${dateStr}${src ? ' · ('+src+')' : ''} <a href="${url}" target="_blank" rel="noopener">${headline}</a></div>`;
+          }).join('')}
+        </div>`
+      : '';
+
     card.innerHTML = `
       <div class="ticker-chart-header">
         <div>
@@ -552,13 +742,14 @@ function renderTickerCharts() {
         </div>
         <div class="ticker-chart-price">
           <div class="ticker-current-price">€${lastClose?.toFixed(2)||'—'}</div>
-          <div class="ticker-price-change ${changeDir}">${changePct!=null?fmtPct(changePct):'—'} today</div>
+          <div class="ticker-price-change ${changeDir}">${changePct!=null?fmtPct(changePct):'—'} ${t('today')}</div>
         </div>
       </div>
       <div style="font-size:10px;color:var(--text-muted);margin-top:2px;font-family:monospace">${[pos.isin,pos.wkn].filter(Boolean).join(' · ')}</div>
       <div class="ticker-chart-canvas-wrap">
         <canvas id="${divId}"></canvas>
-      </div>`;
+      </div>
+      ${newsHtml}`;
     container.appendChild(card);
 
     const labels = hist.map(d=>d.date);
@@ -599,13 +790,14 @@ function renderTickerCharts() {
     grad2.addColorStop(0, color+'30');
     grad2.addColorStop(1, color+'05');
 
+    const isMobile = window.innerWidth < 480;
     charts[divId] = new Chart(ctx2, {
       type: 'line',
       data: {
         labels: allLabels,
         datasets: [
           {
-            label: 'Price',
+            label: t('price-label'),
             data: histPadded,
             borderColor: color,
             borderWidth: 2,
@@ -615,7 +807,7 @@ function renderTickerCharts() {
             pointRadius: 0,
           },
           ...(forecastData.length ? [{
-            label: 'ARIMA Forecast',
+            label: t('forecast-label'),
             data: forecastPad,
             borderColor: color,
             borderWidth: 2,
@@ -633,7 +825,7 @@ function renderTickerCharts() {
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: { display: false },
+          legend: { labels: { font: { size: isMobile ? 10 : 12 }, boxWidth: 12 } },
           tooltip: {
             backgroundColor: '#16161e',
             borderColor: '#2a2a3a',
@@ -645,11 +837,11 @@ function renderTickerCharts() {
         scales: {
           x: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, maxTicksLimit: 6, maxRotation: 0 }
+            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, maxTicksLimit: 6, maxRotation: 45 }
           },
           y: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, callback: v => '€'+v.toFixed(1) }
+            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, callback: v => '€'+v.toFixed(1) }
           }
         }
       }
@@ -661,7 +853,7 @@ function renderTickerCharts() {
 function renderTradesTable() {
   const tbody = document.getElementById('trades-tbody');
   if (!state.executedTrades.length) {
-    tbody.innerHTML = '<tr><td colspan="10" style="color:var(--text-muted);text-align:center;padding:24px">No executed trades loaded.</td></tr>';
+    tbody.innerHTML = `<tr><td colspan="10" style="color:var(--text-muted);text-align:center;padding:24px">${t('no-trades')}</td></tr>`;
     return;
   }
 
@@ -686,8 +878,8 @@ function renderTradesTable() {
 function renderSuggestionFilter() {
   const sel = document.getElementById('suggestion-filter');
   const tickers = [...new Set(state.suggestions.map(s=>s.ticker))];
-  sel.innerHTML = '<option value="ALL">All tickers</option>' +
-    tickers.map(t=>`<option value="${t}">${t}</option>`).join('');
+  sel.innerHTML = `<option value="ALL">${t('filter-all')}</option>` +
+    tickers.map(tk=>`<option value="${tk}">${tk}</option>`).join('');
 }
 
 function renderSuggestionTable() {
@@ -698,7 +890,7 @@ function renderSuggestionTable() {
     .reverse();
 
   if (!rows.length) {
-    tbody.innerHTML = '<tr><td colspan="9" style="color:var(--text-muted);text-align:center;padding:24px">No suggestions loaded.</td></tr>';
+    tbody.innerHTML = `<tr><td colspan="9" style="color:var(--text-muted);text-align:center;padding:24px">${t('no-suggestions')}</td></tr>`;
     return;
   }
 
