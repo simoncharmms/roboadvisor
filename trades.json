@@ -40,7 +40,7 @@
       "currency": "EUR",
       "total_eur": 750.0,
       "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 30% of 2500 EUR expansion (energy/oil shock play)"
+      "note": "30% of 2500 EUR expansion (energy/oil shock play)"
     },
     {
       "date": "2026-03-31",
@@ -54,7 +54,7 @@
       "currency": "EUR",
       "total_eur": 500.0,
       "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 20% of 2500 EUR expansion (US crypto strategy / BTC dip)"
+      "note": "20% of 2500 EUR expansion (US crypto strategy / BTC dip)"
     },
     {
       "date": "2026-03-31",
@@ -68,7 +68,7 @@
       "currency": "EUR",
       "total_eur": 500.0,
       "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 20% of 2500 EUR expansion (stagflation/gold hedge)"
+      "note": "20% of 2500 EUR expansion (stagflation/gold hedge)"
     },
     {
       "date": "2026-03-31",
@@ -82,7 +82,7 @@
       "currency": "CHF",
       "total_eur": 375.0,
       "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 15% of 2500 EUR expansion (defense/geopolitical)"
+      "note": "15% of 2500 EUR expansion (defense/geopolitical)"
     },
     {
       "date": "2026-03-31",
@@ -96,7 +96,7 @@
       "currency": "USD",
       "total_eur": 375.0,
       "fee_eur": null,
-      "note": "Homer suggestion 2026-03-31 — 15% of 2500 EUR expansion (broad commodity inflation hedge)"
+      "note": "15% of 2500 EUR expansion (broad commodity inflation hedge)"
     }
   ]
 }
