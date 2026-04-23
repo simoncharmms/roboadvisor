@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-22",
+    "generated_at": "2026-04-23",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-04-22",
-        "close": 62.03620529174805
-      },
       {
         "date": "2025-04-23",
         "close": 63.07328414916992
@@ -1081,13 +1077,13 @@
       {
         "date": "2026-04-21",
         "close": 77.8499984741211
+      },
+      {
+        "date": "2026-04-22",
+        "close": 77.25
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-04-22",
-        "close": 5.788670063018799
-      },
       {
         "date": "2025-04-23",
         "close": 5.762034893035889
@@ -2087,13 +2083,13 @@
       {
         "date": "2026-04-21",
         "close": 9.63700008392334
+      },
+      {
+        "date": "2026-04-22",
+        "close": 9.718000411987305
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-04-22",
-        "close": 106.93563842773438
-      },
       {
         "date": "2025-04-23",
         "close": 106.75513458251953
@@ -3093,55 +3089,59 @@
       {
         "date": "2026-04-21",
         "close": 107.25
+      },
+      {
+        "date": "2026-04-22",
+        "close": 107.28500366210938
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-04-22",
+      "date": "2026-04-23",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals are weakly constructive \u2014 a BUY filter with an upward trend \u2014 but the ARIMA forecast shows near-zero expected price movement over both 1-day and 5-day horizons, suggesting momentum has stalled. All available news is macro in nature (Iran ceasefire uncertainty, Middle East tensions, mixed equity sentiment) with no company- or sector-specific coverage for AMUN.PA, making it impossible to assess fundamental catalysts. Given the flat price forecast, elevated annualised volatility of 25%, and geopolitical uncertainty creating broad market noise, maintaining the current 15.1% weight is the prudent stance until clearer signals emerge.",
-      "arima_forecast_1d": 77.8607,
-      "arima_forecast_5d": 77.8607,
-      "garch_volatility": 0.250049
+      "llm_rationale": "All available news is macro in nature (US-Iran tensions, oil disruption, tech sector commentary) with no company-specific or sector-specific coverage for AMUN.PA, making a news-driven directional call impossible. The quantitative signals are mildly constructive \u2014 a BUY filter with an upward trend \u2014 but the ARIMA forecast shows virtually no expected price movement over both 1-day and 5-day horizons, suggesting momentum is stalling. GARCH annualised volatility at ~23% is moderate, neither alarming nor compelling. Given the absence of fundamental catalysts and flat price forecasts, maintaining the current 15% weight is appropriate until clearer signals emerge.",
+      "arima_forecast_1d": 77.2144,
+      "arima_forecast_5d": 77.2144,
+      "garch_volatility": 0.229915
     },
     {
-      "date": "2026-04-22",
+      "date": "2026-04-23",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The Y%-Filter confirms an upward trend and the ARIMA forecasts show near-flat price movement over the next 5 days, supporting a hold stance. GARCH annualised volatility of 6.52% is low, indicating a stable instrument with limited near-term risk. The macro news is mixed \u2014 a partial risk-on signal from the Iran ceasefire extension is offset by lingering geopolitical uncertainty and doubts over its durability, which could introduce modest headwinds for broader equity-linked instruments. No position change is warranted at this time.",
-      "arima_forecast_1d": 107.2599,
-      "arima_forecast_5d": 107.2128,
-      "garch_volatility": 0.065164
+      "llm_rationale": "The quantitative signals are uniformly non-directional: the Y%-Filter confirms a HOLD with an upward trend, while ARIMA forecasts show near-flat price movement over the next 5 days and GARCH volatility remains low at 6.38%, indicating a stable, low-risk environment. All available news is macro-level (Iran geopolitical tensions, oil disruption, US military/diplomatic events) with no articles specific to EUN4.DE or its underlying index, making it impossible to draw a fundamental catalyst for a directional change. Given low volatility, a negligible ARIMA drift, and no asset-specific news to challenge the quant HOLD signal, maintaining the position is appropriate. The elevated portfolio weight of 28.7% warrants monitoring should macro tensions escalate further and drive broader risk-off moves.",
+      "arima_forecast_1d": 107.2712,
+      "arima_forecast_5d": 107.2242,
+      "garch_volatility": 0.06383
     },
     {
-      "date": "2026-04-22",
+      "date": "2026-04-23",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals a BUY with an upward trend, but ARIMA forecasts show zero expected price movement over both 1-day and 5-day horizons, suggesting the quantitative signals are mixed and offer limited conviction. The news flow is exclusively macro in nature\u2014covering US-Iran ceasefire uncertainty and Middle East geopolitical tensions\u2014with no direct coverage of IQQH.DE or its underlying assets, making it impossible to assess fundamental catalysts from the provided news. Geopolitical uncertainty around the Iran ceasefire could introduce short-term volatility, consistent with the elevated GARCH annualised volatility of 21.79%, warranting caution before increasing an already heavily concentrated 56.1% position. A HOLD is appropriate until clearer directional signals emerge from both the quant models and asset-specific news.",
-      "arima_forecast_1d": 9.637,
-      "arima_forecast_5d": 9.637,
-      "garch_volatility": 0.217863
+      "llm_rationale": "The quantitative signals are modestly constructive \u2014 the Y%-Filter shows a BUY with an upward trend, while ARIMA forecasts are flat, suggesting momentum but no near-term catalyst for further upside. All available news is macro in nature (US-Iran geopolitical tensions, oil disruptions, tech M&A) with no direct relevance to IQQH.DE, making it impossible to assess fundamental drivers from the provided headlines. Given the heavy 56.3% portfolio concentration, the absence of ticker-specific news warrants caution despite the quant BUY signal. A HOLD is appropriate until clearer signals or relevant news emerge to justify adding to or reducing this outsized position.",
+      "arima_forecast_1d": 9.718,
+      "arima_forecast_5d": 9.718,
+      "garch_volatility": 0.213959
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-22",
+      "run_date": "2026-04-23",
       "ticker": "AMUN.PA",
-      "total_return_pct": 32.6016,
-      "sharpe_ratio": 0.3886,
+      "total_return_pct": 31.5797,
+      "sharpe_ratio": 0.3732,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-04-22",
+      "run_date": "2026-04-23",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-22",
+      "run_date": "2026-04-23",
       "ticker": "IQQH.DE",
-      "total_return_pct": -3.083,
-      "sharpe_ratio": -0.2246,
+      "total_return_pct": -2.2684,
+      "sharpe_ratio": -0.2079,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3260,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-04-22T03:48:32",
-        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
-        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+        "published_at": "2026-04-23T01:12:20",
+        "headline": "[MACRO] Microsoft looked at buying Cursor before SpaceX deal, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/microsoft-looked-at-buying-cursor-before-spacex-deal-sources-say.html",
+        "body": "Prior to SpaceX's announcement that it's agreed to a potential purchase of Cursor, Microsoft looked at buying the AI coding startup."
       },
       {
-        "published_at": "2026-04-22T01:29:00",
-        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "published_at": "2026-04-23T00:58:00",
+        "headline": "[MACRO] Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
-        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT1IwS3YyMWFQOUNCSTBwNXJ3NGcxMlBKeUYtYWhtYmJZZmNRV0ZkOVllYVhsdkhiN3FUcXNpSzRHV1RNWm5nYW9sWFB4VWc4VWVmU2k3cHVRMFFXQjhyZ2poQ3U4SDZ0dmNKUU5wU3lsT1FRNlEtMy1TYmtaX0NacUUydEcyRkNSaXZmQ251ZElZU2lzUjdtSGE4N01uRjZiUlJDelk3aDZydnRVXzloOEE2WUpWOG1oN01aNWkxT3kzUFJs?oc=5",
+        "body": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-22T00:47:00",
-        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
-        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+        "published_at": "2026-04-22T22:50:44",
+        "headline": "[MACRO] ServiceNow CEO downplays impact of Iran war and AI: 'Our business is doing great'",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/servicenow-ceo-downplays-impact-of-iran-war-and-ai-our-business-is-doing-great.html",
+        "body": "ServiceNow CEO Bill McDermott pushed back on concerns about the Iran war and AI disruption risks in an interview with CNBC's Jim Cramer."
       },
       {
-        "published_at": "2026-04-22T00:35:00",
-        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "published_at": "2026-04-22T22:10:00",
+        "headline": "[MACRO] US Navy Secretary Phelan fired, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
-        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY1dJUkJxeF9xUm1RdzhPRjdwTk02dkV4MXFlcnA0ZjN3eXIyNTBEb1htMUhwbHdLOW90c3QxQmkyX3ZBVDBOb1hJY2hnMWx3djVMSVk4amRPbjRTV3RSYV9kQ3YtVTZad1lDb00xSEh4WWZnNFBiUFI1bTkxakw2Rnh5N05WVzNIX0xfNlktX2paN05ROXV1RERDalA?oc=5",
+        "body": "US Navy Secretary Phelan fired, sources say\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-21T22:53:00",
-        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "published_at": "2026-04-22T21:36:50",
+        "headline": "[MACRO] Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
-        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY0dac0FOcTVjR1h4cW5PS0FxVVdkRUlsU3VfMWdZOVRialU3S3cxNl9ZOVZOOWtMekJsdWFnZ21aNENlaFA1Q3E5QlQ3NE5Ea0lYdDVteU5RWGNpNTU2OHhZMzZCZGJiRXZPTnFwWVluT20wUWxVMHA4Q2NfM21IWlB0OWxiblY0cTlzY29KWkpiQUpVcWtkVnNscjBKX2hKTjRESld1b3ZxY0NsOHFYV1RLbVpRdmN4OXc?oc=5",
+        "body": "Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say\u00a0\u00a0Reuters"
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-04-22T03:48:32",
-        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
-        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+        "published_at": "2026-04-23T01:12:20",
+        "headline": "[MACRO] Microsoft looked at buying Cursor before SpaceX deal, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/microsoft-looked-at-buying-cursor-before-spacex-deal-sources-say.html",
+        "body": "Prior to SpaceX's announcement that it's agreed to a potential purchase of Cursor, Microsoft looked at buying the AI coding startup."
       },
       {
-        "published_at": "2026-04-22T01:29:00",
-        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "published_at": "2026-04-23T00:58:00",
+        "headline": "[MACRO] Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
-        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT1IwS3YyMWFQOUNCSTBwNXJ3NGcxMlBKeUYtYWhtYmJZZmNRV0ZkOVllYVhsdkhiN3FUcXNpSzRHV1RNWm5nYW9sWFB4VWc4VWVmU2k3cHVRMFFXQjhyZ2poQ3U4SDZ0dmNKUU5wU3lsT1FRNlEtMy1TYmtaX0NacUUydEcyRkNSaXZmQ251ZElZU2lzUjdtSGE4N01uRjZiUlJDelk3aDZydnRVXzloOEE2WUpWOG1oN01aNWkxT3kzUFJs?oc=5",
+        "body": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-22T00:47:00",
-        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
-        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+        "published_at": "2026-04-22T22:50:44",
+        "headline": "[MACRO] ServiceNow CEO downplays impact of Iran war and AI: 'Our business is doing great'",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/servicenow-ceo-downplays-impact-of-iran-war-and-ai-our-business-is-doing-great.html",
+        "body": "ServiceNow CEO Bill McDermott pushed back on concerns about the Iran war and AI disruption risks in an interview with CNBC's Jim Cramer."
       },
       {
-        "published_at": "2026-04-22T00:35:00",
-        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "published_at": "2026-04-22T22:10:00",
+        "headline": "[MACRO] US Navy Secretary Phelan fired, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
-        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY1dJUkJxeF9xUm1RdzhPRjdwTk02dkV4MXFlcnA0ZjN3eXIyNTBEb1htMUhwbHdLOW90c3QxQmkyX3ZBVDBOb1hJY2hnMWx3djVMSVk4amRPbjRTV3RSYV9kQ3YtVTZad1lDb00xSEh4WWZnNFBiUFI1bTkxakw2Rnh5N05WVzNIX0xfNlktX2paN05ROXV1RERDalA?oc=5",
+        "body": "US Navy Secretary Phelan fired, sources say\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-21T22:53:00",
-        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "published_at": "2026-04-22T21:36:50",
+        "headline": "[MACRO] Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
-        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY0dac0FOcTVjR1h4cW5PS0FxVVdkRUlsU3VfMWdZOVRialU3S3cxNl9ZOVZOOWtMekJsdWFnZ21aNENlaFA1Q3E5QlQ3NE5Ea0lYdDVteU5RWGNpNTU2OHhZMzZCZGJiRXZPTnFwWVluT20wUWxVMHA4Q2NfM21IWlB0OWxiblY0cTlzY29KWkpiQUpVcWtkVnNscjBKX2hKTjRESld1b3ZxY0NsOHFYV1RLbVpRdmN4OXc?oc=5",
+        "body": "Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say\u00a0\u00a0Reuters"
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-04-22T03:48:32",
-        "headline": "[MACRO] IT drags India benchmarks lower after HCLTech's subdued earnings, forecast - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYThmTWdEZ2dhQ24yTnRWN290bzBIeFJ2WEZLR1hFQmxPZzhwR1pPVUFiLWJhVk54S0ZKbkwzRlRPQkxjZHhiTG00OGdiMEtvQXprMGxRWUN1TC1SVWlqdDNqVEVpYV9JMEdSSGduWlJJQVpiWTZjYnJyWlIwZFg1cUZFTTREZUtUa3NXdWtIQXpLbUF1OTZ0Sl83REZxaS1FbEhPRUQycFZLa2lBU1h6VWpScTBvSWh4Q1JUZkRFbzJMZFE?oc=5",
-        "body": "IT drags India benchmarks lower after HCLTech's subdued earnings, forecast\u00a0\u00a0Reuters"
+        "published_at": "2026-04-23T01:12:20",
+        "headline": "[MACRO] Microsoft looked at buying Cursor before SpaceX deal, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/microsoft-looked-at-buying-cursor-before-spacex-deal-sources-say.html",
+        "body": "Prior to SpaceX's announcement that it's agreed to a potential purchase of Cursor, Microsoft looked at buying the AI coding startup."
       },
       {
-        "published_at": "2026-04-22T01:29:00",
-        "headline": "[MACRO] US will indefinitely extend ceasefire, unclear if Iran agrees - Reuters",
+        "published_at": "2026-04-23T00:58:00",
+        "headline": "[MACRO] Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWFZJOE9ma2lEV3F2d1E2Q1hrelFLSVBqQ1otM2dSSm9GRXRQbE84bl9sd3NhNVhPZzhsdF9WdXVwMVlXem51bmlKWnFJamttSG8wdnN2eTM1VHFMRmZFOWI4R3JPZ3dUSWQtd0pIRmZ3dTl5OTJpUDVpaUpFZkFwTzdhQWVRSVJiT3JMS05UOGNaWmttdUQxQ00yN2N0UzdpWi1vMmZySnBVRjZqb05DOXNVMTZlQQ?oc=5",
-        "body": "US will indefinitely extend ceasefire, unclear if Iran agrees\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT1IwS3YyMWFQOUNCSTBwNXJ3NGcxMlBKeUYtYWhtYmJZZmNRV0ZkOVllYVhsdkhiN3FUcXNpSzRHV1RNWm5nYW9sWFB4VWc4VWVmU2k3cHVRMFFXQjhyZ2poQ3U4SDZ0dmNKUU5wU3lsT1FRNlEtMy1TYmtaX0NacUUydEcyRkNSaXZmQ251ZElZU2lzUjdtSGE4N01uRjZiUlJDelk3aDZydnRVXzloOEE2WUpWOG1oN01aNWkxT3kzUFJs?oc=5",
+        "body": "Oil prices edge lower with no progress on US-Iran talks, Hormuz shipping still disrupted\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-22T00:47:00",
-        "headline": "[MACRO] Stocks gain as Trump extends Iran ceasefire - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQWU5pSnFPTHpSYi1aNnVNMnVRMWdKRURqVHdjT2JJZlJ6T1Y1Wi0tbEh5c3ZjMktqbWJDeXptcHNhcGl3VVdjWWs5d0w4eFh0Q3BEQ09xZ0lUcUJqRXg2UHdHNGEyb1pydjVMR25ZNDB5aGF2YVBrZWtLaWpLVWx3blNhYw?oc=5",
-        "body": "Stocks gain as Trump extends Iran ceasefire\u00a0\u00a0Reuters"
+        "published_at": "2026-04-22T22:50:44",
+        "headline": "[MACRO] ServiceNow CEO downplays impact of Iran war and AI: 'Our business is doing great'",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/04/22/servicenow-ceo-downplays-impact-of-iran-war-and-ai-our-business-is-doing-great.html",
+        "body": "ServiceNow CEO Bill McDermott pushed back on concerns about the Iran war and AI disruption risks in an interview with CNBC's Jim Cramer."
       },
       {
-        "published_at": "2026-04-22T00:35:00",
-        "headline": "[MACRO] Dollar at week high as markets raise doubts over Iran ceasefire - Reuters",
+        "published_at": "2026-04-22T22:10:00",
+        "headline": "[MACRO] US Navy Secretary Phelan fired, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPMlR2QTRocm1UcTllSVNxWW5SN09SaWJvQ2N6RmdhMkVxdVRwQVJhSE1jbW9CX1otTzJlaFQ5bUpqbEpaU09aQ2J0Z2QtdmVQdm4yT3dLd3VWQjBtaW1DbnczRjdNUVlld3lxSmtiU0swdEdPYTdocV8tOWg2MHBGN3d6QVY1QUwtX09kRnVHSzdIVTItSEpjY3ViQ2FYVHk2Z1FhVWczWXhlN2xwVFQ1WTBB?oc=5",
-        "body": "Dollar at week high as markets raise doubts over Iran ceasefire\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY1dJUkJxeF9xUm1RdzhPRjdwTk02dkV4MXFlcnA0ZjN3eXIyNTBEb1htMUhwbHdLOW90c3QxQmkyX3ZBVDBOb1hJY2hnMWx3djVMSVk4amRPbjRTV3RSYV9kQ3YtVTZad1lDb00xSEh4WWZnNFBiUFI1bTkxakw2Rnh5N05WVzNIX0xfNlktX2paN05ROXV1RERDalA?oc=5",
+        "body": "US Navy Secretary Phelan fired, sources say\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-21T22:53:00",
-        "headline": "[MACRO] Oil prices turn lower as investors assess outlook for US-Iran peace talks - Reuters",
+        "published_at": "2026-04-22T21:36:50",
+        "headline": "[MACRO] Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR09ZSmd3djlFaW5uX3VvR2hWbWIyeC1jYkZ6UHIzV3VOMmJ2VWdmM0hnd0R1cjNqcTg1OWNBN1BjNWhUck1oVmwwMW5MOW85bWFDOWU0UkFZR2JhN0Q5RE83N0ltRzR1ZEZqdXpxZWozT0FSUHVFYnV1aWRLYVVodVp1d1dIaWJIVVdxMVpOeXByZUtUb0ZYc01sczBjdndtZE0yMTlid0poek0?oc=5",
-        "body": "Oil prices turn lower as investors assess outlook for US-Iran peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOY0dac0FOcTVjR1h4cW5PS0FxVVdkRUlsU3VfMWdZOVRialU3S3cxNl9ZOVZOOWtMekJsdWFnZ21aNENlaFA1Q3E5QlQ3NE5Ea0lYdDVteU5RWGNpNTU2OHhZMzZCZGJiRXZPTnFwWVluT20wUWxVMHA4Q2NfM21IWlB0OWxiblY0cTlzY29KWkpiQUpVcWtkVnNscjBKX2hKTjRESld1b3ZxY0NsOHFYV1RLbVpRdmN4OXc?oc=5",
+        "body": "Exclusive: US intercepts three Iranian oil tankers in Asian waters, sources say\u00a0\u00a0Reuters"
       }
     ]
   }
