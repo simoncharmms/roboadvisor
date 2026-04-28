@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-27",
+    "generated_at": "2026-04-28",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -1077,6 +1077,10 @@
       {
         "date": "2026-04-24",
         "close": 76.44999694824219
+      },
+      {
+        "date": "2026-04-27",
+        "close": 76.55000305175781
       }
     ],
     "IQQH.DE": [
@@ -2079,6 +2083,10 @@
       {
         "date": "2026-04-24",
         "close": 9.84000015258789
+      },
+      {
+        "date": "2026-04-27",
+        "close": 9.807000160217285
       }
     ],
     "EUN4.DE": [
@@ -3081,55 +3089,59 @@
       {
         "date": "2026-04-24",
         "close": 107.25499725341797
+      },
+      {
+        "date": "2026-04-27",
+        "close": 107.05999755859375
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-04-27",
+      "date": "2026-04-28",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals show a BUY trend with a 6.77% move from the last turning point, but the ARIMA forecast projects essentially flat price action over both 1-day and 5-day horizons (76.40 EUR vs. current 76.45 EUR), suggesting momentum may be stalling. GARCH volatility at 21.44% is moderate, not signaling an imminent breakout in either direction. All available news is purely macro in nature (Iran-US tensions, oil prices, AI stocks) with no company- or sector-specific coverage for AMUN.PA, making it impossible to form a fundamental view. Given the flat forecast and absence of relevant news, maintaining the current 14.7% weight without adding or reducing is the prudent course.",
-      "arima_forecast_1d": 76.4034,
-      "arima_forecast_5d": 76.4034,
-      "garch_volatility": 0.214412
+      "llm_rationale": "The quantitative signals are marginally bullish, with a BUY filter and an upward trend, but the ARIMA forecast shows virtually zero expected price movement over both 1-day and 5-day horizons, suggesting momentum has stalled. All available news is macro in nature, focused on escalating US-Iran tensions and geopolitical uncertainty \u2014 none of it is company- or sector-specific to Amundi (AMUN.PA). As a major asset manager, Amundi may benefit indirectly from risk-off flows into gold and fixed income, but the geopolitical uncertainty also clouds equity market sentiment broadly. Given the flat ARIMA forecast, moderate volatility (21.77%), and absence of company-specific catalysts, a HOLD is appropriate while monitoring for macro developments.",
+      "arima_forecast_1d": 76.5586,
+      "arima_forecast_5d": 76.5586,
+      "garch_volatility": 0.217671
     },
     {
-      "date": "2026-04-27",
+      "date": "2026-04-28",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quantitative signals collectively support a hold: the Y%-Filter confirms an upward trend, ARIMA forecasts show near-flat price movement (+1d and +5d both marginally below current price), and GARCH volatility at 5.95% is low, indicating a stable environment. The macro news is dominated by US-Iran geopolitical uncertainty and stalled peace talks, which introduces elevated oil-price risk and broader market unease that could weigh on European equities. However, no news is directly negative for this specific position, and the signals do not warrant reducing a near 28.5% allocation at this time. Monitoring the Iran situation closely is warranted given its potential to shift risk appetite materially.",
-      "arima_forecast_1d": 107.2467,
-      "arima_forecast_5d": 107.2,
-      "garch_volatility": 0.059508
+      "llm_rationale": "The quantitative signals uniformly support a HOLD: the Y%-Filter shows an upward trend still in early progression, ARIMA forecasts are essentially flat over both 1-day and 5-day horizons, and GARCH volatility of 5.76% is low, indicating a stable pricing environment. The macro news is dominated by escalating US-Iran tensions, stalled nuclear negotiations, and rising oil prices, which create broad geopolitical uncertainty that could weigh on European bond ETFs through risk-off or inflationary pressure channels. However, the BoJ holding rates steady and no direct shock to European fixed income markets suggests no urgent reason to reduce exposure. Given the position's significant portfolio weight of 28.6% and the absence of asset-specific negative catalysts, maintaining the current position is prudent until clearer directional signals emerge.",
+      "arima_forecast_1d": 107.063,
+      "arima_forecast_5d": 107.0182,
+      "garch_volatility": 0.057556
     },
     {
-      "date": "2026-04-27",
+      "date": "2026-04-28",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals a BUY with an upward trend, but the ARIMA forecast projects zero price movement over both 1-day and 5-day horizons, offering no momentum confirmation from the statistical model. News flow is entirely macro in nature \u2014 centered on US-Iran conflict and oil price dynamics \u2014 with no direct relevance to IQQH.DE, making it impossible to derive a news-based directional view. At 56.7% portfolio weight, the position is already heavily concentrated, and GARCH-implied annualised volatility of 22.64% warrants caution before adding further exposure. A HOLD is appropriate until either the ARIMA forecast shows directional movement or asset-specific news emerges to validate the trend signal.",
-      "arima_forecast_1d": 9.84,
-      "arima_forecast_5d": 9.84,
-      "garch_volatility": 0.226436
+      "llm_rationale": "The Y%-Filter signals an upward trend and the ARIMA forecasts are flat, suggesting no immediate quantitative pressure to reduce the position, but the macro environment is dominated by an unresolved Iran war with stalled US-Iran negotiations, rising oil prices, and broader geopolitical uncertainty that creates meaningful downside risk for a clean energy ETF. Escalating Middle East tensions, disrupted LNG flows through the Strait of Hormuz, and central bank caution all point to a risk-off backdrop that could weigh on green energy assets despite the quant buy signal. Given the outsized portfolio concentration of 56.7% and GARCH volatility of 21.88%, a HOLD is prudent until the geopolitical situation clarifies rather than adding further exposure at this juncture.",
+      "arima_forecast_1d": 9.807,
+      "arima_forecast_5d": 9.807,
+      "garch_volatility": 0.218805
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-27",
+      "run_date": "2026-04-28",
       "ticker": "AMUN.PA",
-      "total_return_pct": 30.217,
-      "sharpe_ratio": 0.3523,
+      "total_return_pct": 30.3874,
+      "sharpe_ratio": 0.3542,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-04-27",
+      "run_date": "2026-04-28",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3137,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-27",
+      "run_date": "2026-04-28",
       "ticker": "IQQH.DE",
-      "total_return_pct": -1.0415,
-      "sharpe_ratio": -0.1823,
+      "total_return_pct": -1.3733,
+      "sharpe_ratio": -0.1892,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3248,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-04-27T01:40:00",
-        "headline": "[MACRO] China's industrial profit growth quickens even as Iran war heightens risks - Reuters",
+        "published_at": "2026-04-28T02:01:00",
+        "headline": "[MACRO] Trump not happy with latest Iran proposal to end the war, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSmJsR1BjbHcySjZMeGVMd3I5cWkyY0lkQlNNUkFBeWYzdjZLWDFmbUJoQU41aUF1VUhNalZ5WUFGbl9wQktzMFJvSnluWm9WYl82QXJKcVg5OEFFUFV5WkVJLVRvRV9FbVdFeFdwUTcycFV0bktPejBMdHpqX0dVM2tlS3dzV2p4WUxxb3pVZjd3ZHZLVTR3NVR5T1RrVk51NnkzRmdDc2xxQVpPV2c?oc=5",
-        "body": "China's industrial profit growth quickens even as Iran war heightens risks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMzJwYTUtVF9BUVRoM0hkbHlMeXdXaDhVXzk0dUpsYXpBdmNUc2ladEtLT3ZJVk9EeXU3SlVfWlFiWGFYVGRRbXZ5bWtacUVfNElXUHhfVFhQWFZxUnBNaF9hVjBLWkFJR0dsU3hDS0pFanhNSzRaaE5NQmVrcVBFTV9NWHNJSzVYUm1LQ29XN25ZMkk3VEM4UlNnNDUxMUlNRUNDb2sxcmJsSVhQU21sSE8yUVNya1dPdVF4UC13?oc=5",
+        "body": "Trump not happy with latest Iran proposal to end the war, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:38:50",
-        "headline": "[MACRO] Dollar advances as US-Iran talks suffer setback - Reuters",
+        "published_at": "2026-04-28T01:32:00",
+        "headline": "[MACRO] Gold steady with US-Iran talks, central banks in focus - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWlM4RlNXbkFxNVJ6WVBIMDhNVnpLeEtFaVhBWG9fVWtfQzdCSGRycDExQkhCR3JkREhHVC13ZS1yX3VKQklJbWhmUEw4aHVNN18xNVlFdEpsbkx3R19IQ1AtTXdGLW9oZkNxYUlPNGVrdTExM1kzVW8tcDM0MnFHTTVtbTB3c1BYdWxJcFY0dlBWUVFSdGk0YUtqN2NZTXNZ?oc=5",
-        "body": "Dollar advances as US-Iran talks suffer setback\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZGNpbTBCYzQ2NWNmX3k1azB3TGczbV9nb3hsM1lQR2l5dTlxUkxQdjZjZks2T0xZM1Q4MEtSX3psV3lRT3ZIbU41VS1fSUF5MTBtV1liTUl3QW5HUGhHZ2ZKWi1GVHlTOC1zMW1obTFOamZ0OGdRRFlTNDA0SFZtQkZ6VUg3U1Z6R1Zvemw4RGhYRmhVLXBQWUM1c1AwMl9qaHFISEJ2RTI2NTA?oc=5",
+        "body": "Gold steady with US-Iran talks, central banks in focus\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:12:00",
-        "headline": "[MACRO] Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports - Reuters",
+        "published_at": "2026-04-28T01:02:00",
+        "headline": "[MACRO] Oil prices rise as no end to Iran war stand-off seems in sight - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONFM3aHJMV0FzVHVSaGcwVEx2VlhKa0x5azA4SXJGT1dmS3pva1pZS1hpbnRHcE1aRV9pNEhDOU15STEwYmJOTUtOZUZQWGV2czcza1FvSDE4elkyUnhDS3F6V19TWWgtci0xVWYzMjNCY1NVOXZnZWtENEcxVWl0WFRzaFZXbkFjWW9SWTMxa19aWUFhbmVqTlBTdFFWR1ktdWxZMC1jcjZHU3RFenRNc0RkU25fWTFBUDlyT2l1Q2NrNWM?oc=5",
-        "body": "Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSWdEcWtxT1pxaGxwMmc3bHE1elRLZlNOZHlvNWQtWG94NTZ0RzB3STJ3NmQxT0ZMUVhKYWYwWVZjbGhyMkdLaDZ1VEZHT3ZGdTB6cTFXdlV3MzRUT0s0N0JFZV9OUk9sRGNiS2NNeDlGa1czbGgxeGhhOV9BT09qcURMcDNRb3Q2SnE4Y1NSU2JzOXNyX0Q4eFl4My1SNVU1NWJITm43aUc?oc=5",
+        "body": "Oil prices rise as no end to Iran war stand-off seems in sight\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T23:54:46",
-        "headline": "[MACRO] Oil climbs nearly 2% as US-Iran peace talks stall - Reuters",
+        "published_at": "2026-04-28T00:43:00",
+        "headline": "[MACRO] Trump unhappy with Iranian proposal, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQU9lWjRuUWhQNDE1NjUtYmRBUk5ZN0lQc2dmaG5JMlY0RlBDYmlibmUtM0llNGNrUkNkRlp6WXJSV1ZIcjJkdXNFNTFlMGRnV09TR0twYWp5aU1LeGpLcUZQaGZveHBwc3pqd05HNmdBTVVOa3FReGZTWndOblR0cmFVWF9mOXJKR3ZDS3UtOEtLNzR3UndpaU14Y1dqN3VW?oc=5",
-        "body": "Oil climbs nearly 2% as US-Iran peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSkhvWWdfVi1BSVJCTkhjQndtTEcxMHllWm9IQ0dSSER3QXZrVU5uRXRhOVVtZHEzUERmOENwRW9xOGtKd1lhRzhvWEdRbEloUHItU1NNUDdqQld5TXNHQlg4TnhZSFhKY2xUSVBOVVlUaHFqWEYxd1pLYWlILU5CZ3h6bkdQVUx5YXlmWi1fX28ydnNadDZMQVVRNklVTnJKQ3J4WWJRU0w5X28?oc=5",
+        "body": "Trump unhappy with Iranian proposal, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T22:21:00",
-        "headline": "[MACRO] Chips carry stocks higher; Oil jumps on stalled peace talks - Reuters",
+        "published_at": "2026-04-27T22:47:45",
+        "headline": "[MACRO] Iranian defence official holds talks with Russian, Belarusian ministers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdFFHZnR3cEZhaHhha01WbDU2dGlnQWJyX0w0Q2poQk55Y1RjQ1N5Zk84NVVraDBfX3ljdFZab1IxejVPZUZMRTVyRnQxYmZEWDYzaExnRTFKOENYLXBmdkVHeTlSZW1LSDI2b050UE5DNGJnMU1NdHFEaEdPM1JBS1dRbzItbGdH?oc=5",
-        "body": "Chips carry stocks higher; Oil jumps on stalled peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQy1LcEduRGFkRWFrUG5rQ0ZldmZEdG1aUjZwNkhWLUdxc3g1QXZvUktyR3FHRWZ6WHA2VXRkM2YyQVZVdm9Yblo3TnZMODBuaU5SOGxUSlRzQXRzdXlMaUw4T2JFR1VLOGFCaXdzUGd0NmFTSjZPZTJYMTRoX0dXUEhEMklSU0ViSkthdVRUZXF4YzhXc2daNC1FcXRJUHpwc0NoYl9xeWdCYldVRUhxeU44OGFDZDlRMFlr?oc=5",
+        "body": "Iranian defence official holds talks with Russian, Belarusian ministers\u00a0\u00a0Reuters"
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-04-27T01:40:00",
-        "headline": "[MACRO] China's industrial profit growth quickens even as Iran war heightens risks - Reuters",
+        "published_at": "2026-04-28T02:01:00",
+        "headline": "[MACRO] Trump not happy with latest Iran proposal to end the war, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSmJsR1BjbHcySjZMeGVMd3I5cWkyY0lkQlNNUkFBeWYzdjZLWDFmbUJoQU41aUF1VUhNalZ5WUFGbl9wQktzMFJvSnluWm9WYl82QXJKcVg5OEFFUFV5WkVJLVRvRV9FbVdFeFdwUTcycFV0bktPejBMdHpqX0dVM2tlS3dzV2p4WUxxb3pVZjd3ZHZLVTR3NVR5T1RrVk51NnkzRmdDc2xxQVpPV2c?oc=5",
-        "body": "China's industrial profit growth quickens even as Iran war heightens risks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMzJwYTUtVF9BUVRoM0hkbHlMeXdXaDhVXzk0dUpsYXpBdmNUc2ladEtLT3ZJVk9EeXU3SlVfWlFiWGFYVGRRbXZ5bWtacUVfNElXUHhfVFhQWFZxUnBNaF9hVjBLWkFJR0dsU3hDS0pFanhNSzRaaE5NQmVrcVBFTV9NWHNJSzVYUm1LQ29XN25ZMkk3VEM4UlNnNDUxMUlNRUNDb2sxcmJsSVhQU21sSE8yUVNya1dPdVF4UC13?oc=5",
+        "body": "Trump not happy with latest Iran proposal to end the war, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:38:50",
-        "headline": "[MACRO] Dollar advances as US-Iran talks suffer setback - Reuters",
+        "published_at": "2026-04-28T01:32:00",
+        "headline": "[MACRO] Gold steady with US-Iran talks, central banks in focus - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWlM4RlNXbkFxNVJ6WVBIMDhNVnpLeEtFaVhBWG9fVWtfQzdCSGRycDExQkhCR3JkREhHVC13ZS1yX3VKQklJbWhmUEw4aHVNN18xNVlFdEpsbkx3R19IQ1AtTXdGLW9oZkNxYUlPNGVrdTExM1kzVW8tcDM0MnFHTTVtbTB3c1BYdWxJcFY0dlBWUVFSdGk0YUtqN2NZTXNZ?oc=5",
-        "body": "Dollar advances as US-Iran talks suffer setback\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZGNpbTBCYzQ2NWNmX3k1azB3TGczbV9nb3hsM1lQR2l5dTlxUkxQdjZjZks2T0xZM1Q4MEtSX3psV3lRT3ZIbU41VS1fSUF5MTBtV1liTUl3QW5HUGhHZ2ZKWi1GVHlTOC1zMW1obTFOamZ0OGdRRFlTNDA0SFZtQkZ6VUg3U1Z6R1Zvemw4RGhYRmhVLXBQWUM1c1AwMl9qaHFISEJ2RTI2NTA?oc=5",
+        "body": "Gold steady with US-Iran talks, central banks in focus\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:12:00",
-        "headline": "[MACRO] Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports - Reuters",
+        "published_at": "2026-04-28T01:02:00",
+        "headline": "[MACRO] Oil prices rise as no end to Iran war stand-off seems in sight - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONFM3aHJMV0FzVHVSaGcwVEx2VlhKa0x5azA4SXJGT1dmS3pva1pZS1hpbnRHcE1aRV9pNEhDOU15STEwYmJOTUtOZUZQWGV2czcza1FvSDE4elkyUnhDS3F6V19TWWgtci0xVWYzMjNCY1NVOXZnZWtENEcxVWl0WFRzaFZXbkFjWW9SWTMxa19aWUFhbmVqTlBTdFFWR1ktdWxZMC1jcjZHU3RFenRNc0RkU25fWTFBUDlyT2l1Q2NrNWM?oc=5",
-        "body": "Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSWdEcWtxT1pxaGxwMmc3bHE1elRLZlNOZHlvNWQtWG94NTZ0RzB3STJ3NmQxT0ZMUVhKYWYwWVZjbGhyMkdLaDZ1VEZHT3ZGdTB6cTFXdlV3MzRUT0s0N0JFZV9OUk9sRGNiS2NNeDlGa1czbGgxeGhhOV9BT09qcURMcDNRb3Q2SnE4Y1NSU2JzOXNyX0Q4eFl4My1SNVU1NWJITm43aUc?oc=5",
+        "body": "Oil prices rise as no end to Iran war stand-off seems in sight\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T23:54:46",
-        "headline": "[MACRO] Oil climbs nearly 2% as US-Iran peace talks stall - Reuters",
+        "published_at": "2026-04-28T00:43:00",
+        "headline": "[MACRO] Trump unhappy with Iranian proposal, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQU9lWjRuUWhQNDE1NjUtYmRBUk5ZN0lQc2dmaG5JMlY0RlBDYmlibmUtM0llNGNrUkNkRlp6WXJSV1ZIcjJkdXNFNTFlMGRnV09TR0twYWp5aU1LeGpLcUZQaGZveHBwc3pqd05HNmdBTVVOa3FReGZTWndOblR0cmFVWF9mOXJKR3ZDS3UtOEtLNzR3UndpaU14Y1dqN3VW?oc=5",
-        "body": "Oil climbs nearly 2% as US-Iran peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSkhvWWdfVi1BSVJCTkhjQndtTEcxMHllWm9IQ0dSSER3QXZrVU5uRXRhOVVtZHEzUERmOENwRW9xOGtKd1lhRzhvWEdRbEloUHItU1NNUDdqQld5TXNHQlg4TnhZSFhKY2xUSVBOVVlUaHFqWEYxd1pLYWlILU5CZ3h6bkdQVUx5YXlmWi1fX28ydnNadDZMQVVRNklVTnJKQ3J4WWJRU0w5X28?oc=5",
+        "body": "Trump unhappy with Iranian proposal, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T22:21:00",
-        "headline": "[MACRO] Chips carry stocks higher; Oil jumps on stalled peace talks - Reuters",
+        "published_at": "2026-04-27T22:47:45",
+        "headline": "[MACRO] Iranian defence official holds talks with Russian, Belarusian ministers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdFFHZnR3cEZhaHhha01WbDU2dGlnQWJyX0w0Q2poQk55Y1RjQ1N5Zk84NVVraDBfX3ljdFZab1IxejVPZUZMRTVyRnQxYmZEWDYzaExnRTFKOENYLXBmdkVHeTlSZW1LSDI2b050UE5DNGJnMU1NdHFEaEdPM1JBS1dRbzItbGdH?oc=5",
-        "body": "Chips carry stocks higher; Oil jumps on stalled peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQy1LcEduRGFkRWFrUG5rQ0ZldmZEdG1aUjZwNkhWLUdxc3g1QXZvUktyR3FHRWZ6WHA2VXRkM2YyQVZVdm9Yblo3TnZMODBuaU5SOGxUSlRzQXRzdXlMaUw4T2JFR1VLOGFCaXdzUGd0NmFTSjZPZTJYMTRoX0dXUEhEMklSU0ViSkthdVRUZXF4YzhXc2daNC1FcXRJUHpwc0NoYl9xeWdCYldVRUhxeU44OGFDZDlRMFlr?oc=5",
+        "body": "Iranian defence official holds talks with Russian, Belarusian ministers\u00a0\u00a0Reuters"
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-04-27T01:40:00",
-        "headline": "[MACRO] China's industrial profit growth quickens even as Iran war heightens risks - Reuters",
+        "published_at": "2026-04-28T02:01:00",
+        "headline": "[MACRO] Trump not happy with latest Iran proposal to end the war, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSmJsR1BjbHcySjZMeGVMd3I5cWkyY0lkQlNNUkFBeWYzdjZLWDFmbUJoQU41aUF1VUhNalZ5WUFGbl9wQktzMFJvSnluWm9WYl82QXJKcVg5OEFFUFV5WkVJLVRvRV9FbVdFeFdwUTcycFV0bktPejBMdHpqX0dVM2tlS3dzV2p4WUxxb3pVZjd3ZHZLVTR3NVR5T1RrVk51NnkzRmdDc2xxQVpPV2c?oc=5",
-        "body": "China's industrial profit growth quickens even as Iran war heightens risks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMzJwYTUtVF9BUVRoM0hkbHlMeXdXaDhVXzk0dUpsYXpBdmNUc2ladEtLT3ZJVk9EeXU3SlVfWlFiWGFYVGRRbXZ5bWtacUVfNElXUHhfVFhQWFZxUnBNaF9hVjBLWkFJR0dsU3hDS0pFanhNSzRaaE5NQmVrcVBFTV9NWHNJSzVYUm1LQ29XN25ZMkk3VEM4UlNnNDUxMUlNRUNDb2sxcmJsSVhQU21sSE8yUVNya1dPdVF4UC13?oc=5",
+        "body": "Trump not happy with latest Iran proposal to end the war, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:38:50",
-        "headline": "[MACRO] Dollar advances as US-Iran talks suffer setback - Reuters",
+        "published_at": "2026-04-28T01:32:00",
+        "headline": "[MACRO] Gold steady with US-Iran talks, central banks in focus - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWlM4RlNXbkFxNVJ6WVBIMDhNVnpLeEtFaVhBWG9fVWtfQzdCSGRycDExQkhCR3JkREhHVC13ZS1yX3VKQklJbWhmUEw4aHVNN18xNVlFdEpsbkx3R19IQ1AtTXdGLW9oZkNxYUlPNGVrdTExM1kzVW8tcDM0MnFHTTVtbTB3c1BYdWxJcFY0dlBWUVFSdGk0YUtqN2NZTXNZ?oc=5",
-        "body": "Dollar advances as US-Iran talks suffer setback\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZGNpbTBCYzQ2NWNmX3k1azB3TGczbV9nb3hsM1lQR2l5dTlxUkxQdjZjZks2T0xZM1Q4MEtSX3psV3lRT3ZIbU41VS1fSUF5MTBtV1liTUl3QW5HUGhHZ2ZKWi1GVHlTOC1zMW1obTFOamZ0OGdRRFlTNDA0SFZtQkZ6VUg3U1Z6R1Zvemw4RGhYRmhVLXBQWUM1c1AwMl9qaHFISEJ2RTI2NTA?oc=5",
+        "body": "Gold steady with US-Iran talks, central banks in focus\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-27T01:12:00",
-        "headline": "[MACRO] Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports - Reuters",
+        "published_at": "2026-04-28T01:02:00",
+        "headline": "[MACRO] Oil prices rise as no end to Iran war stand-off seems in sight - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONFM3aHJMV0FzVHVSaGcwVEx2VlhKa0x5azA4SXJGT1dmS3pva1pZS1hpbnRHcE1aRV9pNEhDOU15STEwYmJOTUtOZUZQWGV2czcza1FvSDE4elkyUnhDS3F6V19TWWgtci0xVWYzMjNCY1NVOXZnZWtENEcxVWl0WFRzaFZXbkFjWW9SWTMxa19aWUFhbmVqTlBTdFFWR1ktdWxZMC1jcjZHU3RFenRNc0RkU25fWTFBUDlyT2l1Q2NrNWM?oc=5",
-        "body": "Iran gave US a proposal for reopening the Strait Of Hormuz and ending the war, Axios reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNSWdEcWtxT1pxaGxwMmc3bHE1elRLZlNOZHlvNWQtWG94NTZ0RzB3STJ3NmQxT0ZMUVhKYWYwWVZjbGhyMkdLaDZ1VEZHT3ZGdTB6cTFXdlV3MzRUT0s0N0JFZV9OUk9sRGNiS2NNeDlGa1czbGgxeGhhOV9BT09qcURMcDNRb3Q2SnE4Y1NSU2JzOXNyX0Q4eFl4My1SNVU1NWJITm43aUc?oc=5",
+        "body": "Oil prices rise as no end to Iran war stand-off seems in sight\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T23:54:46",
-        "headline": "[MACRO] Oil climbs nearly 2% as US-Iran peace talks stall - Reuters",
+        "published_at": "2026-04-28T00:43:00",
+        "headline": "[MACRO] Trump unhappy with Iranian proposal, US official says - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQQU9lWjRuUWhQNDE1NjUtYmRBUk5ZN0lQc2dmaG5JMlY0RlBDYmlibmUtM0llNGNrUkNkRlp6WXJSV1ZIcjJkdXNFNTFlMGRnV09TR0twYWp5aU1LeGpLcUZQaGZveHBwc3pqd05HNmdBTVVOa3FReGZTWndOblR0cmFVWF9mOXJKR3ZDS3UtOEtLNzR3UndpaU14Y1dqN3VW?oc=5",
-        "body": "Oil climbs nearly 2% as US-Iran peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSkhvWWdfVi1BSVJCTkhjQndtTEcxMHllWm9IQ0dSSER3QXZrVU5uRXRhOVVtZHEzUERmOENwRW9xOGtKd1lhRzhvWEdRbEloUHItU1NNUDdqQld5TXNHQlg4TnhZSFhKY2xUSVBOVVlUaHFqWEYxd1pLYWlILU5CZ3h6bkdQVUx5YXlmWi1fX28ydnNadDZMQVVRNklVTnJKQ3J4WWJRU0w5X28?oc=5",
+        "body": "Trump unhappy with Iranian proposal, US official says\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-26T22:21:00",
-        "headline": "[MACRO] Chips carry stocks higher; Oil jumps on stalled peace talks - Reuters",
+        "published_at": "2026-04-27T22:47:45",
+        "headline": "[MACRO] Iranian defence official holds talks with Russian, Belarusian ministers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOdFFHZnR3cEZhaHhha01WbDU2dGlnQWJyX0w0Q2poQk55Y1RjQ1N5Zk84NVVraDBfX3ljdFZab1IxejVPZUZMRTVyRnQxYmZEWDYzaExnRTFKOENYLXBmdkVHeTlSZW1LSDI2b050UE5DNGJnMU1NdHFEaEdPM1JBS1dRbzItbGdH?oc=5",
-        "body": "Chips carry stocks higher; Oil jumps on stalled peace talks\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQy1LcEduRGFkRWFrUG5rQ0ZldmZEdG1aUjZwNkhWLUdxc3g1QXZvUktyR3FHRWZ6WHA2VXRkM2YyQVZVdm9Yblo3TnZMODBuaU5SOGxUSlRzQXRzdXlMaUw4T2JFR1VLOGFCaXdzUGd0NmFTSjZPZTJYMTRoX0dXUEhEMklSU0ViSkthdVRUZXF4YzhXc2daNC1FcXRJUHpwc0NoYl9xeWdCYldVRUhxeU44OGFDZDlRMFlr?oc=5",
+        "body": "Iranian defence official holds talks with Russian, Belarusian ministers\u00a0\u00a0Reuters"
       }
     ]
   }
