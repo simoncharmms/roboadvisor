@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-30",
+    "generated_at": "2026-05-01",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-04-30",
-        "close": 65.38314056396484
-      },
       {
         "date": "2025-05-02",
         "close": 67.7401351928711
@@ -1081,13 +1077,13 @@
       {
         "date": "2026-04-29",
         "close": 81.1500015258789
+      },
+      {
+        "date": "2026-04-30",
+        "close": 82.19999694824219
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-04-30",
-        "close": 5.8932366371154785
-      },
       {
         "date": "2025-05-02",
         "close": 5.923818111419678
@@ -2087,13 +2083,13 @@
       {
         "date": "2026-04-29",
         "close": 9.932999610900879
+      },
+      {
+        "date": "2026-04-30",
+        "close": 10.074000358581543
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-04-30",
-        "close": 107.03809356689453
-      },
       {
         "date": "2025-05-02",
         "close": 106.63804626464844
@@ -3093,55 +3089,59 @@
       {
         "date": "2026-04-29",
         "close": 106.63500213623047
+      },
+      {
+        "date": "2026-04-30",
+        "close": 107.13999938964844
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-04-30",
+      "date": "2026-05-01",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals are modestly constructive \u2014 the Y%-Filter is on a BUY with an upward trend and the ARIMA forecast projects a marginal gain to 81.45 EUR over the next five days \u2014 suggesting no urgent reason to exit. However, none of the eight provided news articles are specific to AMUN.PA; all are macro or unrelated headlines, leaving fundamental conviction absent. With a 15.4% portfolio weight already representing a meaningful allocation and GARCH volatility at 21.72% (moderate), the prudent stance is to hold the existing position without adding exposure until company-specific news emerges. Confidence is low solely due to the complete absence of issuer-level information.",
-      "arima_forecast_1d": 81.4481,
-      "arima_forecast_5d": 81.4481,
-      "garch_volatility": 0.217245
+      "llm_rationale": "The quantitative signals are mildly constructive \u2014 the Y%-Filter shows a BUY with an upward trend, but the ARIMA forecast is essentially flat (+0.05 EUR over 5 days), suggesting limited near-term price momentum. GARCH annualised volatility at 39% is elevated, indicating meaningful downside risk that tempers conviction in the BUY signal. None of the available news articles are specific to AMUN.PA; all are macro headlines dominated by Middle East conflict and geopolitical uncertainty, which introduces broad risk-off pressure but cannot be directly linked to this position. Given the flat forecast, high volatility, and absence of company-specific news, maintaining the current weight is the prudent course until clearer signals emerge.",
+      "arima_forecast_1d": 82.2431,
+      "arima_forecast_5d": 82.2431,
+      "garch_volatility": 0.390015
     },
     {
-      "date": "2026-04-30",
+      "date": "2026-05-01",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The Y%-Filter confirms an upward trend, and the ARIMA forecasts show near-flat price movement over the next 1\u20135 days, suggesting no meaningful directional catalyst. GARCH annualised volatility of 5.47% is low, consistent with a stable, range-bound ETF position. None of the available news articles are directly relevant to EUN4.DE; the macro headlines (US-Iran conflict, oil prices, Fed dissent) introduce broad geopolitical and rate uncertainty but are insufficient to override the quant HOLD signal. Maintaining the current 28% weight is appropriate given the absence of a clear positive or negative catalyst.",
-      "arima_forecast_1d": 106.6439,
-      "arima_forecast_5d": 106.6039,
-      "garch_volatility": 0.054685
+      "llm_rationale": "The quantitative signals are collectively benign: the Y%-Filter confirms an upward trend with a HOLD signal, ARIMA forecasts show near-flat price action over the next five days, and annualised GARCH volatility of 5.39% is very low, indicating a stable instrument. The available news is entirely macro in nature (Iran conflict, oil prices, US troop posturing, student loans) with no coverage directly relevant to EUN4.DE, so no news-driven catalyst supports a directional change. Given the absence of instrument-specific news and quant signals that point to continued but modest positive momentum with minimal volatility, holding the current 27.8% weight is appropriate. No action is warranted until a clearer price signal or relevant news emerges.",
+      "arima_forecast_1d": 107.0902,
+      "arima_forecast_5d": 107.0452,
+      "garch_volatility": 0.053878
     },
     {
-      "date": "2026-04-30",
+      "date": "2026-05-01",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals present a mixed picture: the Y%-Filter indicates a BUY with an upward trend, but the ARIMA forecast shows zero expected price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. GARCH volatility at 21.09% is moderate but not alarming. None of the provided news articles are directly relevant to IQQH.DE; the macro headlines covering the US-Iran conflict and oil price gains could have indirect implications for clean energy ETFs, but reasoning beyond that is not supported by the available information. Given the flat ARIMA forecast and lack of relevant news, a HOLD is the prudent stance despite the filter signal.",
-      "arima_forecast_1d": 9.933,
-      "arima_forecast_5d": 9.933,
-      "garch_volatility": 0.210894
+      "llm_rationale": "The quantitative signals show a BUY trend with a 14.75% move from the last turning point, but the ARIMA forecast projects zero price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. The available news is entirely macro in nature \u2014 covering the Iran conflict, geopolitical tensions, and unrelated US policy \u2014 with no articles directly relevant to IQQH.DE or its underlying holdings, making news-based conviction impossible. Given the flat ARIMA forecast, elevated annualised volatility of 23.06%, and the significant 56.7% portfolio concentration, a cautious HOLD is appropriate until clearer directional signals emerge.",
+      "arima_forecast_1d": 10.074,
+      "arima_forecast_5d": 10.074,
+      "garch_volatility": 0.230647
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-04-30",
+      "run_date": "2026-05-01",
       "ticker": "AMUN.PA",
-      "total_return_pct": 38.2225,
-      "sharpe_ratio": 0.4562,
+      "total_return_pct": 40.011,
+      "sharpe_ratio": 0.4791,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-04-30",
+      "run_date": "2026-05-01",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-04-30",
+      "run_date": "2026-05-01",
       "ticker": "IQQH.DE",
-      "total_return_pct": -0.1062,
-      "sharpe_ratio": -0.163,
+      "total_return_pct": 1.3118,
+      "sharpe_ratio": -0.135,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3260,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-04-30T01:07:00",
-        "headline": "[MACRO] Oil prices extend gains as US-Iran war deadlock keeps supply off market - Reuters",
+        "published_at": "2026-05-01T01:07:00",
+        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenNidWVwSUNlZUxVRDFaR3N2NVdjRXdmTmJNZGk2T2prVmh6bTJndHR1bm1PUmhmbjN2dkpMYTN5NG5IZlFNUExLclNlcWJMVzFrd1VjTXoxRlFEWmtPbDlGZ055WlJVbEhESGRob0hPVFVKemt2aDNhaGpDR1RzZmRORVM3M0RmbjhuY0ctSGlYaEJXYkVtbmZtZnZZNnZHX3FVcXNIQm4wOXJ1Mk83dXFILXdmQi0xcFYzMw?oc=5",
-        "body": "Oil prices extend gains as US-Iran war deadlock keeps supply off market\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
+        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T21:13:15",
-        "headline": "[MACRO] Canada says IRGC officials banned as Iran officials skip FIFA event - Reuters",
+        "published_at": "2026-04-30T22:39:00",
+        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNT0hjam5EMV9RMURtT1B4d2FtNnQ4czdUNjFOVGM4UHhRTUNHWTlrREJ3QTA1N1NURHUtM2ExWTVITS04TFpuNjlVNkpWUmxtbDFfSm9yRFFVOEJZM2w5S2ZCM3ozVmJqeENVNjhKYkFiSFpsMUZJem44aU9qRTNnbzY4VllSRjAyTUhWWFAyTEVEQkZyZWtQZWx3S3hpUmNnd3F0WFNWdDRmNkkwN3p0SVB3VDY?oc=5",
-        "body": "Canada says IRGC officials banned as Iran officials skip FIFA event\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
+        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T20:58:51",
-        "headline": "[MACRO] US war in Iran has cost $25 billion so far, says Pentagon official - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM0pxNmpQTG80bzB6MDFrTi1IcHBXZEZEc2hoNEc5bTZ2cFllZ3ExcWZYSzVaVGJmbGVra0plRDFVdlUxX0VDM0hxSGdiTzE1M3hXaXg4allzazM4SllWUkU3RDBBZVg4YTRaRzZLVkhqS3VlSE50blp1UVpOdGt1VWNzVmpseGtmdXY5SFJxLWJBcWZpWFllMGJ1dVpJUmtQbVJXVF9ndFNVc2VENmk3ZjRkbUpJQQ?oc=5",
-        "body": "US war in Iran has cost $25 billion so far, says Pentagon official\u00a0\u00a0Reuters"
-      },
-      {
-        "published_at": "2026-04-29T20:51:20",
-        "headline": "[MACRO] Amazon's cloud unit reports 28% sales growth, topping estimates",
+        "published_at": "2026-04-30T20:28:47",
+        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
         "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/aws-earnings-q1-2026.html",
-        "body": "Amazon Web Services now accounts for over 20% of its parent company's total revenue."
+        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
+        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
       },
       {
-        "published_at": "2026-04-29T19:07:12",
-        "headline": "[MACRO] Major Fed rate dissent, Powell to stay on \u2014 plus, Boeing takes an unwarranted hit",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/major-fed-rate-dissent-powell-to-stay-on-plus-boeing-takes-an-unwarranted-hit.html",
-        "body": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+        "published_at": "2026-04-30T20:26:32",
+        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
+        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-30T20:01:51",
+        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
+        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-04-30T01:07:00",
-        "headline": "[MACRO] Oil prices extend gains as US-Iran war deadlock keeps supply off market - Reuters",
+        "published_at": "2026-05-01T01:07:00",
+        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenNidWVwSUNlZUxVRDFaR3N2NVdjRXdmTmJNZGk2T2prVmh6bTJndHR1bm1PUmhmbjN2dkpMYTN5NG5IZlFNUExLclNlcWJMVzFrd1VjTXoxRlFEWmtPbDlGZ055WlJVbEhESGRob0hPVFVKemt2aDNhaGpDR1RzZmRORVM3M0RmbjhuY0ctSGlYaEJXYkVtbmZtZnZZNnZHX3FVcXNIQm4wOXJ1Mk83dXFILXdmQi0xcFYzMw?oc=5",
-        "body": "Oil prices extend gains as US-Iran war deadlock keeps supply off market\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
+        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T21:13:15",
-        "headline": "[MACRO] Canada says IRGC officials banned as Iran officials skip FIFA event - Reuters",
+        "published_at": "2026-04-30T22:39:00",
+        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNT0hjam5EMV9RMURtT1B4d2FtNnQ4czdUNjFOVGM4UHhRTUNHWTlrREJ3QTA1N1NURHUtM2ExWTVITS04TFpuNjlVNkpWUmxtbDFfSm9yRFFVOEJZM2w5S2ZCM3ozVmJqeENVNjhKYkFiSFpsMUZJem44aU9qRTNnbzY4VllSRjAyTUhWWFAyTEVEQkZyZWtQZWx3S3hpUmNnd3F0WFNWdDRmNkkwN3p0SVB3VDY?oc=5",
-        "body": "Canada says IRGC officials banned as Iran officials skip FIFA event\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
+        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T20:58:51",
-        "headline": "[MACRO] US war in Iran has cost $25 billion so far, says Pentagon official - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM0pxNmpQTG80bzB6MDFrTi1IcHBXZEZEc2hoNEc5bTZ2cFllZ3ExcWZYSzVaVGJmbGVra0plRDFVdlUxX0VDM0hxSGdiTzE1M3hXaXg4allzazM4SllWUkU3RDBBZVg4YTRaRzZLVkhqS3VlSE50blp1UVpOdGt1VWNzVmpseGtmdXY5SFJxLWJBcWZpWFllMGJ1dVpJUmtQbVJXVF9ndFNVc2VENmk3ZjRkbUpJQQ?oc=5",
-        "body": "US war in Iran has cost $25 billion so far, says Pentagon official\u00a0\u00a0Reuters"
-      },
-      {
-        "published_at": "2026-04-29T20:51:20",
-        "headline": "[MACRO] Amazon's cloud unit reports 28% sales growth, topping estimates",
+        "published_at": "2026-04-30T20:28:47",
+        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
         "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/aws-earnings-q1-2026.html",
-        "body": "Amazon Web Services now accounts for over 20% of its parent company's total revenue."
+        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
+        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
       },
       {
-        "published_at": "2026-04-29T19:07:12",
-        "headline": "[MACRO] Major Fed rate dissent, Powell to stay on \u2014 plus, Boeing takes an unwarranted hit",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/major-fed-rate-dissent-powell-to-stay-on-plus-boeing-takes-an-unwarranted-hit.html",
-        "body": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+        "published_at": "2026-04-30T20:26:32",
+        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
+        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-30T20:01:51",
+        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
+        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-04-30T01:07:00",
-        "headline": "[MACRO] Oil prices extend gains as US-Iran war deadlock keeps supply off market - Reuters",
+        "published_at": "2026-05-01T01:07:00",
+        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQenNidWVwSUNlZUxVRDFaR3N2NVdjRXdmTmJNZGk2T2prVmh6bTJndHR1bm1PUmhmbjN2dkpMYTN5NG5IZlFNUExLclNlcWJMVzFrd1VjTXoxRlFEWmtPbDlGZ055WlJVbEhESGRob0hPVFVKemt2aDNhaGpDR1RzZmRORVM3M0RmbjhuY0ctSGlYaEJXYkVtbmZtZnZZNnZHX3FVcXNIQm4wOXJ1Mk83dXFILXdmQi0xcFYzMw?oc=5",
-        "body": "Oil prices extend gains as US-Iran war deadlock keeps supply off market\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
+        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T21:13:15",
-        "headline": "[MACRO] Canada says IRGC officials banned as Iran officials skip FIFA event - Reuters",
+        "published_at": "2026-04-30T22:39:00",
+        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNT0hjam5EMV9RMURtT1B4d2FtNnQ4czdUNjFOVGM4UHhRTUNHWTlrREJ3QTA1N1NURHUtM2ExWTVITS04TFpuNjlVNkpWUmxtbDFfSm9yRFFVOEJZM2w5S2ZCM3ozVmJqeENVNjhKYkFiSFpsMUZJem44aU9qRTNnbzY4VllSRjAyTUhWWFAyTEVEQkZyZWtQZWx3S3hpUmNnd3F0WFNWdDRmNkkwN3p0SVB3VDY?oc=5",
-        "body": "Canada says IRGC officials banned as Iran officials skip FIFA event\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
+        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-04-29T20:58:51",
-        "headline": "[MACRO] US war in Iran has cost $25 billion so far, says Pentagon official - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQM0pxNmpQTG80bzB6MDFrTi1IcHBXZEZEc2hoNEc5bTZ2cFllZ3ExcWZYSzVaVGJmbGVra0plRDFVdlUxX0VDM0hxSGdiTzE1M3hXaXg4allzazM4SllWUkU3RDBBZVg4YTRaRzZLVkhqS3VlSE50blp1UVpOdGt1VWNzVmpseGtmdXY5SFJxLWJBcWZpWFllMGJ1dVpJUmtQbVJXVF9ndFNVc2VENmk3ZjRkbUpJQQ?oc=5",
-        "body": "US war in Iran has cost $25 billion so far, says Pentagon official\u00a0\u00a0Reuters"
-      },
-      {
-        "published_at": "2026-04-29T20:51:20",
-        "headline": "[MACRO] Amazon's cloud unit reports 28% sales growth, topping estimates",
+        "published_at": "2026-04-30T20:28:47",
+        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
         "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/aws-earnings-q1-2026.html",
-        "body": "Amazon Web Services now accounts for over 20% of its parent company's total revenue."
+        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
+        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
       },
       {
-        "published_at": "2026-04-29T19:07:12",
-        "headline": "[MACRO] Major Fed rate dissent, Powell to stay on \u2014 plus, Boeing takes an unwarranted hit",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/29/major-fed-rate-dissent-powell-to-stay-on-plus-boeing-takes-an-unwarranted-hit.html",
-        "body": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading."
+        "published_at": "2026-04-30T20:26:32",
+        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
+        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-04-30T20:01:51",
+        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
+        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
       }
     ]
   }
