@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-01",
+    "generated_at": "2026-05-04",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-05-02",
-        "close": 67.7401351928711
-      },
       {
         "date": "2025-05-05",
         "close": 68.25868225097656
@@ -1085,10 +1081,6 @@
     ],
     "IQQH.DE": [
       {
-        "date": "2025-05-02",
-        "close": 5.923818111419678
-      },
-      {
         "date": "2025-05-05",
         "close": 5.9050750732421875
       },
@@ -2090,10 +2082,6 @@
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-05-02",
-        "close": 106.63804626464844
-      },
       {
         "date": "2025-05-05",
         "close": 106.7258529663086
@@ -3098,34 +3086,34 @@
   },
   "suggestions": [
     {
-      "date": "2026-05-01",
+      "date": "2026-05-04",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals are mildly constructive \u2014 the Y%-Filter shows a BUY with an upward trend, but the ARIMA forecast is essentially flat (+0.05 EUR over 5 days), suggesting limited near-term price momentum. GARCH annualised volatility at 39% is elevated, indicating meaningful downside risk that tempers conviction in the BUY signal. None of the available news articles are specific to AMUN.PA; all are macro headlines dominated by Middle East conflict and geopolitical uncertainty, which introduces broad risk-off pressure but cannot be directly linked to this position. Given the flat forecast, high volatility, and absence of company-specific news, maintaining the current weight is the prudent course until clearer signals emerge.",
+      "llm_rationale": "The quantitative signals are mildly constructive \u2014 a BUY filter signal with an upward trend and a near-flat ARIMA forecast \u2014 but the annualised GARCH volatility of 39% signals meaningful downside risk relative to the negligible expected price movement. None of the eight news articles are relevant to AMUN.PA; all are macro or unrelated corporate events, providing no fundamental basis to reinforce or contradict the quant signals. Given the absence of company-specific news, elevated volatility, and a flat price forecast, initiating or adding to the position is not justified. Maintaining the current 15.5% weight is appropriate until a clearer directional signal emerges.",
       "arima_forecast_1d": 82.2431,
       "arima_forecast_5d": 82.2431,
       "garch_volatility": 0.390015
     },
     {
-      "date": "2026-05-01",
+      "date": "2026-05-04",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quantitative signals are collectively benign: the Y%-Filter confirms an upward trend with a HOLD signal, ARIMA forecasts show near-flat price action over the next five days, and annualised GARCH volatility of 5.39% is very low, indicating a stable instrument. The available news is entirely macro in nature (Iran conflict, oil prices, US troop posturing, student loans) with no coverage directly relevant to EUN4.DE, so no news-driven catalyst supports a directional change. Given the absence of instrument-specific news and quant signals that point to continued but modest positive momentum with minimal volatility, holding the current 27.8% weight is appropriate. No action is warranted until a clearer price signal or relevant news emerges.",
+      "llm_rationale": "The quantitative signals uniformly support a hold: the Y%-Filter shows an upward trend, the ARIMA forecasts are essentially flat over 1 and 5 days, and GARCH annualised volatility is low at 5.39%, indicating a stable, low-risk environment. None of the eight news articles are directly relevant to EUN4.DE \u2014 all are unrelated macro or M&A headlines \u2014 so there is no fundamental catalyst to override the quant signal. With a significant 27.8% portfolio weight and no actionable news-driven signal, maintaining the current position is the appropriate course.",
       "arima_forecast_1d": 107.0902,
       "arima_forecast_5d": 107.0452,
       "garch_volatility": 0.053878
     },
     {
-      "date": "2026-05-01",
+      "date": "2026-05-04",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals show a BUY trend with a 14.75% move from the last turning point, but the ARIMA forecast projects zero price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. The available news is entirely macro in nature \u2014 covering the Iran conflict, geopolitical tensions, and unrelated US policy \u2014 with no articles directly relevant to IQQH.DE or its underlying holdings, making news-based conviction impossible. Given the flat ARIMA forecast, elevated annualised volatility of 23.06%, and the significant 56.7% portfolio concentration, a cautious HOLD is appropriate until clearer directional signals emerge.",
+      "llm_rationale": "The quantitative signals show a BUY trend with the Y%-Filter up 14.7% from the last turning point, but the ARIMA forecast projects zero price movement over both the 1-day and 5-day horizons, suggesting momentum may be exhausted. GARCH annualised volatility of 23.06% indicates moderate risk. None of the 8 provided news articles are relevant to IQQH.DE \u2014 all are unrelated macro or corporate M&A stories \u2014 so there is no news-based catalyst to support adding to or reducing this already heavily concentrated 56.7% position. Given the flat ARIMA forecast and lack of relevant news, maintaining the current position without adding further concentration is the prudent stance.",
       "arima_forecast_1d": 10.074,
       "arima_forecast_5d": 10.074,
       "garch_volatility": 0.230647
@@ -3133,7 +3121,7 @@
   ],
   "backtest_results": [
     {
-      "run_date": "2026-05-01",
+      "run_date": "2026-05-04",
       "ticker": "AMUN.PA",
       "total_return_pct": 40.011,
       "sharpe_ratio": 0.4791,
@@ -3141,7 +3129,7 @@
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-05-01",
+      "run_date": "2026-05-04",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,7 +3137,7 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-05-01",
+      "run_date": "2026-05-04",
       "ticker": "IQQH.DE",
       "total_return_pct": 1.3118,
       "sharpe_ratio": -0.135,
@@ -3260,113 +3248,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-05-01T01:07:00",
-        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
-        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T01:35:03",
+        "headline": "[MACRO] Australian March 2026 building approvals -10.5% m/m (prior +29.7%)",
+        "source": "Forexlive",
+        "url": "https://investinglive.com/news/australian-march-2026-building-approvals-105-mm-prior-297-20260504/",
+        "body": "<p>For the y/y +12%</p><ul><li>prior +0.2%</li></ul><p>Other data, ANZ-Indeed Job Advertisements for April -0.8% m/m</p><ul><li>prior \u20133.1%</li></ul><p>Earlier:</p><ul><li><a href=\"https://investinglive.com/news/australia-monthly-inflation-gauge-showed-monthly-inflation-rose-again-in-april-20260504/"
       },
       {
-        "published_at": "2026-04-30T22:39:00",
-        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
-        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T00:38:00",
+        "headline": "[MACRO] GameStop Proposes to Acquire eBay at $125.00 Per Share",
+        "source": "BusinessWire",
+        "url": "http://www.businesswire.com/news/home/20260503694843/en/GameStop-Proposes-to-Acquire-eBay-at-125.00-Per-Share/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA==",
+        "body": "GRAPEVINE, Texas--(BUSINESS WIRE)--GameStop Corp. (NYSE: GME) today submitted a non-binding proposal to acquire 100% of eBay Inc. (NASDAQ: EBAY) at $125.00 per share in cash and stock. The offer represents a 46% premium to eBay\u2019s unaffected closing price on February 4, 2026, the day GameStop started"
       },
       {
-        "published_at": "2026-04-30T20:28:47",
-        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
-        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
+        "published_at": "2026-05-04T00:00:00",
+        "headline": "[MACRO] Applied Materials Broadens Advanced Packaging Portfolio with Acquisition of NEXX",
+        "source": "GlobalNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/05/04/3286382/0/en/Applied-Materials-Broadens-Advanced-Packaging-Portfolio-with-Acquisition-of-NEXX.html",
+        "body": "SANTA CLARA, Calif., May  03, 2026  (GLOBE NEWSWIRE) -- Applied Materials, Inc. today announced it has entered into a definitive agreement with ASMPT Limited (HKEX: 0522) to acquire its NEXX business, a leading supplier of large-area advanced packaging deposition equipment for the semiconductor indu"
       },
       {
-        "published_at": "2026-04-30T20:26:32",
-        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
-        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T15:15:08",
+        "headline": "[MACRO] Key deals this week: Organon, ARC Resources, Nebius, Eli Lilly and more",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584454-key-deals-this-week-organon-arc-resources-nebius-eli-lilly-and-more?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       },
       {
-        "published_at": "2026-04-30T20:01:51",
-        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
-        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T13:20:58",
+        "headline": "[MACRO] Francisco Partners is said to be in talks to buy Canadian payments firm Moneris for up to $2B",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584466-francisco-partners-is-said-to-be-in-talks-to-buy-canadian-payments-firm-moneris-for-up-to-2b?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-05-01T01:07:00",
-        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
-        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T01:35:03",
+        "headline": "[MACRO] Australian March 2026 building approvals -10.5% m/m (prior +29.7%)",
+        "source": "Forexlive",
+        "url": "https://investinglive.com/news/australian-march-2026-building-approvals-105-mm-prior-297-20260504/",
+        "body": "<p>For the y/y +12%</p><ul><li>prior +0.2%</li></ul><p>Other data, ANZ-Indeed Job Advertisements for April -0.8% m/m</p><ul><li>prior \u20133.1%</li></ul><p>Earlier:</p><ul><li><a href=\"https://investinglive.com/news/australia-monthly-inflation-gauge-showed-monthly-inflation-rose-again-in-april-20260504/"
       },
       {
-        "published_at": "2026-04-30T22:39:00",
-        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
-        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T00:38:00",
+        "headline": "[MACRO] GameStop Proposes to Acquire eBay at $125.00 Per Share",
+        "source": "BusinessWire",
+        "url": "http://www.businesswire.com/news/home/20260503694843/en/GameStop-Proposes-to-Acquire-eBay-at-125.00-Per-Share/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA==",
+        "body": "GRAPEVINE, Texas--(BUSINESS WIRE)--GameStop Corp. (NYSE: GME) today submitted a non-binding proposal to acquire 100% of eBay Inc. (NASDAQ: EBAY) at $125.00 per share in cash and stock. The offer represents a 46% premium to eBay\u2019s unaffected closing price on February 4, 2026, the day GameStop started"
       },
       {
-        "published_at": "2026-04-30T20:28:47",
-        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
-        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
+        "published_at": "2026-05-04T00:00:00",
+        "headline": "[MACRO] Applied Materials Broadens Advanced Packaging Portfolio with Acquisition of NEXX",
+        "source": "GlobalNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/05/04/3286382/0/en/Applied-Materials-Broadens-Advanced-Packaging-Portfolio-with-Acquisition-of-NEXX.html",
+        "body": "SANTA CLARA, Calif., May  03, 2026  (GLOBE NEWSWIRE) -- Applied Materials, Inc. today announced it has entered into a definitive agreement with ASMPT Limited (HKEX: 0522) to acquire its NEXX business, a leading supplier of large-area advanced packaging deposition equipment for the semiconductor indu"
       },
       {
-        "published_at": "2026-04-30T20:26:32",
-        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
-        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T15:15:08",
+        "headline": "[MACRO] Key deals this week: Organon, ARC Resources, Nebius, Eli Lilly and more",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584454-key-deals-this-week-organon-arc-resources-nebius-eli-lilly-and-more?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       },
       {
-        "published_at": "2026-04-30T20:01:51",
-        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
-        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T13:20:58",
+        "headline": "[MACRO] Francisco Partners is said to be in talks to buy Canadian payments firm Moneris for up to $2B",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584466-francisco-partners-is-said-to-be-in-talks-to-buy-canadian-payments-firm-moneris-for-up-to-2b?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-05-01T01:07:00",
-        "headline": "[MACRO] US official says Iran war truce 'terminated' hostilities for war powers deadline - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNemtpZUFjR001YzFHcWRuLWowQmVid2hmYWR2UzJpUTR2UnR5aWRTdUhzNWNtOUZMS0lhc29jamFZODZWa25ZejhkZlpneXY1bVNnSjhPT3dyMDk1MXV4M1FscE8xUTEwakF6NU9CWERuSzJDLVFuSEpRVGdhbjAwUF91dm42RS1ORkw4ZzNpV1NpakVKVndra05YaUxvQi1taVkzOHFKTS00QzFWbzhSX2Z1UXAzWlV4OGlacWRQSFpKY3FzdWtIRzhJTkNlN1E?oc=5",
-        "body": "US official says Iran war truce 'terminated' hostilities for war powers deadline\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T01:35:03",
+        "headline": "[MACRO] Australian March 2026 building approvals -10.5% m/m (prior +29.7%)",
+        "source": "Forexlive",
+        "url": "https://investinglive.com/news/australian-march-2026-building-approvals-105-mm-prior-297-20260504/",
+        "body": "<p>For the y/y +12%</p><ul><li>prior +0.2%</li></ul><p>Other data, ANZ-Indeed Job Advertisements for April -0.8% m/m</p><ul><li>prior \u20133.1%</li></ul><p>Earlier:</p><ul><li><a href=\"https://investinglive.com/news/australia-monthly-inflation-gauge-showed-monthly-inflation-rose-again-in-april-20260504/"
       },
       {
-        "published_at": "2026-04-30T22:39:00",
-        "headline": "[MACRO] Oil rises over $1 with no sign of Iran conflict ending - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVJqNi1rMnBzZk5NaEl4S0xUUjdlZjMySnhFQ2hVekljdHNIaVVyMk5Kem1pV05sd1ZIazh3akJ4aVpkbjZ2S3FfcjA3VTdYR3hNeWwydUllS1pfVUhzVmxlRWE0ZHJTSnJoaUZSWGtCRFFFVDFnNDZTcU1mNEptNU5GRXBvZ2NKa1NxMnduQjRpalo0UGJRSGNLTS1nTFdOYjJNOFc4em9hN3BZUFBEZHVtcVZYTVl6b0xsSGNDYklSNDct?oc=5",
-        "body": "Oil rises over $1 with no sign of Iran conflict ending\u00a0\u00a0Reuters"
+        "published_at": "2026-05-04T00:38:00",
+        "headline": "[MACRO] GameStop Proposes to Acquire eBay at $125.00 Per Share",
+        "source": "BusinessWire",
+        "url": "http://www.businesswire.com/news/home/20260503694843/en/GameStop-Proposes-to-Acquire-eBay-at-125.00-Per-Share/?feedref=JjAwJuNHiystnCoBq_hl-Rc4vIAVcHHkbDcwJimU8QtrtlakeQ9hNboBqTAWIjTge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_kAy2gZikaX3QWV6xOvgFlA==",
+        "body": "GRAPEVINE, Texas--(BUSINESS WIRE)--GameStop Corp. (NYSE: GME) today submitted a non-binding proposal to acquire 100% of eBay Inc. (NASDAQ: EBAY) at $125.00 per share in cash and stock. The offer represents a 46% premium to eBay\u2019s unaffected closing price on February 4, 2026, the day GameStop started"
       },
       {
-        "published_at": "2026-04-30T20:28:47",
-        "headline": "[MACRO] Rivian renegotiates DOE loan down to $4.5 billion, adjusts capacity plans for Georgia plant",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/04/30/rivian-renegotiates-doe-loan-adjusts-capacity-plans-for-georgia-plant.html",
-        "body": "The DOE loan was previously set to support two phases of production for a total of 400,000 units annually."
+        "published_at": "2026-05-04T00:00:00",
+        "headline": "[MACRO] Applied Materials Broadens Advanced Packaging Portfolio with Acquisition of NEXX",
+        "source": "GlobalNewswire",
+        "url": "https://www.globenewswire.com/news-release/2026/05/04/3286382/0/en/Applied-Materials-Broadens-Advanced-Packaging-Portfolio-with-Acquisition-of-NEXX.html",
+        "body": "SANTA CLARA, Calif., May  03, 2026  (GLOBE NEWSWIRE) -- Applied Materials, Inc. today announced it has entered into a definitive agreement with ASMPT Limited (HKEX: 0522) to acquire its NEXX business, a leading supplier of large-area advanced packaging deposition equipment for the semiconductor indu"
       },
       {
-        "published_at": "2026-04-30T20:26:32",
-        "headline": "[MACRO] Trump says 'probably' when asked if he might pull US troops out of Italy, Spain - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPa0NxUDdSMmwyY2toWGN1clpNMXdmYUhmNjV5cHdnTWtrYVVfZW1tak9RWWdmUUE4dXdlajRuYnNnRDNMRHFGQmVsSDFrMXhYTkRnTFBsQkRJS25BaFNUelRHRlNYQTlXSjVlTmU5SGdxY2JuSlg1U25GbWt0MnRGTjc4Q25iZnJELXhDa2JsN1lHZkNWVkMtVzBybHh0M2VTUkotM3FHVEV5LVNhTnNHV1dwS3I0cVZnVDR1eXl3Yw?oc=5",
-        "body": "Trump says 'probably' when asked if he might pull US troops out of Italy, Spain\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T15:15:08",
+        "headline": "[MACRO] Key deals this week: Organon, ARC Resources, Nebius, Eli Lilly and more",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584454-key-deals-this-week-organon-arc-resources-nebius-eli-lilly-and-more?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       },
       {
-        "published_at": "2026-04-30T20:01:51",
-        "headline": "[MACRO] Iran will be at World Cup and will play in the US, says FIFA boss - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVNIWXROWlhNUXhFR1lxbXNra3lPalU5YkNyd1BKM3NfMjlNOEplVnFhYUJid1N5Z0dOTjZxN1l1UENYaVM4TEp5cHBBZEZ0cHpHOWRZN3Vja1dKakN4Zy13UHhTdjVHUC1tamh3LWtIVlkwSHh3d0dsRzFVVEMxUkhtcjdZa3dabVdHcUdqN21fWVlSa2pWTXd3NUtrb2RhRWNGaXpIbTEzbTF5NHZXVktwNmNPdjVMeWhCRg?oc=5",
-        "body": "Iran will be at World Cup and will play in the US, says FIFA boss\u00a0\u00a0Reuters"
+        "published_at": "2026-05-03T13:20:58",
+        "headline": "[MACRO] Francisco Partners is said to be in talks to buy Canadian payments firm Moneris for up to $2B",
+        "source": "SeekingAlpha",
+        "url": "https://seekingalpha.com/news/4584466-francisco-partners-is-said-to-be-in-talks-to-buy-canadian-payments-firm-moneris-for-up-to-2b?utm_source=feed_news_m_a&utm_medium=referral&feed_item_type=news",
+        "body": ""
       }
     ]
   }
