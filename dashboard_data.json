@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-05",
+    "generated_at": "2026-05-06",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-05-05",
-        "close": 68.25868225097656
-      },
       {
         "date": "2025-05-06",
         "close": 67.83441925048828
@@ -1081,13 +1077,13 @@
       {
         "date": "2026-05-04",
         "close": 81.9000015258789
+      },
+      {
+        "date": "2026-05-05",
+        "close": 83.3499984741211
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-05-05",
-        "close": 5.9050750732421875
-      },
       {
         "date": "2025-05-06",
         "close": 5.9622907638549805
@@ -2087,13 +2083,13 @@
       {
         "date": "2026-05-04",
         "close": 10.128000259399414
+      },
+      {
+        "date": "2026-05-05",
+        "close": 10.442000389099121
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-05-05",
-        "close": 106.7258529663086
-      },
       {
         "date": "2025-05-06",
         "close": 106.53559112548828
@@ -3093,55 +3089,59 @@
       {
         "date": "2026-05-04",
         "close": 106.70999908447266
+      },
+      {
+        "date": "2026-05-05",
+        "close": 106.95999908447266
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-05-05",
+      "date": "2026-05-06",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals BUY with an upward trend, but the ARIMA forecast shows near-zero expected price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. Available news is entirely macro in nature with no company-specific coverage for AMUN.PA, making it impossible to assess fundamental catalysts. The macro backdrop is modestly negative, with US-Iran tensions, rising oil price concerns, and warnings of \"misplaced euphoria\" in equity markets potentially weighing on sentiment. Given the flat ARIMA outlook, elevated GARCH volatility of 32.19%, and an unfavorable macro risk environment, maintaining the current position without adding is prudent.",
-      "arima_forecast_1d": 81.88,
-      "arima_forecast_5d": 81.88,
-      "garch_volatility": 0.32186
+      "llm_rationale": "The quantitative signals are mildly constructive \u2014 the Y%-Filter is on a BUY with an upward trend, but the ARIMA forecast shows virtually no price movement over 1 to 5 days, suggesting momentum has stalled near current levels. GARCH volatility at 27.55% annualised indicates meaningful risk, warranting caution before adding exposure. None of the available news articles are specific to AMUN.PA; all headlines are macro in nature (Iran/Hormuz geopolitics, oil prices, equity market records), making it impossible to assess company-level catalysts. Given the flat price forecast, elevated volatility, and absence of firm-specific news, maintaining the current 15.3% weight is the prudent course until clearer signals emerge.",
+      "arima_forecast_1d": 83.436,
+      "arima_forecast_5d": 83.436,
+      "garch_volatility": 0.275453
     },
     {
-      "date": "2026-05-05",
+      "date": "2026-05-06",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quantitative signals are uniformly benign: the Y%-Filter confirms an uptrend, ARIMA forecasts are essentially flat (+0.02 EUR over 1 day, -0.02 EUR over 5 days), and annualised GARCH volatility of 5.53% indicates a low-risk environment. None of the eight news articles are specific to EUN4.DE or its underlying asset class; all are unrelated macro headlines (Hormuz geopolitics, entertainment, regulatory) that provide no actionable catalyst to deviate from the quant signal. With a 27.7% portfolio weight already substantial, there is no evidence to justify adding or reducing exposure at this time. Maintaining the current position is the appropriate course of action.",
-      "arima_forecast_1d": 106.7299,
-      "arima_forecast_5d": 106.6891,
-      "garch_volatility": 0.055292
+      "llm_rationale": "The Y%-Filter confirms an upward trend, but the ARIMA forecasts project a marginal price decline over the next 5 days (~0.08%), suggesting momentum is flattening. GARCH volatility at 5.59% annualised is low, indicating a stable, low-risk environment with little urgency to adjust the position. The macro news\u2014centred on Iran geopolitical developments, easing oil prices, and a stronger equity backdrop in the US\u2014is broadly neutral to mildly positive for a euro-denominated bond or fixed-income ETF like EUN4.DE, as reduced energy-price pressure supports European macro stability. With quant signals aligned to hold and no asset-specific catalysts, maintaining the current 27.2% weight is appropriate.",
+      "arima_forecast_1d": 106.9305,
+      "arima_forecast_5d": 106.8875,
+      "garch_volatility": 0.055896
     },
     {
-      "date": "2026-05-05",
+      "date": "2026-05-06",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals a BUY on an uptrend, but the ARIMA forecast projects zero price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. GARCH annualised volatility of 22.72% indicates moderate risk, which warrants caution given the already outsized portfolio concentration of 56.9%. None of the available news articles are directly relevant to IQQH.DE or its underlying exposure, providing no fundamental catalyst to either reinforce or contradict the quant signals. Given the flat price forecast and lack of confirming news, maintaining the current position without adding is the prudent course.",
-      "arima_forecast_1d": 10.128,
-      "arima_forecast_5d": 10.128,
-      "garch_volatility": 0.227249
+      "llm_rationale": "The Y%-Filter is bullish with an 18.9% uptrend, but the ARIMA forecast shows zero expected price movement over both 1-day and 5-day horizons, providing no momentum confirmation. The macro news is dominated by Strait of Hormuz tensions and a potential US-Iran deal, which are relevant to energy markets but have an ambiguous and indirect bearing on IQQH.DE specifically. Given the flat ARIMA signal and geopolitical uncertainty that could cut either way for a clean-energy or hydrogen-related ETF, maintaining the current 57.5% weight without adding or reducing exposure is the prudent stance until clearer directional signals emerge.",
+      "arima_forecast_1d": 10.442,
+      "arima_forecast_5d": 10.442,
+      "garch_volatility": 0.217867
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-05-05",
+      "run_date": "2026-05-06",
       "ticker": "AMUN.PA",
-      "total_return_pct": 39.5,
-      "sharpe_ratio": 0.4717,
+      "total_return_pct": 41.9698,
+      "sharpe_ratio": 0.503,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-05-05",
+      "run_date": "2026-05-06",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-05-05",
+      "run_date": "2026-05-06",
       "ticker": "IQQH.DE",
-      "total_return_pct": 1.8549,
-      "sharpe_ratio": -0.1247,
+      "total_return_pct": 5.0127,
+      "sharpe_ratio": -0.0636,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3260,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-05-04T15:21:08",
-        "headline": "[MACRO] We're adding to our position in a stock that has gotten cheaper since earnings",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/were-adding-to-our-position-in-a-stock-that-has-gotten-cheaper-since-earnings.html",
-        "body": "The company's earnings report wasn't perfect, but the long-term story is still intact."
-      },
-      {
-        "published_at": "2026-05-04T15:01:08",
-        "headline": "[MACRO] Fire, explosion hit South Korean-run vessel in Strait of Hormuz, Seoul says - Reuters",
+        "published_at": "2026-05-06T01:01:00",
+        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOeFBqaE4zOHBMRUw5MVQ5SkZRZGptd1Z0SXprcXdJcHZ4dk9oaFVfOElQOENfWm16c3BaSWROWWJQRkktSXRmTG9LUV9ORDM4bGhEUF84UkgzdVdfTHRBd0UxSk04blZFQzdmVmZuRUVQSG80al9vOVJWZVdTeVFDNU5qYkJOWDhGN2FyU1RWWG5Ha3Rydk1sYmVTa0ttRXprYktIWUlPYVdNQnhDM0R6OGhVWEozQjVpUUo3cHg4SFNQVnlRMG9SazJWVQ?oc=5",
-        "body": "Fire, explosion hit South Korean-run vessel in Strait of Hormuz, Seoul says\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
+        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T14:50:01",
-        "headline": "[MACRO] Bret Taylor's Sierra raises nearly $1 billion months after last capital push",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/bret-taylor-sierra-fundraise-openai.html",
-        "body": "Sierra's $950 million Series E funding round was led by Tiger and Google's GV, with participation from Benchmark, Sequoia, Greenoaks and others."
-      },
-      {
-        "published_at": "2026-05-04T14:41:51",
-        "headline": "[MACRO] Bessent urges China to step up diplomacy on Iran ahead of Trump-Xi summit - Reuters",
+        "published_at": "2026-05-05T23:39:10",
+        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQRjBZMDJTMXdidVVidUhfQnBncmRXUVc4aXRNVm9hN09udHNOOXhYM1FVZ2JWVnZQT1JfdWVSd2tSeU5NU2NJVUl6Vi1fQ2NzVERkNWtHNkZZNk9lSDRGZzhWZ2NESTZpc3F3RVhyOXhlWVFXcXg3QTBLaEVUenU2MDNEQ2ZOYUZ4RDlKRVBNaG5mVXlhd054VWJDX3dqVTJTNXVOV0NLa3Z3SDZPM250NHlVR1J3ZHc?oc=5",
-        "body": "Bessent urges China to step up diplomacy on Iran ahead of Trump-Xi summit\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
+        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T14:12:17",
-        "headline": "[MACRO] S&P 500, Dow tick lower as US-Iran tensions unsettle investors - Reuters",
+        "published_at": "2026-05-05T23:11:00",
+        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMFZzU0o4cVloeVB2Q3hOb0wzeHhFMDlGMkxsT3FFZDhLdjJnei1qcFp1NDFFaXhyZzRtTTRoVFBWbzZHSUo0aXZIQkV3b2pfMUloTUliaWg3RXBlSTVlN3daSHhQNEdqWDNXb1Uwa2prVXMtdFVOZ0EzMk5sLWlzSTFEa0JoNGt6LXJiRWRmUVRYbVVhTzNhZ3pNbnMwd0E?oc=5",
-        "body": "S&P 500, Dow tick lower as US-Iran tensions unsettle investors\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
+        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-05-05T22:29:12",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-05-05T22:19:46",
+        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
+        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-05-04T22:48:18",
-        "headline": "[MACRO] 'The Devil Wears Prada 2' kicks off summer movie season in style with $77 million opening",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/the-devil-wears-prada-2-kicks-off-summer-box-office.html",
-        "body": "Disney and 20th Century Fox's \"The Devil Wears Prada 2\" opened the summer movie season with $77 million in ticket sales."
-      },
-      {
-        "published_at": "2026-05-04T22:13:00",
-        "headline": "[MACRO] Oil eases on signs US is loosening Iranian closure of Strait of Hormuz - Reuters",
+        "published_at": "2026-05-06T01:01:00",
+        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNQUkwOGpqZ0dnWnppaE1hVXczWWZ3eXRtam9ONU8zTlRpZ3NrX2swdDRtOUhFNXVFZmpQanhqQ1hjbFJNQVFLM1oyOUFoRGhyd0lOYnhkTHJyQ2lLS2p4Ml82SlVuT3VxUlhGT3E1TzVLQktYVzF5Qnhxb3Brd0VianZIbFFmOTRTcy1UUzhnd0tDN29LUm1kcVlidw?oc=5",
-        "body": "Oil eases on signs US is loosening Iranian closure of Strait of Hormuz\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
+        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T21:45:51",
-        "headline": "[MACRO] Maersk unit's US-flagged ship transits Hormuz accompanied by US military - Reuters",
+        "published_at": "2026-05-05T23:39:10",
+        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZ0c0VllkWHpONHdfbExpRExaTXFHWWlPSVZJTGFMaUpqdkU5clh1T0tVdzIxdmxoLThNNTV1cldUODBoaUQ4SFpWYXdyQnY2Sm9PNHRHU1F3anB0amVTa3p3SGNTdHBvdzZ2d0ktNkJ5dHN1N3o3YTJKeFFpMDdsYWdELU0xdXc4WWJFTDVGNzhsQmFBWEVUSzZvRnZTM1dZUGExQzFaeU4wSzNEamEzT2RtS09yOGc5YnB1Z0JlMVR6dHhSLVVxTFd0S2NZRTA?oc=5",
-        "body": "Maersk unit's US-flagged ship transits Hormuz accompanied by US military\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
+        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T20:36:00",
-        "headline": "[MACRO] Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say - Reuters",
+        "published_at": "2026-05-05T23:11:00",
+        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNm9KaWowV3pqQVVxRjJSZE9ROFVxTlM3YjZiVEI5bGZjcUIwbE1JSl9nWi1tTF8tc2ZpbU80RXFCQWdFNThGa0JZZ0xyai1XSjJEeGVzU3ZtU2ZNNGZMOHpzd0pDYWdlRldLeFZjeEdoeDlidlZ6U3NhYVc5RXZ5Q2ZsMDNvWkNRZkhzckxjeXJITmhIUGV6cFNId3NRakhOckJtOVI2cnZRVnNMQmpYd2JPTm9GMkJHZmpCUktVZ1YtYUtfZlJfM0Z0Tnk?oc=5",
-        "body": "Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
+        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T20:29:15",
-        "headline": "[MACRO] SEC and Elon Musk agree to settle lawsuit over Twitter buyout in 2022",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/sec-and-elon-musk-agree-to-settle-lawsuit-over-twitter-buyout-in-2022.html",
-        "body": "The SEC and Elon Musk agreed to settle a lawsuit filed by the regulator last year against the world's richest person."
+        "published_at": "2026-05-05T22:29:12",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-05-05T22:19:46",
+        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
+        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-05-04T22:48:18",
-        "headline": "[MACRO] 'The Devil Wears Prada 2' kicks off summer movie season in style with $77 million opening",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/the-devil-wears-prada-2-kicks-off-summer-box-office.html",
-        "body": "Disney and 20th Century Fox's \"The Devil Wears Prada 2\" opened the summer movie season with $77 million in ticket sales."
-      },
-      {
-        "published_at": "2026-05-04T22:13:00",
-        "headline": "[MACRO] Oil eases on signs US is loosening Iranian closure of Strait of Hormuz - Reuters",
+        "published_at": "2026-05-06T01:01:00",
+        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNQUkwOGpqZ0dnWnppaE1hVXczWWZ3eXRtam9ONU8zTlRpZ3NrX2swdDRtOUhFNXVFZmpQanhqQ1hjbFJNQVFLM1oyOUFoRGhyd0lOYnhkTHJyQ2lLS2p4Ml82SlVuT3VxUlhGT3E1TzVLQktYVzF5Qnhxb3Brd0VianZIbFFmOTRTcy1UUzhnd0tDN29LUm1kcVlidw?oc=5",
-        "body": "Oil eases on signs US is loosening Iranian closure of Strait of Hormuz\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
+        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T21:45:51",
-        "headline": "[MACRO] Maersk unit's US-flagged ship transits Hormuz accompanied by US military - Reuters",
+        "published_at": "2026-05-05T23:39:10",
+        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOZ0c0VllkWHpONHdfbExpRExaTXFHWWlPSVZJTGFMaUpqdkU5clh1T0tVdzIxdmxoLThNNTV1cldUODBoaUQ4SFpWYXdyQnY2Sm9PNHRHU1F3anB0amVTa3p3SGNTdHBvdzZ2d0ktNkJ5dHN1N3o3YTJKeFFpMDdsYWdELU0xdXc4WWJFTDVGNzhsQmFBWEVUSzZvRnZTM1dZUGExQzFaeU4wSzNEamEzT2RtS09yOGc5YnB1Z0JlMVR6dHhSLVVxTFd0S2NZRTA?oc=5",
-        "body": "Maersk unit's US-flagged ship transits Hormuz accompanied by US military\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
+        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T20:36:00",
-        "headline": "[MACRO] Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say - Reuters",
+        "published_at": "2026-05-05T23:11:00",
+        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNm9KaWowV3pqQVVxRjJSZE9ROFVxTlM3YjZiVEI5bGZjcUIwbE1JSl9nWi1tTF8tc2ZpbU80RXFCQWdFNThGa0JZZ0xyai1XSjJEeGVzU3ZtU2ZNNGZMOHpzd0pDYWdlRldLeFZjeEdoeDlidlZ6U3NhYVc5RXZ5Q2ZsMDNvWkNRZkhzckxjeXJITmhIUGV6cFNId3NRakhOckJtOVI2cnZRVnNMQmpYd2JPTm9GMkJHZmpCUktVZ1YtYUtfZlJfM0Z0Tnk?oc=5",
-        "body": "Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
+        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-04T20:29:15",
-        "headline": "[MACRO] SEC and Elon Musk agree to settle lawsuit over Twitter buyout in 2022",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/04/sec-and-elon-musk-agree-to-settle-lawsuit-over-twitter-buyout-in-2022.html",
-        "body": "The SEC and Elon Musk agreed to settle a lawsuit filed by the regulator last year against the world's richest person."
+        "published_at": "2026-05-05T22:29:12",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+      },
+      {
+        "published_at": "2026-05-05T22:19:46",
+        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
+        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
       }
     ]
   }
