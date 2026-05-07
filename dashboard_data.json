@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-06",
+    "generated_at": "2026-05-07",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-05-06",
-        "close": 67.83441925048828
-      },
       {
         "date": "2025-05-07",
         "close": 67.97583770751953
@@ -1081,13 +1077,13 @@
       {
         "date": "2026-05-05",
         "close": 83.3499984741211
+      },
+      {
+        "date": "2026-05-06",
+        "close": 83.94999694824219
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-05-06",
-        "close": 5.9622907638549805
-      },
       {
         "date": "2025-05-07",
         "close": 5.912966728210449
@@ -2087,13 +2083,13 @@
       {
         "date": "2026-05-05",
         "close": 10.442000389099121
+      },
+      {
+        "date": "2026-05-06",
+        "close": 10.42199993133545
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-05-06",
-        "close": 106.53559112548828
-      },
       {
         "date": "2025-05-07",
         "close": 106.96491241455078
@@ -3093,55 +3089,59 @@
       {
         "date": "2026-05-05",
         "close": 106.95999908447266
+      },
+      {
+        "date": "2026-05-06",
+        "close": 107.55500030517578
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-05-06",
+      "date": "2026-05-07",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals are mildly constructive \u2014 the Y%-Filter is on a BUY with an upward trend, but the ARIMA forecast shows virtually no price movement over 1 to 5 days, suggesting momentum has stalled near current levels. GARCH volatility at 27.55% annualised indicates meaningful risk, warranting caution before adding exposure. None of the available news articles are specific to AMUN.PA; all headlines are macro in nature (Iran/Hormuz geopolitics, oil prices, equity market records), making it impossible to assess company-level catalysts. Given the flat price forecast, elevated volatility, and absence of firm-specific news, maintaining the current 15.3% weight is the prudent course until clearer signals emerge.",
-      "arima_forecast_1d": 83.436,
-      "arima_forecast_5d": 83.436,
-      "garch_volatility": 0.275453
+      "llm_rationale": "All eight news articles are macro-level headlines with no direct relevance to AMUN.PA, providing no fundamental basis to act on. The quantitative signals are modestly constructive \u2014 the Y%-Filter is BUY with an upward trend \u2014 but the ARIMA forecast shows essentially zero expected price movement over both 1-day and 5-day horizons (83.98 vs. 83.95), suggesting momentum has stalled. GARCH volatility at 25.88% is elevated, warranting caution before adding to an already meaningful 15.4% portfolio weight. Holding the current position is prudent until either directional news or a clearer price forecast emerges.",
+      "arima_forecast_1d": 83.9802,
+      "arima_forecast_5d": 83.9802,
+      "garch_volatility": 0.258807
     },
     {
-      "date": "2026-05-06",
+      "date": "2026-05-07",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The Y%-Filter confirms an upward trend, but the ARIMA forecasts project a marginal price decline over the next 5 days (~0.08%), suggesting momentum is flattening. GARCH volatility at 5.59% annualised is low, indicating a stable, low-risk environment with little urgency to adjust the position. The macro news\u2014centred on Iran geopolitical developments, easing oil prices, and a stronger equity backdrop in the US\u2014is broadly neutral to mildly positive for a euro-denominated bond or fixed-income ETF like EUN4.DE, as reduced energy-price pressure supports European macro stability. With quant signals aligned to hold and no asset-specific catalysts, maintaining the current 27.2% weight is appropriate.",
-      "arima_forecast_1d": 106.9305,
-      "arima_forecast_5d": 106.8875,
-      "garch_volatility": 0.055896
+      "llm_rationale": "The Y%-Filter confirms an upward trend with a HOLD signal, and the ARIMA forecasts show minimal near-term price movement (~0.1% decline over 5 days), consistent with a stable, low-volatility position (GARCH at 5.49%). None of the available news is directly relevant to EUN4.DE; all headlines are macro-level and equity-focused (US tech, oil, geopolitics), with no specific catalyst identified for this position. The geopolitical uncertainty around Iran and Gulf trade routes warrants some caution for a broadly held European ETF, but is insufficient to override the neutral-to-positive quant signals. Maintain the current position without adjustment.",
+      "arima_forecast_1d": 107.493,
+      "arima_forecast_5d": 107.444,
+      "garch_volatility": 0.054913
     },
     {
-      "date": "2026-05-06",
+      "date": "2026-05-07",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter is bullish with an 18.9% uptrend, but the ARIMA forecast shows zero expected price movement over both 1-day and 5-day horizons, providing no momentum confirmation. The macro news is dominated by Strait of Hormuz tensions and a potential US-Iran deal, which are relevant to energy markets but have an ambiguous and indirect bearing on IQQH.DE specifically. Given the flat ARIMA signal and geopolitical uncertainty that could cut either way for a clean-energy or hydrogen-related ETF, maintaining the current 57.5% weight without adding or reducing exposure is the prudent stance until clearer directional signals emerge.",
-      "arima_forecast_1d": 10.442,
-      "arima_forecast_5d": 10.442,
-      "garch_volatility": 0.217867
+      "llm_rationale": "The Y%-Filter signals a BUY on an upward trend, but the ARIMA forecast projects zero price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. None of the available news is directly relevant to IQQH.DE; all articles are broad macro items with no clear positive or negative read-through to this specific position. Given the already high concentration (57.3% portfolio weight) and elevated GARCH volatility of 25.05%, adding further exposure without a stronger fundamental or news catalyst is not warranted. A HOLD is appropriate until clearer directional evidence emerges.",
+      "arima_forecast_1d": 10.422,
+      "arima_forecast_5d": 10.422,
+      "garch_volatility": 0.250532
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-05-06",
+      "run_date": "2026-05-07",
       "ticker": "AMUN.PA",
-      "total_return_pct": 41.9698,
-      "sharpe_ratio": 0.503,
+      "total_return_pct": 42.9917,
+      "sharpe_ratio": 0.5154,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-05-06",
+      "run_date": "2026-05-07",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-05-06",
+      "run_date": "2026-05-07",
       "ticker": "IQQH.DE",
-      "total_return_pct": 5.0127,
-      "sharpe_ratio": -0.0636,
+      "total_return_pct": 4.8116,
+      "sharpe_ratio": -0.0676,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3260,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-05-06T01:01:00",
-        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
+        "published_at": "2026-05-06T23:29:18",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records; AMD results spark AI stock rally - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
-        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ3V5RlZkMXFBanpJNkJ0YVlKRkxYamlXOF9kbjl4RDJtZjctOTd2cHZucnI4ckdCbXZ3LUhCQjdnckU4SVZwVU9jeE54Zzk0dy03RGlBMFFLZVRreHdBemhuOFpnY2dIWVVCdTZva3JFWHViN2dlclF1TnYwSWZSMlp4RjFWZHZKa1cxanM2SG5xVHZzN0VxNG5sQUF0UENxbERpdGpKbXFzakVn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records; AMD results spark AI stock rally\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-05T23:39:10",
-        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
-        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:32:33",
+        "headline": "[MACRO] Will Elon Musk win his lawsuit against Sam Altman's OpenAI? Here's what prediction markets think",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/elon-musk-odds-low-to-win-openai-suit.html",
+        "body": "Out of all live events related to Elon Musk, trading activity on his suit against OpenAI is the second highest out of all contracts related to the billionaire."
       },
       {
-        "published_at": "2026-05-05T23:11:00",
-        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
-        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:20:57",
+        "headline": "[MACRO] Warner Bros. Discovery books $2.9 billion net loss tied to Paramount deal, restructuring costs",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/warner-bros-discovery-net-loss-paramount-deal.html",
+        "body": "Paramount agreed to pay a Netflix termination fee, but the cost lives on WBD's books until the close of the deal."
       },
       {
-        "published_at": "2026-05-05T22:29:12",
-        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
-        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:13:17",
+        "headline": "[MACRO] Snap issues cautious guidance as Perplexity deal ends, Middle East 'geopolitical situation' causes uncertainty",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/snap-q1-earnings-report-2026.html",
+        "body": "Snap reported first-quarter earnings and provided cautious sales guidance while revealing it no longer has a deal with the generative AI startup Perplexity."
       },
       {
-        "published_at": "2026-05-05T22:19:46",
-        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "published_at": "2026-05-06T19:37:43",
+        "headline": "[MACRO] Occidental scraps new oil hedges as Iran war fuels price volatility - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
-        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUW5Vcjh3UDVJQWNxSVM4dklJWEZnTlNSNTJSQ1BMWEhtSl9oT0JYWnFHdEltT0doRWY4U2l0TkdEa3VkY1ZqWkctME41Z1dtLVJmWmVxMTJ4QWt4b1ZBVTl0Z09BV1lDV3VRTWhJd2U0bEJ4M09KbDNweWx6d05JMU1UN29vaURZNTVFOEM3bFI3LW41UDVGNkpESHFOVS1ROXl3YkQyQmZDZ2xkc1ctcmktdDdYMmc?oc=5",
+        "body": "Occidental scraps new oil hedges as Iran war fuels price volatility\u00a0\u00a0Reuters"
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-05-06T01:01:00",
-        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
+        "published_at": "2026-05-06T23:29:18",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records; AMD results spark AI stock rally - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
-        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ3V5RlZkMXFBanpJNkJ0YVlKRkxYamlXOF9kbjl4RDJtZjctOTd2cHZucnI4ckdCbXZ3LUhCQjdnckU4SVZwVU9jeE54Zzk0dy03RGlBMFFLZVRreHdBemhuOFpnY2dIWVVCdTZva3JFWHViN2dlclF1TnYwSWZSMlp4RjFWZHZKa1cxanM2SG5xVHZzN0VxNG5sQUF0UENxbERpdGpKbXFzakVn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records; AMD results spark AI stock rally\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-05T23:39:10",
-        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
-        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:32:33",
+        "headline": "[MACRO] Will Elon Musk win his lawsuit against Sam Altman's OpenAI? Here's what prediction markets think",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/elon-musk-odds-low-to-win-openai-suit.html",
+        "body": "Out of all live events related to Elon Musk, trading activity on his suit against OpenAI is the second highest out of all contracts related to the billionaire."
       },
       {
-        "published_at": "2026-05-05T23:11:00",
-        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
-        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:20:57",
+        "headline": "[MACRO] Warner Bros. Discovery books $2.9 billion net loss tied to Paramount deal, restructuring costs",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/warner-bros-discovery-net-loss-paramount-deal.html",
+        "body": "Paramount agreed to pay a Netflix termination fee, but the cost lives on WBD's books until the close of the deal."
       },
       {
-        "published_at": "2026-05-05T22:29:12",
-        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
-        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:13:17",
+        "headline": "[MACRO] Snap issues cautious guidance as Perplexity deal ends, Middle East 'geopolitical situation' causes uncertainty",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/snap-q1-earnings-report-2026.html",
+        "body": "Snap reported first-quarter earnings and provided cautious sales guidance while revealing it no longer has a deal with the generative AI startup Perplexity."
       },
       {
-        "published_at": "2026-05-05T22:19:46",
-        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "published_at": "2026-05-06T19:37:43",
+        "headline": "[MACRO] Occidental scraps new oil hedges as Iran war fuels price volatility - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
-        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUW5Vcjh3UDVJQWNxSVM4dklJWEZnTlNSNTJSQ1BMWEhtSl9oT0JYWnFHdEltT0doRWY4U2l0TkdEa3VkY1ZqWkctME41Z1dtLVJmWmVxMTJ4QWt4b1ZBVTl0Z09BV1lDV3VRTWhJd2U0bEJ4M09KbDNweWx6d05JMU1UN29vaURZNTVFOEM3bFI3LW41UDVGNkpESHFOVS1ROXl3YkQyQmZDZ2xkc1ctcmktdDdYMmc?oc=5",
+        "body": "Occidental scraps new oil hedges as Iran war fuels price volatility\u00a0\u00a0Reuters"
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-05-06T01:01:00",
-        "headline": "[MACRO] Dollar eases as US-Iran deal hopes grow, yen drifts - Reuters",
+        "published_at": "2026-05-06T23:29:18",
+        "headline": "[MACRO] S&P 500 and Nasdaq notch records; AMD results spark AI stock rally - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaVNWSGx0a2YxMGZVQjAxMDNDSUxsaXFsMWU4Z1VGNDJWRmRyMkxaUzZjczVBOUVxcjI0Wkdib3FoWUNwRkJyZG1YWjVSSFlQamZXSlNRT0R5WE12eWUtTWVqbngxQktFSnRxel80ZzUtMG1DaWxLM0RJVEFLSUoyUkNsUEh2ZHJFazljbVRpc0djd2M0Q1VWTHlVRkxOekhU?oc=5",
-        "body": "Dollar eases as US-Iran deal hopes grow, yen drifts\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNQ3V5RlZkMXFBanpJNkJ0YVlKRkxYamlXOF9kbjl4RDJtZjctOTd2cHZucnI4ckdCbXZ3LUhCQjdnckU4SVZwVU9jeE54Zzk0dy03RGlBMFFLZVRreHdBemhuOFpnY2dIWVVCdTZva3JFWHViN2dlclF1TnYwSWZSMlp4RjFWZHZKa1cxanM2SG5xVHZzN0VxNG5sQUF0UENxbERpdGpKbXFzakVn?oc=5",
+        "body": "S&P 500 and Nasdaq notch records; AMD results spark AI stock rally\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-05T23:39:10",
-        "headline": "[MACRO] Trump says operation to reopen Strait of Hormuz will be 'paused' - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRThBWWVHdGdiN3dET0g1cHdKeTM1QmZsVjBDY3BPMUVzY2lpWDZUSlVwYnNfck94d3BnMnNNNEh6SHdoV2o0WmJzY0ZybUZCSFBJd3g5T1ZsYmpHX1hMYThTWGZkVlBiODQ4YlRMNUxadzZOcjctb2tMaEZKbzlEbmExY0hGSmV2Nm9VekJ4ekxTSENfY3g3YWZQQ3VfeVFsVUpQelFLQkZhcmhCTEtn?oc=5",
-        "body": "Trump says operation to reopen Strait of Hormuz will be 'paused'\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:32:33",
+        "headline": "[MACRO] Will Elon Musk win his lawsuit against Sam Altman's OpenAI? Here's what prediction markets think",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/elon-musk-odds-low-to-win-openai-suit.html",
+        "body": "Out of all live events related to Elon Musk, trading activity on his suit against OpenAI is the second highest out of all contracts related to the billionaire."
       },
       {
-        "published_at": "2026-05-05T23:11:00",
-        "headline": "[MACRO] Oil prices fall a second day as Trump indicates possible Iran peace deal - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeTlLU0pJT2ZwQnowa3g0eVA4RmtVS0h5blNONUR2ZjNndlhNaXFSam9pUWRMcGpzR3dobWQ0UFJ0N1JxZzVUNFdDbXlVZXcxOXJ0N0FvdmxGTGJuQlNfVF9iMmFpOFA5UnZpbTZLcWpGMld4anpxRzRNYlQ4dUtvQnVwclY4dlFTMHV1R0MtelJjM2pNSnFJUUJKdWNIRG90WERXSFlJM0ljVzdoY0xTQ1plU3Q?oc=5",
-        "body": "Oil prices fall a second day as Trump indicates possible Iran peace deal\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:20:57",
+        "headline": "[MACRO] Warner Bros. Discovery books $2.9 billion net loss tied to Paramount deal, restructuring costs",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/warner-bros-discovery-net-loss-paramount-deal.html",
+        "body": "Paramount agreed to pay a Netflix termination fee, but the cost lives on WBD's books until the close of the deal."
       },
       {
-        "published_at": "2026-05-05T22:29:12",
-        "headline": "[MACRO] S&P 500 and Nasdaq notch records as AI chip stocks surge - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcXJmbTJ1QXlUbzNTS1ZhOXF6RHZmZjJGekJSRzZHRWRYQ05FSmEzMnlCaHJpbG0zSVB5WGRTNzUyYWtzY0JtSVNkRWdpWVo0Z2VrM1JLSW02UzRLWXQwaEhoMWgzYnNLdkhRdktMbGJlRnFxY2s5SzNDYkF3Y3ExVWdHTjJuMy1qT200WVo1WmxlT2hnYXJPWmpPTTlXWXhPTnI3N0dn?oc=5",
-        "body": "S&P 500 and Nasdaq notch records as AI chip stocks surge\u00a0\u00a0Reuters"
+        "published_at": "2026-05-06T20:13:17",
+        "headline": "[MACRO] Snap issues cautious guidance as Perplexity deal ends, Middle East 'geopolitical situation' causes uncertainty",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/06/snap-q1-earnings-report-2026.html",
+        "body": "Snap reported first-quarter earnings and provided cautious sales guidance while revealing it no longer has a deal with the generative AI startup Perplexity."
       },
       {
-        "published_at": "2026-05-05T22:19:46",
-        "headline": "[MACRO] CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz - Reuters",
+        "published_at": "2026-05-06T19:37:43",
+        "headline": "[MACRO] Occidental scraps new oil hedges as Iran war fuels price volatility - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSDVQeC1WUkRic0xoSVdVTVdnbG9ISDQxWTFyZVdWSDlZUjhkQTJaNzJ0R0pEX2FITFdYcENCNXFpNnpmQUItTWpTUktSZU82V3ptRm9ma2l3RW1GWVAtaEI2Vm5WZGdPMXllZGM2VnRaN2drRjh2RlJ5Z0lNODdHSEtaR2ZfdG1OMXA0OGVaUUpYZGI0SWM0WGRmOTJPWk1na0JZV1dld0dqVEUxSXlHUXJRazV0bDVYXzdnNE1HLTkwc1djb0lrMjBxdw?oc=5",
-        "body": "CS Anthem chemical tanker was second US-flagged vessel to exit Strait of Hormuz\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUW5Vcjh3UDVJQWNxSVM4dklJWEZnTlNSNTJSQ1BMWEhtSl9oT0JYWnFHdEltT0doRWY4U2l0TkdEa3VkY1ZqWkctME41Z1dtLVJmWmVxMTJ4QWt4b1ZBVTl0Z09BV1lDV3VRTWhJd2U0bEJ4M09KbDNweWx6d05JMU1UN29vaURZNTVFOEM3bFI3LW41UDVGNkpESHFOVS1ROXl3YkQyQmZDZ2xkc1ctcmktdDdYMmc?oc=5",
+        "body": "Occidental scraps new oil hedges as Iran war fuels price volatility\u00a0\u00a0Reuters"
       }
     ]
   }
