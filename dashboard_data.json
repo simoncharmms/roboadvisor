@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-12",
+    "generated_at": "2026-05-13",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -62,10 +62,6 @@
   ],
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-05-12",
-        "close": 69.95571899414062
-      },
       {
         "date": "2025-05-13",
         "close": 70.9456558227539
@@ -1081,13 +1077,13 @@
       {
         "date": "2026-05-11",
         "close": 85.69999694824219
+      },
+      {
+        "date": "2026-05-12",
+        "close": 84.44999694824219
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-05-12",
-        "close": 6.289802074432373
-      },
       {
         "date": "2025-05-13",
         "close": 6.523598670959473
@@ -2087,13 +2083,13 @@
       {
         "date": "2026-05-11",
         "close": 10.711999893188477
+      },
+      {
+        "date": "2026-05-12",
+        "close": 10.37600040435791
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-05-12",
-        "close": 106.11602783203125
-      },
       {
         "date": "2025-05-13",
         "close": 106.0086898803711
@@ -3093,55 +3089,59 @@
       {
         "date": "2026-05-11",
         "close": 107.25499725341797
+      },
+      {
+        "date": "2026-05-12",
+        "close": 106.86499786376953
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-05-12",
+      "date": "2026-05-13",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quantitative signals are modestly constructive \u2014 the Y%-Filter shows an uptrend and the ARIMA forecast is essentially flat, suggesting no imminent directional move, while GARCH volatility at 21.82% is moderate. However, all available news is macro in nature (Iran geopolitical tensions, oil supply concerns, US sanctions), with zero company-specific or sector-specific news for AMUN.PA, making it impossible to assess fundamental catalysts. Given the absence of relevant news and a near-flat price forecast, maintaining the current 15.5% weight is prudent until clearer signals emerge. A BUY upgrade would require stronger upward price momentum or positive company-specific news.",
-      "arima_forecast_1d": 85.7652,
-      "arima_forecast_5d": 85.7652,
-      "garch_volatility": 0.218202
+      "llm_rationale": "All available news is macro in nature (Iran ceasefire uncertainty, hot US inflation, geopolitical tensions) with no company-specific or sector-specific coverage for AMUN.PA, making fundamental signal assessment impossible. The quantitative signals are mixed: the Y%-Filter is bullish with an uptrend of ~18%, but the ARIMA forecast is essentially flat (+1d and +5d both at 84.37 EUR vs. current 84.45 EUR), suggesting near-term price exhaustion. GARCH annualised volatility of 22.21% is moderate, implying manageable risk but no strong directional conviction. Given the absence of company-specific news and a flat ARIMA forecast countering the trend signal, holding the current 15.6% weight is the prudent course until clearer signals emerge.",
+      "arima_forecast_1d": 84.3749,
+      "arima_forecast_5d": 84.3749,
+      "garch_volatility": 0.222058
     },
     {
-      "date": "2026-05-12",
+      "date": "2026-05-13",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quantitative signals are consistent with a hold: the Y%-Filter indicates an upward trend with moderate momentum, ARIMA forecasts are essentially flat (+1d and +5d within ~0.04 EUR of current price), and GARCH volatility at 5.35% annualised signals a low-risk, range-bound environment. The available news is entirely macro in nature (Iran/US tensions, oil supply concerns, sanctions), with no articles directly referencing EUN4.DE or its underlying index; these geopolitical developments introduce modest upside uncertainty via risk-off flows into bonds but do not warrant repositioning. Given the flat price forecast and low volatility, maintaining the current 26.7% weight is appropriate until a clearer directional signal emerges.",
-      "arima_forecast_1d": 107.2687,
-      "arima_forecast_5d": 107.222,
-      "garch_volatility": 0.053548
+      "llm_rationale": "The Y%-Filter confirms an upward trend and the ARIMA forecasts show near-flat movement over the next five days, consistent with a hold posture. GARCH annualised volatility of 5.34% is low, indicating a stable, low-risk position. The available news is entirely macro in nature (Iran ceasefire uncertainty, hot US inflation, geopolitical tensions) with no ticker-specific catalysts, providing no reason to deviate from the quant signal. Given the already significant 27.2% portfolio weight and absence of directional news, maintaining the position is appropriate.",
+      "arima_forecast_1d": 106.8852,
+      "arima_forecast_5d": 106.8424,
+      "garch_volatility": 0.053439
     },
     {
-      "date": "2026-05-12",
+      "date": "2026-05-13",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The quant signals show a BUY trend with a 22% move from the last turning point, but the flat ARIMA forecast (no expected price movement over 1\u20135 days) suggests momentum may be stalling. All available news is macro-level, covering Middle East tensions, Iran sanctions, and oil price movements, with no direct relevance to IQQH.DE (a clean energy/hydrogen ETF), making it impossible to derive a news-based directional view. Given the very high existing portfolio weight of 57.8% and moderate annualised volatility of ~22%, adding further exposure without clearer catalysts would be imprudent. A HOLD is appropriate until either the ARIMA forecast shows a directional signal or relevant fund-specific news emerges.",
-      "arima_forecast_1d": 10.712,
-      "arima_forecast_5d": 10.712,
-      "garch_volatility": 0.219659
+      "llm_rationale": "The quantitative signals present a mixed picture: the Y%-Filter is bullish with an uptrend, but the ARIMA forecast shows zero expected price movement over both 1-day and 5-day horizons, suggesting momentum may be stalling. GARCH volatility at 29.48% is elevated, indicating meaningful downside risk if macro conditions deteriorate. All available news is macro-level (Iran ceasefire uncertainty, hot US inflation, geopolitical tensions), with no direct coverage of IQQH.DE, making it impossible to assess fundamental catalysts; the macro backdrop is net negative for risk assets. Given the flat ARIMA forecast, high volatility, and adverse macro noise, holding the current position without adding exposure is prudent until clearer directional signals emerge.",
+      "arima_forecast_1d": 10.376,
+      "arima_forecast_5d": 10.376,
+      "garch_volatility": 0.294761
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-05-12",
+      "run_date": "2026-05-13",
       "ticker": "AMUN.PA",
-      "total_return_pct": 45.9725,
-      "sharpe_ratio": 0.551,
+      "total_return_pct": 43.8434,
+      "sharpe_ratio": 0.5231,
       "max_drawdown_pct": 15.8172,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-05-12",
+      "run_date": "2026-05-13",
       "ticker": "EUN4.DE",
       "total_return_pct": 0.0,
       "sharpe_ratio": 0.0,
@@ -3149,10 +3149,10 @@
       "win_rate": 0.0
     },
     {
-      "run_date": "2026-05-12",
+      "run_date": "2026-05-13",
       "ticker": "IQQH.DE",
-      "total_return_pct": 7.728,
-      "sharpe_ratio": -0.0125,
+      "total_return_pct": 4.349,
+      "sharpe_ratio": -0.0727,
       "max_drawdown_pct": 28.4527,
       "win_rate": 0.4118
     }
@@ -3260,113 +3260,113 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-05-12T01:04:29",
-        "headline": "[MACRO] Oil prices rise as fragile US-Iran talks sustain supply worries - Reuters",
+        "published_at": "2026-05-13T01:27:00",
+        "headline": "[MACRO] Asia markets falter as hot US inflation, shaky Iran ceasefire weigh - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeHhwaGkxMUwtRTJmcFhZU2puNzFud0M2WkJlNTFYeHRReFRFb0ZJMUdTLUhxTXBJMGxyOEc0MXJzX2pHWDdQMGZjNmhxc19yOVRWMHlPTXVzQS1VdmNsSTNraGlTMzZQanMzOGd3S2pVb2lGUElxUXNXQWd6MGpvMVh1SHFZYnh3TmJiSm1MSlU2eUxWWU05Zld4SmRfekh4WmNXOEVxUUJUUThqMnY2NVdn?oc=5",
-        "body": "Oil prices rise as fragile US-Iran talks sustain supply worries\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9WQ2g4TE51V0FmWDBZOFVjQVhDbVphVXVWQzVmV1RLY01taHBramJiaVNPTUdHZVZTQWtwWExtM2NUSW9fVkVLN2p4UzRMWUNla01KWnNYQVdLR3hlMUhxWlZqZEhQQnIxaThhVXQxNk44Sks1VXZHSkhEVQ?oc=5",
+        "body": "Asia markets falter as hot US inflation, shaky Iran ceasefire weigh\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T23:37:49",
-        "headline": "[MACRO] UAE has been secretly carrying out attacks on Iran, WSJ reports - Reuters",
+        "published_at": "2026-05-13T01:00:00",
+        "headline": "[MACRO] Oil prices slip on teetering Iran ceasefire as Trump heads to China - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVR5MnozSldhdWdnVTRZakJJMG8za2l6V0xUSjhFOUwtVTY0aWdJa2U5M1dWM29Qa012QS14ZUxpdWJoUkRuRzBpNXhOR2tyNjZuYUtKYVV1RjM4bExEMWxOZ09MbHhrLXFSdUNYY2tPaUVJTVlqOFhRek5jRnhPTWI2WjdOT1VjTk0tUTV3d29qZm9SVEF4SUdEcTZVRkxFQWpxdU5lOUd3S3hOYmpyN1ZZMA?oc=5",
-        "body": "UAE has been secretly carrying out attacks on Iran, WSJ reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeExfc3FwV0NDeVZKSzBqVy02QlcwWklBbkRJaDRhbkprQTBtLWZTektlSVV5a2NMLWoyX1ozeVdKTEVSTVFSbWw5SWdzTlBGd2JKWTg4S3ZYREtnaXRPNG8xOUZTel80Nm1POTNSY254Xy1FR2h2U0JiRGRBZDFacFNYemx4SVpEd1d4SHNRUU13LXFKMXVUUnRuanhkRnF5RFJrS0llZU1idnlxQ0pr?oc=5",
+        "body": "Oil prices slip on teetering Iran ceasefire as Trump heads to China\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T22:46:03",
-        "headline": "[MACRO] Trump says he supports suspending US gas tax after prices remain high - Reuters",
+        "published_at": "2026-05-12T21:02:42",
+        "headline": "[MACRO] Earthquake of magnitude 4.6 hits Tehran, no casualties reported - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5",
-        "body": "Trump says he supports suspending US gas tax after prices remain high\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWo2Vmp5bHlOVnI4dmprdDk5Rk03NTNuOTNabnptUjZIdkZUeVlES1ZIQzNZb3pTOFZ0N2tEOE5PSTdyYXdXOWg0QWJONG0wdG05OUpwWFhaUFR5NjdMajVMZmdNSzAweGNtY3g3YkpWOTlkZF9GRW82QmVTYVdzUTRKdEgzUTRyenAyeDhwR3VRcG1OcHNqbXhmcUVHTVBuMWFrbw?oc=5",
+        "body": "Earthquake of magnitude 4.6 hits Tehran, no casualties reported\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T21:04:03",
-        "headline": "[MACRO] Trading Day: AI beats Iran impasse - Reuters",
+        "published_at": "2026-05-12T20:26:48",
+        "headline": "[MACRO] Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNGtMTURYWC1ZdW14ejRtTWZNUmJvZXhJSS1rc21FSFpYM3RnZVNBbFg1S1hwWjdZZm1CWmsyNkl4dHhCWWtuVFo2ekR6MEFESHRjQl9DUGN5UG1vUVdLNUgtWVBZTjdsSXJRYUs1N3FzMlJ2bWY0OTRJOTlwREpEVGVvUGNVTm01WGtZMS1CTzRTaHg3MnN5UzVYUXFMaFN2WkFlNnpB?oc=5",
-        "body": "Trading Day: AI beats Iran impasse\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNlBuN19pTFlNTlBMVExNa0I5eG5XS2hlYlJNRUIzT092LTdqQzk4R0p3TmtuaXpkVHZjMkdxQS1FNDl5T1JWQzhsbWZtYUJ2c2JpMDRjMDZwbFZ4MklzdDg3all0Tjd0SFlqeVNkcmVVc0hfcjVVbXBWQnlKN3dFc2drMVZZaFZ4aThuWlJyemwtZW5hQ3k2R1VmM3JMRUNDeFc3b0VCdlhOSmVCNjJleDREM0hibVR5QW5PY3pIaHpXY0QzeHBma3hWc1RuZw?oc=5",
+        "body": "Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T20:20:13",
-        "headline": "[MACRO] Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbEJHMXBMVWNQT0J2ZDBwZlNfcFFNb2cxaEFxQ1Mya0dlSnQyMVVmYkxRblNGSHJoZVJUSWNEdHdUaWJwSHZZcXdQYzlqd3hWcEViV05vRTdjMGg0SDJ6dm5tOTlKY3J1T0lHN3pnM082VzJOeVozSUtBNlhwNENnMnZNd19XanBfX1JSX3liNkJScEd2Mjl1clJMM1FVNGJEdGtxZ25CeXlhcVdOV0ViRmowcTNyZ1RWY21ZUUxGbXozUQ?oc=5",
-        "body": "Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows\u00a0\u00a0Reuters"
+        "published_at": "2026-05-12T20:11:56",
+        "headline": "[MACRO] Auto-state lawmakers seek to keep Chinese EV parts out of U.S. as Trump heads to Beijing",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/12/trump-congress-china-evs-byd.html",
+        "body": "Michigan lawmakers introduced a bipartisan bill to ban Chinese-connected vehicles and technology from the U.S. market over security concerns."
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-05-12T01:04:29",
-        "headline": "[MACRO] Oil prices rise as fragile US-Iran talks sustain supply worries - Reuters",
+        "published_at": "2026-05-13T01:27:00",
+        "headline": "[MACRO] Asia markets falter as hot US inflation, shaky Iran ceasefire weigh - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeHhwaGkxMUwtRTJmcFhZU2puNzFud0M2WkJlNTFYeHRReFRFb0ZJMUdTLUhxTXBJMGxyOEc0MXJzX2pHWDdQMGZjNmhxc19yOVRWMHlPTXVzQS1VdmNsSTNraGlTMzZQanMzOGd3S2pVb2lGUElxUXNXQWd6MGpvMVh1SHFZYnh3TmJiSm1MSlU2eUxWWU05Zld4SmRfekh4WmNXOEVxUUJUUThqMnY2NVdn?oc=5",
-        "body": "Oil prices rise as fragile US-Iran talks sustain supply worries\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9WQ2g4TE51V0FmWDBZOFVjQVhDbVphVXVWQzVmV1RLY01taHBramJiaVNPTUdHZVZTQWtwWExtM2NUSW9fVkVLN2p4UzRMWUNla01KWnNYQVdLR3hlMUhxWlZqZEhQQnIxaThhVXQxNk44Sks1VXZHSkhEVQ?oc=5",
+        "body": "Asia markets falter as hot US inflation, shaky Iran ceasefire weigh\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T23:37:49",
-        "headline": "[MACRO] UAE has been secretly carrying out attacks on Iran, WSJ reports - Reuters",
+        "published_at": "2026-05-13T01:00:00",
+        "headline": "[MACRO] Oil prices slip on teetering Iran ceasefire as Trump heads to China - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVR5MnozSldhdWdnVTRZakJJMG8za2l6V0xUSjhFOUwtVTY0aWdJa2U5M1dWM29Qa012QS14ZUxpdWJoUkRuRzBpNXhOR2tyNjZuYUtKYVV1RjM4bExEMWxOZ09MbHhrLXFSdUNYY2tPaUVJTVlqOFhRek5jRnhPTWI2WjdOT1VjTk0tUTV3d29qZm9SVEF4SUdEcTZVRkxFQWpxdU5lOUd3S3hOYmpyN1ZZMA?oc=5",
-        "body": "UAE has been secretly carrying out attacks on Iran, WSJ reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeExfc3FwV0NDeVZKSzBqVy02QlcwWklBbkRJaDRhbkprQTBtLWZTektlSVV5a2NMLWoyX1ozeVdKTEVSTVFSbWw5SWdzTlBGd2JKWTg4S3ZYREtnaXRPNG8xOUZTel80Nm1POTNSY254Xy1FR2h2U0JiRGRBZDFacFNYemx4SVpEd1d4SHNRUU13LXFKMXVUUnRuanhkRnF5RFJrS0llZU1idnlxQ0pr?oc=5",
+        "body": "Oil prices slip on teetering Iran ceasefire as Trump heads to China\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T22:46:03",
-        "headline": "[MACRO] Trump says he supports suspending US gas tax after prices remain high - Reuters",
+        "published_at": "2026-05-12T21:02:42",
+        "headline": "[MACRO] Earthquake of magnitude 4.6 hits Tehran, no casualties reported - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5",
-        "body": "Trump says he supports suspending US gas tax after prices remain high\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWo2Vmp5bHlOVnI4dmprdDk5Rk03NTNuOTNabnptUjZIdkZUeVlES1ZIQzNZb3pTOFZ0N2tEOE5PSTdyYXdXOWg0QWJONG0wdG05OUpwWFhaUFR5NjdMajVMZmdNSzAweGNtY3g3YkpWOTlkZF9GRW82QmVTYVdzUTRKdEgzUTRyenAyeDhwR3VRcG1OcHNqbXhmcUVHTVBuMWFrbw?oc=5",
+        "body": "Earthquake of magnitude 4.6 hits Tehran, no casualties reported\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T21:04:03",
-        "headline": "[MACRO] Trading Day: AI beats Iran impasse - Reuters",
+        "published_at": "2026-05-12T20:26:48",
+        "headline": "[MACRO] Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNGtMTURYWC1ZdW14ejRtTWZNUmJvZXhJSS1rc21FSFpYM3RnZVNBbFg1S1hwWjdZZm1CWmsyNkl4dHhCWWtuVFo2ekR6MEFESHRjQl9DUGN5UG1vUVdLNUgtWVBZTjdsSXJRYUs1N3FzMlJ2bWY0OTRJOTlwREpEVGVvUGNVTm01WGtZMS1CTzRTaHg3MnN5UzVYUXFMaFN2WkFlNnpB?oc=5",
-        "body": "Trading Day: AI beats Iran impasse\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNlBuN19pTFlNTlBMVExNa0I5eG5XS2hlYlJNRUIzT092LTdqQzk4R0p3TmtuaXpkVHZjMkdxQS1FNDl5T1JWQzhsbWZtYUJ2c2JpMDRjMDZwbFZ4MklzdDg3all0Tjd0SFlqeVNkcmVVc0hfcjVVbXBWQnlKN3dFc2drMVZZaFZ4aThuWlJyemwtZW5hQ3k2R1VmM3JMRUNDeFc3b0VCdlhOSmVCNjJleDREM0hibVR5QW5PY3pIaHpXY0QzeHBma3hWc1RuZw?oc=5",
+        "body": "Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T20:20:13",
-        "headline": "[MACRO] Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbEJHMXBMVWNQT0J2ZDBwZlNfcFFNb2cxaEFxQ1Mya0dlSnQyMVVmYkxRblNGSHJoZVJUSWNEdHdUaWJwSHZZcXdQYzlqd3hWcEViV05vRTdjMGg0SDJ6dm5tOTlKY3J1T0lHN3pnM082VzJOeVozSUtBNlhwNENnMnZNd19XanBfX1JSX3liNkJScEd2Mjl1clJMM1FVNGJEdGtxZ25CeXlhcVdOV0ViRmowcTNyZ1RWY21ZUUxGbXozUQ?oc=5",
-        "body": "Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows\u00a0\u00a0Reuters"
+        "published_at": "2026-05-12T20:11:56",
+        "headline": "[MACRO] Auto-state lawmakers seek to keep Chinese EV parts out of U.S. as Trump heads to Beijing",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/12/trump-congress-china-evs-byd.html",
+        "body": "Michigan lawmakers introduced a bipartisan bill to ban Chinese-connected vehicles and technology from the U.S. market over security concerns."
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-05-12T01:04:29",
-        "headline": "[MACRO] Oil prices rise as fragile US-Iran talks sustain supply worries - Reuters",
+        "published_at": "2026-05-13T01:27:00",
+        "headline": "[MACRO] Asia markets falter as hot US inflation, shaky Iran ceasefire weigh - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeHhwaGkxMUwtRTJmcFhZU2puNzFud0M2WkJlNTFYeHRReFRFb0ZJMUdTLUhxTXBJMGxyOEc0MXJzX2pHWDdQMGZjNmhxc19yOVRWMHlPTXVzQS1VdmNsSTNraGlTMzZQanMzOGd3S2pVb2lGUElxUXNXQWd6MGpvMVh1SHFZYnh3TmJiSm1MSlU2eUxWWU05Zld4SmRfekh4WmNXOEVxUUJUUThqMnY2NVdn?oc=5",
-        "body": "Oil prices rise as fragile US-Iran talks sustain supply worries\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9WQ2g4TE51V0FmWDBZOFVjQVhDbVphVXVWQzVmV1RLY01taHBramJiaVNPTUdHZVZTQWtwWExtM2NUSW9fVkVLN2p4UzRMWUNla01KWnNYQVdLR3hlMUhxWlZqZEhQQnIxaThhVXQxNk44Sks1VXZHSkhEVQ?oc=5",
+        "body": "Asia markets falter as hot US inflation, shaky Iran ceasefire weigh\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T23:37:49",
-        "headline": "[MACRO] UAE has been secretly carrying out attacks on Iran, WSJ reports - Reuters",
+        "published_at": "2026-05-13T01:00:00",
+        "headline": "[MACRO] Oil prices slip on teetering Iran ceasefire as Trump heads to China - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRVR5MnozSldhdWdnVTRZakJJMG8za2l6V0xUSjhFOUwtVTY0aWdJa2U5M1dWM29Qa012QS14ZUxpdWJoUkRuRzBpNXhOR2tyNjZuYUtKYVV1RjM4bExEMWxOZ09MbHhrLXFSdUNYY2tPaUVJTVlqOFhRek5jRnhPTWI2WjdOT1VjTk0tUTV3d29qZm9SVEF4SUdEcTZVRkxFQWpxdU5lOUd3S3hOYmpyN1ZZMA?oc=5",
-        "body": "UAE has been secretly carrying out attacks on Iran, WSJ reports\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeExfc3FwV0NDeVZKSzBqVy02QlcwWklBbkRJaDRhbkprQTBtLWZTektlSVV5a2NMLWoyX1ozeVdKTEVSTVFSbWw5SWdzTlBGd2JKWTg4S3ZYREtnaXRPNG8xOUZTel80Nm1POTNSY254Xy1FR2h2U0JiRGRBZDFacFNYemx4SVpEd1d4SHNRUU13LXFKMXVUUnRuanhkRnF5RFJrS0llZU1idnlxQ0pr?oc=5",
+        "body": "Oil prices slip on teetering Iran ceasefire as Trump heads to China\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T22:46:03",
-        "headline": "[MACRO] Trump says he supports suspending US gas tax after prices remain high - Reuters",
+        "published_at": "2026-05-12T21:02:42",
+        "headline": "[MACRO] Earthquake of magnitude 4.6 hits Tehran, no casualties reported - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5",
-        "body": "Trump says he supports suspending US gas tax after prices remain high\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWo2Vmp5bHlOVnI4dmprdDk5Rk03NTNuOTNabnptUjZIdkZUeVlES1ZIQzNZb3pTOFZ0N2tEOE5PSTdyYXdXOWg0QWJONG0wdG05OUpwWFhaUFR5NjdMajVMZmdNSzAweGNtY3g3YkpWOTlkZF9GRW82QmVTYVdzUTRKdEgzUTRyenAyeDhwR3VRcG1OcHNqbXhmcUVHTVBuMWFrbw?oc=5",
+        "body": "Earthquake of magnitude 4.6 hits Tehran, no casualties reported\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T21:04:03",
-        "headline": "[MACRO] Trading Day: AI beats Iran impasse - Reuters",
+        "published_at": "2026-05-12T20:26:48",
+        "headline": "[MACRO] Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNGtMTURYWC1ZdW14ejRtTWZNUmJvZXhJSS1rc21FSFpYM3RnZVNBbFg1S1hwWjdZZm1CWmsyNkl4dHhCWWtuVFo2ekR6MEFESHRjQl9DUGN5UG1vUVdLNUgtWVBZTjdsSXJRYUs1N3FzMlJ2bWY0OTRJOTlwREpEVGVvUGNVTm01WGtZMS1CTzRTaHg3MnN5UzVYUXFMaFN2WkFlNnpB?oc=5",
-        "body": "Trading Day: AI beats Iran impasse\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNlBuN19pTFlNTlBMVExNa0I5eG5XS2hlYlJNRUIzT092LTdqQzk4R0p3TmtuaXpkVHZjMkdxQS1FNDl5T1JWQzhsbWZtYUJ2c2JpMDRjMDZwbFZ4MklzdDg3all0Tjd0SFlqeVNkcmVVc0hfcjVVbXBWQnlKN3dFc2drMVZZaFZ4aThuWlJyemwtZW5hQ3k2R1VmM3JMRUNDeFc3b0VCdlhOSmVCNjJleDREM0hibVR5QW5PY3pIaHpXY0QzeHBma3hWc1RuZw?oc=5",
+        "body": "Kuwait says four people affiliated with Iran's IRGC arrested trying to enter by sea\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T20:20:13",
-        "headline": "[MACRO] Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbEJHMXBMVWNQT0J2ZDBwZlNfcFFNb2cxaEFxQ1Mya0dlSnQyMVVmYkxRblNGSHJoZVJUSWNEdHdUaWJwSHZZcXdQYzlqd3hWcEViV05vRTdjMGg0SDJ6dm5tOTlKY3J1T0lHN3pnM082VzJOeVozSUtBNlhwNENnMnZNd19XanBfX1JSX3liNkJScEd2Mjl1clJMM1FVNGJEdGtxZ25CeXlhcVdOV0ViRmowcTNyZ1RWY21ZUUxGbXozUQ?oc=5",
-        "body": "Americans don't think Trump has explained Iran war goals, Reuters/Ipsos poll shows\u00a0\u00a0Reuters"
+        "published_at": "2026-05-12T20:11:56",
+        "headline": "[MACRO] Auto-state lawmakers seek to keep Chinese EV parts out of U.S. as Trump heads to Beijing",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/12/trump-congress-china-evs-byd.html",
+        "body": "Michigan lawmakers introduced a bipartisan bill to ban Chinese-connected vehicles and technology from the U.S. market over security concerns."
       }
     ]
   }
