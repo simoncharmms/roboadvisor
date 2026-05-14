@@ -568,42 +568,46 @@ function renderTickerCharts() {
       ${_newsDE}`;
     container.appendChild(card);
 
-    const labels = hist.map(d=>d.date);
-    const prices  = hist.map(d=>d.close);
-    const color   = PALETTE[idx % PALETTE.length];
+    // Clamp to last 5 historical days + 5 forecast days
+    const HIST_DAYS = 5;
+    const FORE_DAYS = 5;
+    const histSlice = hist.slice(-HIST_DAYS);
+    const labels    = histSlice.map(d => d.date);
+    const prices    = histSlice.map(d => d.close);
+    const color     = PALETTE[idx % PALETTE.length];
 
-    // Forecast overlay — prefer Prophet, fall back to ARIMA
-    let forecastLabels = [], forecastData = [], forecastLower = [], forecastUpper = [];
+    // Prognose-Überlagerung — Prophet bevorzugt, ARIMA als Fallback
+    let forecastLabels = [], forecastData = [];
     const _fc1de = latestSug?.prophet_forecast_1d ?? latestSug?.arima_forecast_1d;
     const _fc5de = latestSug?.prophet_forecast_5d ?? latestSug?.arima_forecast_5d;
     if (_fc1de != null) {
-      const lastDate = new Date(hist[hist.length-1].date);
-      [1, 2, 3, 4, 5].forEach(n => {
+      const lastDate = new Date(histSlice[histSlice.length - 1].date);
+      for (let n = 1; n <= FORE_DAYS; n++) {
         const d = new Date(lastDate);
-        d.setDate(d.getDate()+n);
-        forecastLabels.push(d.toISOString().slice(0,10));
-      });
-      const f1 = _fc1de;
-      const f5 = _fc5de || f1;
-      const step = (f5-f1)/4;
-      forecastData = [lastClose, f1, f1+step, f1+step*2, f1+step*3, f5];
-      forecastLabels = [hist[hist.length-1].date, ...forecastLabels];
+        d.setDate(d.getDate() + n);
+        forecastLabels.push(d.toISOString().slice(0, 10));
+      }
+      const f1   = _fc1de;
+      const f5   = _fc5de || f1;
+      const step = (f5 - f1) / (FORE_DAYS - 1);
+      forecastData   = [lastClose, ...Array.from({length: FORE_DAYS}, (_, i) => +(f1 + step * i).toFixed(4))];
+      forecastLabels = [histSlice[histSlice.length - 1].date, ...forecastLabels];
     }
 
-    const allLabels = [...labels, ...forecastLabels.slice(1)];
-    const totalLen  = allLabels.length;
-
-    const histPadded  = [...prices,      ...Array(totalLen - prices.length).fill(null)];
+    const allLabels  = [...labels, ...forecastLabels.slice(1)];
+    const totalLen   = allLabels.length;
+    const histPadded = [...prices, ...Array(totalLen - prices.length).fill(null)];
     const forecastPad = forecastData.length
       ? [...Array(Math.max(0, labels.length - 1)).fill(null), ...forecastData]
       : Array(totalLen).fill(null);
 
     destroyChart(divId);
-    const ctx2 = document.getElementById(divId).getContext('2d');
-    const grad2 = ctx2.createLinearGradient(0,0,0,200);
-    grad2.addColorStop(0, color+'30');
-    grad2.addColorStop(1, color+'05');
+    const ctx2  = document.getElementById(divId).getContext('2d');
+    const grad2 = ctx2.createLinearGradient(0, 0, 0, 200);
+    grad2.addColorStop(0, color + '30');
+    grad2.addColorStop(1, color + '05');
 
+    const isMobileDE = window.innerWidth < 480;
     charts[divId] = new Chart(ctx2, {
       type: 'line',
       data: {
@@ -617,19 +621,22 @@ function renderTickerCharts() {
             backgroundColor: grad2,
             fill: true,
             tension: 0.3,
-            pointRadius: 0,
+            pointRadius: 3,
+            pointBackgroundColor: color,
           },
           ...(forecastData.length ? [{
             label: 'Prophet-Prognose',
             data: forecastPad,
             borderColor: color,
             borderWidth: 2,
-            borderDash: [5,4],
+            borderDash: [5, 4],
             backgroundColor: 'transparent',
             fill: false,
             tension: 0.3,
-            pointRadius: 0,
+            pointRadius: 3,
             pointStyle: 'circle',
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: color,
           }] : [])
         ]
       },
@@ -650,11 +657,26 @@ function renderTickerCharts() {
         scales: {
           x: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, maxTicksLimit: 6, maxRotation: 0 }
+            ticks: {
+              color: '#5a5a78',
+              font: { size: isMobileDE ? 9 : 11 },
+              maxTicksLimit: totalLen,
+              maxRotation: 30,
+              callback: function(val, i) {
+                const lbl = allLabels[i] || '';
+                const d   = new Date(lbl);
+                return isNaN(d) ? lbl : d.toLocaleDateString('de-DE', { day: 'numeric', month: 'short' });
+              }
+            }
           },
           y: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: 10 }, callback: v => '€'+v.toFixed(1) }
+            ticks: {
+              color: '#5a5a78',
+              font: { size: isMobileDE ? 9 : 11 },
+              maxTicksLimit: isMobileDE ? 4 : 6,
+              callback: v => '€' + v.toFixed(2)
+            }
           }
         }
       }

@@ -777,10 +777,11 @@ canvas { max-width: 100% !important; display: block; }
   /* -- Two-col → single col -- */
   .two-col { grid-template-columns: 1fr; gap: 14px; }
 
-  /* -- Allocation donut -- */
-  .donut-container         { flex-direction: column; align-items: center; }
-  .donut-container canvas  { max-height: 130px !important; }
-  .donut-legend            { gap: 4px; margin-top: 8px; }
+  /* -- Allocation donut: stack vertically, compact -- */
+  .donut-container         { flex-direction: column; align-items: center; gap: 12px; }
+  .donut-container canvas  { max-width: 140px !important; max-height: 140px !important; width: 140px !important; height: 140px !important; }
+  .donut-legend            { gap: 6px; margin-top: 0; width: 100%; }
+  .donut-legend-item       { gap: 8px; }
   .donut-legend-name       { font-size: 10px; }
   .donut-legend-pct        { font-size: 11px; }
 

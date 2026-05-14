@@ -546,11 +546,11 @@ function renderPerformanceChart() {
           time: { unit: 'month', tooltipFormat: 'yyyy-MM-dd', displayFormats: { month: 'MMM yy', week: 'MMM d', day: 'MMM d' } },
           adapters: { date: {} },
           grid: { color: 'rgba(42,42,58,0.5)' },
-          ticks: { color: '#5a5a78', font: { size: 11 }, maxTicksLimit: 10, maxRotation: 0 }
+          ticks: { color: '#5a5a78', font: { size: window.innerWidth < 480 ? 9 : 11 }, maxTicksLimit: window.innerWidth < 480 ? 5 : 10, maxRotation: 0 }
         },
         y: {
           grid: { color: 'rgba(42,42,58,0.5)' },
-          ticks: { color: '#5a5a78', font: { size: 11 }, callback: v => '€'+v.toFixed(0) }
+          ticks: { color: '#5a5a78', font: { size: window.innerWidth < 480 ? 9 : 11 }, callback: v => '€'+v.toFixed(0), maxTicksLimit: window.innerWidth < 480 ? 4 : 8 }
         }
       }
     }
@@ -570,6 +570,7 @@ function renderAllocationChart() {
   });
 
   const ctx = document.getElementById('chart-allocation').getContext('2d');
+  const isMobileAlloc = window.innerWidth < 480;
   charts['allocation'] = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -578,13 +579,14 @@ function renderAllocationChart() {
         data: values,
         backgroundColor: PALETTE,
         borderColor: '#0a0a0f',
-        borderWidth: 3,
+        borderWidth: isMobileAlloc ? 2 : 3,
         hoverBorderColor: '#16161e'
       }]
     },
     options: {
       responsive: true,
-      cutout: '68%',
+      maintainAspectRatio: true,
+      cutout: isMobileAlloc ? '62%' : '68%',
       plugins: { legend: { display: false }, tooltip: {
         backgroundColor: '#16161e',
         borderColor: '#2a2a3a',
@@ -783,45 +785,44 @@ function renderTickerCharts() {
       ${newsHtml}`;
     container.appendChild(card);
 
-    const labels = hist.map(d=>d.date);
-    const prices  = hist.map(d=>d.close);
-    const color   = PALETTE[idx % PALETTE.length];
+    // Clamp to last 5 historical days + 5 forecast days
+    const HIST_DAYS = 5;
+    const FORE_DAYS = 5;
+    const histSlice = hist.slice(-HIST_DAYS);
+    const labels    = histSlice.map(d => d.date);
+    const prices    = histSlice.map(d => d.close);
+    const color     = PALETTE[idx % PALETTE.length];
 
-    // Forecast overlay (extend labels) — prefer Prophet, fall back to ARIMA
-    let forecastLabels = [], forecastData = [], forecastLower = [], forecastUpper = [];
+    // Forecast overlay — prefer Prophet, fall back to ARIMA
+    let forecastLabels = [], forecastData = [];
     const _fc1 = latestSug?.prophet_forecast_1d ?? latestSug?.arima_forecast_1d;
     const _fc5 = latestSug?.prophet_forecast_5d ?? latestSug?.arima_forecast_5d;
     if (_fc1 != null) {
-      const lastDate = new Date(hist[hist.length-1].date);
-      [1, 2, 3, 4, 5].forEach(n => {
+      const lastDate = new Date(histSlice[histSlice.length - 1].date);
+      for (let n = 1; n <= FORE_DAYS; n++) {
         const d = new Date(lastDate);
-        d.setDate(d.getDate()+n);
-        forecastLabels.push(d.toISOString().slice(0,10));
-      });
-      // Simple linear interpolation from last close to 5d forecast
-      const f1 = _fc1;
-      const f5 = _fc5 || f1;
-      const step = (f5-f1)/4;
-      forecastData = [lastClose, f1, f1+step, f1+step*2, f1+step*3, f5];
-      forecastLabels = [hist[hist.length-1].date, ...forecastLabels];
+        d.setDate(d.getDate() + n);
+        forecastLabels.push(d.toISOString().slice(0, 10));
+      }
+      const f1   = _fc1;
+      const f5   = _fc5 || f1;
+      const step = (f5 - f1) / (FORE_DAYS - 1);
+      forecastData   = [lastClose, ...Array.from({length: FORE_DAYS}, (_, i) => +(f1 + step * i).toFixed(4))];
+      forecastLabels = [histSlice[histSlice.length - 1].date, ...forecastLabels];
     }
 
-    const allLabels = [...labels, ...forecastLabels.slice(1)];
-    const totalLen  = allLabels.length;
-
-    // Null-pad so every dataset is exactly totalLen long
-    const histPadded  = [...prices,      ...Array(totalLen - prices.length).fill(null)];
-    // forecastPad: nulls up to the bridge point (last historical index), then forecastData
-    // if no forecastData, fill entirely with null so dataset lengths still match
+    const allLabels  = [...labels, ...forecastLabels.slice(1)];
+    const totalLen   = allLabels.length;
+    const histPadded = [...prices, ...Array(totalLen - prices.length).fill(null)];
     const forecastPad = forecastData.length
       ? [...Array(Math.max(0, labels.length - 1)).fill(null), ...forecastData]
       : Array(totalLen).fill(null);
 
     destroyChart(divId);
-    const ctx2 = document.getElementById(divId).getContext('2d');
-    const grad2 = ctx2.createLinearGradient(0,0,0,200);
-    grad2.addColorStop(0, color+'30');
-    grad2.addColorStop(1, color+'05');
+    const ctx2  = document.getElementById(divId).getContext('2d');
+    const grad2 = ctx2.createLinearGradient(0, 0, 0, 200);
+    grad2.addColorStop(0, color + '30');
+    grad2.addColorStop(1, color + '05');
 
     const isMobile = window.innerWidth < 480;
     charts[divId] = new Chart(ctx2, {
@@ -837,19 +838,22 @@ function renderTickerCharts() {
             backgroundColor: grad2,
             fill: true,
             tension: 0.3,
-            pointRadius: 0,
+            pointRadius: 3,
+            pointBackgroundColor: color,
           },
           ...(forecastData.length ? [{
             label: t('forecast-label'),
             data: forecastPad,
             borderColor: color,
             borderWidth: 2,
-            borderDash: [5,4],
+            borderDash: [5, 4],
             backgroundColor: 'transparent',
             fill: false,
             tension: 0.3,
-            pointRadius: 0,
+            pointRadius: 3,
             pointStyle: 'circle',
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: color,
           }] : [])
         ]
       },
@@ -858,23 +862,38 @@ function renderTickerCharts() {
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: { labels: { font: { size: isMobile ? 10 : 12 }, boxWidth: 12 } },
+          legend: { labels: { font: { size: isMobile ? 9 : 12 }, boxWidth: 10 } },
           tooltip: {
             backgroundColor: '#16161e',
             borderColor: '#2a2a3a',
             borderWidth: 1,
             bodyColor: '#f0f0f8',
-            callbacks: { label: ctx => `${ctx.dataset.label}: €${ctx.raw?.toFixed(2)||'—'}` }
+            callbacks: { label: ctx => `${ctx.dataset.label}: €${ctx.raw?.toFixed(2) || '—'}` }
           }
         },
         scales: {
           x: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, maxTicksLimit: 6, maxRotation: 45 }
+            ticks: {
+              color: '#5a5a78',
+              font: { size: isMobile ? 9 : 11 },
+              maxTicksLimit: totalLen,
+              maxRotation: 30,
+              callback: function(val, i) {
+                const lbl = allLabels[i] || '';
+                const d   = new Date(lbl);
+                return isNaN(d) ? lbl : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+              }
+            }
           },
           y: {
             grid: { color: 'rgba(42,42,58,0.4)' },
-            ticks: { color: '#5a5a78', font: { size: isMobile ? 9 : 11 }, callback: v => '€'+v.toFixed(1) }
+            ticks: {
+              color: '#5a5a78',
+              font: { size: isMobile ? 9 : 11 },
+              maxTicksLimit: isMobile ? 4 : 6,
+              callback: v => '€' + v.toFixed(2)
+            }
           }
         }
       }
