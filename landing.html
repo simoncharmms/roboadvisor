@@ -595,9 +595,9 @@ function renderLanding(data) {
 
   // Build portfolio series
   const fullSeriesObj = buildPortfolioSeries(data);
-  // Performance: first depot value → today's total (depot + savings)
+  // Performance: first depot value → today's depot value (depot-only return)
   const _firstVal = fullSeriesObj.depot.length ? fullSeriesObj.depot[0].value : null;
-  const returnPct = _firstVal && _firstVal > 0 ? (totalValue - _firstVal) / _firstVal * 100 : null;
+  const returnPct = _firstVal && _firstVal > 0 ? (depotValue - _firstVal) / _firstVal * 100 : null;
   // Extend to today so today's trades show as markers
   const todayStr = new Date().toISOString().slice(0,10);
   const _lastDepot = fullSeriesObj.depot.length ? fullSeriesObj.depot[fullSeriesObj.depot.length-1].date : null;
