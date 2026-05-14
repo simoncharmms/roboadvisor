@@ -521,31 +521,41 @@ function renderChart(seriesObj, trades) {
     };
   });
 
+  // Stacked order: Tagesgeld bottom, Depot on top
+  // Tagesgeld top line = raw savings value (fills from zero)
+  // Depot stacked top line = savings + depot (fills down to savings line)
+  const savingsTopXY = savingsSeries.map(s => ({ x: s.date, y: s.value }));
+  const depotStackedXY = depotSeries.map((d, i) => ({
+    x: d.date,
+    y: d.value + (savingsSeries[i]?.value || 0),
+  }));
+  const depotRawMap = new Map(depotSeries.map(d => [d.date, d.value]));
+
   const datasets = [
-    {
-      label: 'Depot',
-      data: depotXY,
-      borderColor: '#10b981',
-      borderWidth: 2,
-      backgroundColor: gradDepot,
-      fill: 'origin',       // fills from this line down to zero
-      tension: 0.35,
-      pointRadius: 0,
-      pointHoverRadius: 4,
-      order: 2,
-    },
-    ...(savingsStackedXY.length ? [{
+    ...(savingsTopXY.length ? [{
       label: 'Tagesgeld',
-      data: savingsStackedXY,
+      data: savingsTopXY,
       borderColor: '#3b82f6',
       borderWidth: 2,
       backgroundColor: gradSavings,
-      fill: '-1',           // fills from this line down to the depot line
+      fill: 'origin',       // fills from this line down to zero
       tension: 0.1,
       pointRadius: 0,
       pointHoverRadius: 4,
+      order: 2,
+    }] : []),
+    {
+      label: 'Depot',
+      data: savingsTopXY.length ? depotStackedXY : depotXY,
+      borderColor: '#10b981',
+      borderWidth: 2,
+      backgroundColor: gradDepot,
+      fill: savingsTopXY.length ? '-1' : 'origin',  // fills down to Tagesgeld line
+      tension: 0.35,
+      pointRadius: 0,
+      pointHoverRadius: 4,
       order: 1,
-    }] : [])
+    },
   ];
 
   perfChart = new Chart(ctx, {
@@ -570,12 +580,14 @@ function renderChart(seriesObj, trades) {
           bodyFont: { weight: '700' },
           callbacks: {
             label: c => {
-              if (c.datasetIndex === 0) {
-                return 'Depot: €' + (c.raw?.y ?? c.raw).toFixed(2);
+              const dateKey = c.raw?.x ?? '';
+              if (c.dataset.label === 'Tagesgeld') {
+                const rawSav = savingsRawMap.get(dateKey) || (c.raw?.y ?? 0);
+                return 'Tagesgeld: €' + Number(rawSav).toFixed(2);
               } else {
-                // Show raw savings value, not stacked value
-                const rawSav = savingsRawMap.get(c.raw?.x ?? c.label) || 0;
-                return 'Tagesgeld: €' + rawSav.toFixed(2);
+                // Depot: stacked value minus savings = raw depot
+                const rawDep = depotRawMap.get(dateKey) || (c.raw?.y ?? 0);
+                return 'Depot: €' + Number(rawDep).toFixed(2);
               }
             }
           }
