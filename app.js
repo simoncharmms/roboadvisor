@@ -728,6 +728,8 @@ function renderTickerCharts() {
     const _macdSig = latestSug?.macd_signal || null;
     const _propFc5 = latestSug?.prophet_forecast_5d ?? latestSug?.arima_forecast_5d;
     const _zScore = latestSug?.zscore;
+    const _llmRec = latestSug?.llm_recommendation || null;
+    const _llmConf = latestSug?.llm_confidence || null;
     function _pillClass(sig) {
       if (sig === 'BUY') return 'buy';
       if (sig === 'SELL') return 'sell';
@@ -738,6 +740,7 @@ function renderTickerCharts() {
       ${_macdSig ? `<div class="sig-pill sig-pill-${_pillClass(_macdSig)}" title="MACD: Moving Average Convergence Divergence. BUY/SELL only on fresh crossovers. HOLD = trend continues, no new crossover."><span class="sig-label">MACD</span><span class="sig-value">${_macdSig}</span></div>` : ''}
       ${_propFc5 != null ? `<div class="sig-pill sig-pill-neutral" title="Prophet: Facebook's time-series model capturing weekly and yearly seasonality. More realistic than ARIMA for ETF prices."><span class="sig-label">Prophet +5d</span><span class="sig-value">€${Number(_propFc5).toFixed(2)}</span></div>` : ''}
       ${_zScore != null ? `<div class="sig-pill sig-pill-${_zScore <= -1.5 ? 'buy' : _zScore >= 1.5 ? 'sell' : 'hold'}" title="Z-Score: Mean-reversion signal for bond ETFs. Z ≤ -1.5 = below 1-year mean → BUY. Z ≥ +1.5 = overextended → SELL."><span class="sig-label">Z-Score</span><span class="sig-value">${Number(_zScore).toFixed(2)}</span></div>` : ''}
+      ${_llmRec ? `<div class="sig-pill sig-pill-${_pillClass(_llmRec)} sig-pill-llm" title="AI Recommendation (Claude): Based on quant signals + recent news. Confidence: ${_llmConf||'N/A'}."><span class="sig-label">AI • ${_llmConf||'?'}</span><span class="sig-value">${_llmRec}</span></div>` : ''}
     </div>`;
 
     // Build news HTML — detect shared headlines across tickers

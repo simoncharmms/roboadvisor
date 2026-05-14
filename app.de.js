@@ -528,12 +528,15 @@ function renderTickerCharts() {
     const _macdS = latestSug?.macd_signal || null;
     const _pFc5 = latestSug?.prophet_forecast_5d ?? latestSug?.arima_forecast_5d;
     const _zS = latestSug?.zscore;
+    const _llmS = latestSug?.llm_recommendation || null;
+    const _llmC = latestSug?.llm_confidence || null;
     function _pc(sig) { return sig==='BUY'?'buy':sig==='SELL'?'sell':'hold'; }
     const _pillsDE = `<div class="signal-strip">
       ${_yS ? `<div class="sig-pill sig-pill-${_pc(_yS)}" title="Y%-Filter: Signalisiert eine Trendwende, wenn der Kurs ≥3% vom letzten Wendepunkt abweicht. ⏱️ = Signal älter als 30 Tage, weniger gewichten."><span class="sig-label">Y%-Filter</span><span class="sig-value">${_yS}${_yExp ? ' ⏱️ abgelaufen' : ''}</span></div>` : ''}
       ${_macdS ? `<div class="sig-pill sig-pill-${_pc(_macdS)}" title="MACD: Gleitender Durchschnitt Konvergenz/Divergenz. KAUF/VERKAUF nur bei frischen Kreuzungen. HALTEN = Trend setzt sich fort, keine neue Kreuzung."><span class="sig-label">MACD</span><span class="sig-value">${_macdS}</span></div>` : ''}
       ${_pFc5 != null ? `<div class="sig-pill sig-pill-neutral" title="Prophet: Zeitreihenmodell von Facebook mit Wochen- und Jahressaisonalität. Realistischer als ARIMA für ETF-Kurse."><span class="sig-label">Prophet +5T</span><span class="sig-value">€${Number(_pFc5).toFixed(2)}</span></div>` : ''}
       ${_zS != null ? `<div class="sig-pill sig-pill-${_zS <= -1.5 ? 'buy' : _zS >= 1.5 ? 'sell' : 'hold'}" title="Z-Score: Mean-Reversion-Signal für Anleihen-ETFs. Z ≤ -1,5 = Kurs unter Jahresdurchschnitt → KAUF. Z ≥ +1,5 = überdehnt → VERKAUF."><span class="sig-label">Z-Score</span><span class="sig-value">${Number(_zS).toFixed(2)}</span></div>` : ''}
+      ${_llmS ? `<div class="sig-pill sig-pill-${_pc(_llmS)} sig-pill-llm" title="KI-Empfehlung (Claude): Basierend auf Quant-Signalen + aktuellen Nachrichten. Konfidenz: ${_llmC||'?'}."><span class="sig-label">KI • ${_llmC||'?'}</span><span class="sig-value">${_llmS}</span></div>` : ''}
     </div>`;
 
     // News with deduplication
