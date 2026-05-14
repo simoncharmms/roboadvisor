@@ -60,10 +60,10 @@
       "total_fees_eur": 0.0
     },
     {
-      "ticker": "ENB",
+      "ticker": "FM.TO",
       "isin": "CA3359341052",
       "wkn": "904604",
-      "name": "Enbridge Inc.",
+      "name": "First Quantum Minerals Ltd.",
       "shares": 21,
       "currency": "EUR",
       "cost_basis_eur": 545.76,
@@ -3105,1010 +3105,1010 @@
         "close": 106.83000183105469
       }
     ],
-    "ENB": [
+    "FM.TO": [
       {
         "date": "2025-05-14",
-        "close": 42.98788833618164
+        "close": 20.190000534057617
       },
       {
         "date": "2025-05-15",
-        "close": 43.698028564453125
+        "close": 20.09000015258789
       },
       {
         "date": "2025-05-16",
-        "close": 43.62993240356445
-      },
-      {
-        "date": "2025-05-19",
-        "close": 43.71748733520508
+        "close": 19.530000686645508
       },
       {
         "date": "2025-05-20",
-        "close": 44.3692626953125
+        "close": 19.780000686645508
       },
       {
         "date": "2025-05-21",
-        "close": 44.33034896850586
+        "close": 19.6299991607666
       },
       {
         "date": "2025-05-22",
-        "close": 43.941226959228516
+        "close": 20.010000228881836
       },
       {
         "date": "2025-05-23",
-        "close": 44.80702209472656
+        "close": 20.489999771118164
+      },
+      {
+        "date": "2025-05-26",
+        "close": 20.93000030517578
       },
       {
         "date": "2025-05-27",
-        "close": 44.78756332397461
+        "close": 20.68000030517578
       },
       {
         "date": "2025-05-28",
-        "close": 44.33034896850586
+        "close": 20.489999771118164
       },
       {
         "date": "2025-05-29",
-        "close": 44.60272979736328
+        "close": 20.68000030517578
       },
       {
         "date": "2025-05-30",
-        "close": 45.21559524536133
+        "close": 20.329999923706055
       },
       {
         "date": "2025-06-02",
-        "close": 45.877098083496094
+        "close": 20.8700008392334
       },
       {
         "date": "2025-06-03",
-        "close": 45.789546966552734
+        "close": 20.770000457763672
       },
       {
         "date": "2025-06-04",
-        "close": 45.39069747924805
+        "close": 21.030000686645508
       },
       {
         "date": "2025-06-05",
-        "close": 45.59498596191406
+        "close": 21.420000076293945
       },
       {
         "date": "2025-06-06",
-        "close": 45.2545051574707
+        "close": 21.579999923706055
       },
       {
         "date": "2025-06-09",
-        "close": 44.573551177978516
+        "close": 21.510000228881836
       },
       {
         "date": "2025-06-10",
-        "close": 44.60272979736328
+        "close": 21.399999618530273
       },
       {
         "date": "2025-06-11",
-        "close": 44.622188568115234
+        "close": 21.270000457763672
       },
       {
         "date": "2025-06-12",
-        "close": 45.53662109375
+        "close": 20.959999084472656
       },
       {
         "date": "2025-06-13",
-        "close": 45.40042495727539
+        "close": 21.030000686645508
       },
       {
         "date": "2025-06-16",
-        "close": 44.709739685058594
+        "close": 21.459999084472656
       },
       {
         "date": "2025-06-17",
-        "close": 44.71946716308594
+        "close": 21.209999084472656
       },
       {
         "date": "2025-06-18",
-        "close": 43.75639724731445
+        "close": 21.43000030517578
+      },
+      {
+        "date": "2025-06-19",
+        "close": 21.469999313354492
       },
       {
         "date": "2025-06-20",
-        "close": 43.56184005737305
+        "close": 21.360000610351562
       },
       {
         "date": "2025-06-23",
-        "close": 43.707759857177734
+        "close": 21.84000015258789
       },
       {
         "date": "2025-06-24",
-        "close": 43.81476593017578
+        "close": 22.549999237060547
       },
       {
         "date": "2025-06-25",
-        "close": 43.27000045776367
+        "close": 22.469999313354492
       },
       {
         "date": "2025-06-26",
-        "close": 43.85368347167969
+        "close": 24.149999618530273
       },
       {
         "date": "2025-06-27",
-        "close": 43.56184005737305
+        "close": 23.93000030517578
       },
       {
         "date": "2025-06-30",
-        "close": 44.08715057373047
-      },
-      {
-        "date": "2025-07-01",
-        "close": 43.698028564453125
+        "close": 24.190000534057617
       },
       {
         "date": "2025-07-02",
-        "close": 43.56184005737305
+        "close": 25.09000015258789
       },
       {
         "date": "2025-07-03",
-        "close": 43.52293014526367
+        "close": 25.1200008392334
+      },
+      {
+        "date": "2025-07-04",
+        "close": 25.06999969482422
       },
       {
         "date": "2025-07-07",
-        "close": 42.94898223876953
+        "close": 24.760000228881836
       },
       {
         "date": "2025-07-08",
-        "close": 42.99761962890625
+        "close": 24.219999313354492
       },
       {
         "date": "2025-07-09",
-        "close": 42.59877395629883
+        "close": 23.579999923706055
       },
       {
         "date": "2025-07-10",
-        "close": 43.27973175048828
+        "close": 23.81999969482422
       },
       {
         "date": "2025-07-11",
-        "close": 43.338096618652344
+        "close": 23.31999969482422
       },
       {
         "date": "2025-07-14",
-        "close": 43.98014450073242
+        "close": 23.239999771118164
       },
       {
         "date": "2025-07-15",
-        "close": 44.03851318359375
+        "close": 23.25
       },
       {
         "date": "2025-07-16",
-        "close": 44.0190544128418
+        "close": 23.110000610351562
       },
       {
         "date": "2025-07-17",
-        "close": 43.54238510131836
+        "close": 23.600000381469727
       },
       {
         "date": "2025-07-18",
-        "close": 43.86341094970703
+        "close": 23.389999389648438
       },
       {
         "date": "2025-07-21",
-        "close": 43.377010345458984
+        "close": 23.700000762939453
       },
       {
         "date": "2025-07-22",
-        "close": 43.97041702270508
+        "close": 24.329999923706055
       },
       {
         "date": "2025-07-23",
-        "close": 44.2427978515625
+        "close": 24.34000015258789
       },
       {
         "date": "2025-07-24",
-        "close": 44.22334289550781
+        "close": 23.940000534057617
       },
       {
         "date": "2025-07-25",
-        "close": 43.74666976928711
+        "close": 23.729999542236328
       },
       {
         "date": "2025-07-28",
-        "close": 43.41592025756836
+        "close": 23.600000381469727
       },
       {
         "date": "2025-07-29",
-        "close": 43.85368347167969
+        "close": 23.459999084472656
       },
       {
         "date": "2025-07-30",
-        "close": 43.75639724731445
+        "close": 23.0
       },
       {
         "date": "2025-07-31",
-        "close": 44.05796813964844
+        "close": 23.290000915527344
       },
       {
         "date": "2025-08-01",
-        "close": 44.943214416503906
-      },
-      {
-        "date": "2025-08-04",
-        "close": 45.35178756713867
+        "close": 22.18000030517578
       },
       {
         "date": "2025-08-05",
-        "close": 45.46852493286133
+        "close": 23.34000015258789
       },
       {
         "date": "2025-08-06",
-        "close": 45.731178283691406
+        "close": 22.950000762939453
       },
       {
         "date": "2025-08-07",
-        "close": 45.79927444458008
+        "close": 23.15999984741211
       },
       {
         "date": "2025-08-08",
-        "close": 45.71172332763672
+        "close": 23.760000228881836
       },
       {
         "date": "2025-08-11",
-        "close": 46.198123931884766
+        "close": 23.190000534057617
       },
       {
         "date": "2025-08-12",
-        "close": 46.03274154663086
+        "close": 23.68000030517578
       },
       {
         "date": "2025-08-13",
-        "close": 46.38295364379883
+        "close": 23.809999465942383
       },
       {
         "date": "2025-08-14",
-        "close": 46.86935043334961
+        "close": 23.639999389648438
       },
       {
         "date": "2025-08-15",
-        "close": 46.41838836669922
+        "close": 23.65999984741211
       },
       {
         "date": "2025-08-18",
-        "close": 46.05327606201172
+        "close": 23.270000457763672
       },
       {
         "date": "2025-08-19",
-        "close": 46.56640625
+        "close": 22.979999542236328
       },
       {
         "date": "2025-08-20",
-        "close": 47.39530563354492
+        "close": 22.40999984741211
       },
       {
         "date": "2025-08-21",
-        "close": 47.306495666503906
+        "close": 22.5
       },
       {
         "date": "2025-08-22",
-        "close": 47.33610153198242
+        "close": 23.469999313354492
       },
       {
         "date": "2025-08-25",
-        "close": 46.970985412597656
+        "close": 23.579999923706055
       },
       {
         "date": "2025-08-26",
-        "close": 46.81310272216797
+        "close": 23.760000228881836
       },
       {
         "date": "2025-08-27",
-        "close": 46.980857849121094
+        "close": 23.34000015258789
       },
       {
         "date": "2025-08-28",
-        "close": 47.17821502685547
+        "close": 23.510000228881836
       },
       {
         "date": "2025-08-29",
-        "close": 47.701210021972656
+        "close": 24.06999969482422
       },
       {
         "date": "2025-09-02",
-        "close": 47.661739349365234
+        "close": 23.700000762939453
       },
       {
         "date": "2025-09-03",
-        "close": 47.68147277832031
+        "close": 25.059999465942383
       },
       {
         "date": "2025-09-04",
-        "close": 47.52358627319336
+        "close": 24.290000915527344
       },
       {
         "date": "2025-09-05",
-        "close": 47.62226486206055
+        "close": 24.579999923706055
       },
       {
         "date": "2025-09-08",
-        "close": 47.68147277832031
+        "close": 24.690000534057617
       },
       {
         "date": "2025-09-09",
-        "close": 47.69134521484375
+        "close": 25.3799991607666
       },
       {
         "date": "2025-09-10",
-        "close": 47.947906494140625
+        "close": 25.329999923706055
       },
       {
         "date": "2025-09-11",
-        "close": 48.165000915527344
+        "close": 26.079999923706055
       },
       {
         "date": "2025-09-12",
-        "close": 48.45116424560547
+        "close": 26.31999969482422
       },
       {
         "date": "2025-09-15",
-        "close": 48.41169738769531
+        "close": 26.739999771118164
       },
       {
         "date": "2025-09-16",
-        "close": 48.24394226074219
+        "close": 26.969999313354492
       },
       {
         "date": "2025-09-17",
-        "close": 48.461036682128906
+        "close": 26.440000534057617
       },
       {
         "date": "2025-09-18",
-        "close": 48.47090148925781
+        "close": 26.290000915527344
       },
       {
         "date": "2025-09-19",
-        "close": 48.8064079284668
+        "close": 27.0
       },
       {
         "date": "2025-09-22",
-        "close": 48.539974212646484
+        "close": 27.56999969482422
       },
       {
         "date": "2025-09-23",
-        "close": 48.944557189941406
+        "close": 27.829999923706055
       },
       {
         "date": "2025-09-24",
-        "close": 49.31953811645508
+        "close": 28.780000686645508
       },
       {
         "date": "2025-09-25",
-        "close": 48.914955139160156
+        "close": 28.729999542236328
       },
       {
         "date": "2025-09-26",
-        "close": 48.9346923828125
+        "close": 29.1200008392334
       },
       {
         "date": "2025-09-29",
-        "close": 49.06297302246094
+        "close": 31.559999465942383
       },
       {
         "date": "2025-09-30",
-        "close": 49.79319381713867
+        "close": 31.479999542236328
       },
       {
         "date": "2025-10-01",
-        "close": 48.9346923828125
+        "close": 31.770000457763672
       },
       {
         "date": "2025-10-02",
-        "close": 49.04323959350586
+        "close": 31.56999969482422
       },
       {
         "date": "2025-10-03",
-        "close": 49.408348083496094
+        "close": 32.34000015258789
       },
       {
         "date": "2025-10-06",
-        "close": 49.11231231689453
+        "close": 31.559999465942383
       },
       {
         "date": "2025-10-07",
-        "close": 48.79654312133789
+        "close": 31.420000076293945
       },
       {
         "date": "2025-10-08",
-        "close": 48.3820915222168
+        "close": 32.810001373291016
       },
       {
         "date": "2025-10-09",
-        "close": 47.3558349609375
+        "close": 32.529998779296875
       },
       {
         "date": "2025-10-10",
-        "close": 47.05979919433594
-      },
-      {
-        "date": "2025-10-13",
-        "close": 47.10913848876953
+        "close": 31.75
       },
       {
         "date": "2025-10-14",
-        "close": 46.89204788208008
+        "close": 31.989999771118164
       },
       {
         "date": "2025-10-15",
-        "close": 46.980857849121094
+        "close": 32.970001220703125
       },
       {
         "date": "2025-10-16",
-        "close": 46.58613967895508
+        "close": 31.809999465942383
       },
       {
         "date": "2025-10-17",
-        "close": 46.457862854003906
+        "close": 31.09000015258789
       },
       {
         "date": "2025-10-20",
-        "close": 46.58613967895508
+        "close": 31.010000228881836
       },
       {
         "date": "2025-10-21",
-        "close": 46.64535140991211
+        "close": 29.81999969482422
       },
       {
         "date": "2025-10-22",
-        "close": 47.079532623291016
+        "close": 29.559999465942383
       },
       {
         "date": "2025-10-23",
-        "close": 46.55653762817383
+        "close": 29.889999389648438
       },
       {
         "date": "2025-10-24",
-        "close": 46.29010772705078
+        "close": 30.34000015258789
       },
       {
         "date": "2025-10-27",
-        "close": 46.64535140991211
+        "close": 30.479999542236328
       },
       {
         "date": "2025-10-28",
-        "close": 46.46772766113281
+        "close": 31.1299991607666
       },
       {
         "date": "2025-10-29",
-        "close": 46.05327606201172
+        "close": 30.510000228881836
       },
       {
         "date": "2025-10-30",
-        "close": 46.35918045043945
+        "close": 29.40999984741211
       },
       {
         "date": "2025-10-31",
-        "close": 46.003936767578125
+        "close": 29.1200008392334
       },
       {
         "date": "2025-11-03",
-        "close": 46.003936767578125
+        "close": 28.479999542236328
       },
       {
         "date": "2025-11-04",
-        "close": 45.7769775390625
+        "close": 27.6200008392334
       },
       {
         "date": "2025-11-05",
-        "close": 45.944732666015625
+        "close": 28.530000686645508
       },
       {
         "date": "2025-11-06",
-        "close": 46.26050567626953
+        "close": 29.3700008392334
       },
       {
         "date": "2025-11-07",
-        "close": 47.079532623291016
+        "close": 29.579999923706055
       },
       {
         "date": "2025-11-10",
-        "close": 47.28675842285156
+        "close": 30.219999313354492
       },
       {
         "date": "2025-11-11",
-        "close": 47.65187072753906
+        "close": 29.860000610351562
       },
       {
         "date": "2025-11-12",
-        "close": 48.06631851196289
+        "close": 30.850000381469727
       },
       {
         "date": "2025-11-13",
-        "close": 47.62226486206055
+        "close": 29.920000076293945
       },
       {
         "date": "2025-11-14",
-        "close": 47.24728775024414
+        "close": 29.68000030517578
       },
       {
         "date": "2025-11-17",
-        "close": 47.1190071105957
+        "close": 29.600000381469727
       },
       {
         "date": "2025-11-18",
-        "close": 47.63213348388672
+        "close": 28.450000762939453
       },
       {
         "date": "2025-11-19",
-        "close": 47.977508544921875
+        "close": 28.979999542236328
       },
       {
         "date": "2025-11-20",
-        "close": 47.661739349365234
+        "close": 27.809999465942383
       },
       {
         "date": "2025-11-21",
-        "close": 47.306495666503906
+        "close": 28.6299991607666
       },
       {
         "date": "2025-11-24",
-        "close": 46.69468688964844
+        "close": 29.350000381469727
       },
       {
         "date": "2025-11-25",
-        "close": 46.9315185546875
+        "close": 29.5
       },
       {
         "date": "2025-11-26",
-        "close": 47.405174255371094
+        "close": 29.8799991607666
+      },
+      {
+        "date": "2025-11-27",
+        "close": 30.450000762939453
       },
       {
         "date": "2025-11-28",
-        "close": 48.13539505004883
+        "close": 31.84000015258789
       },
       {
         "date": "2025-12-01",
-        "close": 48.24394226074219
+        "close": 31.600000381469727
       },
       {
         "date": "2025-12-02",
-        "close": 47.47425079345703
+        "close": 31.530000686645508
       },
       {
         "date": "2025-12-03",
-        "close": 47.1190071105957
+        "close": 33.15999984741211
       },
       {
         "date": "2025-12-04",
-        "close": 47.50385284423828
+        "close": 33.029998779296875
       },
       {
         "date": "2025-12-05",
-        "close": 47.45451354980469
+        "close": 33.310001373291016
       },
       {
         "date": "2025-12-08",
-        "close": 47.553192138671875
+        "close": 32.70000076293945
       },
       {
         "date": "2025-12-09",
-        "close": 46.911781311035156
+        "close": 32.25
       },
       {
         "date": "2025-12-10",
-        "close": 46.56640625
+        "close": 33.18000030517578
       },
       {
         "date": "2025-12-11",
-        "close": 46.78350067138672
+        "close": 33.83000183105469
       },
       {
         "date": "2025-12-12",
-        "close": 46.92164993286133
+        "close": 33.2599983215332
       },
       {
         "date": "2025-12-15",
-        "close": 47.049930572509766
+        "close": 33.880001068115234
       },
       {
         "date": "2025-12-16",
-        "close": 46.05327606201172
+        "close": 33.93000030517578
       },
       {
         "date": "2025-12-17",
-        "close": 46.31970977783203
+        "close": 33.849998474121094
       },
       {
         "date": "2025-12-18",
-        "close": 46.12235641479492
+        "close": 34.22999954223633
       },
       {
         "date": "2025-12-19",
-        "close": 46.01380920410156
+        "close": 35.16999816894531
       },
       {
         "date": "2025-12-22",
-        "close": 46.21116638183594
+        "close": 36.09000015258789
       },
       {
         "date": "2025-12-23",
-        "close": 46.842708587646484
+        "close": 36.95000076293945
       },
       {
         "date": "2025-12-24",
-        "close": 46.82297134399414
-      },
-      {
-        "date": "2025-12-26",
-        "close": 46.901912689208984
+        "close": 36.41999816894531
       },
       {
         "date": "2025-12-29",
-        "close": 47.09926986694336
+        "close": 36.4900016784668
       },
       {
         "date": "2025-12-30",
-        "close": 47.415042877197266
+        "close": 36.61000061035156
       },
       {
         "date": "2025-12-31",
-        "close": 47.19795227050781
+        "close": 36.79999923706055
       },
       {
         "date": "2026-01-02",
-        "close": 47.48411560058594
+        "close": 37.290000915527344
       },
       {
         "date": "2026-01-05",
-        "close": 45.96446990966797
+        "close": 39.540000915527344
       },
       {
         "date": "2026-01-06",
-        "close": 45.09609603881836
+        "close": 39.0
       },
       {
         "date": "2026-01-07",
-        "close": 44.63230514526367
+        "close": 38.150001525878906
       },
       {
         "date": "2026-01-08",
-        "close": 44.69151306152344
+        "close": 37.95000076293945
       },
       {
         "date": "2026-01-09",
-        "close": 45.02702331542969
+        "close": 39.630001068115234
       },
       {
         "date": "2026-01-12",
-        "close": 45.25398254394531
+        "close": 40.810001373291016
       },
       {
         "date": "2026-01-13",
-        "close": 45.727638244628906
+        "close": 40.70000076293945
       },
       {
         "date": "2026-01-14",
-        "close": 45.95459747314453
+        "close": 41.349998474121094
       },
       {
         "date": "2026-01-15",
-        "close": 46.191429138183594
+        "close": 41.20000076293945
       },
       {
         "date": "2026-01-16",
-        "close": 46.96112060546875
+        "close": 40.720001220703125
+      },
+      {
+        "date": "2026-01-19",
+        "close": 41.0
       },
       {
         "date": "2026-01-20",
-        "close": 46.5072021484375
+        "close": 41.099998474121094
       },
       {
         "date": "2026-01-21",
-        "close": 46.66508483886719
+        "close": 41.22999954223633
       },
       {
         "date": "2026-01-22",
-        "close": 46.85257339477539
+        "close": 38.75
       },
       {
         "date": "2026-01-23",
-        "close": 47.56306076049805
+        "close": 40.810001373291016
       },
       {
         "date": "2026-01-26",
-        "close": 47.24728775024414
+        "close": 41.40999984741211
       },
       {
         "date": "2026-01-27",
-        "close": 47.38543701171875
+        "close": 41.90999984741211
       },
       {
         "date": "2026-01-28",
-        "close": 47.918304443359375
+        "close": 41.630001068115234
       },
       {
         "date": "2026-01-29",
-        "close": 48.589317321777344
+        "close": 41.720001220703125
       },
       {
         "date": "2026-01-30",
-        "close": 48.194602966308594
+        "close": 38.4900016784668
       },
       {
         "date": "2026-02-02",
-        "close": 47.64200210571289
+        "close": 39.189998626708984
       },
       {
         "date": "2026-02-03",
-        "close": 48.67812728881836
+        "close": 40.59000015258789
       },
       {
         "date": "2026-02-04",
-        "close": 49.49715805053711
+        "close": 37.56999969482422
       },
       {
         "date": "2026-02-05",
-        "close": 49.82279968261719
+        "close": 35.58000183105469
       },
       {
         "date": "2026-02-06",
-        "close": 49.65504455566406
+        "close": 37.36000061035156
       },
       {
         "date": "2026-02-09",
-        "close": 49.9609489440918
+        "close": 38.72999954223633
       },
       {
         "date": "2026-02-10",
-        "close": 50.41487121582031
+        "close": 38.7599983215332
       },
       {
         "date": "2026-02-11",
-        "close": 50.86878967285156
+        "close": 37.599998474121094
       },
       {
         "date": "2026-02-12",
-        "close": 51.15496063232422
+        "close": 36.59000015258789
       },
       {
         "date": "2026-02-13",
-        "close": 53.16800308227539
+        "close": 36.220001220703125
       },
       {
         "date": "2026-02-17",
-        "close": 51.439998626708984
+        "close": 35.529998779296875
       },
       {
         "date": "2026-02-18",
-        "close": 50.88999938964844
+        "close": 36.34000015258789
       },
       {
         "date": "2026-02-19",
-        "close": 51.59000015258789
+        "close": 36.40999984741211
       },
       {
         "date": "2026-02-20",
-        "close": 51.52000045776367
+        "close": 37.709999084472656
       },
       {
         "date": "2026-02-23",
-        "close": 52.349998474121094
+        "close": 38.310001373291016
       },
       {
         "date": "2026-02-24",
-        "close": 52.400001525878906
+        "close": 40.2400016784668
       },
       {
         "date": "2026-02-25",
-        "close": 52.40999984741211
+        "close": 40.95000076293945
       },
       {
         "date": "2026-02-26",
-        "close": 52.25
+        "close": 41.349998474121094
       },
       {
         "date": "2026-02-27",
-        "close": 53.13999938964844
+        "close": 40.84000015258789
       },
       {
         "date": "2026-03-02",
-        "close": 53.959999084472656
+        "close": 40.18000030517578
       },
       {
         "date": "2026-03-03",
-        "close": 54.33000183105469
+        "close": 36.68000030517578
       },
       {
         "date": "2026-03-04",
-        "close": 54.16999816894531
+        "close": 37.779998779296875
       },
       {
         "date": "2026-03-05",
-        "close": 53.880001068115234
+        "close": 34.619998931884766
       },
       {
         "date": "2026-03-06",
-        "close": 54.060001373291016
+        "close": 32.90999984741211
       },
       {
         "date": "2026-03-09",
-        "close": 53.939998626708984
+        "close": 32.52000045776367
       },
       {
         "date": "2026-03-10",
-        "close": 53.70000076293945
+        "close": 32.4900016784668
       },
       {
         "date": "2026-03-11",
-        "close": 53.63999938964844
+        "close": 33.5099983215332
       },
       {
         "date": "2026-03-12",
-        "close": 53.630001068115234
+        "close": 33.86000061035156
       },
       {
         "date": "2026-03-13",
-        "close": 54.08000183105469
+        "close": 32.43000030517578
       },
       {
         "date": "2026-03-16",
-        "close": 54.540000915527344
+        "close": 32.9900016784668
       },
       {
         "date": "2026-03-17",
-        "close": 54.04999923706055
+        "close": 32.84000015258789
       },
       {
         "date": "2026-03-18",
-        "close": 53.2400016784668
+        "close": 31.09000015258789
       },
       {
         "date": "2026-03-19",
-        "close": 54.06999969482422
+        "close": 29.790000915527344
       },
       {
         "date": "2026-03-20",
-        "close": 53.459999084472656
+        "close": 29.190000534057617
       },
       {
         "date": "2026-03-23",
-        "close": 54.15999984741211
+        "close": 30.75
       },
       {
         "date": "2026-03-24",
-        "close": 54.439998626708984
+        "close": 31.389999389648438
       },
       {
         "date": "2026-03-25",
-        "close": 54.47999954223633
+        "close": 32.529998779296875
       },
       {
         "date": "2026-03-26",
-        "close": 54.5
+        "close": 30.860000610351562
       },
       {
         "date": "2026-03-27",
-        "close": 54.58000183105469
+        "close": 31.329999923706055
       },
       {
         "date": "2026-03-30",
-        "close": 54.33000183105469
+        "close": 31.049999237060547
       },
       {
         "date": "2026-03-31",
-        "close": 54.13999938964844
+        "close": 33.2599983215332
       },
       {
         "date": "2026-04-01",
-        "close": 53.650001525878906
+        "close": 34.88999938964844
       },
       {
         "date": "2026-04-02",
-        "close": 54.150001525878906
+        "close": 34.59000015258789
       },
       {
         "date": "2026-04-06",
-        "close": 53.7400016784668
+        "close": 36.34000015258789
       },
       {
         "date": "2026-04-07",
-        "close": 54.380001068115234
+        "close": 35.95000076293945
       },
       {
         "date": "2026-04-08",
-        "close": 54.47999954223633
+        "close": 37.56999969482422
       },
       {
         "date": "2026-04-09",
-        "close": 54.5
+        "close": 37.279998779296875
       },
       {
         "date": "2026-04-10",
-        "close": 54.31999969482422
+        "close": 38.040000915527344
       },
       {
         "date": "2026-04-13",
-        "close": 53.470001220703125
+        "close": 38.189998626708984
       },
       {
         "date": "2026-04-14",
-        "close": 52.9900016784668
+        "close": 38.599998474121094
       },
       {
         "date": "2026-04-15",
-        "close": 52.61000061035156
+        "close": 39.029998779296875
       },
       {
         "date": "2026-04-16",
-        "close": 52.56999969482422
+        "close": 39.060001373291016
       },
       {
         "date": "2026-04-17",
-        "close": 52.66999816894531
+        "close": 39.70000076293945
       },
       {
         "date": "2026-04-20",
-        "close": 52.2400016784668
+        "close": 39.34000015258789
       },
       {
         "date": "2026-04-21",
-        "close": 51.849998474121094
+        "close": 36.83000183105469
       },
       {
         "date": "2026-04-22",
-        "close": 51.79999923706055
+        "close": 38.279998779296875
       },
       {
         "date": "2026-04-23",
-        "close": 52.5
+        "close": 37.41999816894531
       },
       {
         "date": "2026-04-24",
-        "close": 53.29999923706055
+        "close": 35.849998474121094
       },
       {
         "date": "2026-04-27",
-        "close": 52.45000076293945
+        "close": 35.91999816894531
       },
       {
         "date": "2026-04-28",
-        "close": 53.040000915527344
+        "close": 34.290000915527344
       },
       {
         "date": "2026-04-29",
-        "close": 53.41999816894531
+        "close": 32.459999084472656
       },
       {
         "date": "2026-04-30",
-        "close": 55.41999816894531
+        "close": 33.2599983215332
       },
       {
         "date": "2026-05-01",
-        "close": 54.83000183105469
+        "close": 32.34000015258789
       },
       {
         "date": "2026-05-04",
-        "close": 54.720001220703125
+        "close": 31.040000915527344
       },
       {
         "date": "2026-05-05",
-        "close": 54.90999984741211
+        "close": 31.540000915527344
       },
       {
         "date": "2026-05-06",
-        "close": 54.20000076293945
+        "close": 33.25
       },
       {
         "date": "2026-05-07",
-        "close": 53.9900016784668
+        "close": 33.02000045776367
       },
       {
         "date": "2026-05-08",
-        "close": 53.59000015258789
+        "close": 35.0
       },
       {
         "date": "2026-05-11",
-        "close": 54.459999084472656
+        "close": 34.900001525878906
       },
       {
         "date": "2026-05-12",
-        "close": 54.84000015258789
+        "close": 36.0
       },
       {
         "date": "2026-05-13",
-        "close": 55.189998626708984
+        "close": 37.220001220703125
       }
     ]
   },
@@ -4119,7 +4119,7 @@
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quant signals are mildly constructive \u2014 the Y%-Filter is a live BUY with an uptrend, Prophet forecasts modest upside (+0.79% over 5 days), and the MACD histogram is positive but without a crossover confirmation, suggesting momentum is present but not accelerating. GARCH volatility at ~23% is moderate, consistent with a cautious hold rather than aggressive accumulation. The available news is entirely macro in nature (Iran conflict, US-China diplomacy) with no company- or sector-specific coverage for AMUN.PA, making it impossible to assess fundamental catalysts from news alone. Given the lack of ticker-specific news and the absence of a MACD bullish crossover, maintaining the current 7.8% weight is appropriate without adding conviction.",
+      "llm_rationale": "The quantitative signals are broadly constructive \u2014 the Y%-Filter is an active BUY with an upward trend, and Prophet forecasts a modest gain to ~85.62 EUR over five days \u2014 but the MACD is flat with no crossover, suggesting near-term momentum has stalled. None of the eight news articles are specific to AMUN.PA; all are macro-level geopolitical stories (Iran conflict, Trump-Xi summit) or unrelated sector news, providing no fundamental catalyst to act on. Given the absence of company-specific news and the neutral MACD reading tempering an otherwise positive trend signal, holding the existing 9.3% weight is the prudent course. Monitor for a MACD bullish crossover or AMUN-specific news before adding exposure.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 85.0552,
       "arima_forecast_5d": 85.6205,
@@ -4131,27 +4131,11 @@
     },
     {
       "date": "2026-05-14",
-      "ticker": "ENB",
-      "quant_signal": "SELL",
-      "llm_recommendation": "HOLD",
-      "llm_confidence": "MED",
-      "llm_rationale": "Enbridge's Q1 2026 earnings beat estimates on both EPS ($0.98 vs $0.89) and revenue, and RBC Capital raised its price target to $79, signaling fundamental strength. However, the Y%-Filter is a live SELL signal with a downward trend, and Prophet forecasts a modest price decline to ~54.13 EUR over the next 5 days. The MACD histogram is positive but shows no crossover, suggesting momentum is neither accelerating nor reversing. Given the heavy 49% portfolio weight, a HOLD is appropriate \u2014 the fundamental news does not justify adding exposure against active quant headwinds, but the strong earnings and analyst upgrade argue against reducing the position at current levels.",
-      "llm_quant_agreement": "neutral",
-      "arima_forecast_1d": 54.4713,
-      "arima_forecast_5d": 54.1276,
-      "prophet_forecast_1d": 54.4713,
-      "prophet_forecast_5d": 54.1276,
-      "macd_signal": "HOLD",
-      "garch_volatility": 0.173165,
-      "zscore": null
-    },
-    {
-      "date": "2026-05-14",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
-      "llm_confidence": "LOW",
-      "llm_rationale": "The MACD bearish crossover signals short-term downward momentum, but the Y%-Filter signal is expired and therefore carries limited weight, while the Prophet forecast suggests a marginal upside to ~107.35 EUR over the next five days. The Z-Score of -0.81 indicates this bond ETF is modestly cheap relative to its mean, supporting a hold rather than a sell. The macro news is dominated by geopolitical uncertainty around the Iran conflict, which typically supports a mild flight-to-quality bid for bond instruments, partially offsetting the bearish momentum signal. Given low GARCH volatility of 5.37% and the small position size (3 shares), there is no compelling case to act decisively in either direction.",
+      "llm_confidence": "MED",
+      "llm_rationale": "The MACD bearish crossover signals short-term downside momentum, but the Y%-Filter signal is expired and therefore carries less weight, while the Prophet forecast suggests a marginal price uptick over the next 5 days. The Z-Score of -0.81 indicates this bond ETF is slightly cheap relative to its mean, suggesting no immediate overvaluation concern and supporting a hold rather than a sell. The macro news is dominated by geopolitical tensions around Iran and the Middle East, which typically support safe-haven fixed income assets, partially offsetting the bearish MACD signal. Given the low GARCH volatility of 5.37% and the modest portfolio weight of 16.1%, maintaining the position is prudent until a clearer directional signal emerges.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 107.3553,
       "arima_forecast_5d": 107.3515,
@@ -4163,11 +4147,27 @@
     },
     {
       "date": "2026-05-14",
+      "ticker": "FM.TO",
+      "quant_signal": "BUY",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "MED",
+      "llm_rationale": "The quant signals are broadly constructive \u2014 a live BUY signal from the Y%-Filter with upward trend, a positive MACD histogram, and Prophet forecasts pointing to ~4.4% upside over five days \u2014 but the 56% annualised GARCH volatility flags meaningful near-term risk. The available news is entirely macro in nature (Iran conflict, U.S.-China trade talks) with no FM.TO-specific catalysts; ongoing Middle East instability introduces geopolitical risk that could weigh on risk assets broadly. Given the already elevated 39.3% portfolio weight and high volatility, adding to the position is not warranted, but the positive trend signals do not justify trimming either. Hold current exposure and reassess if geopolitical tensions escalate further or a company-specific catalyst emerges.",
+      "llm_quant_agreement": "neutral",
+      "arima_forecast_1d": 38.9004,
+      "arima_forecast_5d": 39.7407,
+      "prophet_forecast_1d": 38.9004,
+      "prophet_forecast_5d": 39.7407,
+      "macd_signal": "HOLD",
+      "garch_volatility": 0.563066,
+      "zscore": null
+    },
+    {
+      "date": "2026-05-14",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
-      "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter is a live BUY signal with an upward trend, but the MACD shows no crossover momentum and the Prophet forecast projects a near-term price decline to ~10.53 EUR tomorrow before partially recovering to ~10.71 EUR over five days \u2014 both below the current price of 10.82 EUR, suggesting limited short-term upside. GARCH volatility at 31.19% is elevated, adding risk to any new exposure. The available news is exclusively macro in nature (Iran conflict, US-China diplomacy) with no direct relevance to IQQH.DE, making it impossible to draw fundamental conclusions; the geopolitical uncertainty does, however, represent a general risk-off headwind for clean energy or thematic ETFs. Given the conflicting quant signals and absence of ticker-specific news, maintaining the current position without adding or reducing is prudent.",
+      "llm_confidence": "MED",
+      "llm_rationale": "The Y%-Filter remains a valid BUY signal with an upward trend, but the MACD is neutral with no crossover and the Prophet forecast projects a near-term price decline to ~10.53 EUR (+1d) before partially recovering to ~10.71 EUR (+5d), both below the current price of 10.82 EUR \u2014 suggesting limited short-term upside. GARCH volatility at 31.19% is elevated, reflecting meaningful risk. The news cycle is dominated by the Iran conflict and U.S.-China diplomatic tensions, which represent macro geopolitical headwinds that could weigh on risk assets generally, though no news is directly specific to IQQH.DE. Given the mixed quant signals and uncertain macro backdrop, holding the current 35.3% position without adding is prudent.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 10.5287,
       "arima_forecast_5d": 10.7117,
@@ -4189,19 +4189,19 @@
     },
     {
       "run_date": "2026-05-14",
-      "ticker": "ENB",
-      "total_return_pct": 41.35,
-      "sharpe_ratio": 0.6365,
-      "max_drawdown_pct": 16.4165,
-      "win_rate": 0.5
-    },
-    {
-      "run_date": "2026-05-14",
       "ticker": "EUN4.DE",
       "total_return_pct": 3.9606,
       "sharpe_ratio": -0.8533,
       "max_drawdown_pct": 4.1359,
       "win_rate": 0.5
+    },
+    {
+      "run_date": "2026-05-14",
+      "ticker": "FM.TO",
+      "total_return_pct": 33.9115,
+      "sharpe_ratio": 0.3397,
+      "max_drawdown_pct": 44.7792,
+      "win_rate": 0.3816
     },
     {
       "run_date": "2026-05-14",
@@ -4313,7 +4313,7 @@
     },
     {
       "date": "2026-05-14",
-      "ticker": "ENB",
+      "ticker": "FM.TO",
       "isin": "CA3359341052",
       "wkn": "904604",
       "action": "BUY",
@@ -4323,7 +4323,7 @@
       "currency": "EUR",
       "total_eur": 545.76,
       "fee_eur": null,
-      "note": "Enbridge Inc. \u2014 Canadian pipeline, energy infrastructure"
+      "note": "First Quantum Minerals Ltd. \u2014 Canadian copper/mining"
     }
   ],
   "news_by_ticker": {
@@ -4438,41 +4438,41 @@
         "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
       }
     ],
-    "ENB": [
+    "FM.TO": [
       {
-        "published_at": "2026-05-12T04:45:45",
-        "headline": "Enbridge FQ1 Earnings: An Equity Bond For Uncertain Times",
-        "source": "SeekingAlpha",
-        "url": "https://finnhub.io/api/news?id=f0b95610a28c0be54f34adc15dabd3f7daaedba12b556889b1a2234dd0345839",
-        "body": ""
+        "published_at": "2026-05-14T03:56:00",
+        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
+        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-11T11:04:16",
-        "headline": "RBC Capital Maintains Outperform on Enbridge, Raises Price Target to $79",
-        "source": "Benzinga",
-        "url": "https://finnhub.io/api/news?id=a42d52fe6cd0736002efe440d20fb43343741534fb0b27c5df965e099a4aa068",
-        "body": "RBC Capital  analyst Maurice Choy   maintains Enbridge (NYSE:ENB) with a Outperform and raises the price target from $76 to $79."
+        "published_at": "2026-05-13T22:32:00",
+        "headline": "[MACRO] China's Xi hails trade progress in Trump summit, sends Taiwan warning - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5",
+        "body": "China's Xi hails trade progress in Trump summit, sends Taiwan warning\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-10T19:06:11",
-        "headline": "Enbridge Inc. 2026 Q1 - Results - Earnings Call Presentation",
-        "source": "SeekingAlpha",
-        "url": "https://finnhub.io/api/news?id=1fed8b55d373c905892c2287a600f5d4adea887c841de4dbfbb94c2eea8d9969",
-        "body": "2026-05-10. The following slide deck was published by Enbridge Inc."
+        "published_at": "2026-05-13T21:30:00",
+        "headline": "[MACRO] Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5",
+        "body": "Rubio: U.S. wants China to press Iran to change course in Gulf\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-09T08:06:31",
-        "headline": "The Williams Companies: Good Earnings And Growth Potential, But Very Expensive",
-        "source": "SeekingAlpha",
-        "url": "https://finnhub.io/api/news?id=e2f577a3ca8190c62895b7718352a3e7cb52895c5564d8d06dda7c03d87a9727",
-        "body": "Williams Companies (WMB) Q1 2026 earnings surged on gas volume growth, pipeline expansions, and contracts\u00e2\u0080\u0094yet trades at a premium P/E."
+        "published_at": "2026-05-13T21:28:01",
+        "headline": "[MACRO] UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5",
+        "body": "UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-08T17:21:14",
-        "headline": "Enbridge Inc. (ENB:CA) Q1 2026 Earnings Call Transcript",
-        "source": "SeekingAlpha",
-        "url": "https://finnhub.io/api/news?id=fad8476aee5b5f7c8e7939a05ab45d5ea7cb88f97e61e4388419110433b8e5f2",
-        "body": "Enbridge Inc. (ENB:CA) Q1 2026 Earnings Call May 8, 2026 9:00 AM EDTCompany ParticipantsMarlon Samuel - Vice President of Investor Relations &..."
+        "published_at": "2026-05-13T20:23:36",
+        "headline": "[MACRO] Vance says US making progress in Iran talks - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
+        "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
       }
     ]
   }
