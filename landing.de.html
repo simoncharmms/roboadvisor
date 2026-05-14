@@ -91,6 +91,12 @@
 <script>
 'use strict';
 function fmtEur(v) { return v != null ? '€' + Number(v).toFixed(2) : '—'; }
+function computeSavingsVal(s) {
+  if (!s || !s.balance_eur) return 0;
+  const asOf  = s.as_of ? new Date(s.as_of) : new Date();
+  const days  = Math.max(0, Math.round((new Date() - asOf) / 86400000));
+  return s.balance_eur * Math.pow(1 + (s.interest_rate_pct||0)/100, days/365);
+}
 function fmtPct(v) { return v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—'; }
 function sigClass(s) { if (!s) return 'neutral'; s = s.toUpperCase(); return s==='BUY'?'buy':s==='SELL'?'sell':s==='HOLD'?'hold':'neutral'; }
 function recEmoji(s) { return s==='BUY'?'🟢':s==='SELL'?'🔴':'🟡'; }
@@ -165,11 +171,14 @@ function renderLanding(data) {
   const dateEl = document.getElementById('lp-date');
   if (dateEl && meta.generated_at) dateEl.textContent = meta.generated_at;
 
-  let totalValue = 0;
+  const savings    = data.savings_account || {};
+  const savingsVal = computeSavingsVal(savings);
+  let depotValue = 0;
   portfolio.forEach(pos => {
     const hist = (data.price_history||{})[pos.ticker]||[];
-    if (hist.length) totalValue += hist[hist.length-1].close * pos.shares;
+    if (hist.length) depotValue += hist[hist.length-1].close * pos.shares;
   });
+  const totalValue = depotValue + savingsVal;
   const invested = (data.executed_trades||[]).reduce((sum,t) => {
     if (!t.total_eur) return sum;
     return t.action?.toUpperCase()==='BUY' ? sum+t.total_eur : sum-t.total_eur;
@@ -187,6 +196,7 @@ function renderLanding(data) {
       <div class="hero-label">Portfoliowert</div>
       <div class="hero-value">${fmtEur(totalValue)}</div>
       ${returnPct != null ? `<div class="hero-change ${returnPct>=0?'up':'down'}">${fmtPct(returnPct)} seit erstem Trade</div>` : ''}
+      ${savingsVal > 0 ? `<div style="font-size:11px;color:var(--muted);margin-top:8px">Depot €${depotValue.toFixed(2)} &nbsp;·&nbsp; ${savings.label||'Tagesgeld'} €${savingsVal.toFixed(2)}</div>` : ''}
     </div>
 
     <div class="chart-card">

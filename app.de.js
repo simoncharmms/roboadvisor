@@ -11,6 +11,7 @@ let state = {
   suggestions: [],
   backtestResults: [],
   executedTrades: [],
+  savingsAccount: {},
   meta: {}
 };
 
@@ -115,6 +116,7 @@ function loadData(data) {
   state.suggestions     = data.suggestions      || [];
   state.backtestResults = data.backtest_results || [];
   state.executedTrades  = data.executed_trades  || [];
+  state.savingsAccount  = data.savings_account  || {};
   state.meta            = data.meta             || {};
 
   // Sort everything by date asc
@@ -174,11 +176,30 @@ function lastPrice(ticker) {
 }
 
 /** Compute portfolio total value */
+function computeSavingsValue() {
+  const s = state.savingsAccount;
+  if (!s || !s.balance_eur) return 0;
+  const asOf  = s.as_of ? new Date(s.as_of) : new Date();
+  const today = new Date();
+  const days  = Math.max(0, Math.round((today - asOf) / 86400000));
+  const rate  = (s.interest_rate_pct || 0) / 100;
+  return s.balance_eur * Math.pow(1 + rate, days / 365);
+}
+
 function computePortfolioValue() {
+  const depotValue = state.portfolio.reduce((sum, pos) => {
+    const p = lastPrice(pos.ticker);
+    return p ? sum + p * pos.shares : sum;
+  }, 0);
+  return depotValue + computeSavingsValue();
+}
+
+function computeDepotValue() {
   return state.portfolio.reduce((sum, pos) => {
     const p = lastPrice(pos.ticker);
     return p ? sum + p * pos.shares : sum;
   }, 0);
+}, 0);
 }
 
 /** Build a daily portfolio-value series by summing across all tickers */
@@ -231,7 +252,12 @@ function renderKPIs() {
   const totalCost = invested + totalFees;
   const returnPct = totalCost > 0 ? ((totalValue - totalCost) / totalCost * 100) : null;
 
-  setKPI('kpi-total-value', `€${totalValue.toFixed(2)}`, 'aktueller Marktwert', null);
+  const depotValDE   = computeDepotValue();
+  const savingsValDE = computeSavingsValue();
+  const kpiSub       = savingsValDE > 0
+    ? 'Depot €' + depotValDE.toFixed(0) + ' · Tagesgeld €' + savingsValDE.toFixed(0)
+    : 'aktueller Marktwert';
+  setKPI('kpi-total-value', '€' + totalValue.toFixed(2), kpiSub, null);
   setKPI('kpi-total-return', fmtPct(returnPct), 'seit erstem Trade', returnPct != null && returnPct >= 0 ? 'positive' : returnPct != null ? 'negative' : null);
   setKPI('kpi-positions', state.portfolio.length.toString(), state.portfolio.map(p=>p.ticker).join(' · '), null);
 
@@ -362,11 +388,13 @@ function renderAllocationChart() {
   const totalValue = computePortfolioValue();
   if (!totalValue) return;
 
-  const labels = state.portfolio.map(p => p.ticker);
-  const values = state.portfolio.map(p => {
+  const savingsValA  = computeSavingsValue();
+  const savingsLblA  = (state.savingsAccount?.label) || 'Tagesgeld';
+  const labels = [...state.portfolio.map(p => p.ticker), ...(savingsValA > 0 ? [savingsLblA] : [])];
+  const values = [...state.portfolio.map(p => {
     const price = lastPrice(p.ticker);
     return price ? price * p.shares : 0;
-  });
+  }), ...(savingsValA > 0 ? [savingsValA] : [])];
 
   const ctx = document.getElementById('chart-allocation').getContext('2d');
   charts['allocation'] = new Chart(ctx, {
@@ -395,7 +423,7 @@ function renderAllocationChart() {
   });
 
   const legend = document.getElementById('allocation-legend');
-  legend.innerHTML = state.portfolio.map((pos, i) => {
+  const legendItemsDE = state.portfolio.map((pos, i) => {
     const val = values[i];
     const pct = (val / totalValue * 100).toFixed(1);
     const isinWkn = [pos.isin, pos.wkn].filter(Boolean).join(' · ');
@@ -404,7 +432,20 @@ function renderAllocationChart() {
       <span class="donut-legend-name" title="${pos.name}${isinWkn ? '\n' + isinWkn : ''}">${pos.ticker}</span>
       <span class="donut-legend-pct" style="color:${PALETTE[i%PALETTE.length]}">${pct}%</span>
     </div>`;
-  }).join('');
+  });
+  if (computeSavingsValue() > 0) {
+    const si   = state.portfolio.length;
+    const sVal = values[si];
+    const sPct = (sVal / totalValue * 100).toFixed(1);
+    const sLbl = state.savingsAccount?.label || 'Tagesgeld';
+    const sRt  = state.savingsAccount?.interest_rate_pct || 0;
+    legendItemsDE.push(`<div class="donut-legend-item">
+      <div class="donut-legend-dot" style="background:${PALETTE[si%PALETTE.length]}"></div>
+      <span class="donut-legend-name" title="${sLbl} · ${sRt}% p.a.">${sLbl} <span style="font-size:9px;color:var(--muted)">${sRt}% p.a.</span></span>
+      <span class="donut-legend-pct" style="color:${PALETTE[si%PALETTE.length]}">${sPct}%</span>
+    </div>`);
+  }
+  legend.innerHTML = legendItemsDE.join('');
 }
 
 // ── Signals List ───────────────────────────────────────────────

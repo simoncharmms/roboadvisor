@@ -363,6 +363,15 @@
 
 // ── helpers ────────────────────────────────────────────────────
 function fmtEur(v) { return v != null ? '€' + Number(v).toFixed(2) : '—'; }
+function computeSavingsVal(savingsAccount) {
+  const s = savingsAccount || {};
+  if (!s.balance_eur) return 0;
+  const asOf  = s.as_of ? new Date(s.as_of) : new Date();
+  const today = new Date();
+  const days  = Math.max(0, Math.round((today - asOf) / 86400000));
+  const rate  = (s.interest_rate_pct || 0) / 100;
+  return s.balance_eur * Math.pow(1 + rate, days / 365);
+}
 function fmtPct(v) { return v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—'; }
 function sigClass(s) {
   if (!s) return 'neutral';
@@ -527,11 +536,14 @@ function renderLanding(data) {
   if (dateEl && meta.generated_at) dateEl.textContent = meta.generated_at;
 
   // Compute current portfolio value
-  let totalValue = 0;
+  const savings    = data.savings_account || {};
+  const savingsVal = computeSavingsVal(savings);
+  let depotValue = 0;
   portfolio.forEach(pos => {
     const hist = (data.price_history || {})[pos.ticker] || [];
-    if (hist.length) totalValue += hist[hist.length - 1].close * pos.shares;
+    if (hist.length) depotValue += hist[hist.length - 1].close * pos.shares;
   });
+  const totalValue = depotValue + savingsVal;
 
   // Compute return vs cost basis from executed trades
   const invested = (data.executed_trades || []).reduce((sum, t) => {
@@ -556,6 +568,7 @@ function renderLanding(data) {
       <div class="hero-label">Portfolio Value</div>
       <div class="hero-value">${fmtEur(totalValue)}</div>
       ${returnPct != null ? `<div class="hero-change ${returnPct >= 0 ? 'up' : 'down'}">${fmtPct(returnPct)} since first trade</div>` : ''}
+      ${savingsVal > 0 ? `<div style="font-size:11px;color:var(--muted);margin-top:8px">Depot €${depotValue.toFixed(2)} &nbsp;·&nbsp; ${savings.label||'Tagesgeld'} €${savingsVal.toFixed(2)}</div>` : ''}
     </div>
 
     <!-- Performance chart -->

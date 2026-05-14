@@ -70,6 +70,12 @@
       "total_fees_eur": 0.0
     }
   ],
+  "savings_account": {
+    "balance_eur": 1407.18,
+    "interest_rate_pct": 0.75,
+    "label": "Tagesgeld",
+    "as_of": "2026-05-14"
+  },
   "price_history": {
     "AMUN.PA": [
       {
