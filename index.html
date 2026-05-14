@@ -202,35 +202,19 @@
     </div>
   </section>
 
-  <!-- Two-column: Allocation + Signals -->
-  <div class="two-col">
-
-    <!-- Allocation -->
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title" data-i18n="alloc-title">Allocation</h2>
-          <p class="section-sub" data-i18n="alloc-sub">Current portfolio weights</p>
-        </div>
+  <!-- Allocation (full width now) -->
+  <section class="section">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title" data-i18n="alloc-title">Allocation</h2>
+        <p class="section-sub" data-i18n="alloc-sub">Current portfolio weights</p>
       </div>
-      <div class="donut-container">
-        <canvas id="chart-allocation"></canvas>
-        <div id="allocation-legend" class="donut-legend"></div>
-      </div>
-    </section>
-
-    <!-- Latest Signals -->
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title" data-i18n="signals-title">Latest Signals</h2>
-          <p class="section-sub" data-i18n="signals-sub">Most recent daily recommendations</p>
-        </div>
-      </div>
-      <div id="signals-list" class="signals-list"></div>
-    </section>
-
-  </div>
+    </div>
+    <div class="donut-container">
+      <canvas id="chart-allocation"></canvas>
+      <div id="allocation-legend" class="donut-legend"></div>
+    </div>
+  </section>
 
   <!-- Backtest Results -->
   <section class="section">
