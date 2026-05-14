@@ -1,43 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📈 Roboadvisor — Portfolio Dashboard</title>
+  <title>📈 Roboadvisor — Portfolio-Dashboard</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
   <link rel="stylesheet" href="styles.css?v=3">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-  <style>
-    /* ── Language Switcher ── */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 3px;
-    }
-    .lang-btn {
-      background: transparent;
-      border: none;
-      border-radius: 5px;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      transition: all 0.15s;
-    }
-    .lang-btn:hover { color: var(--text-primary); }
-    .lang-btn.active {
-      background: var(--accent);
-      color: #000;
-    }
-  </style>
+  <script src="chart.umd.min.js"></script>
+  <script src="chartjs-plugin-annotation.min.js"></script>
 </head>
 <body>
 
@@ -48,23 +18,16 @@
   <div class="logo">
     <div class="logo-icon">📈</div>
     <span class="logo-text">Roboadvisor</span>
-    <span class="logo-tagline" data-i18n="tagline">Portfolio Intelligence</span>
+    <span class="logo-tagline">Portfolio-Intelligenz</span>
   </div>
   <div class="header-actions">
-    <div id="last-updated" class="last-updated" data-i18n-default="no-data">No data loaded</div>
-
-    <!-- Language switcher -->
-    <div class="lang-switcher" aria-label="Language">
-      <button class="lang-btn active" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="de">DE</button>
-    </div>
-
+    <div id="last-updated" class="last-updated">Keine Daten geladen</div>
     <label class="btn btn-primary" for="file-import">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      <span data-i18n="import-btn">Import JSON</span>
+      JSON importieren
     </label>
     <input type="file" id="file-import" accept=".json" style="display:none">
-    <button class="btn btn-ghost btn-sm" id="btn-load-demo" data-i18n="load-demo">Load Demo</button>
+    <button class="btn btn-ghost btn-sm" id="btn-load-demo">Demo laden</button>
   </div>
 </header>
 
@@ -73,16 +36,16 @@
 ================================================================ -->
 <div id="empty-state" class="empty-state">
   <div class="empty-icon">📂</div>
-  <h2 data-i18n="empty-title">Import your portfolio data</h2>
-  <p data-i18n="empty-desc">Load a JSON file containing your portfolio, historical suggestions, backtesting results, and executed trades.<br>See the <strong>data format guide</strong> below.</p>
+  <h2>Portfolio-Daten importieren</h2>
+  <p>Laden Sie eine JSON-Datei mit Ihrem Portfolio, historischen Empfehlungen, Backtesting-Ergebnissen und ausgeführten Trades.<br>Siehe das <strong>Datenformat</strong> unten.</p>
   <label class="btn btn-primary" for="file-import" style="margin-top: 24px; font-size: 16px; padding: 14px 28px;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-    <span data-i18n="import-btn-full">Import JSON File</span>
+    JSON-Datei importieren
   </label>
-  <button class="btn btn-ghost" id="btn-load-demo2" style="margin-top: 12px;" data-i18n="load-demo-data">Load Demo Data</button>
+  <button class="btn btn-ghost" id="btn-load-demo2" style="margin-top: 12px;">Demo-Daten laden</button>
 
   <div class="format-guide">
-    <h3 data-i18n="format-guide-title">📋 Expected JSON Format</h3>
+    <h3>📋 Erwartetes JSON-Format</h3>
     <pre><code>{
   "meta": {
     "generated_at": "2026-03-31",
@@ -133,7 +96,7 @@
       "shares": 1.62338,
       "price_per_share": 42.10,
       "total_eur": 68.35,
-      "note": "Initial position"
+      "note": "Erstposition"
     }
   ]
 }</code></pre>
@@ -148,32 +111,32 @@
   <!-- KPI Strip -->
   <section class="kpi-strip">
     <div class="kpi-card" id="kpi-total-value">
-      <div class="kpi-label" data-i18n="kpi-value">Portfolio Value</div>
+      <div class="kpi-label">Portfoliowert</div>
       <div class="kpi-value">—</div>
       <div class="kpi-sub">—</div>
     </div>
     <div class="kpi-card" id="kpi-total-return">
-      <div class="kpi-label" data-i18n="kpi-return">Total Return</div>
+      <div class="kpi-label">Gesamtrendite</div>
       <div class="kpi-value">—</div>
-      <div class="kpi-sub" data-i18n="kpi-return-sub">since first trade</div>
+      <div class="kpi-sub">seit erstem Trade</div>
     </div>
     <div class="kpi-card" id="kpi-positions">
-      <div class="kpi-label" data-i18n="kpi-positions">Positions</div>
+      <div class="kpi-label">Positionen</div>
       <div class="kpi-value">—</div>
       <div class="kpi-sub">—</div>
     </div>
     <div class="kpi-card" id="kpi-sharpe">
-      <div class="kpi-label" data-i18n="kpi-sharpe">Avg Sharpe</div>
+      <div class="kpi-label">Ø Sharpe-Ratio</div>
       <div class="kpi-value">—</div>
-      <div class="kpi-sub" data-i18n="kpi-sharpe-sub">backtested</div>
+      <div class="kpi-sub">Backtest</div>
     </div>
     <div class="kpi-card" id="kpi-max-dd">
-      <div class="kpi-label" data-i18n="kpi-drawdown">Max Drawdown</div>
+      <div class="kpi-label">Max. Drawdown</div>
       <div class="kpi-value">—</div>
-      <div class="kpi-sub" data-i18n="kpi-drawdown-sub">backtested</div>
+      <div class="kpi-sub">Backtest</div>
     </div>
     <div class="kpi-card" id="kpi-signals">
-      <div class="kpi-label" data-i18n="kpi-signals">Today's Signals</div>
+      <div class="kpi-label">Heutige Signale</div>
       <div class="kpi-value" id="kpi-signals-val">—</div>
       <div class="kpi-sub" id="kpi-signals-sub">—</div>
     </div>
@@ -183,17 +146,17 @@
   <section class="section">
     <div class="section-header">
       <div>
-        <h2 class="section-title" data-i18n="perf-title">Portfolio Performance</h2>
-        <p class="section-sub" data-i18n="perf-sub">Overall value over time · markers show executed trades</p>
+        <h2 class="section-title">Portfolio-Performance</h2>
+        <p class="section-sub">Gesamtwert im Zeitverlauf · Markierungen zeigen ausgeführte Trades</p>
       </div>
       <div class="chart-controls">
-        <button class="chip" data-range="1M">1M</button>
-        <button class="chip active" data-range="3M">3M</button>
+        <button class="chip active" data-range="1M">1M</button>
+        <button class="chip" data-range="3M">3M</button>
         <button class="chip" data-range="6M">6M</button>
-        <button class="chip" data-range="ALL" data-i18n="range-all">All</button>
+        <button class="chip" data-range="ALL">Alle</button>
         <div class="chart-legend">
-          <span class="legend-dot buy"></span><span data-i18n="legend-buy">BUY</span>
-          <span class="legend-dot sell"></span><span data-i18n="legend-sell">SELL</span>
+          <span class="legend-dot buy"></span>KAUF
+          <span class="legend-dot sell"></span>VERKAUF
         </div>
       </div>
     </div>
@@ -209,8 +172,8 @@
     <section class="section">
       <div class="section-header">
         <div>
-          <h2 class="section-title" data-i18n="alloc-title">Allocation</h2>
-          <p class="section-sub" data-i18n="alloc-sub">Current portfolio weights</p>
+          <h2 class="section-title">Aufteilung</h2>
+          <p class="section-sub">Aktuelle Portfolio-Gewichtung</p>
         </div>
       </div>
       <div class="donut-container">
@@ -223,8 +186,8 @@
     <section class="section">
       <div class="section-header">
         <div>
-          <h2 class="section-title" data-i18n="signals-title">Latest Signals</h2>
-          <p class="section-sub" data-i18n="signals-sub">Most recent daily recommendations</p>
+          <h2 class="section-title">Aktuelle Signale</h2>
+          <p class="section-sub">Neueste tägliche Empfehlungen</p>
         </div>
       </div>
       <div id="signals-list" class="signals-list"></div>
@@ -236,8 +199,8 @@
   <section class="section">
     <div class="section-header">
       <div>
-        <h2 class="section-title" data-i18n="backtest-title">Backtesting Results</h2>
-        <p class="section-sub" data-i18n="backtest-sub">Statistical model performance on historical data</p>
+        <h2 class="section-title">Backtesting-Ergebnisse</h2>
+        <p class="section-sub">Statistische Modellperformance auf historischen Daten</p>
       </div>
     </div>
     <div id="backtest-grid" class="backtest-grid"></div>
@@ -247,8 +210,8 @@
   <section class="section">
     <div class="section-header">
       <div>
-        <h2 class="section-title" data-i18n="positions-title">Individual Positions</h2>
-        <p class="section-sub" data-i18n="positions-sub">Price history with Prophet forecast · MACD · Z-Score</p>
+        <h2 class="section-title">Einzelne Positionen</h2>
+        <p class="section-sub">Kursverlauf mit Prophet-Prognose · MACD · Z-Score</p>
       </div>
     </div>
     <div id="ticker-charts" class="ticker-charts"></div>
@@ -258,24 +221,24 @@
   <section class="section">
     <div class="section-header">
       <div>
-        <h2 class="section-title" data-i18n="trades-title">Executed Trades</h2>
-        <p class="section-sub" data-i18n="trades-sub">Your manually logged portfolio adjustments</p>
+        <h2 class="section-title">Ausgeführte Trades</h2>
+        <p class="section-sub">Manuell erfasste Portfolio-Anpassungen</p>
       </div>
     </div>
     <div class="table-wrap">
       <table id="trades-table" class="data-table">
         <thead>
           <tr>
-            <th data-i18n="col-date">Date</th>
+            <th>Datum</th>
             <th>Ticker</th>
             <th>ISIN</th>
             <th>WKN</th>
-            <th data-i18n="col-action">Action</th>
-            <th data-i18n="col-shares">Shares</th>
-            <th data-i18n="col-price">Price</th>
-            <th data-i18n="col-total">Total (€)</th>
-            <th data-i18n="col-fee">Fee (€)</th>
-            <th data-i18n="col-note">Note</th>
+            <th>Aktion</th>
+            <th>Anteile</th>
+            <th>Kurs</th>
+            <th>Gesamt (€)</th>
+            <th>Gebühren (€)</th>
+            <th>Notiz</th>
           </tr>
         </thead>
         <tbody id="trades-tbody"></tbody>
@@ -287,12 +250,12 @@
   <section class="section">
     <div class="section-header">
       <div>
-        <h2 class="section-title" data-i18n="suggestions-title">Suggestion History</h2>
-        <p class="section-sub" data-i18n="suggestions-sub">All daily recommendations — quant + LLM</p>
+        <h2 class="section-title">Empfehlungsverlauf</h2>
+        <p class="section-sub">Alle täglichen Empfehlungen — Quant + KI</p>
       </div>
       <div>
         <select id="suggestion-filter" class="select">
-          <option value="ALL" data-i18n="filter-all">All tickers</option>
+          <option value="ALL">Alle Ticker</option>
         </select>
       </div>
     </div>
@@ -300,16 +263,16 @@
       <table class="data-table">
         <thead>
           <tr>
-            <th data-i18n="col-date">Date</th>
+            <th>Datum</th>
             <th>Ticker</th>
             <th>Quant</th>
-            <th>LLM</th>
-            <th data-i18n="col-confidence">Confidence</th>
-            <th data-i18n="col-arima1">Prophet 1D</th>
-            <th data-i18n="col-arima5">Prophet 5D</th>
-            <th data-i18n="col-macd">MACD</th>
-            <th data-i18n="col-vol">Vol (GARCH)</th>
-            <th data-i18n="col-rationale">Rationale</th>
+            <th>KI</th>
+            <th>Konfidenz</th>
+            <th>Prophet 1T</th>
+            <th>Prophet 5T</th>
+            <th>MACD</th>
+            <th>Vol. (GARCH)</th>
+            <th>Begründung</th>
           </tr>
         </thead>
         <tbody id="suggestions-tbody"></tbody>
@@ -319,6 +282,6 @@
 
 </div><!-- /dashboard -->
 
-<script src="app.js?v=6"></script>
+<script src="app.de.js?v=5"></script>
 </body>
 </html>

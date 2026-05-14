@@ -568,10 +568,87 @@ body {
 .ticker-price-change.up   { color: var(--up); }
 .ticker-price-change.down { color: var(--down); }
 
+.ticker-chart-card { overflow: hidden; }
+
 .ticker-chart-canvas-wrap {
   height: 200px;
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
+
+canvas { max-width: 100% !important; display: block; }
+
+/* ── Signal Strip (per-ticker cards) ── */
+.signal-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 8px;
+}
+.sig-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 10px;
+  min-width: 80px;
+  cursor: help;
+  transition: border-color 0.15s;
+}
+.sig-pill:hover { border-color: var(--text-muted); }
+.sig-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.sig-value {
+  font-size: 12px;
+  font-weight: 700;
+}
+.sig-pill-buy   { border-color: rgba(16,185,129,0.4); }
+.sig-pill-buy .sig-value   { color: var(--buy); }
+.sig-pill-sell  { border-color: rgba(239,68,68,0.4); }
+.sig-pill-sell .sig-value  { color: var(--sell); }
+.sig-pill-hold  { border-color: rgba(245,158,11,0.4); }
+.sig-pill-hold .sig-value  { color: var(--hold); }
+.sig-pill-neutral { border-color: var(--border); }
+.sig-pill-neutral .sig-value { color: var(--text-secondary); }
+
+/* ── News block ── */
+.ticker-news {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+.news-ticker-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.news-macro-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.news-item {
+  font-size: 11px;
+  color: var(--text-secondary);
+  padding: 3px 0;
+  line-height: 1.5;
+}
+.news-item a { color: var(--accent); text-decoration: none; }
+.news-item a:hover { text-decoration: underline; }
 
 /* ---- Tables ---- */
 .table-wrap {
@@ -665,6 +742,7 @@ body {
   .btn-ghost .btn-icon { display: none; }
 
   /* -- Main layout -- */
+  .content-wrap { padding: 12px 10px; }
   .main-content {
     padding: 16px;
     gap: 16px;
@@ -751,6 +829,10 @@ body {
   .ticker-price-change  { font-size: 12px; }
   .ticker-chart-canvas-wrap { height: 160px !important; }
   .ticker-chart-isin { font-size: 10px; }
+
+  /* -- News -- */
+  .ticker-news { max-height: 80px; }
+  .news-item { font-size: 11px; }
 
   /* -- Tables: make horizontally scrollable -- */
   .table-wrap {
