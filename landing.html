@@ -405,6 +405,7 @@ function buildPortfolioSeries(data) {
   const priceHistory   = data.price_history   || {};
   const portfolio      = data.portfolio       || [];
   const savingsAccount = data.savings_account || {};
+  const trades         = (data.executed_trades || []).filter(t => t.total_eur != null);
   if (!portfolio.length) return { depot: [], savings: [], total: [] };
 
   const dateSet = new Set();
@@ -416,6 +417,31 @@ function buildPortfolioSeries(data) {
     maps[pos.ticker] = new Map();
     (priceHistory[pos.ticker] || []).forEach(r => maps[pos.ticker].set(r.date, r.close));
   });
+
+  // Reconstruct Tagesgeld balance on any past date:
+  // Start from today’s known balance, add back BUYs / subtract SELLs that happened AFTER that date,
+  // then de-accrue interest to get the balance as it was on that day.
+  const currentBalance  = savingsAccount.balance_eur || 0;
+  const annualRate      = (savingsAccount.interest_rate_pct || 0) / 100;
+  const todayRef        = savingsAccount.as_of ? new Date(savingsAccount.as_of) : new Date();
+
+  function savingsOnDate(dateStr) {
+    const d = new Date(dateStr);
+    // Cash flows: add back all BUYs after this date (that money was still in account)
+    //             subtract all SELLs after this date
+    let cashAdj = 0;
+    trades.forEach(t => {
+      if (t.date > dateStr) {
+        const isBuy = (t.action || '').toUpperCase() === 'BUY';
+        cashAdj += isBuy ? t.total_eur : -t.total_eur;
+      }
+    });
+    // De-accrue interest from dateStr to todayRef
+    const daysToToday = Math.round((todayRef - d) / 86400000);
+    const growthFactor = Math.pow(1 + annualRate, daysToToday / 365);
+    // Balance on date = (current + cashAdj) before interest growth, so divide by growth
+    return (currentBalance + cashAdj) / growthFactor;
+  }
 
   const lastKnown = {};
   const depot = [], savings = [], total = [];
@@ -431,16 +457,7 @@ function buildPortfolioSeries(data) {
     });
     if (!allPresent || depotVal <= 0) return;
 
-    // Accrue savings interest up to this date
-    let savingsVal = 0;
-    if (savingsAccount.balance_eur) {
-      const asOf = savingsAccount.as_of ? new Date(savingsAccount.as_of) : new Date();
-      const d    = new Date(date);
-      const days = Math.max(0, Math.round((d - asOf) / 86400000));
-      const rate = (savingsAccount.interest_rate_pct || 0) / 100;
-      // Only include savings from as_of date onward
-      savingsVal = d >= asOf ? savingsAccount.balance_eur * Math.pow(1 + rate, days / 365) : 0;
-    }
+    const savingsVal = savingsOnDate(date);
 
     depot.push({ date, value: depotVal });
     savings.push({ date, value: savingsVal });
@@ -629,7 +646,7 @@ function renderLanding(data) {
     <div class="hero" id="lp-hero">
       <div class="hero-label">Portfoliowert</div>
       <div class="hero-value">${fmtEur(totalValue)}</div>
-      ${returnPct != null ? `<div class="hero-change ${returnPct >= 0 ? 'up' : 'down'}">${fmtPct(returnPct)} seit erstem Trade</div>` : ''}
+      ${returnPct != null ? `<div class="hero-change ${returnPct >= 0 ? 'up' : 'down'}">${fmtPct(returnPct)} seit Portfoliostart</div>` : ''}
       ${savingsVal > 0 ? `<div style="font-size:11px;color:var(--muted);margin-top:8px">Depot €${depotValue.toFixed(2)} &nbsp;·&nbsp; ${savings.label||'Tagesgeld'} €${savingsVal.toFixed(2)}</div>` : ''}
     </div>
 
