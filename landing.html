@@ -402,53 +402,80 @@ function filterRange(series, range) {
 }
 
 function buildPortfolioSeries(data) {
-  const priceHistory = data.price_history || {};
-  const portfolio    = data.portfolio    || [];
-  if (!portfolio.length) return [];
+  const priceHistory   = data.price_history   || {};
+  const portfolio      = data.portfolio       || [];
+  const savingsAccount = data.savings_account || {};
+  if (!portfolio.length) return { depot: [], savings: [], total: [] };
 
-  // Collect all dates across all tickers
   const dateSet = new Set();
   Object.values(priceHistory).forEach(rows => rows.forEach(r => dateSet.add(r.date)));
   const allDates = [...dateSet].sort();
 
-  // Build per-ticker price maps
   const maps = {};
   portfolio.forEach(pos => {
     maps[pos.ticker] = new Map();
     (priceHistory[pos.ticker] || []).forEach(r => maps[pos.ticker].set(r.date, r.close));
   });
 
-  // Forward-fill prices
   const lastKnown = {};
-  return allDates.map(date => {
-    let total = 0;
+  const depot = [], savings = [], total = [];
+
+  allDates.forEach(date => {
+    let depotVal = 0;
     let allPresent = true;
     portfolio.forEach(pos => {
       const p = maps[pos.ticker]?.get(date);
-      if (p != null) { lastKnown[pos.ticker] = p; total += p * pos.shares; }
-      else if (lastKnown[pos.ticker] != null) { total += lastKnown[pos.ticker] * pos.shares; }
+      if (p != null) { lastKnown[pos.ticker] = p; depotVal += p * pos.shares; }
+      else if (lastKnown[pos.ticker] != null) { depotVal += lastKnown[pos.ticker] * pos.shares; }
       else { allPresent = false; }
     });
-    return allPresent && total > 0 ? { date, value: total } : null;
-  }).filter(Boolean);
+    if (!allPresent || depotVal <= 0) return;
+
+    // Accrue savings interest up to this date
+    let savingsVal = 0;
+    if (savingsAccount.balance_eur) {
+      const asOf = savingsAccount.as_of ? new Date(savingsAccount.as_of) : new Date();
+      const d    = new Date(date);
+      const days = Math.max(0, Math.round((d - asOf) / 86400000));
+      const rate = (savingsAccount.interest_rate_pct || 0) / 100;
+      // Only include savings from as_of date onward
+      savingsVal = d >= asOf ? savingsAccount.balance_eur * Math.pow(1 + rate, days / 365) : 0;
+    }
+
+    depot.push({ date, value: depotVal });
+    savings.push({ date, value: savingsVal });
+    total.push({ date, value: depotVal + savingsVal });
+  });
+
+  return { depot, savings, total };
 }
 
-function renderChart(series, trades) {
+function renderChart(seriesObj, trades) {
   if (perfChart) { perfChart.destroy(); perfChart = null; }
   const canvas = document.getElementById('lp-perf-chart');
-  if (!canvas || !series.length) return;
+  if (!canvas) return;
 
-  const xyData = series.map(d => ({ x: d.date, y: d.value }));
-  const ctx    = canvas.getContext('2d');
-  const grad   = ctx.createLinearGradient(0, 0, 0, 200);
-  grad.addColorStop(0, 'rgba(16,185,129,0.25)');
-  grad.addColorStop(1, 'rgba(16,185,129,0.01)');
+  // Accept both old flat array and new {depot, savings, total} object
+  const depotSeries   = seriesObj.depot   || seriesObj || [];
+  const savingsSeries = seriesObj.savings  || [];
+  if (!depotSeries.length) return;
 
-  // Build trade annotations (only trades visible in current range)
-  const seriesDates = new Set(series.map(d => d.date));
+  const depotXY   = depotSeries.map(d => ({ x: d.date, y: d.value }));
+  const savingsXY = savingsSeries.map(d => ({ x: d.date, y: d.value }));
+
+  const ctx  = canvas.getContext('2d');
+  const gradDepot = ctx.createLinearGradient(0, 0, 0, 200);
+  gradDepot.addColorStop(0, 'rgba(16,185,129,0.22)');
+  gradDepot.addColorStop(1, 'rgba(16,185,129,0.01)');
+  const gradSavings = ctx.createLinearGradient(0, 0, 0, 200);
+  gradSavings.addColorStop(0, 'rgba(59,130,246,0.18)');
+  gradSavings.addColorStop(1, 'rgba(59,130,246,0.01)');
+
+  // Trade annotations
+  const allDates = new Set(depotSeries.map(d => d.date));
   const annotations = {};
   (trades || []).forEach((t, i) => {
-    if (!seriesDates.has(t.date)) return;
+    if (!allDates.has(t.date)) return;
     const isBuy = (t.action || '').toUpperCase() === 'BUY';
     annotations['trade_' + i] = {
       type: 'line',
@@ -470,26 +497,43 @@ function renderChart(series, trades) {
     };
   });
 
+  const datasets = [
+    {
+      label: 'Depot',
+      data: depotXY,
+      borderColor: '#10b981',
+      borderWidth: 2.5,
+      backgroundColor: gradDepot,
+      fill: true,
+      tension: 0.35,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      order: 2,
+    },
+    ...(savingsXY.length ? [{
+      label: 'Tagesgeld',
+      data: savingsXY,
+      borderColor: '#3b82f6',
+      borderWidth: 2,
+      backgroundColor: gradSavings,
+      fill: true,
+      tension: 0.1,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      order: 1,
+      borderDash: [4, 3],
+    }] : [])
+  ];
+
   perfChart = new Chart(ctx, {
     type: 'line',
-    data: {
-      datasets: [{
-        data: xyData,
-        borderColor: '#10b981',
-        borderWidth: 2.5,
-        backgroundColor: grad,
-        fill: true,
-        tension: 0.35,
-        pointRadius: 0,
-        pointHoverRadius: 4,
-      }]
-    },
+    data: { datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       animation: { duration: 900, easing: 'easeInOutQuart' },
       plugins: {
-        legend: { display: false },
+        legend: { display: savingsXY.length > 0, labels: { color: '#9090b0', font: { size: 10 }, boxWidth: 12, padding: 12 } },
         annotation: { annotations },
         tooltip: {
           backgroundColor: '#16161e',
@@ -498,7 +542,7 @@ function renderChart(series, trades) {
           titleColor: '#9090b0',
           bodyColor: '#f0f0f8',
           bodyFont: { weight: '700' },
-          callbacks: { label: c => '€' + (c.raw?.y ?? c.raw).toFixed(2) }
+          callbacks: { label: c => c.dataset.label + ': €' + (c.raw?.y ?? c.raw).toFixed(2) }
         }
       },
       scales: {
@@ -547,31 +591,36 @@ function renderLanding(data) {
   });
   const totalValue = depotValue + savingsVal;
 
-  // Compute return vs cost basis from executed trades
-  const invested = (data.executed_trades || []).reduce((sum, t) => {
-    if (!t.total_eur) return sum;
-    return t.action?.toUpperCase() === 'BUY' ? sum + t.total_eur : sum - t.total_eur;
-  }, 0);
-  const returnPct = invested > 0 ? (totalValue - invested) / invested * 100 : null;
+  // Performance computed after series is built (see below)
 
   // Get latest suggestion per ticker
   const latestBySug = {};
   suggestions.forEach(s => { latestBySug[s.ticker] = s; });
 
   // Build portfolio series
-  const fullSeries = buildPortfolioSeries(data);
+  const fullSeriesObj = buildPortfolioSeries(data);
+  // Performance: first total series value → today
+  const _firstVal = fullSeriesObj.total.length ? fullSeriesObj.total[0].value : null;
+  const returnPct = _firstVal && _firstVal > 0 ? (totalValue - _firstVal) / _firstVal * 100 : null;
   // Extend to today so today's trades show as markers
   const todayStr = new Date().toISOString().slice(0,10);
-  const lastDate = fullSeries.length ? fullSeries[fullSeries.length-1].date : null;
-  if (lastDate && todayStr > lastDate) {
-    const todayTotal = portfolio.reduce((sum, pos) => {
+  const _lastDepot = fullSeriesObj.depot.length ? fullSeriesObj.depot[fullSeriesObj.depot.length-1].date : null;
+  if (_lastDepot && todayStr > _lastDepot) {
+    const todayDepot = portfolio.reduce((sum, pos) => {
       const hist = (data.price_history || {})[pos.ticker] || [];
-      const lastP = hist.length ? hist[hist.length-1].close : 0;
-      return sum + lastP * pos.shares;
-    }, 0) + savingsVal;
-    if (todayTotal > 0) fullSeries.push({ date: todayStr, value: todayTotal });
+      return sum + (hist.length ? hist[hist.length-1].close : 0) * pos.shares;
+    }, 0);
+    if (todayDepot > 0) {
+      fullSeriesObj.depot.push({ date: todayStr, value: todayDepot });
+      fullSeriesObj.savings.push({ date: todayStr, value: savingsVal });
+      fullSeriesObj.total.push({ date: todayStr, value: todayDepot + savingsVal });
+    }
   }
-  const series3M   = filterRange(fullSeries, '3M');
+  const series3M = {
+    depot:   filterRange(fullSeriesObj.depot,   '3M'),
+    savings: filterRange(fullSeriesObj.savings,  '3M'),
+    total:   filterRange(fullSeriesObj.total,    '3M'),
+  };
 
   // ── HTML ──────────────────────────────────────────────────────
   const body = document.getElementById('lp-body');
@@ -662,7 +711,12 @@ function renderLanding(data) {
         activeRange = btn.dataset.range;
         document.querySelectorAll('.chip[data-range]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-                renderChart(filterRange(fullSeries, activeRange), _trades);
+                const r = activeRange;
+        renderChart({
+          depot:   filterRange(fullSeriesObj.depot,  r),
+          savings: filterRange(fullSeriesObj.savings, r),
+          total:   filterRange(fullSeriesObj.total,   r),
+        }, _trades);
       });
     });
 
