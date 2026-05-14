@@ -58,6 +58,16 @@
       "currency": "EUR",
       "cost_basis_eur": 0.0,
       "total_fees_eur": 0.0
+    },
+    {
+      "ticker": "ENB",
+      "isin": "CA3359341052",
+      "wkn": "904604",
+      "name": "Enbridge Inc.",
+      "shares": 21,
+      "currency": "EUR",
+      "cost_basis_eur": 545.76,
+      "total_fees_eur": 0.0
     }
   ],
   "price_history": {
@@ -3094,6 +3104,1012 @@
         "date": "2026-05-13",
         "close": 106.83000183105469
       }
+    ],
+    "ENB": [
+      {
+        "date": "2025-05-14",
+        "close": 42.98788833618164
+      },
+      {
+        "date": "2025-05-15",
+        "close": 43.698028564453125
+      },
+      {
+        "date": "2025-05-16",
+        "close": 43.62993240356445
+      },
+      {
+        "date": "2025-05-19",
+        "close": 43.71748733520508
+      },
+      {
+        "date": "2025-05-20",
+        "close": 44.3692626953125
+      },
+      {
+        "date": "2025-05-21",
+        "close": 44.33034896850586
+      },
+      {
+        "date": "2025-05-22",
+        "close": 43.941226959228516
+      },
+      {
+        "date": "2025-05-23",
+        "close": 44.80702209472656
+      },
+      {
+        "date": "2025-05-27",
+        "close": 44.78756332397461
+      },
+      {
+        "date": "2025-05-28",
+        "close": 44.33034896850586
+      },
+      {
+        "date": "2025-05-29",
+        "close": 44.60272979736328
+      },
+      {
+        "date": "2025-05-30",
+        "close": 45.21559524536133
+      },
+      {
+        "date": "2025-06-02",
+        "close": 45.877098083496094
+      },
+      {
+        "date": "2025-06-03",
+        "close": 45.789546966552734
+      },
+      {
+        "date": "2025-06-04",
+        "close": 45.39069747924805
+      },
+      {
+        "date": "2025-06-05",
+        "close": 45.59498596191406
+      },
+      {
+        "date": "2025-06-06",
+        "close": 45.2545051574707
+      },
+      {
+        "date": "2025-06-09",
+        "close": 44.573551177978516
+      },
+      {
+        "date": "2025-06-10",
+        "close": 44.60272979736328
+      },
+      {
+        "date": "2025-06-11",
+        "close": 44.622188568115234
+      },
+      {
+        "date": "2025-06-12",
+        "close": 45.53662109375
+      },
+      {
+        "date": "2025-06-13",
+        "close": 45.40042495727539
+      },
+      {
+        "date": "2025-06-16",
+        "close": 44.709739685058594
+      },
+      {
+        "date": "2025-06-17",
+        "close": 44.71946716308594
+      },
+      {
+        "date": "2025-06-18",
+        "close": 43.75639724731445
+      },
+      {
+        "date": "2025-06-20",
+        "close": 43.56184005737305
+      },
+      {
+        "date": "2025-06-23",
+        "close": 43.707759857177734
+      },
+      {
+        "date": "2025-06-24",
+        "close": 43.81476593017578
+      },
+      {
+        "date": "2025-06-25",
+        "close": 43.27000045776367
+      },
+      {
+        "date": "2025-06-26",
+        "close": 43.85368347167969
+      },
+      {
+        "date": "2025-06-27",
+        "close": 43.56184005737305
+      },
+      {
+        "date": "2025-06-30",
+        "close": 44.08715057373047
+      },
+      {
+        "date": "2025-07-01",
+        "close": 43.698028564453125
+      },
+      {
+        "date": "2025-07-02",
+        "close": 43.56184005737305
+      },
+      {
+        "date": "2025-07-03",
+        "close": 43.52293014526367
+      },
+      {
+        "date": "2025-07-07",
+        "close": 42.94898223876953
+      },
+      {
+        "date": "2025-07-08",
+        "close": 42.99761962890625
+      },
+      {
+        "date": "2025-07-09",
+        "close": 42.59877395629883
+      },
+      {
+        "date": "2025-07-10",
+        "close": 43.27973175048828
+      },
+      {
+        "date": "2025-07-11",
+        "close": 43.338096618652344
+      },
+      {
+        "date": "2025-07-14",
+        "close": 43.98014450073242
+      },
+      {
+        "date": "2025-07-15",
+        "close": 44.03851318359375
+      },
+      {
+        "date": "2025-07-16",
+        "close": 44.0190544128418
+      },
+      {
+        "date": "2025-07-17",
+        "close": 43.54238510131836
+      },
+      {
+        "date": "2025-07-18",
+        "close": 43.86341094970703
+      },
+      {
+        "date": "2025-07-21",
+        "close": 43.377010345458984
+      },
+      {
+        "date": "2025-07-22",
+        "close": 43.97041702270508
+      },
+      {
+        "date": "2025-07-23",
+        "close": 44.2427978515625
+      },
+      {
+        "date": "2025-07-24",
+        "close": 44.22334289550781
+      },
+      {
+        "date": "2025-07-25",
+        "close": 43.74666976928711
+      },
+      {
+        "date": "2025-07-28",
+        "close": 43.41592025756836
+      },
+      {
+        "date": "2025-07-29",
+        "close": 43.85368347167969
+      },
+      {
+        "date": "2025-07-30",
+        "close": 43.75639724731445
+      },
+      {
+        "date": "2025-07-31",
+        "close": 44.05796813964844
+      },
+      {
+        "date": "2025-08-01",
+        "close": 44.943214416503906
+      },
+      {
+        "date": "2025-08-04",
+        "close": 45.35178756713867
+      },
+      {
+        "date": "2025-08-05",
+        "close": 45.46852493286133
+      },
+      {
+        "date": "2025-08-06",
+        "close": 45.731178283691406
+      },
+      {
+        "date": "2025-08-07",
+        "close": 45.79927444458008
+      },
+      {
+        "date": "2025-08-08",
+        "close": 45.71172332763672
+      },
+      {
+        "date": "2025-08-11",
+        "close": 46.198123931884766
+      },
+      {
+        "date": "2025-08-12",
+        "close": 46.03274154663086
+      },
+      {
+        "date": "2025-08-13",
+        "close": 46.38295364379883
+      },
+      {
+        "date": "2025-08-14",
+        "close": 46.86935043334961
+      },
+      {
+        "date": "2025-08-15",
+        "close": 46.41838836669922
+      },
+      {
+        "date": "2025-08-18",
+        "close": 46.05327606201172
+      },
+      {
+        "date": "2025-08-19",
+        "close": 46.56640625
+      },
+      {
+        "date": "2025-08-20",
+        "close": 47.39530563354492
+      },
+      {
+        "date": "2025-08-21",
+        "close": 47.306495666503906
+      },
+      {
+        "date": "2025-08-22",
+        "close": 47.33610153198242
+      },
+      {
+        "date": "2025-08-25",
+        "close": 46.970985412597656
+      },
+      {
+        "date": "2025-08-26",
+        "close": 46.81310272216797
+      },
+      {
+        "date": "2025-08-27",
+        "close": 46.980857849121094
+      },
+      {
+        "date": "2025-08-28",
+        "close": 47.17821502685547
+      },
+      {
+        "date": "2025-08-29",
+        "close": 47.701210021972656
+      },
+      {
+        "date": "2025-09-02",
+        "close": 47.661739349365234
+      },
+      {
+        "date": "2025-09-03",
+        "close": 47.68147277832031
+      },
+      {
+        "date": "2025-09-04",
+        "close": 47.52358627319336
+      },
+      {
+        "date": "2025-09-05",
+        "close": 47.62226486206055
+      },
+      {
+        "date": "2025-09-08",
+        "close": 47.68147277832031
+      },
+      {
+        "date": "2025-09-09",
+        "close": 47.69134521484375
+      },
+      {
+        "date": "2025-09-10",
+        "close": 47.947906494140625
+      },
+      {
+        "date": "2025-09-11",
+        "close": 48.165000915527344
+      },
+      {
+        "date": "2025-09-12",
+        "close": 48.45116424560547
+      },
+      {
+        "date": "2025-09-15",
+        "close": 48.41169738769531
+      },
+      {
+        "date": "2025-09-16",
+        "close": 48.24394226074219
+      },
+      {
+        "date": "2025-09-17",
+        "close": 48.461036682128906
+      },
+      {
+        "date": "2025-09-18",
+        "close": 48.47090148925781
+      },
+      {
+        "date": "2025-09-19",
+        "close": 48.8064079284668
+      },
+      {
+        "date": "2025-09-22",
+        "close": 48.539974212646484
+      },
+      {
+        "date": "2025-09-23",
+        "close": 48.944557189941406
+      },
+      {
+        "date": "2025-09-24",
+        "close": 49.31953811645508
+      },
+      {
+        "date": "2025-09-25",
+        "close": 48.914955139160156
+      },
+      {
+        "date": "2025-09-26",
+        "close": 48.9346923828125
+      },
+      {
+        "date": "2025-09-29",
+        "close": 49.06297302246094
+      },
+      {
+        "date": "2025-09-30",
+        "close": 49.79319381713867
+      },
+      {
+        "date": "2025-10-01",
+        "close": 48.9346923828125
+      },
+      {
+        "date": "2025-10-02",
+        "close": 49.04323959350586
+      },
+      {
+        "date": "2025-10-03",
+        "close": 49.408348083496094
+      },
+      {
+        "date": "2025-10-06",
+        "close": 49.11231231689453
+      },
+      {
+        "date": "2025-10-07",
+        "close": 48.79654312133789
+      },
+      {
+        "date": "2025-10-08",
+        "close": 48.3820915222168
+      },
+      {
+        "date": "2025-10-09",
+        "close": 47.3558349609375
+      },
+      {
+        "date": "2025-10-10",
+        "close": 47.05979919433594
+      },
+      {
+        "date": "2025-10-13",
+        "close": 47.10913848876953
+      },
+      {
+        "date": "2025-10-14",
+        "close": 46.89204788208008
+      },
+      {
+        "date": "2025-10-15",
+        "close": 46.980857849121094
+      },
+      {
+        "date": "2025-10-16",
+        "close": 46.58613967895508
+      },
+      {
+        "date": "2025-10-17",
+        "close": 46.457862854003906
+      },
+      {
+        "date": "2025-10-20",
+        "close": 46.58613967895508
+      },
+      {
+        "date": "2025-10-21",
+        "close": 46.64535140991211
+      },
+      {
+        "date": "2025-10-22",
+        "close": 47.079532623291016
+      },
+      {
+        "date": "2025-10-23",
+        "close": 46.55653762817383
+      },
+      {
+        "date": "2025-10-24",
+        "close": 46.29010772705078
+      },
+      {
+        "date": "2025-10-27",
+        "close": 46.64535140991211
+      },
+      {
+        "date": "2025-10-28",
+        "close": 46.46772766113281
+      },
+      {
+        "date": "2025-10-29",
+        "close": 46.05327606201172
+      },
+      {
+        "date": "2025-10-30",
+        "close": 46.35918045043945
+      },
+      {
+        "date": "2025-10-31",
+        "close": 46.003936767578125
+      },
+      {
+        "date": "2025-11-03",
+        "close": 46.003936767578125
+      },
+      {
+        "date": "2025-11-04",
+        "close": 45.7769775390625
+      },
+      {
+        "date": "2025-11-05",
+        "close": 45.944732666015625
+      },
+      {
+        "date": "2025-11-06",
+        "close": 46.26050567626953
+      },
+      {
+        "date": "2025-11-07",
+        "close": 47.079532623291016
+      },
+      {
+        "date": "2025-11-10",
+        "close": 47.28675842285156
+      },
+      {
+        "date": "2025-11-11",
+        "close": 47.65187072753906
+      },
+      {
+        "date": "2025-11-12",
+        "close": 48.06631851196289
+      },
+      {
+        "date": "2025-11-13",
+        "close": 47.62226486206055
+      },
+      {
+        "date": "2025-11-14",
+        "close": 47.24728775024414
+      },
+      {
+        "date": "2025-11-17",
+        "close": 47.1190071105957
+      },
+      {
+        "date": "2025-11-18",
+        "close": 47.63213348388672
+      },
+      {
+        "date": "2025-11-19",
+        "close": 47.977508544921875
+      },
+      {
+        "date": "2025-11-20",
+        "close": 47.661739349365234
+      },
+      {
+        "date": "2025-11-21",
+        "close": 47.306495666503906
+      },
+      {
+        "date": "2025-11-24",
+        "close": 46.69468688964844
+      },
+      {
+        "date": "2025-11-25",
+        "close": 46.9315185546875
+      },
+      {
+        "date": "2025-11-26",
+        "close": 47.405174255371094
+      },
+      {
+        "date": "2025-11-28",
+        "close": 48.13539505004883
+      },
+      {
+        "date": "2025-12-01",
+        "close": 48.24394226074219
+      },
+      {
+        "date": "2025-12-02",
+        "close": 47.47425079345703
+      },
+      {
+        "date": "2025-12-03",
+        "close": 47.1190071105957
+      },
+      {
+        "date": "2025-12-04",
+        "close": 47.50385284423828
+      },
+      {
+        "date": "2025-12-05",
+        "close": 47.45451354980469
+      },
+      {
+        "date": "2025-12-08",
+        "close": 47.553192138671875
+      },
+      {
+        "date": "2025-12-09",
+        "close": 46.911781311035156
+      },
+      {
+        "date": "2025-12-10",
+        "close": 46.56640625
+      },
+      {
+        "date": "2025-12-11",
+        "close": 46.78350067138672
+      },
+      {
+        "date": "2025-12-12",
+        "close": 46.92164993286133
+      },
+      {
+        "date": "2025-12-15",
+        "close": 47.049930572509766
+      },
+      {
+        "date": "2025-12-16",
+        "close": 46.05327606201172
+      },
+      {
+        "date": "2025-12-17",
+        "close": 46.31970977783203
+      },
+      {
+        "date": "2025-12-18",
+        "close": 46.12235641479492
+      },
+      {
+        "date": "2025-12-19",
+        "close": 46.01380920410156
+      },
+      {
+        "date": "2025-12-22",
+        "close": 46.21116638183594
+      },
+      {
+        "date": "2025-12-23",
+        "close": 46.842708587646484
+      },
+      {
+        "date": "2025-12-24",
+        "close": 46.82297134399414
+      },
+      {
+        "date": "2025-12-26",
+        "close": 46.901912689208984
+      },
+      {
+        "date": "2025-12-29",
+        "close": 47.09926986694336
+      },
+      {
+        "date": "2025-12-30",
+        "close": 47.415042877197266
+      },
+      {
+        "date": "2025-12-31",
+        "close": 47.19795227050781
+      },
+      {
+        "date": "2026-01-02",
+        "close": 47.48411560058594
+      },
+      {
+        "date": "2026-01-05",
+        "close": 45.96446990966797
+      },
+      {
+        "date": "2026-01-06",
+        "close": 45.09609603881836
+      },
+      {
+        "date": "2026-01-07",
+        "close": 44.63230514526367
+      },
+      {
+        "date": "2026-01-08",
+        "close": 44.69151306152344
+      },
+      {
+        "date": "2026-01-09",
+        "close": 45.02702331542969
+      },
+      {
+        "date": "2026-01-12",
+        "close": 45.25398254394531
+      },
+      {
+        "date": "2026-01-13",
+        "close": 45.727638244628906
+      },
+      {
+        "date": "2026-01-14",
+        "close": 45.95459747314453
+      },
+      {
+        "date": "2026-01-15",
+        "close": 46.191429138183594
+      },
+      {
+        "date": "2026-01-16",
+        "close": 46.96112060546875
+      },
+      {
+        "date": "2026-01-20",
+        "close": 46.5072021484375
+      },
+      {
+        "date": "2026-01-21",
+        "close": 46.66508483886719
+      },
+      {
+        "date": "2026-01-22",
+        "close": 46.85257339477539
+      },
+      {
+        "date": "2026-01-23",
+        "close": 47.56306076049805
+      },
+      {
+        "date": "2026-01-26",
+        "close": 47.24728775024414
+      },
+      {
+        "date": "2026-01-27",
+        "close": 47.38543701171875
+      },
+      {
+        "date": "2026-01-28",
+        "close": 47.918304443359375
+      },
+      {
+        "date": "2026-01-29",
+        "close": 48.589317321777344
+      },
+      {
+        "date": "2026-01-30",
+        "close": 48.194602966308594
+      },
+      {
+        "date": "2026-02-02",
+        "close": 47.64200210571289
+      },
+      {
+        "date": "2026-02-03",
+        "close": 48.67812728881836
+      },
+      {
+        "date": "2026-02-04",
+        "close": 49.49715805053711
+      },
+      {
+        "date": "2026-02-05",
+        "close": 49.82279968261719
+      },
+      {
+        "date": "2026-02-06",
+        "close": 49.65504455566406
+      },
+      {
+        "date": "2026-02-09",
+        "close": 49.9609489440918
+      },
+      {
+        "date": "2026-02-10",
+        "close": 50.41487121582031
+      },
+      {
+        "date": "2026-02-11",
+        "close": 50.86878967285156
+      },
+      {
+        "date": "2026-02-12",
+        "close": 51.15496063232422
+      },
+      {
+        "date": "2026-02-13",
+        "close": 53.16800308227539
+      },
+      {
+        "date": "2026-02-17",
+        "close": 51.439998626708984
+      },
+      {
+        "date": "2026-02-18",
+        "close": 50.88999938964844
+      },
+      {
+        "date": "2026-02-19",
+        "close": 51.59000015258789
+      },
+      {
+        "date": "2026-02-20",
+        "close": 51.52000045776367
+      },
+      {
+        "date": "2026-02-23",
+        "close": 52.349998474121094
+      },
+      {
+        "date": "2026-02-24",
+        "close": 52.400001525878906
+      },
+      {
+        "date": "2026-02-25",
+        "close": 52.40999984741211
+      },
+      {
+        "date": "2026-02-26",
+        "close": 52.25
+      },
+      {
+        "date": "2026-02-27",
+        "close": 53.13999938964844
+      },
+      {
+        "date": "2026-03-02",
+        "close": 53.959999084472656
+      },
+      {
+        "date": "2026-03-03",
+        "close": 54.33000183105469
+      },
+      {
+        "date": "2026-03-04",
+        "close": 54.16999816894531
+      },
+      {
+        "date": "2026-03-05",
+        "close": 53.880001068115234
+      },
+      {
+        "date": "2026-03-06",
+        "close": 54.060001373291016
+      },
+      {
+        "date": "2026-03-09",
+        "close": 53.939998626708984
+      },
+      {
+        "date": "2026-03-10",
+        "close": 53.70000076293945
+      },
+      {
+        "date": "2026-03-11",
+        "close": 53.63999938964844
+      },
+      {
+        "date": "2026-03-12",
+        "close": 53.630001068115234
+      },
+      {
+        "date": "2026-03-13",
+        "close": 54.08000183105469
+      },
+      {
+        "date": "2026-03-16",
+        "close": 54.540000915527344
+      },
+      {
+        "date": "2026-03-17",
+        "close": 54.04999923706055
+      },
+      {
+        "date": "2026-03-18",
+        "close": 53.2400016784668
+      },
+      {
+        "date": "2026-03-19",
+        "close": 54.06999969482422
+      },
+      {
+        "date": "2026-03-20",
+        "close": 53.459999084472656
+      },
+      {
+        "date": "2026-03-23",
+        "close": 54.15999984741211
+      },
+      {
+        "date": "2026-03-24",
+        "close": 54.439998626708984
+      },
+      {
+        "date": "2026-03-25",
+        "close": 54.47999954223633
+      },
+      {
+        "date": "2026-03-26",
+        "close": 54.5
+      },
+      {
+        "date": "2026-03-27",
+        "close": 54.58000183105469
+      },
+      {
+        "date": "2026-03-30",
+        "close": 54.33000183105469
+      },
+      {
+        "date": "2026-03-31",
+        "close": 54.13999938964844
+      },
+      {
+        "date": "2026-04-01",
+        "close": 53.650001525878906
+      },
+      {
+        "date": "2026-04-02",
+        "close": 54.150001525878906
+      },
+      {
+        "date": "2026-04-06",
+        "close": 53.7400016784668
+      },
+      {
+        "date": "2026-04-07",
+        "close": 54.380001068115234
+      },
+      {
+        "date": "2026-04-08",
+        "close": 54.47999954223633
+      },
+      {
+        "date": "2026-04-09",
+        "close": 54.5
+      },
+      {
+        "date": "2026-04-10",
+        "close": 54.31999969482422
+      },
+      {
+        "date": "2026-04-13",
+        "close": 53.470001220703125
+      },
+      {
+        "date": "2026-04-14",
+        "close": 52.9900016784668
+      },
+      {
+        "date": "2026-04-15",
+        "close": 52.61000061035156
+      },
+      {
+        "date": "2026-04-16",
+        "close": 52.56999969482422
+      },
+      {
+        "date": "2026-04-17",
+        "close": 52.66999816894531
+      },
+      {
+        "date": "2026-04-20",
+        "close": 52.2400016784668
+      },
+      {
+        "date": "2026-04-21",
+        "close": 51.849998474121094
+      },
+      {
+        "date": "2026-04-22",
+        "close": 51.79999923706055
+      },
+      {
+        "date": "2026-04-23",
+        "close": 52.5
+      },
+      {
+        "date": "2026-04-24",
+        "close": 53.29999923706055
+      },
+      {
+        "date": "2026-04-27",
+        "close": 52.45000076293945
+      },
+      {
+        "date": "2026-04-28",
+        "close": 53.040000915527344
+      },
+      {
+        "date": "2026-04-29",
+        "close": 53.41999816894531
+      },
+      {
+        "date": "2026-04-30",
+        "close": 55.41999816894531
+      },
+      {
+        "date": "2026-05-01",
+        "close": 54.83000183105469
+      },
+      {
+        "date": "2026-05-04",
+        "close": 54.720001220703125
+      },
+      {
+        "date": "2026-05-05",
+        "close": 54.90999984741211
+      },
+      {
+        "date": "2026-05-06",
+        "close": 54.20000076293945
+      },
+      {
+        "date": "2026-05-07",
+        "close": 53.9900016784668
+      },
+      {
+        "date": "2026-05-08",
+        "close": 53.59000015258789
+      },
+      {
+        "date": "2026-05-11",
+        "close": 54.459999084472656
+      },
+      {
+        "date": "2026-05-12",
+        "close": 54.84000015258789
+      },
+      {
+        "date": "2026-05-13",
+        "close": 55.189998626708984
+      }
     ]
   },
   "suggestions": [
@@ -3103,7 +4119,7 @@
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "The quantitative signals are modestly constructive \u2014 the Y%-Filter is an active BUY with an upward trend, the Prophet forecast projects slight gains over 1\u20135 days, and the MACD histogram is positive though no crossover confirms fresh momentum. However, the macro news is dominated by geopolitical risk surrounding the Iran conflict, with ECB Lane explicitly warning that an oil shock from the Iran war may require rate hikes \u2014 a headwind for European equity valuations including asset managers like Amundi. Given the elevated geopolitical uncertainty and the absence of any company-specific positive catalysts in the news, the position at 15.3% weight warrants a HOLD rather than adding further exposure despite the quant signals leaning mildly bullish.",
+      "llm_rationale": "The quant signals are mildly constructive \u2014 the Y%-Filter is a live BUY with an uptrend, Prophet forecasts modest upside (+0.79% over 5 days), and the MACD histogram is positive but without a crossover confirmation, suggesting momentum is present but not accelerating. GARCH volatility at ~23% is moderate, consistent with a cautious hold rather than aggressive accumulation. The available news is entirely macro in nature (Iran conflict, US-China diplomacy) with no company- or sector-specific coverage for AMUN.PA, making it impossible to assess fundamental catalysts from news alone. Given the lack of ticker-specific news and the absence of a MACD bullish crossover, maintaining the current 7.8% weight is appropriate without adding conviction.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 85.0552,
       "arima_forecast_5d": 85.6205,
@@ -3115,11 +4131,27 @@
     },
     {
       "date": "2026-05-14",
+      "ticker": "ENB",
+      "quant_signal": "SELL",
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "MED",
+      "llm_rationale": "Enbridge's Q1 2026 earnings beat estimates on both EPS ($0.98 vs $0.89) and revenue, and RBC Capital raised its price target to $79, signaling fundamental strength. However, the Y%-Filter is a live SELL signal with a downward trend, and Prophet forecasts a modest price decline to ~54.13 EUR over the next 5 days. The MACD histogram is positive but shows no crossover, suggesting momentum is neither accelerating nor reversing. Given the heavy 49% portfolio weight, a HOLD is appropriate \u2014 the fundamental news does not justify adding exposure against active quant headwinds, but the strong earnings and analyst upgrade argue against reducing the position at current levels.",
+      "llm_quant_agreement": "neutral",
+      "arima_forecast_1d": 54.4713,
+      "arima_forecast_5d": 54.1276,
+      "prophet_forecast_1d": 54.4713,
+      "prophet_forecast_5d": 54.1276,
+      "macd_signal": "HOLD",
+      "garch_volatility": 0.173165,
+      "zscore": null
+    },
+    {
+      "date": "2026-05-14",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
-      "llm_confidence": "MED",
-      "llm_rationale": "The MACD bearish crossover and expired Y%-Filter downtrend signal suggest mild near-term weakness, but the Prophet forecast projects a modest price recovery toward 107.35 EUR over the next 5 days, and GARCH volatility remains low at 5.37%, indicating a stable environment. The Z-Score of -0.81 is modestly negative, suggesting the bond ETF is slightly cheap rather than overvalued, supporting a hold rather than a sell. The macro news is concerning for European fixed income \u2014 ECB's Lane explicitly flagging potential rate hikes due to an oil shock from the Iran war is a headwind for bond prices, partially offsetting the cheapness signal. Given the conflicting signals and geopolitical uncertainty, maintaining the current position without adding or reducing exposure is appropriate.",
+      "llm_confidence": "LOW",
+      "llm_rationale": "The MACD bearish crossover signals short-term downward momentum, but the Y%-Filter signal is expired and therefore carries limited weight, while the Prophet forecast suggests a marginal upside to ~107.35 EUR over the next five days. The Z-Score of -0.81 indicates this bond ETF is modestly cheap relative to its mean, supporting a hold rather than a sell. The macro news is dominated by geopolitical uncertainty around the Iran conflict, which typically supports a mild flight-to-quality bid for bond instruments, partially offsetting the bearish momentum signal. Given low GARCH volatility of 5.37% and the small position size (3 shares), there is no compelling case to act decisively in either direction.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 107.3553,
       "arima_forecast_5d": 107.3515,
@@ -3135,7 +4167,7 @@
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "The Y%-Filter signals an active BUY with an upward trend, but the MACD shows no crossover and a modest histogram, indicating weak short-term momentum confirmation. Critically, the Prophet forecast projects a notable near-term price decline to 10.53 EUR (+1d) and 10.71 EUR (+5d) from the current 10.82 EUR, suggesting downside risk in the immediate term. The macro news is dominated by Iran war escalation and potential ECB rate hikes due to an oil shock \u2014 both are headwinds for clean energy/ESG-linked ETFs like IQQH.DE, adding fundamental risk to the quant uncertainty. Given the very high existing portfolio weight of 58.2% and elevated GARCH volatility of 31.19%, a HOLD is appropriate pending clearer momentum and resolution of macro risks.",
+      "llm_rationale": "The Y%-Filter is a live BUY signal with an upward trend, but the MACD shows no crossover momentum and the Prophet forecast projects a near-term price decline to ~10.53 EUR tomorrow before partially recovering to ~10.71 EUR over five days \u2014 both below the current price of 10.82 EUR, suggesting limited short-term upside. GARCH volatility at 31.19% is elevated, adding risk to any new exposure. The available news is exclusively macro in nature (Iran conflict, US-China diplomacy) with no direct relevance to IQQH.DE, making it impossible to draw fundamental conclusions; the geopolitical uncertainty does, however, represent a general risk-off headwind for clean energy or thematic ETFs. Given the conflicting quant signals and absence of ticker-specific news, maintaining the current position without adding or reducing is prudent.",
       "llm_quant_agreement": "neutral",
       "arima_forecast_1d": 10.5287,
       "arima_forecast_5d": 10.7117,
@@ -3154,6 +4186,14 @@
       "sharpe_ratio": 0.6018,
       "max_drawdown_pct": 16.7225,
       "win_rate": 0.4667
+    },
+    {
+      "run_date": "2026-05-14",
+      "ticker": "ENB",
+      "total_return_pct": 41.35,
+      "sharpe_ratio": 0.6365,
+      "max_drawdown_pct": 16.4165,
+      "win_rate": 0.5
     },
     {
       "run_date": "2026-05-14",
@@ -3270,11 +4310,32 @@
       "total_eur": 375.0,
       "fee_eur": null,
       "note": "15% of 2500 EUR expansion (broad commodity inflation hedge)"
+    },
+    {
+      "date": "2026-05-14",
+      "ticker": "ENB",
+      "isin": "CA3359341052",
+      "wkn": "904604",
+      "action": "BUY",
+      "shares": 21,
+      "price_per_share": 23.355,
+      "price_eur": 23.355,
+      "currency": "EUR",
+      "total_eur": 545.76,
+      "fee_eur": null,
+      "note": "Enbridge Inc. \u2014 Canadian pipeline, energy infrastructure"
     }
   ],
   "news_by_ticker": {
     "AMUN.PA": [
       {
+        "published_at": "2026-05-14T03:56:00",
+        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
+        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+      },
+      {
         "published_at": "2026-05-13T22:32:00",
         "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
         "source": "Reuters",
@@ -3301,17 +4362,17 @@
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
         "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
-      },
-      {
-        "published_at": "2026-05-13T20:13:45",
-        "headline": "[MACRO] Cisco's stock pops 11% on earnings beat, strong guidance",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html",
-        "body": "Cisco's AI story has finally started resonating with Wall Street, with the stock hitting a record late last year and continuing to rally in 2026."
       }
     ],
     "IQQH.DE": [
       {
+        "published_at": "2026-05-14T03:56:00",
+        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
+        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+      },
+      {
         "published_at": "2026-05-13T22:32:00",
         "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
         "source": "Reuters",
@@ -3338,17 +4399,17 @@
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
         "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
-      },
-      {
-        "published_at": "2026-05-13T20:13:45",
-        "headline": "[MACRO] Cisco's stock pops 11% on earnings beat, strong guidance",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html",
-        "body": "Cisco's AI story has finally started resonating with Wall Street, with the stock hitting a record late last year and continuing to rally in 2026."
       }
     ],
     "EUN4.DE": [
       {
+        "published_at": "2026-05-14T03:56:00",
+        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
+        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+      },
+      {
         "published_at": "2026-05-13T22:32:00",
         "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
         "source": "Reuters",
@@ -3375,13 +4436,43 @@
         "source": "Reuters",
         "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
         "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
+      }
+    ],
+    "ENB": [
+      {
+        "published_at": "2026-05-12T04:45:45",
+        "headline": "Enbridge FQ1 Earnings: An Equity Bond For Uncertain Times",
+        "source": "SeekingAlpha",
+        "url": "https://finnhub.io/api/news?id=f0b95610a28c0be54f34adc15dabd3f7daaedba12b556889b1a2234dd0345839",
+        "body": ""
       },
       {
-        "published_at": "2026-05-13T20:13:45",
-        "headline": "[MACRO] Cisco's stock pops 11% on earnings beat, strong guidance",
-        "source": "CNBC",
-        "url": "https://www.cnbc.com/2026/05/13/cisco-csco-q3-earnings-report-2026.html",
-        "body": "Cisco's AI story has finally started resonating with Wall Street, with the stock hitting a record late last year and continuing to rally in 2026."
+        "published_at": "2026-05-11T11:04:16",
+        "headline": "RBC Capital Maintains Outperform on Enbridge, Raises Price Target to $79",
+        "source": "Benzinga",
+        "url": "https://finnhub.io/api/news?id=a42d52fe6cd0736002efe440d20fb43343741534fb0b27c5df965e099a4aa068",
+        "body": "RBC Capital  analyst Maurice Choy   maintains Enbridge (NYSE:ENB) with a Outperform and raises the price target from $76 to $79."
+      },
+      {
+        "published_at": "2026-05-10T19:06:11",
+        "headline": "Enbridge Inc. 2026 Q1 - Results - Earnings Call Presentation",
+        "source": "SeekingAlpha",
+        "url": "https://finnhub.io/api/news?id=1fed8b55d373c905892c2287a600f5d4adea887c841de4dbfbb94c2eea8d9969",
+        "body": "2026-05-10. The following slide deck was published by Enbridge Inc."
+      },
+      {
+        "published_at": "2026-05-09T08:06:31",
+        "headline": "The Williams Companies: Good Earnings And Growth Potential, But Very Expensive",
+        "source": "SeekingAlpha",
+        "url": "https://finnhub.io/api/news?id=e2f577a3ca8190c62895b7718352a3e7cb52895c5564d8d06dda7c03d87a9727",
+        "body": "Williams Companies (WMB) Q1 2026 earnings surged on gas volume growth, pipeline expansions, and contracts\u00e2\u0080\u0094yet trades at a premium P/E."
+      },
+      {
+        "published_at": "2026-05-08T17:21:14",
+        "headline": "Enbridge Inc. (ENB:CA) Q1 2026 Earnings Call Transcript",
+        "source": "SeekingAlpha",
+        "url": "https://finnhub.io/api/news?id=fad8476aee5b5f7c8e7939a05ab45d5ea7cb88f97e61e4388419110433b8e5f2",
+        "body": "Enbridge Inc. (ENB:CA) Q1 2026 Earnings Call May 8, 2026 9:00 AM EDTCompany ParticipantsMarlon Samuel - Vice President of Investor Relations &..."
       }
     ]
   }
