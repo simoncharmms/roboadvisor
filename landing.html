@@ -472,21 +472,28 @@ function renderChart(seriesObj, trades) {
   const canvas = document.getElementById('lp-perf-chart');
   if (!canvas) return;
 
-  // Accept both old flat array and new {depot, savings, total} object
   const depotSeries   = seriesObj.depot   || seriesObj || [];
   const savingsSeries = seriesObj.savings  || [];
   if (!depotSeries.length) return;
 
-  const depotXY   = depotSeries.map(d => ({ x: d.date, y: d.value }));
-  const savingsXY = savingsSeries.map(d => ({ x: d.date, y: d.value }));
+  // Depot: raw depot values (bottom band)
+  const depotXY = depotSeries.map(d => ({ x: d.date, y: d.value }));
+  // Savings stacked top line = depot + savings (so fill '-1' fills the gap between the two lines)
+  // Align by date — depot and savings arrays share the same dates
+  const savingsStackedXY = savingsSeries.map((s, i) => ({
+    x: s.date,
+    y: s.value + (depotSeries[i]?.value || 0),
+  }));
+  // Keep raw savings values for tooltip
+  const savingsRawMap = new Map(savingsSeries.map(s => [s.date, s.value]));
 
-  const ctx  = canvas.getContext('2d');
+  const ctx = canvas.getContext('2d');
   const gradDepot = ctx.createLinearGradient(0, 0, 0, 200);
-  gradDepot.addColorStop(0, 'rgba(16,185,129,0.22)');
-  gradDepot.addColorStop(1, 'rgba(16,185,129,0.01)');
+  gradDepot.addColorStop(0, 'rgba(16,185,129,0.35)');
+  gradDepot.addColorStop(1, 'rgba(16,185,129,0.08)');
   const gradSavings = ctx.createLinearGradient(0, 0, 0, 200);
-  gradSavings.addColorStop(0, 'rgba(59,130,246,0.18)');
-  gradSavings.addColorStop(1, 'rgba(59,130,246,0.01)');
+  gradSavings.addColorStop(0, 'rgba(59,130,246,0.30)');
+  gradSavings.addColorStop(1, 'rgba(59,130,246,0.08)');
 
   // Trade annotations
   const allDates = new Set(depotSeries.map(d => d.date));
@@ -519,26 +526,25 @@ function renderChart(seriesObj, trades) {
       label: 'Depot',
       data: depotXY,
       borderColor: '#10b981',
-      borderWidth: 2.5,
+      borderWidth: 2,
       backgroundColor: gradDepot,
-      fill: true,
+      fill: 'origin',       // fills from this line down to zero
       tension: 0.35,
       pointRadius: 0,
       pointHoverRadius: 4,
       order: 2,
     },
-    ...(savingsXY.length ? [{
+    ...(savingsStackedXY.length ? [{
       label: 'Tagesgeld',
-      data: savingsXY,
+      data: savingsStackedXY,
       borderColor: '#3b82f6',
       borderWidth: 2,
       backgroundColor: gradSavings,
-      fill: true,
+      fill: '-1',           // fills from this line down to the depot line
       tension: 0.1,
       pointRadius: 0,
       pointHoverRadius: 4,
       order: 1,
-      borderDash: [4, 3],
     }] : [])
   ];
 
@@ -550,7 +556,10 @@ function renderChart(seriesObj, trades) {
       maintainAspectRatio: false,
       animation: { duration: 900, easing: 'easeInOutQuart' },
       plugins: {
-        legend: { display: savingsXY.length > 0, labels: { color: '#9090b0', font: { size: 10 }, boxWidth: 12, padding: 12 } },
+        legend: {
+          display: savingsStackedXY.length > 0,
+          labels: { color: '#9090b0', font: { size: 10 }, boxWidth: 12, padding: 12 }
+        },
         annotation: { annotations },
         tooltip: {
           backgroundColor: '#16161e',
@@ -559,7 +568,17 @@ function renderChart(seriesObj, trades) {
           titleColor: '#9090b0',
           bodyColor: '#f0f0f8',
           bodyFont: { weight: '700' },
-          callbacks: { label: c => c.dataset.label + ': €' + (c.raw?.y ?? c.raw).toFixed(2) }
+          callbacks: {
+            label: c => {
+              if (c.datasetIndex === 0) {
+                return 'Depot: €' + (c.raw?.y ?? c.raw).toFixed(2);
+              } else {
+                // Show raw savings value, not stacked value
+                const rawSav = savingsRawMap.get(c.raw?.x ?? c.label) || 0;
+                return 'Tagesgeld: €' + rawSav.toFixed(2);
+              }
+            }
+          }
         }
       },
       scales: {
