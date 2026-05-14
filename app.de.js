@@ -137,7 +137,6 @@ function renderAll() {
   renderKPIs();
   renderPerformanceChart();
   renderAllocationChart();
-  renderSignalsList();
   renderBacktestGrid();
   renderTickerCharts();
   renderTradesTable();
@@ -411,6 +410,7 @@ function renderAllocationChart() {
 // ── Signals List ───────────────────────────────────────────────
 function renderSignalsList() {
   const container = document.getElementById('signals-list');
+  if (!container) return;  // Karte aus HTML entfernt
   if (!state.suggestions.length) {
     container.innerHTML = '<p style="color:var(--text-muted);font-size:13px">Keine Empfehlungen geladen.</p>';
     return;

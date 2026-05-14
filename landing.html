@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <style>
     /* ── Reset & Base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -373,9 +374,10 @@ function recEmoji(s) {
 }
 
 // ── chart instance ─────────────────────────────────────────────
-let perfChart = null;
-let fullData  = null;
+let perfChart   = null;
+let fullData    = null;
 let activeRange = '3M';
+let _trades     = [];
 
 function filterRange(series, range) {
   if (range === 'ALL') return series;
@@ -420,7 +422,7 @@ function buildPortfolioSeries(data) {
   }).filter(Boolean);
 }
 
-function renderChart(series) {
+function renderChart(series, trades) {
   if (perfChart) { perfChart.destroy(); perfChart = null; }
   const canvas = document.getElementById('lp-perf-chart');
   if (!canvas || !series.length) return;
@@ -430,6 +432,32 @@ function renderChart(series) {
   const grad   = ctx.createLinearGradient(0, 0, 0, 200);
   grad.addColorStop(0, 'rgba(16,185,129,0.25)');
   grad.addColorStop(1, 'rgba(16,185,129,0.01)');
+
+  // Build trade annotations (only trades visible in current range)
+  const seriesDates = new Set(series.map(d => d.date));
+  const annotations = {};
+  (trades || []).forEach((t, i) => {
+    if (!seriesDates.has(t.date)) return;
+    const isBuy = (t.action || '').toUpperCase() === 'BUY';
+    annotations['trade_' + i] = {
+      type: 'line',
+      xMin: t.date, xMax: t.date,
+      borderColor: isBuy ? 'rgba(16,185,129,0.6)' : 'rgba(239,68,68,0.6)',
+      borderWidth: 1.5,
+      borderDash: [4, 3],
+      label: {
+        display: true,
+        content: (isBuy ? '▲ ' : '▼ ') + t.ticker,
+        position: isBuy ? 'start' : 'end',
+        backgroundColor: isBuy ? 'rgba(16,185,129,0.85)' : 'rgba(239,68,68,0.85)',
+        color: '#000',
+        font: { size: 9, weight: '700' },
+        padding: { x: 5, y: 2 },
+        borderRadius: 4,
+        yAdjust: isBuy ? -8 : 8
+      }
+    };
+  });
 
   perfChart = new Chart(ctx, {
     type: 'line',
@@ -451,6 +479,7 @@ function renderChart(series) {
       animation: { duration: 900, easing: 'easeInOutQuart' },
       plugins: {
         legend: { display: false },
+        annotation: { annotations },
         tooltip: {
           backgroundColor: '#16161e',
           borderColor: '#2a2a3a',
@@ -598,7 +627,8 @@ function renderLanding(data) {
 
   // Render chart after DOM is painted
   requestAnimationFrame(() => {
-    renderChart(series3M);
+        _trades = data.executed_trades || [];
+    renderChart(series3M, _trades);
 
     // Wire up range buttons
     document.querySelectorAll('.chip[data-range]').forEach(btn => {
@@ -606,7 +636,7 @@ function renderLanding(data) {
         activeRange = btn.dataset.range;
         document.querySelectorAll('.chip[data-range]').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        renderChart(filterRange(fullSeries, activeRange));
+                renderChart(filterRange(fullSeries, activeRange), _trades);
       });
     });
 
