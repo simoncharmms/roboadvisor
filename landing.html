@@ -319,7 +319,7 @@
     .cta-btn:active { transform: translateY(0); }
     .cta-btn svg { flex-shrink: 0; }
 
-    /* ── No data state ── */
+    /* ── Keine Daten state ── */
     .no-data {
       text-align: center;
       padding: 60px 20px;
@@ -353,8 +353,8 @@
 
 <main class="lp-body" id="lp-body">
   <div class="no-data" id="lp-loading">
-    <h2>Loading…</h2>
-    <p>Fetching portfolio data</p>
+    <h2>Wird geladen…</h2>
+    <p>Portfolio-Daten werden abgerufen</p>
   </div>
 </main>
 
@@ -373,6 +373,8 @@ function computeSavingsVal(savingsAccount) {
   return s.balance_eur * Math.pow(1 + rate, days / 365);
 }
 function fmtPct(v) { return v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(2) + '%' : '—'; }
+function recDE(s) { return s==='BUY'?'KAUF':s==='SELL'?'VERKAUF':'HALTEN'; }
+function confDE(s) { return s==='HIGH'?'HOCH':s==='MED'?'MITTEL':'NIEDRIG'; }
 function sigClass(s) {
   if (!s) return 'neutral';
   s = s.toUpperCase();
@@ -456,7 +458,7 @@ function renderChart(series, trades) {
       borderDash: [4, 3],
       label: {
         display: true,
-        content: (isBuy ? '▲ ' : '▼ ') + t.ticker,
+        content: (isBuy ? '▲ Kauf ' : '▼ Verk. ') + t.ticker,
         position: isBuy ? 'start' : 'end',
         backgroundColor: isBuy ? 'rgba(16,185,129,0.85)' : 'rgba(239,68,68,0.85)',
         color: '#000',
@@ -558,6 +560,17 @@ function renderLanding(data) {
 
   // Build portfolio series
   const fullSeries = buildPortfolioSeries(data);
+  // Extend to today so today's trades show as markers
+  const todayStr = new Date().toISOString().slice(0,10);
+  const lastDate = fullSeries.length ? fullSeries[fullSeries.length-1].date : null;
+  if (lastDate && todayStr > lastDate) {
+    const todayTotal = portfolio.reduce((sum, pos) => {
+      const hist = (data.price_history || {})[pos.ticker] || [];
+      const lastP = hist.length ? hist[hist.length-1].close : 0;
+      return sum + lastP * pos.shares;
+    }, 0) + savingsVal;
+    if (todayTotal > 0) fullSeries.push({ date: todayStr, value: todayTotal });
+  }
   const series3M   = filterRange(fullSeries, '3M');
 
   // ── HTML ──────────────────────────────────────────────────────
@@ -565,15 +578,15 @@ function renderLanding(data) {
   body.innerHTML = `
     <!-- Hero value -->
     <div class="hero" id="lp-hero">
-      <div class="hero-label">Portfolio Value</div>
+      <div class="hero-label">Portfoliowert</div>
       <div class="hero-value">${fmtEur(totalValue)}</div>
-      ${returnPct != null ? `<div class="hero-change ${returnPct >= 0 ? 'up' : 'down'}">${fmtPct(returnPct)} since first trade</div>` : ''}
+      ${returnPct != null ? `<div class="hero-change ${returnPct >= 0 ? 'up' : 'down'}">${fmtPct(returnPct)} seit erstem Trade</div>` : ''}
       ${savingsVal > 0 ? `<div style="font-size:11px;color:var(--muted);margin-top:8px">Depot €${depotValue.toFixed(2)} &nbsp;·&nbsp; ${savings.label||'Tagesgeld'} €${savingsVal.toFixed(2)}</div>` : ''}
     </div>
 
     <!-- Performance chart -->
     <div class="chart-card" id="lp-chart-card">
-      <div class="chart-title">Portfolio Performance</div>
+      <div class="chart-title">Portfolio-Performance</div>
       <div class="chart-wrap">
         <canvas id="lp-perf-chart"></canvas>
       </div>
@@ -581,12 +594,12 @@ function renderLanding(data) {
         <button class="chip${activeRange==='1M'?' active':''}" data-range="1M">1M</button>
         <button class="chip${activeRange==='3M'?' active':''}" data-range="3M">3M</button>
         <button class="chip${activeRange==='6M'?' active':''}" data-range="6M">6M</button>
-        <button class="chip${activeRange==='ALL'?' active':''}" data-range="ALL">All</button>
+        <button class="chip${activeRange==='ALL'?' active':''}" data-range="ALL">Alle</button>
       </div>
     </div>
 
     <!-- Daily analysis heading -->
-    <div class="section-heading">Today's Analysis</div>
+    <div class="section-heading">Tagesanalyse</div>
 
     <!-- One card per ticker suggestion -->
     ${Object.values(latestBySug).map((s, i) => {
@@ -607,17 +620,17 @@ function renderLanding(data) {
             <div class="sug-name" title="${pos.name || ''}">${pos.name || ''}</div>
           </div>
           <div class="sug-rec-badge">
-            <div class="rec-pill ${rec || 'HOLD'}">${recEmoji(rec)} ${rec || 'HOLD'}</div>
-            <div class="rec-conf">AI · ${conf || '—'}</div>
+            <div class="rec-pill ${rec || 'HOLD'}">${recEmoji(rec)} ${recDE(rec || 'HOLD')}</div>
+            <div class="rec-conf">KI · ${confDE(conf) || '—'}</div>
           </div>
         </div>
 
         <div class="sug-rationale">${s.llm_rationale || '—'}</div>
 
         <div class="sug-signals">
-          ${yFilter ? `<div class="sug-sig ${sigClass(yFilter)}"><span class="sug-sig-label">Y%-Filter</span><span class="sug-sig-val">${yFilter}${yExp ? ' ⏱️' : ''}</span></div>` : ''}
-          ${macd    ? `<div class="sug-sig ${sigClass(macd)}"><span class="sug-sig-label">MACD</span><span class="sug-sig-val">${macd}</span></div>` : ''}
-          ${propFc5 != null ? `<div class="sug-sig neutral"><span class="sug-sig-label">Prophet +5d</span><span class="sug-sig-val">${fmtEur(propFc5)}</span></div>` : ''}
+          ${yFilter ? `<div class="sug-sig ${sigClass(yFilter)}"><span class="sug-sig-label">Y%-Filter</span><span class="sug-sig-val">${yFilter==='BUY'?'KAUF':yFilter==='SELL'?'VERK.':'HALTEN'}${yExp ? ' ⏱️' : ''}</span></div>` : ''}
+          ${macd    ? `<div class="sug-sig ${sigClass(macd)}"><span class="sug-sig-label">MACD</span><span class="sug-sig-val">${macd==='BUY'?'KAUF':macd==='SELL'?'VERK.':'HALTEN'}</span></div>` : ''}
+          ${propFc5 != null ? `<div class="sug-sig neutral"><span class="sug-sig-label">Prophet +5T</span><span class="sug-sig-val">${fmtEur(propFc5)}</span></div>` : ''}
           ${zScore  != null ? `<div class="sug-sig ${zScore <= -1.5 ? 'buy' : zScore >= 1.5 ? 'sell' : 'hold'}"><span class="sug-sig-label">Z-Score</span><span class="sug-sig-val">${Number(zScore).toFixed(2)}</span></div>` : ''}
         </div>
 
@@ -627,13 +640,13 @@ function renderLanding(data) {
 
     <!-- CTA -->
     <div class="cta-wrap" id="lp-cta">
-      <div class="cta-label">Explore the full dashboard with charts, backtesting, and trade history</div>
+      <div class="cta-label">Vollständiges Dashboard mit Charts, Backtesting und Trade-Historie</div>
       <a href="index.html" class="cta-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
           <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
         </svg>
-        Full Dashboard
+        Vollständiges Dashboard
       </a>
     </div>
   `;
@@ -670,7 +683,7 @@ function loadData() {
   function tryNext(i) {
     if (i >= paths.length) {
       document.getElementById('lp-loading').innerHTML =
-        '<h2>No data</h2><p>Run the pipeline first to generate dashboard_data.json</p>';
+        '<h2>Keine Daten</h2><p>Bitte zuerst die Pipeline ausführen, um dashboard_data.json zu generieren</p>';
       return;
     }
     fetch(paths[i])
