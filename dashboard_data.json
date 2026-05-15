@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-05-14",
+    "generated_at": "2026-05-15",
     "version": "1.1",
     "portfolio_start": {
       "date": "2022-11-24",
@@ -78,10 +78,6 @@
   },
   "price_history": {
     "AMUN.PA": [
-      {
-        "date": "2025-05-14",
-        "close": 70.28570556640625
-      },
       {
         "date": "2025-05-15",
         "close": 69.90857696533203
@@ -1097,13 +1093,13 @@
       {
         "date": "2026-05-13",
         "close": 84.94999694824219
+      },
+      {
+        "date": "2026-05-14",
+        "close": 85.8499984741211
       }
     ],
     "IQQH.DE": [
-      {
-        "date": "2025-05-14",
-        "close": 6.530503273010254
-      },
       {
         "date": "2025-05-15",
         "close": 6.554637908935547
@@ -2103,13 +2099,13 @@
       {
         "date": "2026-05-13",
         "close": 10.815999984741211
+      },
+      {
+        "date": "2026-05-14",
+        "close": 10.800000190734863
       }
     ],
     "EUN4.DE": [
-      {
-        "date": "2025-05-14",
-        "close": 105.87696838378906
-      },
       {
         "date": "2025-05-15",
         "close": 106.40874481201172
@@ -3109,13 +3105,13 @@
       {
         "date": "2026-05-13",
         "close": 106.83000183105469
+      },
+      {
+        "date": "2026-05-14",
+        "close": 107.20999908447266
       }
     ],
     "FM.TO": [
-      {
-        "date": "2025-05-14",
-        "close": 20.190000534057617
-      },
       {
         "date": "2025-05-15",
         "close": 20.09000015258789
@@ -4115,105 +4111,109 @@
       {
         "date": "2026-05-13",
         "close": 37.220001220703125
+      },
+      {
+        "date": "2026-05-14",
+        "close": 37.0
       }
     ]
   },
   "suggestions": [
     {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "ticker": "AMUN.PA",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "Die Quant-Signale sind insgesamt konstruktiv: Der Y%-Filter zeigt ein aktives BUY-Signal mit einem intakten Aufw\u00e4rtstrend, und die Prophet-Prognose deutet auf moderate Kursgewinne von bis zu 0,8% in den n\u00e4chsten f\u00fcnf Tagen hin. Das MACD-Signal liefert jedoch keinen zus\u00e4tzlichen Impuls (keine Kreuzung, neutrales Histogramm), was kurzfristig auf eine Konsolidierungsphase hindeutet. Die verf\u00fcgbaren Nachrichten sind ausschlie\u00dflich makro\u00f6konomischer Natur (Iran-Konflikt, US-China-Gipfel) und enthalten keine unternehmensspezifischen Informationen zu AMUN.PA, sodass eine fundierte nachrichtenbasierte Einsch\u00e4tzung nicht m\u00f6glich ist. Bei einem bestehenden Portfoliogewicht von 9,3% und einer GARCH-Volatilit\u00e4t von ~23% ist eine abwartende Haltung angebracht, bis klarere Impulssignale entstehen.",
+      "llm_rationale": "The Y%-Filter remains a valid BUY signal with an upward trend, but the MACD offers no directional confirmation (no crossover, modest positive histogram), and Prophet forecasts are essentially flat over the next 1\u20135 days, suggesting limited near-term upside momentum. The macro news backdrop is notably risk-off, with an active Middle East conflict disrupting air travel and fuel markets, rising stagflation concerns, and geopolitical instability that could weigh on risk assets broadly, including European asset managers like Amundi. GARCH volatility at 22.12% is elevated enough to warrant caution against adding to the position at this stage. Given the absence of AMUN.PA-specific news and the mixed signal environment, maintaining the current 9.4% weight is appropriate until clearer momentum emerges.",
       "llm_quant_agreement": "neutral",
-      "arima_forecast_1d": 85.0552,
-      "arima_forecast_5d": 85.6205,
-      "prophet_forecast_1d": 85.0552,
-      "prophet_forecast_5d": 85.6205,
+      "arima_forecast_1d": 85.5599,
+      "arima_forecast_5d": 85.7767,
+      "prophet_forecast_1d": 85.5599,
+      "prophet_forecast_5d": 85.7767,
       "macd_signal": "HOLD",
-      "garch_volatility": 0.229841,
+      "garch_volatility": 0.221239,
       "zscore": null
     },
     {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "ticker": "EUN4.DE",
       "quant_signal": "HOLD",
       "llm_recommendation": "HOLD",
       "llm_confidence": "MED",
-      "llm_rationale": "Das MACD-Signal zeigt eine b\u00e4rische Kreuzung und deutet auf kurzfristigen Abw\u00e4rtsdruck hin, jedoch ist das Y%-Filter-Signal als abgelaufen markiert und damit weniger aussagekr\u00e4ftig. Der Z-Score von -0.81 signalisiert eine leicht g\u00fcnstige Bewertung des Anleihen-ETFs, was Abw\u00e4rtsrisiken begrenzt, w\u00e4hrend die Prophet-Prognose eine leichte Erholung auf ~107,35 EUR andeutet. Die verf\u00fcgbaren Nachrichten sind makro\u00f6konomischer Natur (Iran-Konflikt, US-China-Gespr\u00e4che) und haben keinen direkten Bezug zu diesem Anleihen-ETF, sodass kein klarer fundamentaler Impuls f\u00fcr eine Richtungs\u00e4nderung erkennbar ist. Bei einer geringen GARCH-Volatilit\u00e4t von 5,37% und nur 3 gehaltenen Anteilen empfiehlt sich ein Halten der Position ohne aktiven Handlungsbedarf.",
+      "llm_rationale": "The MACD bullish crossover provides a modest short-term positive signal, but the Y%-Filter is both downtrend-aligned and expired, reducing its weight. Prophet forecasts show near-flat movement (~+0.15 EUR over 5 days), and low GARCH volatility (5.20%) suggests limited near-term price disruption. The Z-Score of -0.21 is essentially neutral, indicating this bond ETF is fairly valued. Macro news points to elevated geopolitical risk and stagflation concerns, which could support safe-haven bond holdings but does not provide a strong enough catalyst to add to the position at current levels.",
       "llm_quant_agreement": "neutral",
-      "arima_forecast_1d": 107.3553,
-      "arima_forecast_5d": 107.3515,
-      "prophet_forecast_1d": 107.3553,
-      "prophet_forecast_5d": 107.3515,
-      "macd_signal": "SELL",
-      "garch_volatility": 0.053729,
-      "zscore": -0.8087
+      "arima_forecast_1d": 107.362,
+      "arima_forecast_5d": 107.3586,
+      "prophet_forecast_1d": 107.362,
+      "prophet_forecast_5d": 107.3586,
+      "macd_signal": "BUY",
+      "garch_volatility": 0.052033,
+      "zscore": -0.2127
     },
     {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "ticker": "FM.TO",
       "quant_signal": "BUY",
-      "llm_recommendation": "BUY",
-      "llm_confidence": "MED",
-      "llm_rationale": "Der Y%-Filter zeigt ein aktives Kaufsignal mit einem Aufw\u00e4rtstrend von knapp 20% vom letzten Wendepunkt, und die Prophet-Prognosen deuten auf weitere Kursgewinne von +1,7 EUR in einem Tag bzw. +2,5 EUR in f\u00fcnf Tagen hin. Der MACD liefert kein klares Impulssignal, best\u00e4tigt aber mit positivem Histogramm keine Gegenbewegung. Die verf\u00fcgbaren Nachrichten sind ausschlie\u00dflich makro\u00f6konomischer Natur (Iran-Konflikt, US-China-Gipfel) und lassen keine direkten R\u00fcckschl\u00fcsse auf FM.TO zu. Die hohe GARCH-Volatilit\u00e4t von 56,31% sowie das bereits erhebliche Portfoliogewicht von 39,3% mahnen zur Vorsicht bei einem Aufstocken, weshalb die Konfidenz nur als mittel eingestuft wird.",
-      "llm_quant_agreement": "agree",
-      "arima_forecast_1d": 38.9004,
-      "arima_forecast_5d": 39.7407,
-      "prophet_forecast_1d": 38.9004,
-      "prophet_forecast_5d": 39.7407,
+      "llm_recommendation": "HOLD",
+      "llm_confidence": "LOW",
+      "llm_rationale": "The quantitative signals are modestly constructive \u2014 a non-expired Y%-Filter BUY with an upward trend, positive Prophet forecasts projecting ~5% upside over 5 days, and a slightly positive MACD histogram \u2014 but none of these signals are strongly decisive. However, the macro news environment is materially negative: an active Middle East conflict (Iran war), rising stagflation risk (~40% probability by end-2026), and regional economic stress in Iraq and Kenya all point to elevated geopolitical and macroeconomic headwinds that are difficult to quantify but hard to ignore. GARCH annualised volatility of 56% is extremely high, amplifying downside risk at a 39.1% portfolio weight that is already heavily concentrated. Given the macro uncertainty and lack of any company-specific positive news, the prudent stance is to hold rather than add, while monitoring for escalation or de-escalation of geopolitical risk.",
+      "llm_quant_agreement": "neutral",
+      "arima_forecast_1d": 38.8577,
+      "arima_forecast_5d": 39.2567,
+      "prophet_forecast_1d": 38.8577,
+      "prophet_forecast_5d": 39.2567,
       "macd_signal": "HOLD",
-      "garch_volatility": 0.563066,
+      "garch_volatility": 0.560787,
       "zscore": null
     },
     {
-      "date": "2026-05-14",
+      "date": "2026-05-15",
       "ticker": "IQQH.DE",
       "quant_signal": "BUY",
       "llm_recommendation": "HOLD",
       "llm_confidence": "LOW",
-      "llm_rationale": "Der Y%-Filter zeigt ein aktives BUY-Signal mit aufw\u00e4rts gerichtetem Trend, jedoch deuten die Prophet-Prognosen f\u00fcr +1T (10.53 EUR) und +5T (10.71 EUR) beide unter den aktuellen Kurs von 10.82 EUR, was kurzfristigen Gegenwind signalisiert. Der MACD liefert kein klares Signal (keine Kreuzung, leicht positives Histogramm), sodass kein zus\u00e4tzlicher Impuls vorhanden ist. Die verf\u00fcgbaren Nachrichten sind makro\u00f6konomischer Natur (Iran-Konflikt, Trump-Xi-Gipfel) und weisen keinen direkten Bezug zum Ticker IQQH.DE auf, weshalb keine newsbasierte Positionsanpassung begr\u00fcndbar ist. Bei einem bereits hohen Portfoliogewicht von 35,3% und einer GARCH-Jahresvolatilit\u00e4t von 31,19% ist eine abwartende Haltung angemessen.",
+      "llm_rationale": "The Y%-Filter maintains a live BUY signal with an upward trend, but the MACD offers no directional confirmation and the Prophet forecast projects a near-term dip to ~10.57 before partially recovering to ~10.77 over five days, suggesting limited upside in the short run. GARCH volatility at 33.82% is elevated, indicating meaningful price risk for a position that already carries a substantial 35.3% portfolio weight. The macro news environment is notably negative \u2014 ongoing Iran-related conflict is disrupting airlines, raising fuel prices, and creating geopolitical instability, all of which are headwinds for a clean energy or climate-focused ETF (IQQH.DE) if risk-off sentiment intensifies; additionally, stagflation fears near 40% probability further cloud the outlook. Given the conflicting signals, elevated volatility, and adverse macro backdrop, maintaining the current position without adding exposure is the prudent stance.",
       "llm_quant_agreement": "neutral",
-      "arima_forecast_1d": 10.5287,
-      "arima_forecast_5d": 10.7117,
-      "prophet_forecast_1d": 10.5287,
-      "prophet_forecast_5d": 10.7117,
+      "arima_forecast_1d": 10.5719,
+      "arima_forecast_5d": 10.7709,
+      "prophet_forecast_1d": 10.5719,
+      "prophet_forecast_5d": 10.7709,
       "macd_signal": "HOLD",
-      "garch_volatility": 0.311947,
+      "garch_volatility": 0.338234,
       "zscore": null
     }
   ],
   "backtest_results": [
     {
-      "run_date": "2026-05-14",
+      "run_date": "2026-05-15",
       "ticker": "AMUN.PA",
-      "total_return_pct": 48.3499,
-      "sharpe_ratio": 0.6018,
+      "total_return_pct": 49.9216,
+      "sharpe_ratio": 0.6212,
       "max_drawdown_pct": 16.7225,
       "win_rate": 0.4667
     },
     {
-      "run_date": "2026-05-14",
+      "run_date": "2026-05-15",
       "ticker": "EUN4.DE",
       "total_return_pct": 3.9606,
-      "sharpe_ratio": -0.8533,
+      "sharpe_ratio": -0.8543,
       "max_drawdown_pct": 4.1359,
       "win_rate": 0.5
     },
     {
-      "run_date": "2026-05-14",
+      "run_date": "2026-05-15",
       "ticker": "FM.TO",
-      "total_return_pct": 33.9115,
-      "sharpe_ratio": 0.3397,
+      "total_return_pct": 33.12,
+      "sharpe_ratio": 0.334,
       "max_drawdown_pct": 44.7792,
       "win_rate": 0.3816
     },
     {
-      "run_date": "2026-05-14",
+      "run_date": "2026-05-15",
       "ticker": "IQQH.DE",
-      "total_return_pct": -11.5957,
-      "sharpe_ratio": -0.4063,
+      "total_return_pct": -11.7264,
+      "sharpe_ratio": -0.4093,
       "max_drawdown_pct": 39.2718,
       "win_rate": 0.2162
     }
@@ -4335,150 +4335,150 @@
   "news_by_ticker": {
     "AMUN.PA": [
       {
-        "published_at": "2026-05-14T03:56:00",
-        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "published_at": "2026-05-15T02:18:00",
+        "headline": "[MACRO] Airlines cancel flights in response to Middle East conflict - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
-        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUktYcUtESEg4Vkt6a2d5akRkeFI2Njd0dkR1UnhaLU5EbVFuQkJnMnkyaWRnWFlkQlVBY1BtWFRRVWpfS1RPMjRfclZidFBVaWJwb0c2Y2UxV2p5azA5M3FyWjRJLXlMcVRsd3JIdWZsZXpXVDV5WVdJRHFFUUFzWF9pQkxsbURWQ0p4bnl3MkxtTVFrVUxEX3dhdGNKM2MyNkhhOVNMTmhLRGNEYnJSWHRKTG5zdw?oc=5",
+        "body": "Airlines cancel flights in response to Middle East conflict\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T22:32:00",
-        "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
+        "published_at": "2026-05-14T23:30:45",
+        "headline": "[MACRO] Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5",
-        "body": "Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVUI5Q1lmWm9OdHAtM2s1VGc1U1BxRkpkaEFaZW1UN2ZnMU1xSFlOcExVMEU3TG54dWpXczR6NzNnbnJiZ0tDNklfaU93RFVyUkxFcllQMjFGaHUtRUdMVkhjYkhwd2tzQjlLRndyS2lMTjJ3dEtXV0t6N2g3eGlPNlRmMGNtU0s3dmZqS0pxbkQ2Mmp0Y05pWUlhWEQwVGlBSENGd3EzeDlFU21FRVFSR3UyUXlmc0kyWlQ1YnQxQ3R3QVlnYzhR?oc=5",
+        "body": "Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:31:43",
-        "headline": "[MACRO] Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters",
+        "published_at": "2026-05-14T22:59:00",
+        "headline": "[MACRO] US House narrowly rejects bid to rein in Trump Iran war powers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5",
-        "body": "Rubio: U.S. wants China to press Iran to change course in Gulf\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU09HM0Z4REpPVkhWTGF4ZHVBWGlmU0p5MmxRNGdJTDBvTEpEOFlCazEzMXkzemhNazNobFJGd25ZbjZwNm5mdWtFVUxLd2Zocm1aSVlONjZnTkdHT215UGhuaUg1VzQ5djVSOGc1eFZRd0JJM1cxRG1tMHJqdDI1ZGJKTHloaFZNZFBrTzZvSUM2TDVUWUY0ZlVkc09rU21NZldJ?oc=5",
+        "body": "US House narrowly rejects bid to rein in Trump Iran war powers\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:28:01",
-        "headline": "[MACRO] UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5",
-        "body": "UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T22:02:48",
+        "headline": "[MACRO] Group led by Egon Durban to buy 25% of Las Vegas Raiders at $9.9 billion valuation, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/group-led-by-egon-durban-to-buy-25percent-of-las-vegas-raiders-at-9point9-billion-valuation-sources.html",
+        "body": "First Football is selling its 25% stake in the team to a group led by Egon Durban at a $9.9 billion valuation."
       },
       {
-        "published_at": "2026-05-13T20:23:36",
-        "headline": "[MACRO] Vance says US making progress in Iran talks - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
-        "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T20:25:22",
+        "headline": "[MACRO] What's good for Cisco is good for Broadcom. 3 reasons both stocks are soaring",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/whats-good-for-cisco-is-good-for-broadcom-3-reasons-both-stocks-are-up.html",
+        "body": "Cisco investors aren't the only victors from the network company's blowout earnings."
       }
     ],
     "IQQH.DE": [
       {
-        "published_at": "2026-05-14T03:56:00",
-        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "published_at": "2026-05-15T02:18:00",
+        "headline": "[MACRO] Airlines cancel flights in response to Middle East conflict - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
-        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUktYcUtESEg4Vkt6a2d5akRkeFI2Njd0dkR1UnhaLU5EbVFuQkJnMnkyaWRnWFlkQlVBY1BtWFRRVWpfS1RPMjRfclZidFBVaWJwb0c2Y2UxV2p5azA5M3FyWjRJLXlMcVRsd3JIdWZsZXpXVDV5WVdJRHFFUUFzWF9pQkxsbURWQ0p4bnl3MkxtTVFrVUxEX3dhdGNKM2MyNkhhOVNMTmhLRGNEYnJSWHRKTG5zdw?oc=5",
+        "body": "Airlines cancel flights in response to Middle East conflict\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T22:32:00",
-        "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
+        "published_at": "2026-05-14T23:30:45",
+        "headline": "[MACRO] Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5",
-        "body": "Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVUI5Q1lmWm9OdHAtM2s1VGc1U1BxRkpkaEFaZW1UN2ZnMU1xSFlOcExVMEU3TG54dWpXczR6NzNnbnJiZ0tDNklfaU93RFVyUkxFcllQMjFGaHUtRUdMVkhjYkhwd2tzQjlLRndyS2lMTjJ3dEtXV0t6N2g3eGlPNlRmMGNtU0s3dmZqS0pxbkQ2Mmp0Y05pWUlhWEQwVGlBSENGd3EzeDlFU21FRVFSR3UyUXlmc0kyWlQ1YnQxQ3R3QVlnYzhR?oc=5",
+        "body": "Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:31:43",
-        "headline": "[MACRO] Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters",
+        "published_at": "2026-05-14T22:59:00",
+        "headline": "[MACRO] US House narrowly rejects bid to rein in Trump Iran war powers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5",
-        "body": "Rubio: U.S. wants China to press Iran to change course in Gulf\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU09HM0Z4REpPVkhWTGF4ZHVBWGlmU0p5MmxRNGdJTDBvTEpEOFlCazEzMXkzemhNazNobFJGd25ZbjZwNm5mdWtFVUxLd2Zocm1aSVlONjZnTkdHT215UGhuaUg1VzQ5djVSOGc1eFZRd0JJM1cxRG1tMHJqdDI1ZGJKTHloaFZNZFBrTzZvSUM2TDVUWUY0ZlVkc09rU21NZldJ?oc=5",
+        "body": "US House narrowly rejects bid to rein in Trump Iran war powers\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:28:01",
-        "headline": "[MACRO] UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5",
-        "body": "UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T22:02:48",
+        "headline": "[MACRO] Group led by Egon Durban to buy 25% of Las Vegas Raiders at $9.9 billion valuation, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/group-led-by-egon-durban-to-buy-25percent-of-las-vegas-raiders-at-9point9-billion-valuation-sources.html",
+        "body": "First Football is selling its 25% stake in the team to a group led by Egon Durban at a $9.9 billion valuation."
       },
       {
-        "published_at": "2026-05-13T20:23:36",
-        "headline": "[MACRO] Vance says US making progress in Iran talks - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
-        "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T20:25:22",
+        "headline": "[MACRO] What's good for Cisco is good for Broadcom. 3 reasons both stocks are soaring",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/whats-good-for-cisco-is-good-for-broadcom-3-reasons-both-stocks-are-up.html",
+        "body": "Cisco investors aren't the only victors from the network company's blowout earnings."
       }
     ],
     "EUN4.DE": [
       {
-        "published_at": "2026-05-14T03:56:00",
-        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "published_at": "2026-05-15T02:18:00",
+        "headline": "[MACRO] Airlines cancel flights in response to Middle East conflict - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
-        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUktYcUtESEg4Vkt6a2d5akRkeFI2Njd0dkR1UnhaLU5EbVFuQkJnMnkyaWRnWFlkQlVBY1BtWFRRVWpfS1RPMjRfclZidFBVaWJwb0c2Y2UxV2p5azA5M3FyWjRJLXlMcVRsd3JIdWZsZXpXVDV5WVdJRHFFUUFzWF9pQkxsbURWQ0p4bnl3MkxtTVFrVUxEX3dhdGNKM2MyNkhhOVNMTmhLRGNEYnJSWHRKTG5zdw?oc=5",
+        "body": "Airlines cancel flights in response to Middle East conflict\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T22:32:00",
-        "headline": "[MACRO] Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran - Reuters",
+        "published_at": "2026-05-14T23:30:45",
+        "headline": "[MACRO] Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5",
-        "body": "Trump lauds \u2018biggest summit\u2019 as Xi talks tackle trade, Iran\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVUI5Q1lmWm9OdHAtM2s1VGc1U1BxRkpkaEFaZW1UN2ZnMU1xSFlOcExVMEU3TG54dWpXczR6NzNnbnJiZ0tDNklfaU93RFVyUkxFcllQMjFGaHUtRUdMVkhjYkhwd2tzQjlLRndyS2lMTjJ3dEtXV0t6N2g3eGlPNlRmMGNtU0s3dmZqS0pxbkQ2Mmp0Y05pWUlhWEQwVGlBSENGd3EzeDlFU21FRVFSR3UyUXlmc0kyWlQ1YnQxQ3R3QVlnYzhR?oc=5",
+        "body": "Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:31:43",
-        "headline": "[MACRO] Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters",
+        "published_at": "2026-05-14T22:59:00",
+        "headline": "[MACRO] US House narrowly rejects bid to rein in Trump Iran war powers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5",
-        "body": "Rubio: U.S. wants China to press Iran to change course in Gulf\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU09HM0Z4REpPVkhWTGF4ZHVBWGlmU0p5MmxRNGdJTDBvTEpEOFlCazEzMXkzemhNazNobFJGd25ZbjZwNm5mdWtFVUxLd2Zocm1aSVlONjZnTkdHT215UGhuaUg1VzQ5djVSOGc1eFZRd0JJM1cxRG1tMHJqdDI1ZGJKTHloaFZNZFBrTzZvSUM2TDVUWUY0ZlVkc09rU21NZldJ?oc=5",
+        "body": "US House narrowly rejects bid to rein in Trump Iran war powers\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:28:01",
-        "headline": "[MACRO] UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5",
-        "body": "UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T22:02:48",
+        "headline": "[MACRO] Group led by Egon Durban to buy 25% of Las Vegas Raiders at $9.9 billion valuation, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/group-led-by-egon-durban-to-buy-25percent-of-las-vegas-raiders-at-9point9-billion-valuation-sources.html",
+        "body": "First Football is selling its 25% stake in the team to a group led by Egon Durban at a $9.9 billion valuation."
       },
       {
-        "published_at": "2026-05-13T20:23:36",
-        "headline": "[MACRO] Vance says US making progress in Iran talks - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
-        "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T20:25:22",
+        "headline": "[MACRO] What's good for Cisco is good for Broadcom. 3 reasons both stocks are soaring",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/whats-good-for-cisco-is-good-for-broadcom-3-reasons-both-stocks-are-up.html",
+        "body": "Cisco investors aren't the only victors from the network company's blowout earnings."
       }
     ],
     "FM.TO": [
       {
-        "published_at": "2026-05-14T03:56:00",
-        "headline": "[MACRO] Iran war overshadows Trump's China visit as peace talks stall - Reuters",
+        "published_at": "2026-05-15T02:18:00",
+        "headline": "[MACRO] Airlines cancel flights in response to Middle East conflict - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFd0ejg3MHE1NzY3MmdESTZ4bkxtNGtpQkFxZnhTSlVmLWVXSTZRRkRXbVBRNVlmS3FtbEk2NS1uaGFIX3Mxazc0UzFFbkJkbHdtQm9BS2NzSTFWTEVYQkxidUFZWE1MSEFiRlB0M3hYUFNRQm10eWN1dGhIei1URkYtRE5rS05pMFo5dmpZN3d6azVES2NiaWswZGMzZUl1SzVLejlWRzg?oc=5",
-        "body": "Iran war overshadows Trump's China visit as peace talks stall\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUktYcUtESEg4Vkt6a2d5akRkeFI2Njd0dkR1UnhaLU5EbVFuQkJnMnkyaWRnWFlkQlVBY1BtWFRRVWpfS1RPMjRfclZidFBVaWJwb0c2Y2UxV2p5azA5M3FyWjRJLXlMcVRsd3JIdWZsZXpXVDV5WVdJRHFFUUFzWF9pQkxsbURWQ0p4bnl3MkxtTVFrVUxEX3dhdGNKM2MyNkhhOVNMTmhLRGNEYnJSWHRKTG5zdw?oc=5",
+        "body": "Airlines cancel flights in response to Middle East conflict\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T22:32:00",
-        "headline": "[MACRO] China's Xi hails trade progress in Trump summit, sends Taiwan warning - Reuters",
+        "published_at": "2026-05-14T23:30:45",
+        "headline": "[MACRO] Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQS3lkbXo1Qi03THB1M3ZabG5xUFNTNzloZl96QTUyTGItdm5WMWd4eVhWTEtDd0plRHBmYTVYUU94bXAtN3AxYzQ1aUdUR203NmM5YjFfZGNaT3F5a01BcnJxTTVRUUsyU1d5b01zRU9nNDNNLU54ZkNkckxDS0J2NTI0MGU1OGp0X3VVRFlxNHJkU3ZvMkF2Y1lrdEE2TDhUX3VoS2cxdWZ5Zw?oc=5",
-        "body": "China's Xi hails trade progress in Trump summit, sends Taiwan warning\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVUI5Q1lmWm9OdHAtM2s1VGc1U1BxRkpkaEFaZW1UN2ZnMU1xSFlOcExVMEU3TG54dWpXczR6NzNnbnJiZ0tDNklfaU93RFVyUkxFcllQMjFGaHUtRUdMVkhjYkhwd2tzQjlLRndyS2lMTjJ3dEtXV0t6N2g3eGlPNlRmMGNtU0s3dmZqS0pxbkQ2Mmp0Y05pWUlhWEQwVGlBSENGd3EzeDlFU21FRVFSR3UyUXlmc0kyWlQ1YnQxQ3R3QVlnYzhR?oc=5",
+        "body": "Exclusive: Iraq seeking financial assistance from IMF, World Bank as result of Iran war\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:30:00",
-        "headline": "[MACRO] Rubio: U.S. wants China to press Iran to change course in Gulf - Reuters",
+        "published_at": "2026-05-14T22:59:00",
+        "headline": "[MACRO] US House narrowly rejects bid to rein in Trump Iran war powers - Reuters",
         "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUUFYYkxUMy1tNnZnUGhHUDBCeHlTcFBVT05QN3JEMDVYRG1yakRXVHYwZHdNWmRRdG9JbVVsNXpZdG4xOFRCUVVjYTFoMXNERVdadlh0eW53YXdDXzA1Yzk4N0xPT2tnQ0dnRm9lbGJlalNTb2dQME9vRFJtQzNIbkZJMGVqNUNkdWtRdVktYnF6N2lQWE10Uy1KdVJ3VmM?oc=5",
-        "body": "Rubio: U.S. wants China to press Iran to change course in Gulf\u00a0\u00a0Reuters"
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU09HM0Z4REpPVkhWTGF4ZHVBWGlmU0p5MmxRNGdJTDBvTEpEOFlCazEzMXkzemhNazNobFJGd25ZbjZwNm5mdWtFVUxLd2Zocm1aSVlONjZnTkdHT215UGhuaUg1VzQ5djVSOGc1eFZRd0JJM1cxRG1tMHJqdDI1ZGJKTHloaFZNZFBrTzZvSUM2TDVUWUY0ZlVkc09rU21NZldJ?oc=5",
+        "body": "US House narrowly rejects bid to rein in Trump Iran war powers\u00a0\u00a0Reuters"
       },
       {
-        "published_at": "2026-05-13T21:28:01",
-        "headline": "[MACRO] UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbHNleDhULVFsVGI1UU1BdTh5OXRTYkZvenZPLUhrNUlEM1FRUWZubXlLc1pfTmt4bkZ6eWFEZDVFRTgtVGhwcjQwSnBkUDIzRmg4VXNCZlNXRnFUcFRMXzRqT1VpWXF2Q3V1elMxbWR2ZjVlWEdSMUhzTld5ZlZpTHVqQUEzOTdnNlpUOGd3U3prWmlnb04xN1Frd2FRZENUVENVY0JISjdSRzdBZlAxWWtmNXNEVGwtYVNaU283eF9wam44OGhpdEZB?oc=5",
-        "body": "UAE denies Netanyahu held secret meeting with Emirati president in the UAE during Iran war\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T22:02:48",
+        "headline": "[MACRO] Group led by Egon Durban to buy 25% of Las Vegas Raiders at $9.9 billion valuation, sources say",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/group-led-by-egon-durban-to-buy-25percent-of-las-vegas-raiders-at-9point9-billion-valuation-sources.html",
+        "body": "First Football is selling its 25% stake in the team to a group led by Egon Durban at a $9.9 billion valuation."
       },
       {
-        "published_at": "2026-05-13T20:23:36",
-        "headline": "[MACRO] Vance says US making progress in Iran talks - Reuters",
-        "source": "Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSjRYS19wcklKU2RPZGYzTlNoaDRHM2tPYnEzSHNzYlFEb2hPbkM0UkZyVVhzcGY0VW1ZYXJwQ0lrbklLcjhqWVhMaUd0OS1XQWJJcEdZaEpId0hFeG02LXBpMEhILUZKbnVXRFFUZTdQVTBUSzRicWRVTFUzV0c4NTBITmE4Tm1mbHc?oc=5",
-        "body": "Vance says US making progress in Iran talks\u00a0\u00a0Reuters"
+        "published_at": "2026-05-14T20:25:22",
+        "headline": "[MACRO] What's good for Cisco is good for Broadcom. 3 reasons both stocks are soaring",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2026/05/14/whats-good-for-cisco-is-good-for-broadcom-3-reasons-both-stocks-are-up.html",
+        "body": "Cisco investors aren't the only victors from the network company's blowout earnings."
       }
     ]
   }
