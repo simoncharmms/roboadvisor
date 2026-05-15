@@ -101,6 +101,7 @@ function fmtPct(v) { return v != null ? (v >= 0 ? '+' : '') + Number(v).toFixed(
 function sigClass(s) { if (!s) return 'neutral'; s = s.toUpperCase(); return s==='BUY'?'buy':s==='SELL'?'sell':s==='HOLD'?'hold':'neutral'; }
 function recEmoji(s) { return s==='BUY'?'🟢':s==='SELL'?'🔴':'🟡'; }
 function recDE(s) { return s==='BUY'?'KAUF':s==='SELL'?'VERKAUF':'HALTEN'; }
+function sigDE(s) { return s==='BUY'?'KAUF':s==='SELL'?'VERKAUF':s==='HOLD'?'HALTEN':s||'—'; }
 function confDE(s) { return s==='HIGH'?'HOCH':s==='MED'?'MITTEL':s==='LOW'?'NIEDRIG':s||'—'; }
 
 let perfChart = null, fullData = null, activeRange = '3M', _trades = [];
@@ -235,8 +236,8 @@ function renderLanding(data) {
         </div>
         <div class="sug-rationale">${s.llm_rationale||'—'}</div>
         <div class="sug-signals">
-          ${yFilter ? `<div class="sug-sig ${sigClass(yFilter)}"><span class="sug-sig-label">Y%-Filter</span><span class="sug-sig-val">${yFilter}${yExp?' ⏱️':''}</span></div>` : ''}
-          ${macd    ? `<div class="sug-sig ${sigClass(macd)}"><span class="sug-sig-label">MACD</span><span class="sug-sig-val">${macd}</span></div>` : ''}
+          ${yFilter ? `<div class="sug-sig ${sigClass(yFilter)}"><span class="sug-sig-label">Y%-Filter</span><span class="sug-sig-val">${sigDE(yFilter)}${yExp?' ⏱️':''}</span></div>` : ''}
+          ${macd    ? `<div class="sug-sig ${sigClass(macd)}"><span class="sug-sig-label">MACD</span><span class="sug-sig-val">${sigDE(macd)}</span></div>` : ''}
           ${propFc5 != null ? `<div class="sug-sig neutral"><span class="sug-sig-label">Prophet +5T</span><span class="sug-sig-val">${fmtEur(propFc5)}</span></div>` : ''}
           ${zScore  != null ? `<div class="sug-sig ${zScore<=-1.5?'buy':zScore>=1.5?'sell':'hold'}"><span class="sug-sig-label">Z-Score</span><span class="sug-sig-val">${Number(zScore).toFixed(2)}</span></div>` : ''}
         </div>
